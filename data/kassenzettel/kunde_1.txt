@@ -1,0 +1,15 @@
+================== KASSENZETTEL ==================
+Kunde: Josuke Higashikata, Kunde-ID: 1
+Haendler: Jonathan Joestar, Haendler-ID: 0
+
+Produkt             Menge          Preis [€]         
+--------------------------------------------------
+Apfel               1.17           1.23                
+Birne               5.20           2.42                
+--------------------------------------------------
+Gesamtpreis:                       14.02         
+
+Institut: Deutsche Bank
+Konto-ID: 1
+Abrechnungsdatum: 01.01.2023
+================== KASSENZETTEL ==================

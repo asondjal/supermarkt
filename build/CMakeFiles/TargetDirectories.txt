@@ -1,0 +1,3 @@
+/home/arrif-sondjalim/c++projects/supermarkt/build/CMakeFiles/supermarkt.dir
+/home/arrif-sondjalim/c++projects/supermarkt/build/CMakeFiles/edit_cache.dir
+/home/arrif-sondjalim/c++projects/supermarkt/build/CMakeFiles/rebuild_cache.dir
