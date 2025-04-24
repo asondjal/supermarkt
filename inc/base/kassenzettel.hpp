@@ -22,11 +22,11 @@ class Kassenzettel {
     const Haendler& haendler_;
     const Warenkorb& warenkorb_;
     const uint32_t kassenzettelID_;
-    const Konto& konto_;
+    Konto& konto_; // Nicht konstant, da Auszahlungen und Einzahlungen möglich bleiben müssen
     std::string filename_;
 
     public:
-    Kassenzettel(Datum& datum, const Kunde& kunde, Haendler& haendler, Warenkorb& warenkorb, const Konto& konto);
+    Kassenzettel(Datum& datum, const Kunde& kunde, Haendler& haendler, Warenkorb& warenkorb, Konto& konto);
     uint32_t GetKassenzettelID() const;
     std::string CreateKassenzettel() const;
 

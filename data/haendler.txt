@@ -1,4 +1,4 @@
-============================ KUNDEN DATABASE ==============================
+============================ HAENDLER DATABASE ============================
 Supermarkt: REAL
 Adresse: Muenchen, Deutschland
 

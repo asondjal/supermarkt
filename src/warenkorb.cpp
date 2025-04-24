@@ -3,13 +3,13 @@
 Warenkorb::Warenkorb(Kunde& kunde) : kunde_(kunde) {}
 
 void Warenkorb::AddProdukt(Produkt* produkt) {
-    produkte.push_back(produkt);  // Fügt das Produkt hinzu
+    produkte.push_back(produkt); 
 }
 
 void Warenkorb::RemoveProdukt(Produkt* produkt) {
     auto it = std::find(produkte.begin(), produkte.end(), produkt);
     if (it != produkte.end()) {
-        produkte.erase(it);  // Entfernt das Produkt
+        produkte.erase(it);
     }
 }
 

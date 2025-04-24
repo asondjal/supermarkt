@@ -2,7 +2,7 @@
 
 static uint32_t kassenzettelCounter_ = 0;
 
-Kassenzettel::Kassenzettel(Datum& datum, const Kunde& kunde, Haendler& haendler, Warenkorb& warenkorb, const Konto& konto) :
+Kassenzettel::Kassenzettel(Datum& datum, const Kunde& kunde, Haendler& haendler, Warenkorb& warenkorb, Konto& konto) :
     datum_(datum),
     kunde_(kunde),
     haendler_(haendler),
@@ -58,7 +58,7 @@ std::string Kassenzettel::CreateKassenzettel() const {
         << std::setw(14) << warenkorb_.GetGesamtPreis() << "\n\n";
     
     file << oss.str();
-
+    konto_.Auszahlen(warenkorb_.GetGesamtPreis());
     file << "Institut: " << konto_.GetBank() << "\n";
     file << "Konto-ID: " << konto_.GetKontoID() << "\n";
     file << "Abrechnungsdatum: "

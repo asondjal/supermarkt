@@ -2,10 +2,16 @@
 
 Supermarkt::Supermarkt(std::string name, std::string adresse) : name_(name), adresse_(adresse) {}
 
+/**
+ * @brief Hinzufügen eines Produktes ins Sortiment
+ */
 void Supermarkt::AddProdukt(Produkt& produkt) {
     produkte_.push_back(&produkt);
 }
 
+/**
+ * @brief Entfernen eines Produktes ins Sortiment
+ */
 void Supermarkt::RemoveProdukt(Produkt& produkt) {
     RemoveFromVector(produkte_, produkt, 
         [](Produkt* a, const Produkt& b) {
@@ -14,6 +20,10 @@ void Supermarkt::RemoveProdukt(Produkt& produkt) {
     );
 }
 
+/**
+ * @brief Erzeugen eines Kassenzettels und Speicherung im Ordner Kassenzettel
+ * @return absoluter Pfad zur Datei
+ */
 std::string Supermarkt::CreateProduktDatabase() const {
     // Anlegen der Produkt-Datei
     std::string filename = "./data/inventur.txt";
@@ -53,17 +63,24 @@ std::string Supermarkt::CreateProduktDatabase() const {
     file << oss.str();
     file.close();
 
-    return oss.str();
+    return filename;
 }
 
+/**
+ * @brief Hinzufügen eines Kunden
+ */
 void Supermarkt::AddKunde(Kunde& kunde) {
     kunden_.push_back(&kunde);
 }
 
+/**
+ * @brief Erzeugen einer Textdatei mit allen Kunden
+ * @return absoluter Pfad zur Datei
+ */
 std::string Supermarkt::CreateKundeDatabase() const {
     // Anlegen der Kunden-Datei
-    std::string filename = "./data/kunden.txt";
-    std::ofstream file(filename, std::ios::out | std::ios::trunc);
+    std::string kundendatabase_path = "./data/kunden.txt";
+    std::ofstream file(kundendatabase_path, std::ios::out | std::ios::trunc);
     if (!file) {
         return "Fehler beim Erstellen der Datei!";
     }
@@ -91,9 +108,12 @@ std::string Supermarkt::CreateKundeDatabase() const {
     oss << "===========================================================================\n";
     file << oss.str();
     file.close();
-    return oss.str();
+    return kundendatabase_path;
 }
 
+/**
+ * @brief Entfernen eines Kunden
+ */
 void Supermarkt::RemoveKunde(Kunde& kunde) {
     RemoveFromVector(kunden_, kunde, 
         [](Kunde* a, const Kunde& b) {
@@ -102,14 +122,21 @@ void Supermarkt::RemoveKunde(Kunde& kunde) {
     );
 }
 
+/**
+ * @brief Hinzufügen eines Warenkorbs
+ */
 void Supermarkt::AddWarenkorb(Warenkorb& warenkorb) {
     warenkoerbe_.push_back(&warenkorb);
 }
 
+/**
+ * @brief Erzeugen einer Textdatei mit allen Warenkörben und Speicherung im Ordner data
+ * @return absoluter Pfad zur Datei
+ */
 std::string Supermarkt::CreateWarenkorbDatabase() const {
     // Anlegen der Warenkorb-Datei
-    std::string filename = "./data/warenkoerbe.txt";
-    std::ofstream file(filename, std::ios::out | std::ios::trunc);
+    std::string warenkorbdatabase_path = "./data/warenkoerbe.txt";
+    std::ofstream file(warenkorbdatabase_path, std::ios::out | std::ios::trunc);
     if (!file) {
         return "Fehler beim Erstellen der Datei!";
     }
@@ -136,9 +163,12 @@ std::string Supermarkt::CreateWarenkorbDatabase() const {
     oss << "===========================================================================\n";
     file << oss.str();
     file.close();
-    return oss.str();
+    return warenkorbdatabase_path;
 }
 
+/**
+ * @brief Entfernen eines Warenkorbes
+ */
 void Supermarkt::RemoveWarenkorb(Warenkorb& warenkorb) {
     RemoveFromVector(warenkoerbe_, warenkorb, 
         [](Warenkorb* a, const Warenkorb& b) {
@@ -147,18 +177,25 @@ void Supermarkt::RemoveWarenkorb(Warenkorb& warenkorb) {
     );
 }
 
+/**
+ * @brief Hinzufügen eines Händlers
+ */
 void Supermarkt::AddHaendler(Haendler& haendler) {
     haendler_.push_back(&haendler);
 }
 
+/**
+ * @brief Erzeugen eines Textdatei mit allen Händlern und Speicherung im Ordner data
+ * @return absoluter Pfad zur Datei
+ */
 std::string Supermarkt::CreateHaendlerDatabase() const {
     // Anlegen der Kunden-Datei
-    std::string filename = "./data/haendler.txt";
-    std::ofstream file(filename, std::ios::out | std::ios::trunc);
+    std::string haendlerdatabase_path = "./data/haendler.txt";
+    std::ofstream file(haendlerdatabase_path, std::ios::out | std::ios::trunc);
     if (!file) {
         return "Fehler beim Erstellen der Datei!";
     }
-    file << "============================ KUNDEN DATABASE ==============================\n";
+    file << "============================ HAENDLER DATABASE ============================\n";
     file << "Supermarkt: " << name_ << "\n";
     file << "Adresse: " << adresse_ << "\n\n";
     std::ostringstream oss;
@@ -182,10 +219,12 @@ std::string Supermarkt::CreateHaendlerDatabase() const {
     oss << "===========================================================================\n";
     file << oss.str();
     file.close();
-    return oss.str();
+    return haendlerdatabase_path;
 }
 
-
+/**
+ * @brief Entfernen eines Händlers aus dem System
+ */
 void Supermarkt::RemoveHaendler(Haendler& haendler) {
     RemoveFromVector(haendler_, haendler, 
         [](Haendler* a, const Haendler& b) {
@@ -194,8 +233,13 @@ void Supermarkt::RemoveHaendler(Haendler& haendler) {
     );
 }
 
+/**
+ * @brief Berechnung vom generierten Umsatz
+ * @return generierter Umsatz in €
+ */
 float Supermarkt::GetGesamtWert() const {
     float gesamtwert = 0.0f;
+    std::cout << std::fixed << std::setprecision(2);
     for (const auto& produkt : produkte_) {
         gesamtwert += produkt->GetPreis() * produkt->GetMenge();
     }

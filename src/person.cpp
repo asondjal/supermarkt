@@ -5,26 +5,49 @@ static int personen_counter = 0;
 Person::Person(std::string name, std::string gender, int age, std::string email, std::string adresse) :
     name_{name}, gender_{gender}, age_{age}, email_{email}, adresse_{adresse}, personID_{personen_counter++} {}
 
+/** 
+* @brief Funktion liefert den Namen einer Person zurück
+* @return name_: Name der Person
+*/
 std::string Person::GetName() const {
     return name_;
 }
 
+/**
+ * @brief Funktion liefert das Geschlecht einer Person zurück
+ * @return gender_: Geschlecht der Person
+ */
 std::string Person::GetGender() const {
     return gender_;
 }
 
+/**
+ * @brief Funktion liefert das Alter einer Person zurück
+ * @return age_: Alter der Person 
+ */
 int Person::GetAge() const {
     return age_;
 }
 
+/**
+ * @brief Funktion liefert die E-Mail einer Person zurück
+ * @return email_: E-Mail der Person
+ */
 std::string Person::GetEmail() const {
     return email_;
 }
 
+/**
+ * @brief Rückgabwert der Funktion ist die Adresse einer Person
+ * @return adresse_: Adresse der Person
+ */
 std::string Person::GetAdresse() const {
     return adresse_;
 }
 
+/**
+ * @brief Funktion zur Zusammenfassung aller Informationen für eine Person
+ */
 void Person::Print() const {
     std::cout << "Name: " << name_ << "\n"
         << "Alter: " << age_ << "\n" 
