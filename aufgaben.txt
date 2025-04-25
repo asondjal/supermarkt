@@ -1,7 +1,0 @@
-1. Klasse Kunde sowie Klasse Haendler muss noch implementiert werden # erledigt
-2. Klasse Warenkorb muss noch implementiert werden # Problem behoben
-3. Klasse Konto muss noch implementiert werden # erledigt
-4. Klasse Kassenzettel muss noch implementiert werden
-5. Klasse Supermarkt muss noch implementiert werden
-6. Klasse Statistics: Statistische Funktionen fehlen noch
-7. Benutzerfreundliche UI muss noch entwickelt werden

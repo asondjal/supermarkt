@@ -1,14 +1,12 @@
 # ninja log v5
-4	377	1745524386761060263	CMakeFiles/supermarkt.dir/src/person.cpp.o	4e2dbe690aad8139
-4	380	1745524386765060334	CMakeFiles/supermarkt.dir/src/haendler.cpp.o	43b60492858d835b
-2	308	1745525444771023077	CMakeFiles/supermarkt.dir/src/produkt.cpp.o	ee97b0d524033f1
-5	358	1745524386742059924	CMakeFiles/supermarkt.dir/src/kunde.cpp.o	6f7a70467641f773
-677	735	1745525468697898650	supermarkt	a32ea29fb7257ecb
-4	356	1745524386740059888	CMakeFiles/supermarkt.dir/src/datum.cpp.o	6f44c17b264f3cb4
-5	371	1745524386756060174	CMakeFiles/supermarkt.dir/src/konto.cpp.o	4e2262a785413898
-1	677	1745525468634896341	CMakeFiles/supermarkt.dir/src/supermarkt.cpp.o	13b6857a4d6869e4
-5	96	1745524386480055244	CMakeFiles/supermarkt.dir/src/warenkorb.cpp.o	f5428987b4bbcc23
-2	546	1745524505105446536	CMakeFiles/supermarkt.dir/src/main.cpp.o	12bdd9729fa6e6e3
 1	517	1745524512638615346	CMakeFiles/supermarkt.dir/src/kassenzettel.cpp.o	129e15f1efdb2830
-2	692	1745525540962560068	CMakeFiles/supermarkt.dir/src/supermarkt.cpp.o	13b6857a4d6869e4
-692	753	1745525541028562510	supermarkt	a32ea29fb7257ecb
+1	11	1745597848220490873	CMakeFiles/supermarkt.dir/src/main.cpp.o	12bdd9729fa6e6e3
+5	96	1745524386480055244	CMakeFiles/supermarkt.dir/src/warenkorb.cpp.o	f5428987b4bbcc23
+1	11	1745597848220490873	CMakeFiles/supermarkt.dir/src/supermarkt.cpp.o	13b6857a4d6869e4
+5	371	1745524386756060174	CMakeFiles/supermarkt.dir/src/konto.cpp.o	4e2262a785413898
+4	356	1745524386740059888	CMakeFiles/supermarkt.dir/src/datum.cpp.o	6f44c17b264f3cb4
+11	99	1745597848306489611	supermarkt	a32ea29fb7257ecb
+5	358	1745524386742059924	CMakeFiles/supermarkt.dir/src/kunde.cpp.o	6f7a70467641f773
+2	308	1745525444771023077	CMakeFiles/supermarkt.dir/src/produkt.cpp.o	ee97b0d524033f1
+4	380	1745524386765060334	CMakeFiles/supermarkt.dir/src/haendler.cpp.o	43b60492858d835b
+4	377	1745524386761060263	CMakeFiles/supermarkt.dir/src/person.cpp.o	4e2dbe690aad8139
