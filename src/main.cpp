@@ -9,6 +9,7 @@
 #include "kassenzettel.hpp"
 #include "supermarkt.hpp"
 #include "read_data.hpp"
+#include "statistik.hpp"
 
 int main() {
 
@@ -131,5 +132,15 @@ int main() {
 	std::cout << "Auto from file: " << std::endl;
 	std::cout << autoData << std::endl;
 
+	Statistik statistik;
+	statistik.LadeDaten(inventur);
+	std::cout << "Anzahl Daten: " << statistik.AnzahlDaten() << std::endl;
+	statistik.EntferneDaten(data);
+	std::cout << "Anzahl Daten nach Entfernen: " << statistik.AnzahlDaten() << std::endl;
+	statistik.LadeDaten(inventur);
+	std::cout << "Anzahl Daten: " << statistik.AnzahlDaten() << std::endl;
+	statistik.LadeDaten(numbers);
+	std::cout << "Anzahl Daten: " << statistik.AnzahlDaten() << std::endl;
+	
 	return 0;
 }

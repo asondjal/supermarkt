@@ -12,7 +12,7 @@
 class ReadData {
 public:
     explicit ReadData(const std::string& path);
-    mutable std::mutex mtx_;
+    std::mutex& GetMutex();
     std::string ReadFile() const; 
     std::string ReadTxt() const;
     std::string ReadCSV() const;
@@ -22,6 +22,7 @@ public:
 
 private:
     std::string filePath_;
+    mutable std::mutex mtx_;
 };
 
 #endif /* READ_DATA_HPP_ */

@@ -23,6 +23,7 @@ add_executable(${PROJECT_NAME}
     src/kassenzettel.cpp
     src/supermarkt.cpp
     src/read_data.cpp
+    src/statistik.cpp
 )
 
 target_include_directories(${PROJECT_NAME} PRIVATE

@@ -2,6 +2,10 @@
 
 ReadData::ReadData(const std::string& path) : filePath_{path} {}
 
+std::mutex& ReadData::GetMutex() {
+    return mtx_;
+}
+
 /**
  * @brief Liest den Inhalt einer Datei aus und gibt ihn als String zurück
  * @return Inhalt der Datei als String
