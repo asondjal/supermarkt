@@ -22,11 +22,14 @@ add_executable(${PROJECT_NAME}
     src/konto.cpp
     src/kassenzettel.cpp
     src/supermarkt.cpp
+    src/read_data.cpp
 )
 
 target_include_directories(${PROJECT_NAME} PRIVATE
     inc/base
     inc/utils
 )
+
+target_link_libraries(supermarkt PRIVATE poppler-cpp)
 
 target_compile_options(supermarkt PRIVATE -Wall -Wextra -pedantic)

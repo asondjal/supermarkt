@@ -3,8 +3,15 @@
 ## Ziele
 
 - Implementierung eines Supermarktes
-- Verwendung einer GUI zur Interaktion mit dem User
-- Datenerfassung und Speicherung in seperaten Dateien bzw. Ordnern
+- Integration einer GUI zur nutzerfreundlichen Bedienung
+- Datenerfassung und -speicherung in seperaten Dateien bzw. Ordnern
+
+## Hauptfunktionen
+
+- Verwaltung von Kunden, Händlern, Produkten und Warenkörben
+- Export von Kassenzetteln, Inventur- und Kundendateien
+- Trennung von Datenzugriff (`ReadData`) und Auswertung (`Statistik`)
+- Multithreading-fähiger Dateizugriff
 
 ## CMakeLists.txt
 

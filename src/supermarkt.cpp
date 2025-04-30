@@ -32,7 +32,7 @@ std::string Supermarkt::CreateProduktDatabase() const {
         return "Fehler beim Erstellen der Datei!";
     }
 
-    file << "================== PRODUKT DATABASE ==================\n";
+    file << "========================== PRODUKT DATABASE ==========================\n";
     file << "Supermarkt: " << name_ << "\n";
     file << "Adresse: " << adresse_ << "\n\n";
 
@@ -58,7 +58,7 @@ std::string Supermarkt::CreateProduktDatabase() const {
     oss << std::left << std::setw(35) << "Umsatz: "
         << std::fixed << std::setprecision(2)
         << std::setw(14) << GetGesamtWert() << "\n";
-    oss << "=======================================================\n";
+    oss << "======================================================================\n";
 
     file << oss.str();
     file.close();
@@ -140,7 +140,7 @@ std::string Supermarkt::CreateWarenkorbDatabase() const {
     if (!file) {
         return "Fehler beim Erstellen der Datei!";
     }
-    file << "============================ WARENKORB DATABASE ===========================\n";
+    file << "=========================== WARENKORB DATABASE =======================\n";
     file << "Supermarkt: " << name_ << "\n";
     file << "Adresse: " << adresse_ << "\n\n";
     std::ostringstream oss;
@@ -160,7 +160,7 @@ std::string Supermarkt::CreateWarenkorbDatabase() const {
     oss << std::string(70, '-') << "\n";
     oss << std::left << std::setw(35) << "Anzahl Warenkoerbe: "
         << std::setw(14) << warenkoerbe_.size() << "\n";
-    oss << "===========================================================================\n";
+    oss << "======================================================================\n";
     file << oss.str();
     file.close();
     return warenkorbdatabase_path;

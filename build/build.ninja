@@ -129,6 +129,14 @@ build CMakeFiles/supermarkt.dir/src/supermarkt.cpp.o: CXX_COMPILER__supermarkt_u
   OBJECT_DIR = CMakeFiles/supermarkt.dir
   OBJECT_FILE_DIR = CMakeFiles/supermarkt.dir/src
 
+build CMakeFiles/supermarkt.dir/src/read_data.cpp.o: CXX_COMPILER__supermarkt_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/read_data.cpp || cmake_object_order_depends_target_supermarkt
+  DEP_FILE = CMakeFiles/supermarkt.dir/src/read_data.cpp.o.d
+  FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -Wall -Wextra -pedantic
+  INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils
+  LAUNCHER = ccache 
+  OBJECT_DIR = CMakeFiles/supermarkt.dir
+  OBJECT_FILE_DIR = CMakeFiles/supermarkt.dir/src
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target supermarkt
@@ -137,8 +145,9 @@ build CMakeFiles/supermarkt.dir/src/supermarkt.cpp.o: CXX_COMPILER__supermarkt_u
 #############################################
 # Link the executable supermarkt
 
-build supermarkt: CXX_EXECUTABLE_LINKER__supermarkt_Debug CMakeFiles/supermarkt.dir/src/main.cpp.o CMakeFiles/supermarkt.dir/src/datum.cpp.o CMakeFiles/supermarkt.dir/src/produkt.cpp.o CMakeFiles/supermarkt.dir/src/person.cpp.o CMakeFiles/supermarkt.dir/src/haendler.cpp.o CMakeFiles/supermarkt.dir/src/kunde.cpp.o CMakeFiles/supermarkt.dir/src/warenkorb.cpp.o CMakeFiles/supermarkt.dir/src/konto.cpp.o CMakeFiles/supermarkt.dir/src/kassenzettel.cpp.o CMakeFiles/supermarkt.dir/src/supermarkt.cpp.o
+build supermarkt: CXX_EXECUTABLE_LINKER__supermarkt_Debug CMakeFiles/supermarkt.dir/src/main.cpp.o CMakeFiles/supermarkt.dir/src/datum.cpp.o CMakeFiles/supermarkt.dir/src/produkt.cpp.o CMakeFiles/supermarkt.dir/src/person.cpp.o CMakeFiles/supermarkt.dir/src/haendler.cpp.o CMakeFiles/supermarkt.dir/src/kunde.cpp.o CMakeFiles/supermarkt.dir/src/warenkorb.cpp.o CMakeFiles/supermarkt.dir/src/konto.cpp.o CMakeFiles/supermarkt.dir/src/kassenzettel.cpp.o CMakeFiles/supermarkt.dir/src/supermarkt.cpp.o CMakeFiles/supermarkt.dir/src/read_data.cpp.o
   FLAGS = -g -g -O0 -Wall -Wextra -pedantic
+  LINK_LIBRARIES = -lpoppler-cpp
   OBJECT_DIR = CMakeFiles/supermarkt.dir
   POST_BUILD = :
   PRE_LINK = :

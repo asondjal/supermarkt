@@ -58,5 +58,11 @@
   "command": "/usr/bin/c++ -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -Wall -Wextra -pedantic -o CMakeFiles/supermarkt.dir/src/supermarkt.cpp.o -c /home/arrif-sondjalim/c++projects/supermarkt/src/supermarkt.cpp",
   "file": "/home/arrif-sondjalim/c++projects/supermarkt/src/supermarkt.cpp",
   "output": "CMakeFiles/supermarkt.dir/src/supermarkt.cpp.o"
+},
+{
+  "directory": "/home/arrif-sondjalim/c++projects/supermarkt/build",
+  "command": "/usr/bin/c++ -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -Wall -Wextra -pedantic -o CMakeFiles/supermarkt.dir/src/read_data.cpp.o -c /home/arrif-sondjalim/c++projects/supermarkt/src/read_data.cpp",
+  "file": "/home/arrif-sondjalim/c++projects/supermarkt/src/read_data.cpp",
+  "output": "CMakeFiles/supermarkt.dir/src/read_data.cpp.o"
 }
 ]

@@ -8,6 +8,7 @@
 #include "haendler.hpp"
 #include "kassenzettel.hpp"
 #include "supermarkt.hpp"
+#include "read_data.hpp"
 
 int main() {
 
@@ -76,35 +77,59 @@ int main() {
 	supermarkt.AddKunde(kunde2);
 	supermarkt.AddHaendler(haendler);
 	supermarkt.AddWarenkorb(warenkorb1);
-
-	supermarkt.CreateProduktDatabase();
-	supermarkt.RemoveProdukt(produkt1);
-	supermarkt.CreateProduktDatabase();
-
-	supermarkt.CreateKundeDatabase();
-	supermarkt.RemoveKunde(kunde1);
-	supermarkt.CreateKundeDatabase();
-	supermarkt.CreateKundeDatabase();
-	supermarkt.AddKunde(kunde1);
-	supermarkt.CreateKundeDatabase();
-
-	supermarkt.AddHaendler(haendler);
-	supermarkt.CreateHaendlerDatabase();
-	supermarkt.RemoveHaendler(haendler);
-	supermarkt.CreateHaendlerDatabase();
-	supermarkt.AddHaendler(haendler);
-	supermarkt.CreateHaendlerDatabase();
-
-	supermarkt.AddWarenkorb(warenkorb1);
-	supermarkt.RemoveWarenkorb(warenkorb1);
-	supermarkt.CreateWarenkorbDatabase();
-	supermarkt.RemoveWarenkorb(warenkorb1);
-	supermarkt.CreateWarenkorbDatabase();
-	supermarkt.AddWarenkorb(warenkorb1);
-	supermarkt.CreateWarenkorbDatabase();
 	supermarkt.AddWarenkorb(warenkorb2);
-	
 
+	// supermarkt.CreateProduktDatabase();
+	// supermarkt.RemoveProdukt(produkt1);
+	// supermarkt.CreateProduktDatabase();
+
+	// supermarkt.CreateKundeDatabase();
+	// supermarkt.RemoveKunde(kunde1);
+	// supermarkt.CreateKundeDatabase();
+	// supermarkt.CreateKundeDatabase();
+	// supermarkt.AddKunde(kunde1);
+	// supermarkt.CreateKundeDatabase();
+
+	// supermarkt.AddHaendler(haendler);
+	// supermarkt.CreateHaendlerDatabase();
+	// supermarkt.RemoveHaendler(haendler);
+	// supermarkt.CreateHaendlerDatabase();
+	// supermarkt.AddHaendler(haendler);
+	// supermarkt.CreateHaendlerDatabase();
+
+	// supermarkt.AddWarenkorb(warenkorb1);
+	// supermarkt.RemoveWarenkorb(warenkorb1);
+	// supermarkt.CreateWarenkorbDatabase();
+	// supermarkt.RemoveWarenkorb(warenkorb1);
+	// supermarkt.CreateWarenkorbDatabase();
+	// supermarkt.AddWarenkorb(warenkorb1);
+	// supermarkt.CreateWarenkorbDatabase();
+	// supermarkt.AddWarenkorb(warenkorb2);
+	
+	ReadData inventur{"./data/inventur.txt"};
+	std::string data = inventur.ReadTxt();
+	std::cout << "Data from file: " << std::endl;
+	std::cout << data << std::endl;
+
+	ReadData settings{"./.vscode/settings.json"};
+	std::string settingsData = settings.ReadJSON();
+	std::cout << "Settings from file: " << std::endl;
+	std::cout << settingsData << std::endl;
+
+	ReadData numbers{"./data/numbers.csv"};
+	std::string numbersData = numbers.ReadCSV();
+	std::cout << "Numbers from file: " << std::endl;
+	std::cout << numbersData << std::endl;
+
+	ReadData pdf{"README.pdf"};
+	std::string pdfData = pdf.ReadPDF();
+	std::cout << "PDF from file: " << std::endl;
+	std::cout << pdfData << std::endl;
+
+	ReadData autoFile{"CMakeLists.txt"};
+	std::string autoData = autoFile.ReadAuto();
+	std::cout << "Auto from file: " << std::endl;
+	std::cout << autoData << std::endl;
 
 	return 0;
 }
