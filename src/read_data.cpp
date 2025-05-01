@@ -25,7 +25,7 @@ std::string ReadData::ReadFile() const {
 
 /**
  * @brief Liest den Inhalt einer Textdatei aus und gibt ihn als String zurück
- * @return Inhalt der Datei als String
+ * @return Inhalt der Text-Datei als String
  */
 std::string ReadData::ReadTxt() const {
     return ReadFile();
@@ -33,7 +33,7 @@ std::string ReadData::ReadTxt() const {
 
 /**
  * @brief Liest den Inhalt einer CSV-Datei aus und gibt ihn als String zurück
- * @return Inhalt der Datei als String
+ * @return Inhalt der CSV-Datei als String
  */
 std::string ReadData::ReadCSV() const {
     return ReadFile();
@@ -41,7 +41,7 @@ std::string ReadData::ReadCSV() const {
 
 /**
  * @brief Liest den Inhalt einer JSON-Datei und gibt ihn als String zurück
- * @return Inhalt der Datei als String
+ * @return Inhalt der JSON-Datei als String
  */
 std::string ReadData::ReadJSON() const {
     return ReadFile();
@@ -49,7 +49,7 @@ std::string ReadData::ReadJSON() const {
 
 /**
  * @brief Liest den Inhalt einer PDF-Datei und gibt ihn als String zurück
- * @return Inhalt der Datei als String
+ * @return Inhalt der PDF-Datei als String
  */
 std::string ReadData::ReadPDF() const {
     std::string content;

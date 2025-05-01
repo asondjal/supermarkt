@@ -81,7 +81,8 @@
         "__split_buffer": "cpp",
         "queue": "cpp",
         "stack": "cpp",
-        "map": "cpp"
+        "map": "cpp",
+        "regex": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled",
     "C_Cpp.default.compilerPath": "/usr/bin/gcc"

@@ -43,6 +43,6 @@
 
 ## Noch zu implementierende Dateien
 
-- ReadData: Header sowie Source
-- Statistik: Header sowie Source
-- UserInterface: Header sowie Source
+- Statistik: Header sowie Source // Kleinere Funktionen fehlen, aber erst bei der Gestaltung der GUI von Relevanz
+- Logging: Header sowie Source
+- GUI: Header sowie Source

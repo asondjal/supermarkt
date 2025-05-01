@@ -11,6 +11,8 @@
 #include "read_data.hpp"
 #include "statistik.hpp"
 
+// Auskommentierte Funktionen: Erfolgreiche Tests
+
 int main() {
 
 	Produkt produkt1{"Apfel", 1.170, 1.230, Datum{1, 1, 2022}, "Lebensmittel"};
@@ -109,38 +111,80 @@ int main() {
 	
 	ReadData inventur{"./data/inventur.txt"};
 	std::string data = inventur.ReadTxt();
-	std::cout << "Data from file: " << std::endl;
-	std::cout << data << std::endl;
+	// std::cout << "Data from file: " << std::endl;
+	// std::cout << data << std::endl;
+
+	ReadData kunden{"./data/kunden.txt"};
+	std::string kundenData = kunden.ReadTxt();
+
+	ReadData verkaeufer{"./data/haendler.txt"};
+	std::string verkaeuferData = verkaeufer.ReadTxt();
+
+	ReadData warenkoerbe{"./data/warenkoerbe.txt"};
+	std::string warenkoerbeData = warenkoerbe.ReadTxt();
 
 	ReadData settings{"./.vscode/settings.json"};
 	std::string settingsData = settings.ReadJSON();
-	std::cout << "Settings from file: " << std::endl;
-	std::cout << settingsData << std::endl;
+	// std::cout << "Settings from file: " << std::endl;
+	// std::cout << settingsData << std::endl;
 
 	ReadData numbers{"./data/numbers.csv"};
 	std::string numbersData = numbers.ReadCSV();
-	std::cout << "Numbers from file: " << std::endl;
-	std::cout << numbersData << std::endl;
+	// std::cout << "Numbers from file: " << std::endl;
+	// std::cout << numbersData << std::endl;
 
 	ReadData pdf{"README.pdf"};
 	std::string pdfData = pdf.ReadPDF();
-	std::cout << "PDF from file: " << std::endl;
-	std::cout << pdfData << std::endl;
+	// std::cout << "PDF from file: " << std::endl;
+	// std::cout << pdfData << std::endl;
 
 	ReadData autoFile{"CMakeLists.txt"};
 	std::string autoData = autoFile.ReadAuto();
-	std::cout << "Auto from file: " << std::endl;
-	std::cout << autoData << std::endl;
+	// std::cout << "Auto from file: " << std::endl;
+	// std::cout << autoData << std::endl;
 
 	Statistik statistik;
+	statistik.LadeDaten(warenkoerbe);
+	// std::cout << "Anzahl Daten: " << statistik.ZaehleElemente() << std::endl;
+	// statistik.EntferneDaten(data);
+	// std::cout << "Anzahl Daten nach Entfernen: " << statistik.ZaehleElemente() << std::endl;
+	// statistik.LadeDaten(inventur);
+	// std::cout << "Anzahl Daten: " << statistik.ZaehleElemente() << std::endl;
+	// statistik.LadeDaten(numbers);
+	// std::cout << "Anzahl Daten: " << statistik.ZaehleEintraege() << std::endl;
+	// std::cout << "Anzahl Zeilen: " << statistik.ZaehleLinien() << std::endl;
+	// std::cout << "Anzahl Worte: " << statistik.ZaehleWorte() << std::endl;
+	// std::cout << "Anzahl Zeichen: " << statistik.ZaehleZeichen() << std::endl;
+	// std::cout << "Mittelwert: " << statistik.Mittelwert() << std::endl;
+	// std::cout << "\n";
+
+	statistik.LadeDaten(kunden);
+	// std::cout << "Anzahl Daten: " << statistik.ZaehleEintraege() << std::endl;
+	// std::cout << "Anzahl Zeilen: " << statistik.ZaehleLinien() << std::endl;
+	// std::cout << "Anzahl Worte: " << statistik.ZaehleWorte() << std::endl;
+	// std::cout << "Anzahl Zeichen: " << statistik.ZaehleZeichen() << std::endl;
+	// std::cout << "Mittelwert: " << statistik.Mittelwert() << std::endl;
+	// std::cout << "Median: " << statistik.Median() << std::endl;
+	// std::cout << "Erwartungswert: " << statistik.Erwartungswert() << std::endl;
+	// std::cout << "Varianz: " << statistik.Varianz() << std::endl;
+	// std::cout << "\n";
+
+	statistik.LadeDaten(verkaeufer);
+	// std::cout << "Anzahl Daten: " << statistik.ZaehleEintraege() << std::endl;
+	// std::cout << "Anzahl Zeilen: " << statistik.ZaehleLinien() << std::endl;
+	// std::cout << "Anzahl Worte: " << statistik.ZaehleWorte() << std::endl;
+	// std::cout << "Anzahl Zeichen: " << statistik.ZaehleZeichen() << std::endl;
+	// std::cout << "Mittelwert: " << statistik.Mittelwert() << std::endl;
+	// std::cout << "Median: " << statistik.Median() << std::endl;
+	// std::cout << "Anzahl Database: " << statistik.ZaehleVariable("DATABASE") << std::endl;
+	// std::cout << "Anzahl Joestar: " << statistik.ZaehleVariable("Joestar") << std::endl;
+	// std::cout << "Anzahl REAL: " << statistik.ZaehleVariable("REAL") << std::endl;
+	// std::cout << "\n";
+
 	statistik.LadeDaten(inventur);
-	std::cout << "Anzahl Daten: " << statistik.AnzahlDaten() << std::endl;
-	statistik.EntferneDaten(data);
-	std::cout << "Anzahl Daten nach Entfernen: " << statistik.AnzahlDaten() << std::endl;
-	statistik.LadeDaten(inventur);
-	std::cout << "Anzahl Daten: " << statistik.AnzahlDaten() << std::endl;
-	statistik.LadeDaten(numbers);
-	std::cout << "Anzahl Daten: " << statistik.AnzahlDaten() << std::endl;
-	
+	// std::cout << "Anzahl Daten: " << statistik.ZaehleEintraege() << std::endl;
+	// std::cout << "Anzahl Database: " << statistik.ZaehleVariable("DATABASE") << std::endl;
+	// std::cout << "Anzahl REAL: " << statistik.ZaehleVariable("REAL") << std::endl;
+
 	return 0;
 }
