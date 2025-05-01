@@ -10,6 +10,7 @@
 #include "supermarkt.hpp"
 #include "read_data.hpp"
 #include "statistik.hpp"
+#include "tests.hpp"
 
 // Auskommentierte Funktionen: Erfolgreiche Tests
 
@@ -186,5 +187,9 @@ int main() {
 	// std::cout << "Anzahl Database: " << statistik.ZaehleVariable("DATABASE") << std::endl;
 	// std::cout << "Anzahl REAL: " << statistik.ZaehleVariable("REAL") << std::endl;
 
+	Tests tests;
+	tests.test_Produkt();
+	tests.test_Person();
+	tests.test_Kunde();
 	return 0;
 }

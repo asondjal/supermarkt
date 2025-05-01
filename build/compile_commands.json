@@ -7,6 +7,12 @@
 },
 {
   "directory": "/home/arrif-sondjalim/c++projects/supermarkt/build",
+  "command": "/usr/bin/c++ -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -Wall -Wextra -pedantic -o CMakeFiles/supermarkt.dir/src/tests.cpp.o -c /home/arrif-sondjalim/c++projects/supermarkt/src/tests.cpp",
+  "file": "/home/arrif-sondjalim/c++projects/supermarkt/src/tests.cpp",
+  "output": "CMakeFiles/supermarkt.dir/src/tests.cpp.o"
+},
+{
+  "directory": "/home/arrif-sondjalim/c++projects/supermarkt/build",
   "command": "/usr/bin/c++ -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -Wall -Wextra -pedantic -o CMakeFiles/supermarkt.dir/src/datum.cpp.o -c /home/arrif-sondjalim/c++projects/supermarkt/src/datum.cpp",
   "file": "/home/arrif-sondjalim/c++projects/supermarkt/src/datum.cpp",
   "output": "CMakeFiles/supermarkt.dir/src/datum.cpp.o"

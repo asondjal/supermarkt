@@ -29,6 +29,11 @@ uint32_t Datum::GetJahr() const {
 /**
  * @brief Darstellung vom Tag im Format DD.MM.JJ
  */
-void Datum::Print() const {
-    std::cout << "Datum: " << std::setfill('0') << std::setw(2) << tag_ << "." << std::setfill('0') << std::setw(2) << monat_ << "." << jahr_ << std::endl;
+std::string Datum::Print() const {
+    std::string datum;
+    std::ostringstream oss;
+    oss << std::setfill('0') << std::setw(2) << tag_ << "." 
+        << std::setfill('0') << std::setw(2) << monat_ << "." << jahr_;
+    datum = oss.str();
+    return datum;
 }

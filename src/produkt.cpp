@@ -5,7 +5,6 @@ static int produkt_counter = 0;
 Produkt::Produkt(std::string name, float menge, float preis, Datum haltbarkeit, std::string abteilung) :
     name_{name}, menge_{menge}, preis_{preis}, haltbarkeit_{haltbarkeit}, id_{produkt_counter++}, abteilung_{abteilung} {}
 
-
 /**
  * @brief Ausgabe vom Namen des Produktes 
  * @return Name einer Person 

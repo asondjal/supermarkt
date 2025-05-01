@@ -11,8 +11,10 @@ set(CMAKE_CXX_COMPILER_LAUNCHER ccache)
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O2")
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g -O0 -Wall -Wextra -pedantic")
 
+## Hauptzweig
 add_executable(${PROJECT_NAME} 
     src/main.cpp
+    src/tests.cpp
     src/datum.cpp
     src/produkt.cpp
     src/person.cpp

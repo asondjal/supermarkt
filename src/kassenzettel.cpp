@@ -61,10 +61,7 @@ std::string Kassenzettel::CreateKassenzettel() const {
     konto_.Auszahlen(warenkorb_.GetGesamtPreis());
     file << "Institut: " << konto_.GetBank() << "\n";
     file << "Konto-ID: " << konto_.GetKontoID() << "\n";
-    file << "Abrechnungsdatum: "
-     << std::setw(2) << std::setfill('0') << datum_.GetTag() << "."
-     << std::setw(2) << std::setfill('0') << datum_.GetMonat() << "."
-     << datum_.GetJahr() << "\n";
+    file << "Abrechnungsdatum: " << datum_.Print() << "\n";
 
     file << "================== KASSENZETTEL ==================\n";
     file.close();

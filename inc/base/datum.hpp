@@ -2,6 +2,7 @@
 #define DATUM_HPP_
 
 #include <string>
+#include <sstream>
 #include <cinttypes>
 #include <iostream>
 #include <iomanip>
@@ -17,7 +18,7 @@ class Datum {
     uint32_t GetTag() const;
     uint32_t GetMonat() const;
     uint32_t GetJahr() const;
-    void Print() const;
+    std::string Print() const;
 
 };
 
