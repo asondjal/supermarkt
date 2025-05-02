@@ -18,13 +18,13 @@
 class Tests {
     public:
     Tests();
-    void test_Datum();
-    void test_Produkt();
-    void test_Person();
-    void test_Kunde();
-    void test_Haendler();
-    void test_Warenkorb();
-    void test_Konto();
+    void test_Datum(); // Funktioniert einwandfrei
+    void test_Produkt(); // Funktioniert einwandfrei
+    void test_Person(); // Funktioniert einwandfrei
+    void test_Kunde(); // Funktioniert einwandfrei
+    void test_Haendler(); // Funktioniert einwandfrei
+    void test_Warenkorb(); // Funktioniert einwandfrei
+    void test_Konto(); // Funktioniert einwandfrei
     void test_Kassenzettel();
     void test_Supermarkt();
     void test_ReadData();

@@ -29,6 +29,7 @@ class Kassenzettel {
     Kassenzettel(Datum& datum, const Kunde& kunde, Haendler& haendler, Warenkorb& warenkorb, Konto& konto);
     uint32_t GetKassenzettelID() const;
     std::string CreateKassenzettel() const;
+    bool operator== (Kassenzettel& other) const;
 
 };
 

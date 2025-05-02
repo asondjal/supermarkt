@@ -36,4 +36,14 @@ std::string Datum::Print() const {
         << std::setfill('0') << std::setw(2) << monat_ << "." << jahr_;
     datum = oss.str();
     return datum;
+}   
+
+/**
+ * @brief Vergleich von zwei Daten
+ * @param other anderes Datum
+ * @return true wenn gleich, false wenn ungleich
+ */
+bool Datum::operator==(const Datum& other) const {
+    return (tag_ == other.tag_) && (monat_ == other.monat_) && (jahr_ == other.jahr_);
 }
+

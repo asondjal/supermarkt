@@ -12,6 +12,7 @@ class Kunde : public Person {
     Kunde(std::string name, std::string gender, int age, std::string email, std::string adresse);
     int GetKundeID() const;
     void Print() const final;
+    bool operator==(const Kunde& other) const;
 
 };
 

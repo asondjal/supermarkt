@@ -6,6 +6,14 @@ Haendler::Haendler(std::string name, std::string gender, int alter, std::string 
     : Person(name, gender, alter, email, adresse), haendlerID_(haendlerCounter_++) {
 }
 
+
+/**
+ * @brief Überladung des Vergleichsoperators für die Klasse Haendler
+ */
+bool Haendler::operator==(const Haendler& other) const {
+    return haendlerID_ == other.GetHaendlerID();
+}
+
 /**
  * @brief Funktion zur Wiedergabe der ID eines Händlers
  */

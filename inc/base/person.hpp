@@ -23,6 +23,7 @@ class Person {
     std::string GetEmail() const;
     std::string GetAdresse() const;
     virtual void Print() const;
+    bool operator==(const Person& other) const;
 };
 
 #endif /* PERSON_HPP_ */

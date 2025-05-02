@@ -20,6 +20,7 @@ class Datum {
     uint32_t GetJahr() const;
     std::string Print() const;
 
+    bool operator==(const Datum& other) const;
 };
 
 #endif /* DATUM_HPP_ */

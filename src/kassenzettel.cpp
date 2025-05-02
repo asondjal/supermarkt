@@ -13,10 +13,27 @@ Kassenzettel::Kassenzettel(Datum& datum, const Kunde& kunde, Haendler& haendler,
     {
 }
 
+/**
+ * @brief Vergleichsoperator für Kassenzettel
+ * @param other: anderer Kassenzettel
+ * @return true, wenn die Kassenzettel gleich sind, false sonst
+ */
+bool Kassenzettel::operator== (Kassenzettel& other) const {
+    return kassenzettelID_ == other.GetKassenzettelID();
+}
+
+/**
+ * @brief Aufruf vom KassenzettelID
+ * @return ID vom Kassenzettel
+ */
 uint32_t Kassenzettel::GetKassenzettelID() const {
     return kassenzettelID_;
 }
 
+/**
+ * @brief Erzeugen eines Kassenzettels und Speicherung im Ordner Kassenzettel
+ * @return absoluter Pfad zur Datei
+ */
 std::string Kassenzettel::CreateKassenzettel() const {
     // Anlegen des Kassenzettel-Ordners
     std::filesystem::create_directories("./data/kassenzettel");

@@ -1,6 +1,6 @@
 ================== KASSENZETTEL ==================
-Kunde: Josuke Higashikata, Kunde-ID: 4
-Haendler: Jonathan Joestar, Haendler-ID: 1
+Kunde: Josuke Higashikata, Kunde-ID: 6
+Haendler: Jonathan Joestar, Haendler-ID: 3
 
 Produkt             Menge          Preis [€]         
 --------------------------------------------------
@@ -10,6 +10,6 @@ Birne               5.20           2.42
 Gesamtpreis:                       14.02         
 
 Institut: Deutsche Bank
-Konto-ID: 2
+Konto-ID: 4
 Abrechnungsdatum: 12.11.2009
 ================== KASSENZETTEL ==================

@@ -20,6 +20,7 @@ class Warenkorb {
     void RemoveProdukt(Produkt* produkt);
     float GetGesamtPreis() const;
     std::vector<Produkt*> GetProdukte() const;
+    bool operator==(const Warenkorb& other) const;
 
 };
 

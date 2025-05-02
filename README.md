@@ -40,6 +40,7 @@
 ## src
 
 - Speicherort für die Source-Dateien
+- **tests.cpp:** Test-File fuer alle Executables
 
 ## Noch zu implementierende Dateien
 

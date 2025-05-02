@@ -7,6 +7,16 @@ Kunde::Kunde(std::string name, std::string gender, int age, std::string email, s
 
 
 /**
+ * @brief Vergleichsoperator für Kunden
+ * @param other: anderer Kunde
+ * @return true, wenn die ID übereinstimmt
+ */
+
+ bool Kunde::operator==(const Kunde& other) const {
+    return kundeID_ == other.kundeID_;
+ }
+
+/**
  * @brief Rückgabewert ist die ID eines Kunden
  * @return kundeID_: ID eines Kunden
  */

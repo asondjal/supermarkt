@@ -21,6 +21,7 @@ class Konto{
     float GetKontostand() const;
     const Kunde& GetUser() const;
     int GetKontoID() const;
+    bool operator==(const Konto& other) const;
 
 };
 

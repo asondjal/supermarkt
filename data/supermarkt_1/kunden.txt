@@ -1,11 +1,11 @@
 ============================ KUNDEN DATABASE ==============================
-Supermarkt: REAL
-Adresse: Muenchen, Deutschland
+Supermarkt: DM
+Adresse: Prag, Tschechien
 
 Kunde               ID             Alter               Geschlecht     
 ----------------------------------------------------------------------
-Josuke Higashikata  1              16                  maennlich      
-Kujo Jotaro         0              30                  maennlich      
+Kujo Jotaro         5              30                  maennlich      
+Josuke Higashikata  6              16                  maennlich      
 ----------------------------------------------------------------------
 Anzahl Kunden:                     2             
 ===========================================================================

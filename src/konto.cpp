@@ -5,6 +5,15 @@ static int kontoCounter = 0;
 Konto::Konto(const Kunde& user, std::string bank) : user_{user}, bank_{bank}, kontostand_{0.00}, kontoID_{kontoCounter++} {}
 
 /**
+ * @brief Vergleichsoperator für Konten
+ * @param other: anderes Konto
+ * @return true, wenn die Konten gleich sind, false sonst
+ */
+bool Konto::operator==(const Konto& other) const {
+    return kontoID_ == other.GetKontoID();
+}
+
+/**
  * @brief Einzahlung auf das Konto
  * @param betrag: Geldbetrag, der aufs Konto eingezahlt bzw. überwiesen wird
  */

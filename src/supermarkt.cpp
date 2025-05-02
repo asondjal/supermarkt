@@ -1,6 +1,26 @@
 #include "supermarkt.hpp"
 
-Supermarkt::Supermarkt(std::string name, std::string adresse) : name_(name), adresse_(adresse) {}
+static uint32_t supermarkt_counter = 0;
+
+Supermarkt::Supermarkt(std::string name, std::string adresse) : name_(name), adresse_(adresse), 
+    supermarkt_ID_{supermarkt_counter++} {}
+
+/**
+ * @brief Aufruf der ID vom Supermarkt
+ * @return ID vom Supermarkt
+ */
+uint32_t Supermarkt::GetSupermarktID() const {
+    return supermarkt_ID_;
+}
+
+/**
+ * @brief Vergleichsoperator für Supermärkte
+ * @param other: anderer Supermarkt
+ * @return true, wenn die Supermärkte gleich sind, false sonst
+ */
+bool Supermarkt::operator==(Supermarkt& other) const {
+    return supermarkt_ID_ == other.GetSupermarktID();
+}
 
 /**
  * @brief Hinzufügen eines Produktes ins Sortiment
@@ -26,7 +46,9 @@ void Supermarkt::RemoveProdukt(Produkt& produkt) {
  */
 std::string Supermarkt::CreateProduktDatabase() const {
     // Anlegen der Produkt-Datei
-    std::string filename = "./data/inventur.txt";
+    std::filesystem::create_directories("./data");
+    std::filesystem::create_directories("./data/supermarkt_" + std::to_string(supermarkt_ID_));
+    std::string filename = "./data/supermarkt_" + std::to_string(supermarkt_ID_) + "/produkte.txt";
     std::ofstream file(filename, std::ios::out | std::ios::trunc);
     if (!file) {
         return "Fehler beim Erstellen der Datei!";
@@ -79,7 +101,9 @@ void Supermarkt::AddKunde(Kunde& kunde) {
  */
 std::string Supermarkt::CreateKundeDatabase() const {
     // Anlegen der Kunden-Datei
-    std::string kundendatabase_path = "./data/kunden.txt";
+    std::filesystem::create_directories("./data");
+    std::filesystem::create_directories("./data/supermarkt_" + std::to_string(supermarkt_ID_));
+    std::string kundendatabase_path = "./data/supermarkt_" + std::to_string(supermarkt_ID_) + "/kunden.txt";
     std::ofstream file(kundendatabase_path, std::ios::out | std::ios::trunc);
     if (!file) {
         return "Fehler beim Erstellen der Datei!";
@@ -135,7 +159,9 @@ void Supermarkt::AddWarenkorb(Warenkorb& warenkorb) {
  */
 std::string Supermarkt::CreateWarenkorbDatabase() const {
     // Anlegen der Warenkorb-Datei
-    std::string warenkorbdatabase_path = "./data/warenkoerbe.txt";
+    std::filesystem::create_directories("./data");
+    std::filesystem::create_directories("./data/supermarkt_" + std::to_string(supermarkt_ID_));
+    std::string warenkorbdatabase_path = "./data/supermarkt_" + std::to_string(supermarkt_ID_) + "/warenkoerbe.txt";
     std::ofstream file(warenkorbdatabase_path, std::ios::out | std::ios::trunc);
     if (!file) {
         return "Fehler beim Erstellen der Datei!";
@@ -190,7 +216,9 @@ void Supermarkt::AddHaendler(Haendler& haendler) {
  */
 std::string Supermarkt::CreateHaendlerDatabase() const {
     // Anlegen der Kunden-Datei
-    std::string haendlerdatabase_path = "./data/haendler.txt";
+    std::filesystem::create_directories("./data");
+    std::filesystem::create_directories("./data/supermarkt_" + std::to_string(supermarkt_ID_));
+    std::string haendlerdatabase_path = "./data/supermarkt_" + std::to_string(supermarkt_ID_) + "/haendler.txt";
     std::ofstream file(haendlerdatabase_path, std::ios::out | std::ios::trunc);
     if (!file) {
         return "Fehler beim Erstellen der Datei!";

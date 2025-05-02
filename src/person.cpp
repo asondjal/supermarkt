@@ -5,6 +5,14 @@ static int personen_counter = 0;
 Person::Person(std::string name, std::string gender, int age, std::string email, std::string adresse) :
     name_{name}, gender_{gender}, age_{age}, email_{email}, adresse_{adresse}, personID_{personen_counter++} {}
 
+/**
+ * @brief Überladung des Vergleichsoperators
+ * @param other: andere Person
+ * @return true, wenn die Personen gleich sind, false sonst
+ */
+bool Person::operator==(const Person& other) const {
+    return personID_ == other.personID_;
+}
 /** 
 * @brief Funktion liefert den Namen einer Person zurück
 * @return name_: Name der Person

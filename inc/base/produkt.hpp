@@ -26,6 +26,7 @@ class Produkt {
     int GetID() const;
     std::string GetAbteilung() const;
     void Display() const;
+    bool operator== (Produkt& other) const;
 
 };
 

@@ -21,6 +21,7 @@ class Supermarkt {
         std::vector<Kunde*> kunden_;
         std::vector<Warenkorb*> warenkoerbe_;
         std::vector<Haendler*> haendler_;
+        const uint32_t supermarkt_ID_;
 
     public:
         Supermarkt(std::string name, std::string adresse);
@@ -37,6 +38,8 @@ class Supermarkt {
         std::string CreateWarenkorbDatabase() const;
         std::string CreateHaendlerDatabase() const;
         float GetGesamtWert() const;
+        uint32_t GetSupermarktID() const;
+        bool operator== (Supermarkt& other) const;
 };
 
 #endif /* SUPERMARKT_HPP_ */
