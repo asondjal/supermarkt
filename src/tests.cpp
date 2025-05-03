@@ -48,7 +48,7 @@ void Tests::test_Kunde() {
     assert(kunde.GetAdresse() == "Los Angeles, USA");
     assert(kunde.GetGender() == "M");
     assert(kunde.GetEmail() ==  "lebron.james@gmail.com");
-    // assert(kunde.GetKundeID()== 2);
+    assert(kunde.GetKundeID()== 0);
 
     std::cout << "Kunde Test erfolgreich!" << std::endl;
 }
@@ -61,7 +61,7 @@ void Tests::test_Haendler() {
     assert(haendler.GetAdresse() == "Protein 1, 82617, Proteinos");
     assert(haendler.GetGender() == "M");
     assert(haendler.GetEmail() ==  "leonidas.arkona@esn.com");
-    // assert(haendler.GetHaendlerID() == 1);
+    assert(haendler.GetHaendlerID() == 0);
 
     std::cout << "Haendler Test erfolgreich!" << std::endl;
 }
@@ -140,7 +140,6 @@ void Tests::test_Kassenzettel() {
 
 	Kassenzettel kassenzettel2{datum2, kunde2, haendler1, warenkorb1, konto2};
 	kassenzettel2.CreateKassenzettel();
-
     std::cout << "Test für Kassenzettel alle erfolgreich!" << std::endl;
 }
 
@@ -148,11 +147,11 @@ void Tests::test_Supermarkt() {
     Produkt produkt1{"Apfel", 1.170, 1.230, Datum{1, 1, 2022}, "Lebensmittel"};
 	Produkt produkt2{"Birne", 5.20, 2.420, Datum{1, 1, 2022}, "Lebensmittel"};
 
-	Kunde kunde1{"Kujo Jotaro", "maennlich", 30, "jotaro.kujo@gmail.com", "Tokyo, Japan"};
-	Kunde kunde2{"Josuke Higashikata", "maennlich", 16, "josuke.higashikata@yahoo.com", "Morioh, Japan"};
+	Kunde kunde1{"Kujo Jotaro", "M", 30, "jotaro.kujo@gmail.com", "Tokyo, Japan"};
+	Kunde kunde2{"Josuke Higashikata", "M", 16, "josuke.higashikata@yahoo.com", "Morioh, Japan"};
 
-	Haendler haendler1{"Jonathan Joestar", "maennlich", 76, "jonathan.joestar@gmx.net", "London, England"};
-    Haendler haendler2{"Girono Giovanna", "maennlich", 19, "giorno.giovanna@gmail.com", "Rom, Italien"};
+	Haendler haendler1{"Jonathan Joestar", "M", 76, "jonathan.joestar@gmx.net", "London, England"};
+    Haendler haendler2{"Girono Giovanna", "M", 19, "giorno.giovanna@gmail.com", "Rom, Italien"};
 	
 	Warenkorb warenkorb1(kunde1);
 	warenkorb1.AddProdukt(&produkt1);
@@ -184,14 +183,22 @@ void Tests::test_Supermarkt() {
 	supermarkt1.AddHaendler(haendler1);
 	supermarkt1.AddWarenkorb(warenkorb1);
 	supermarkt1.AddWarenkorb(warenkorb2);
+
     supermarkt1.CreateProduktDatabase();
     assert(supermarkt1.CreateProduktDatabase() == "./data/supermarkt_0/produkte.txt");
+	assert(std::filesystem::exists(supermarkt1.CreateProduktDatabase()));
+
     supermarkt1.CreateKundeDatabase();
     assert(supermarkt1.CreateKundeDatabase() == "./data/supermarkt_0/kunden.txt");
+	assert(std::filesystem::exists(supermarkt1.CreateKundeDatabase()));
+
     supermarkt1.CreateHaendlerDatabase();
     assert(supermarkt1.CreateHaendlerDatabase() == "./data/supermarkt_0/haendler.txt");
+	assert(std::filesystem::exists(supermarkt1.CreateHaendlerDatabase()));
+
     supermarkt1.CreateWarenkorbDatabase();
     assert(supermarkt1.CreateWarenkorbDatabase() == "./data/supermarkt_0/warenkoerbe.txt");
+	assert(std::filesystem::exists(supermarkt1.CreateWarenkorbDatabase()));
 
     Supermarkt supermarkt2{"DM", "Prag, Tschechien"};
     supermarkt2.AddProdukt(produkt1);
@@ -214,199 +221,125 @@ void Tests::test_Supermarkt() {
 
 void Tests::test_ReadData() {
 
-	Produkt produkt1{"Apfel", 1.170, 1.230, Datum{1, 1, 2022}, "Lebensmittel"};
-	Produkt produkt2{"Birne", 5.20, 2.420, Datum{1, 1, 2022}, "Lebensmittel"};
+	ReadData inventur{"./data/supermarkt_1/produkte.txt"};
+	std::string data = inventur.ReadTxt();
+	std::ifstream produkt_file("./data/supermarkt_1/produkte.txt");
+	std::string data_content((std::istreambuf_iterator<char>(produkt_file)), std::istreambuf_iterator<char>());
+	assert(data == data_content);
 
-	Kunde kunde1{"Kujo Jotaro", "maennlich", 30, "jotaro.kujo@gmail.com", "Tokyo, Japan"};
-	Kunde kunde2{"Josuke Higashikata", "maennlich", 16, "josuke.higashikata@yahoo.com", "Morioh, Japan"};
+	ReadData kunden{"./data/supermarkt_0/kunden.txt"};
+	std::string kundenData = kunden.ReadTxt();
+	std::ifstream kunden_file("./data/supermarkt_0/kunden.txt");
+	std::string kunden_content((std::istreambuf_iterator<char>(kunden_file)), std::istreambuf_iterator<char>());
+	assert(kundenData == kunden_content);
 
-	Haendler haendler{"Jonathan Joestar", "maennlich", 76, "jonathan.joestar@gmx.net", "London, England"};
-	
-	Warenkorb warenkorb1(kunde1);
-	warenkorb1.AddProdukt(&produkt1);
-	warenkorb1.AddProdukt(&produkt2);
+	ReadData verkaeufer{"./data/supermarkt_0/haendler.txt"};
+	std::string verkaeuferData = verkaeufer.ReadTxt();
+	std::ifstream verkaeufer_file("./data/supermarkt_0/haendler.txt");
+	std::string verkaeufer_content((std::istreambuf_iterator<char>(verkaeufer_file)), std::istreambuf_iterator<char>());
+	assert(verkaeuferData == verkaeufer_content);
 
-	warenkorb1.GetProdukte();
+	ReadData warenkoerbe{"./data/supermarkt_1/warenkoerbe.txt"};
+	std::string warenkoerbeData = warenkoerbe.ReadTxt();
+	std::ifstream warenkoerbe_file("./data/supermarkt_1/warenkoerbe.txt");
+	std::string warenkoerbe_content((std::istreambuf_iterator<char>(warenkoerbe_file)), std::istreambuf_iterator<char>());
+	assert(warenkoerbeData == warenkoerbe_content);
 
-	Warenkorb warenkorb2{kunde2};
+	ReadData settings{"./.vscode/settings.json"};
+	std::string settingsData = settings.ReadJSON();
+	std::ifstream settings_file("./.vscode/settings.json");
+	std::string settings_content((std::istreambuf_iterator<char>(settings_file)), std::istreambuf_iterator<char>());
+	assert(settingsData == settings_content);
 
-	warenkorb2.AddProdukt(&produkt1);
-	warenkorb2.AddProdukt(&produkt2);
+	ReadData numbers{"./data/numbers.csv"};
+	std::string numbersData = numbers.ReadCSV();
+	std::ifstream numbers_file("./data/numbers.csv");
+	std::string numbers_content((std::istreambuf_iterator<char>(numbers_file)), std::istreambuf_iterator<char>());
+	assert(numbersData == numbers_content);
 
-	Konto konto1{kunde1, "Bank of America"};
-	Konto konto2{kunde2, "Deutsche Bank"};
+	ReadData pdf{"README.pdf"};
+	std::string pdfData = pdf.ReadPDF();
+	std::ifstream pdf_file("README.pdf");
+	std::string pdf_content;
+	poppler::document* doc = poppler::document::load_from_file("README.pdf");
+	if (!doc) {
+		throw std::runtime_error("Could not open PDF file: README.pdf");
+	}
+	for (int i = 0; i < doc->pages(); ++i) {
+		poppler::page* p = doc->create_page(i);
+		if (p) {
+			pdf_content += p->text().to_latin1();
+			delete p;
+		}
+	}
+	delete doc;
 
-	Datum datum1{1, 1, 2022};
-	Datum datum2{1, 1, 2023};
+	assert(pdfData == pdf_content);
 
-	Kassenzettel kassenzettel1{datum1, kunde1, haendler, warenkorb1, konto1};
-	kassenzettel1.CreateKassenzettel();
+	ReadData autoFile{"CMakeLists.txt"};
+	std::string autoData = autoFile.ReadAuto();
+	std::ifstream automatic_file("CMakeLists.txt");
+	std::string automated_content((std::istreambuf_iterator<char>(automatic_file)), std::istreambuf_iterator<char>());
+	assert(autoData == automated_content);
 
-	Kassenzettel kassenzettel2{datum2, kunde2, haendler, warenkorb1, konto2};
-	kassenzettel2.CreateKassenzettel();
+	std::cout << "Alle Tests für ReadData waren erfolgreich!" << std::endl;
 
-	Supermarkt supermarkt{"REAL", "Muenchen, Deutschland"};
-	supermarkt.AddProdukt(produkt1);
-	supermarkt.AddProdukt(produkt2);
-	supermarkt.AddKunde(kunde1);
-	supermarkt.AddKunde(kunde2);
-	supermarkt.AddHaendler(haendler);
-	supermarkt.AddWarenkorb(warenkorb1);
-	supermarkt.AddWarenkorb(warenkorb2);
-	
-	// ReadData inventur{"./data/inventur.txt"};
-	// std::string data = inventur.ReadTxt();
-	// std::cout << "Data from file: " << std::endl;
-	// std::cout << data << std::endl;
-
-	// ReadData kunden{"./data/kunden.txt"};
-	// std::string kundenData = kunden.ReadTxt();
-
-	// ReadData verkaeufer{"./data/haendler.txt"};
-	// std::string verkaeuferData = verkaeufer.ReadTxt();
-
-	// ReadData warenkoerbe{"./data/warenkoerbe.txt"};
-	// std::string warenkoerbeData = warenkoerbe.ReadTxt();
-
-	// ReadData settings{"./.vscode/settings.json"};
-	// std::string settingsData = settings.ReadJSON();
-	// // std::cout << "Settings from file: " << std::endl;
-	// // std::cout << settingsData << std::endl;
-
-	// ReadData numbers{"./data/numbers.csv"};
-	// std::string numbersData = numbers.ReadCSV();
-	// // std::cout << "Numbers from file: " << std::endl;
-	// // std::cout << numbersData << std::endl;
-
-	// ReadData pdf{"README.pdf"};
-	// std::string pdfData = pdf.ReadPDF();
-	// // std::cout << "PDF from file: " << std::endl;
-	// // std::cout << pdfData << std::endl;
-
-	// ReadData autoFile{"CMakeLists.txt"};
-	// std::string autoData = autoFile.ReadAuto();
-	// // std::cout << "Auto from file: " << std::endl;
-	// // std::cout << autoData << std::endl;
 }
 
 void Tests::test_Statistik() {
-
-	Produkt produkt1{"Apfel", 1.170, 1.230, Datum{1, 1, 2022}, "Lebensmittel"};
-	Produkt produkt2{"Birne", 5.20, 2.420, Datum{1, 1, 2022}, "Lebensmittel"};
-
-	Kunde kunde1{"Kujo Jotaro", "maennlich", 30, "jotaro.kujo@gmail.com", "Tokyo, Japan"};
-	Kunde kunde2{"Josuke Higashikata", "maennlich", 16, "josuke.higashikata@yahoo.com", "Morioh, Japan"};
-
-	Haendler haendler{"Jonathan Joestar", "maennlich", 76, "jonathan.joestar@gmx.net", "London, England"};
 	
-	Warenkorb warenkorb1(kunde1);
-	warenkorb1.AddProdukt(&produkt1);
-	warenkorb1.AddProdukt(&produkt2);
+	ReadData inventur{"./data/supermarkt_1/produkte.txt"};
+	std::string data = inventur.ReadTxt();
 
-	warenkorb1.GetProdukte();
+	ReadData kunden{"./data/supermarkt_0/kunden.txt"};
+	std::string kundenData = kunden.ReadTxt();
 
-	Warenkorb warenkorb2{kunde2};
+	ReadData verkaeufer{"./data/supermarkt_0/haendler.txt"};
+	std::string verkaeuferData = verkaeufer.ReadTxt();
 
-	warenkorb2.AddProdukt(&produkt1);
-	warenkorb2.AddProdukt(&produkt2);
-
-	Konto konto1{kunde1, "Bank of America"};
-	Konto konto2{kunde2, "Deutsche Bank"};
-
-	Datum datum1{1, 1, 2022};
-	Datum datum2{1, 1, 2023};
-
-	Kassenzettel kassenzettel1{datum1, kunde1, haendler, warenkorb1, konto1};
-	kassenzettel1.CreateKassenzettel();
-
-	Kassenzettel kassenzettel2{datum2, kunde2, haendler, warenkorb1, konto2};
-	kassenzettel2.CreateKassenzettel();
-
-	Supermarkt supermarkt{"REAL", "Muenchen, Deutschland"};
-	supermarkt.AddProdukt(produkt1);
-	supermarkt.AddProdukt(produkt2);
-	supermarkt.AddKunde(kunde1);
-	supermarkt.AddKunde(kunde2);
-	supermarkt.AddHaendler(haendler);
-	supermarkt.AddWarenkorb(warenkorb1);
-	supermarkt.AddWarenkorb(warenkorb2);
+	ReadData warenkoerbe{"./data/supermarkt_1/warenkoerbe.txt"};
+	std::string warenkoerbeData = warenkoerbe.ReadTxt();
 	
-	// ReadData inventur{"./data/inventur.txt"};
-	// std::string data = inventur.ReadTxt();
-	// std::cout << "Data from file: " << std::endl;
-	// std::cout << data << std::endl;
+	ReadData settings{"./.vscode/settings.json"};
+	std::string settingsData = settings.ReadJSON();
 
-	// ReadData kunden{"./data/kunden.txt"};
-	// std::string kundenData = kunden.ReadTxt();
+	ReadData numbers{"./data/numbers.csv"};
+	std::string numbersData = numbers.ReadCSV();
 
-	// ReadData verkaeufer{"./data/haendler.txt"};
-	// std::string verkaeuferData = verkaeufer.ReadTxt();
+	ReadData pdf{"README.pdf"};
+	std::string pdfData = pdf.ReadPDF();
 
-	// ReadData warenkoerbe{"./data/warenkoerbe.txt"};
-	// std::string warenkoerbeData = warenkoerbe.ReadTxt();
+	Statistik statistik;
+	statistik.LadeDaten(warenkoerbe);
+	assert(statistik.ZaehleEintraege() == 1);
+	statistik.EntferneDaten(warenkoerbeData);
+	assert(statistik.ZaehleEintraege() == 0);
+	statistik.EntferneDaten(warenkoerbeData);
+	assert(statistik.ZaehleEintraege() == 0);
+	statistik.LadeDaten(inventur);
+	assert(statistik.ZaehleEintraege() == 1);
+	assert(statistik.ZaehleLinien() == 11);
+	assert(statistik.ZaehleWorte() == 14);
+	statistik.LadeDaten(numbers);
+	assert(statistik.ZaehleEintraege() == 2);
+	assert(statistik.ZaehleLinien() == 54);
+	assert(statistik.ZaehleWorte() == 14);
+	assert(statistik.ZaehleZeichen() == 2084);
 
-	// ReadData settings{"./.vscode/settings.json"};
-	// std::string settingsData = settings.ReadJSON();
-	// // std::cout << "Settings from file: " << std::endl;
-	// // std::cout << settingsData << std::endl;
+	std::cout << "Mittelwert: " << statistik.Mittelwert() << std::endl;
+	assert(std::fabs(statistik.Mittelwert() - 197.14f) < 0.01f);
+	
+	std::cout << "Median: " << statistik.Median() << std::endl;
+	assert(std::fabs(statistik.Median() - 1042.00f) < 0.01f);
+	
+	std::cout << "Erwartungswert: " << statistik.Erwartungswert() << std::endl;
+	assert(std::fabs(statistik.Erwartungswert() - 197.14f) < 0.01f);
+	
+	std::cout << "Varianz: " << statistik.Varianz() << std::endl;
+	assert(std::fabs(statistik.Varianz() - 13750.23f) < 0.01f);
+	
 
-	// ReadData numbers{"./data/numbers.csv"};
-	// std::string numbersData = numbers.ReadCSV();
-	// // std::cout << "Numbers from file: " << std::endl;
-	// // std::cout << numbersData << std::endl;
-
-	// ReadData pdf{"README.pdf"};
-	// std::string pdfData = pdf.ReadPDF();
-	// // std::cout << "PDF from file: " << std::endl;
-	// // std::cout << pdfData << std::endl;
-
-	// ReadData autoFile{"CMakeLists.txt"};
-	// std::string autoData = autoFile.ReadAuto();
-	// // std::cout << "Auto from file: " << std::endl;
-	// // std::cout << autoData << std::endl;
-
-	// Statistik statistik;
-	// statistik.LadeDaten(warenkoerbe);
-	// // std::cout << "Anzahl Daten: " << statistik.ZaehleElemente() << std::endl;
-	// // statistik.EntferneDaten(data);
-	// // std::cout << "Anzahl Daten nach Entfernen: " << statistik.ZaehleElemente() << std::endl;
-	// // statistik.LadeDaten(inventur);
-	// // std::cout << "Anzahl Daten: " << statistik.ZaehleElemente() << std::endl;
-	// // statistik.LadeDaten(numbers);
-	// // std::cout << "Anzahl Daten: " << statistik.ZaehleEintraege() << std::endl;
-	// // std::cout << "Anzahl Zeilen: " << statistik.ZaehleLinien() << std::endl;
-	// // std::cout << "Anzahl Worte: " << statistik.ZaehleWorte() << std::endl;
-	// // std::cout << "Anzahl Zeichen: " << statistik.ZaehleZeichen() << std::endl;
-	// // std::cout << "Mittelwert: " << statistik.Mittelwert() << std::endl;
-	// // std::cout << "\n";
-
-	// statistik.LadeDaten(kunden);
-	// // std::cout << "Anzahl Daten: " << statistik.ZaehleEintraege() << std::endl;
-	// // std::cout << "Anzahl Zeilen: " << statistik.ZaehleLinien() << std::endl;
-	// // std::cout << "Anzahl Worte: " << statistik.ZaehleWorte() << std::endl;
-	// // std::cout << "Anzahl Zeichen: " << statistik.ZaehleZeichen() << std::endl;
-	// // std::cout << "Mittelwert: " << statistik.Mittelwert() << std::endl;
-	// // std::cout << "Median: " << statistik.Median() << std::endl;
-	// // std::cout << "Erwartungswert: " << statistik.Erwartungswert() << std::endl;
-	// // std::cout << "Varianz: " << statistik.Varianz() << std::endl;
-	// // std::cout << "\n";
-
-	// statistik.LadeDaten(verkaeufer);
-	// // std::cout << "Anzahl Daten: " << statistik.ZaehleEintraege() << std::endl;
-	// // std::cout << "Anzahl Zeilen: " << statistik.ZaehleLinien() << std::endl;
-	// // std::cout << "Anzahl Worte: " << statistik.ZaehleWorte() << std::endl;
-	// // std::cout << "Anzahl Zeichen: " << statistik.ZaehleZeichen() << std::endl;
-	// // std::cout << "Mittelwert: " << statistik.Mittelwert() << std::endl;
-	// // std::cout << "Median: " << statistik.Median() << std::endl;
-	// // std::cout << "Anzahl Database: " << statistik.ZaehleVariable("DATABASE") << std::endl;
-	// // std::cout << "Anzahl Joestar: " << statistik.ZaehleVariable("Joestar") << std::endl;
-	// // std::cout << "Anzahl REAL: " << statistik.ZaehleVariable("REAL") << std::endl;
-	// // std::cout << "\n";
-
-	// statistik.LadeDaten(inventur);
-	// // std::cout << "Anzahl Daten: " << statistik.ZaehleEintraege() << std::endl;
-	// // std::cout << "Anzahl Database: " << statistik.ZaehleVariable("DATABASE") << std::endl;
-	// // std::cout << "Anzahl REAL: " << statistik.ZaehleVariable("REAL") << std::endl;
+	std::cout << "Alle Statistik-Tests waren erfolgreich!" << std::endl;
 }
 
 void Tests::runAllTests() {

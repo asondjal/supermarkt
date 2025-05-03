@@ -108,7 +108,6 @@ float Statistik::MittelwertIntern() const {
     if (datenBuffer_.empty()) {
         return 0.0f;
     }
-
     std::regex numberRegex(R"(([-+]?\d*\.?\d+))");
     float sum = 0.0f;
     uint32_t count = 0;
@@ -129,6 +128,8 @@ float Statistik::MittelwertIntern() const {
     if (count == 0) {
         return 0.0f;
     }
+    
+    std::cout << std::fixed << std::setprecision(2);
     return sum / count;
 }
 

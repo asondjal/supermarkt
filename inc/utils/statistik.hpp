@@ -9,6 +9,7 @@
 #include <iomanip>
 #include <iostream>
 #include <regex>
+#include <cmath>
 
 class Statistik {
 public:

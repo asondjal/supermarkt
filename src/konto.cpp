@@ -26,7 +26,13 @@ void Konto::Einzahlen(float betrag) {
  * @param betrag: Geldbetrag, der vom Konto abgerechnet wird
  */
 void Konto::Auszahlen(float betrag) {
-    kontostand_ -= betrag;
+    if (betrag > kontostand_) {
+        std::cerr << "Fehler: Auszahlung übersteigt Kontostand!" << std::endl;
+        return;
+    }
+    else {
+        kontostand_ -= betrag;
+    }
 }
 
 /**

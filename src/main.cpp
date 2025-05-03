@@ -12,22 +12,9 @@
 #include "statistik.hpp"
 #include "tests.hpp"
 
-// Auskommentierte Funktionen: Erfolgreiche Tests
-
 int main() {
 
 	Tests tests;
-	tests.test_Datum();
-	tests.test_Produkt();
-	tests.test_Person();
-	tests.test_Kunde();
-	tests.test_Haendler();
-	tests.test_Warenkorb();
-	tests.test_Konto();
-	tests.test_Kassenzettel();
-	tests.test_Supermarkt();
-	// tests.test_ReadData();
-	// tests.test_Statistik();
-	// tests.runAllTests();
+	tests.runAllTests();
 	return 0;
 }
