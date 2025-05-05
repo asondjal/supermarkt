@@ -120,26 +120,30 @@ void Tests::test_Kassenzettel() {
 	Haendler haendler1{"Jonathan Joestar", "maennlich", 76, "jonathan.joestar@gmx.net", "London, England"};
     Haendler haendler2{"Girono Giovanna", "maennlich", 19, "giorno.giovanna@gmail.com", "Rom, Italien"};
 	
+	Konto konto1{kunde1,"Bank of America"};
+	konto1.Einzahlen(100.0f);
+	Konto konto2{kunde2,"Deutsche Bank"};
+	konto2.Einzahlen(50.0f);
+
+	Datum datum1{1, 1, 2022};
+	Datum datum2{12, 11, 2009};
+
 	Warenkorb warenkorb1(kunde1);
 	warenkorb1.AddProdukt(&produkt1);
 	warenkorb1.AddProdukt(&produkt2);
-	warenkorb1.GetProdukte();
 
 	Warenkorb warenkorb2{kunde2};
 	warenkorb2.AddProdukt(&produkt1);
 	warenkorb2.AddProdukt(&produkt2);
 
-	Konto konto1{kunde1,"Bank of America"};
-	Konto konto2{kunde2,"Deutsche Bank"};
-
-	Datum datum1{1, 1, 2022};
-	Datum datum2{12, 11, 2009};
-
 	Kassenzettel kassenzettel1{datum1, kunde1, haendler1, warenkorb1, konto1};
 	kassenzettel1.CreateKassenzettel();
+	assert(konto1.GetKontostand() == 100.0f - warenkorb1.GetGesamtPreis());
 
 	Kassenzettel kassenzettel2{datum2, kunde2, haendler1, warenkorb1, konto2};
 	kassenzettel2.CreateKassenzettel();
+	assert(konto2.GetKontostand() == 50.0f - warenkorb1.GetGesamtPreis());
+
     std::cout << "Test für Kassenzettel alle erfolgreich!" << std::endl;
 }
 
@@ -163,7 +167,9 @@ void Tests::test_Supermarkt() {
 	warenkorb2.AddProdukt(&produkt2);
 
 	Konto konto1{kunde1,"Bank of America"};
+	konto1.Einzahlen(100.0f);
 	Konto konto2{kunde2,"Deutsche Bank"};
+	konto2.Einzahlen(50.0f);
 
 	Datum datum1{1, 1, 2022};
 	Datum datum2{12, 11, 2009};
@@ -208,13 +214,19 @@ void Tests::test_Supermarkt() {
 	supermarkt2.AddHaendler(haendler1);
 	supermarkt2.AddWarenkorb(warenkorb1);
 	supermarkt2.AddWarenkorb(warenkorb2);
+
+	supermarkt2.CreateProduktDatabase();
     assert(supermarkt2.CreateProduktDatabase() == "./data/supermarkt_1/produkte.txt");
+	assert(std::filesystem::exists(supermarkt2.CreateProduktDatabase()));
     supermarkt2.CreateKundeDatabase();
     assert(supermarkt2.CreateKundeDatabase() == "./data/supermarkt_1/kunden.txt");
+	assert(std::filesystem::exists(supermarkt2.CreateKundeDatabase()));
     supermarkt2.CreateHaendlerDatabase();
     assert(supermarkt2.CreateHaendlerDatabase() == "./data/supermarkt_1/haendler.txt");
+	assert(std::filesystem::exists(supermarkt2.CreateHaendlerDatabase()));
     supermarkt2.CreateWarenkorbDatabase();
     assert(supermarkt2.CreateWarenkorbDatabase() == "./data/supermarkt_1/warenkoerbe.txt");
+	assert(std::filesystem::exists(supermarkt2.CreateWarenkorbDatabase()));
 
     std::cout << "Alle Test für Supermarkt waren erfolgreich!" << std::endl;
 }
@@ -312,6 +324,7 @@ void Tests::test_Statistik() {
 	Statistik statistik;
 	statistik.LadeDaten(warenkoerbe);
 	assert(statistik.ZaehleEintraege() == 1);
+	assert(statistik.ZaehleVariable("DATABASE") == 1);
 	statistik.EntferneDaten(warenkoerbeData);
 	assert(statistik.ZaehleEintraege() == 0);
 	statistik.EntferneDaten(warenkoerbeData);
@@ -325,19 +338,10 @@ void Tests::test_Statistik() {
 	assert(statistik.ZaehleLinien() == 54);
 	assert(statistik.ZaehleWorte() == 14);
 	assert(statistik.ZaehleZeichen() == 2084);
-
-	std::cout << "Mittelwert: " << statistik.Mittelwert() << std::endl;
 	assert(std::fabs(statistik.Mittelwert() - 197.14f) < 0.01f);
-	
-	std::cout << "Median: " << statistik.Median() << std::endl;
 	assert(std::fabs(statistik.Median() - 1042.00f) < 0.01f);
-	
-	std::cout << "Erwartungswert: " << statistik.Erwartungswert() << std::endl;
 	assert(std::fabs(statistik.Erwartungswert() - 197.14f) < 0.01f);
-	
-	std::cout << "Varianz: " << statistik.Varianz() << std::endl;
 	assert(std::fabs(statistik.Varianz() - 13750.23f) < 0.01f);
-	
 
 	std::cout << "Alle Statistik-Tests waren erfolgreich!" << std::endl;
 }

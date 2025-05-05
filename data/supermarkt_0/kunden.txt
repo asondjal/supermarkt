@@ -4,8 +4,8 @@ Adresse: Muenchen, Deutschland
 
 Kunde               ID             Alter               Geschlecht     
 ----------------------------------------------------------------------
-Kujo Jotaro         5              30                  maennlich      
-Josuke Higashikata  6              16                  maennlich      
+Kujo Jotaro         5              30                  M              
+Josuke Higashikata  6              16                  M              
 ----------------------------------------------------------------------
 Anzahl Kunden:                     2             
 ===========================================================================
