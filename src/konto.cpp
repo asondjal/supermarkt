@@ -1,4 +1,4 @@
-#include "konto.hpp"
+#include "../inc/base/konto.hpp"
 
 static int kontoCounter = 0;
 

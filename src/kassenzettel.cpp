@@ -1,4 +1,4 @@
-#include "kassenzettel.hpp"
+#include "../inc/base/kassenzettel.hpp"
 
 static uint32_t kassenzettelCounter_ = 0;
 

@@ -1,4 +1,4 @@
-#include "person.hpp"
+#include "../inc/base/person.hpp"
 
 static int personen_counter = 0;
 

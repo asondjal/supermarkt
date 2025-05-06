@@ -1,0 +1,4 @@
+[2025-05-06 19:38:05] [INFO] System initialized.
+[2025-05-06 19:38:05] [DEBUG] Reading configuration...
+[2025-05-06 19:38:05] [WARNING] File not found!
+[2025-05-06 19:38:05] [ERROR] Critical error!

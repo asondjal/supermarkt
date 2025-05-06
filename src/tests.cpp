@@ -1,4 +1,4 @@
-#include "tests.hpp"
+#include "../inc/utils/tests.hpp"
 
 Tests::Tests() {}
 

@@ -505,3 +505,37 @@ events:
       
       
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.28/Modules/CheckCXXCompilerFlag.cmake:34 (cmake_check_compiler_flag)"
+      - "pybind11/tools/pybind11Common.cmake:316 (check_cxx_compiler_flag)"
+      - "pybind11/tools/pybind11Common.cmake:361 (_pybind11_return_if_cxx_and_linker_flags_work)"
+      - "pybind11/tools/pybind11Common.cmake:417 (_pybind11_generate_lto)"
+      - "pybind11/CMakeLists.txt:238 (include)"
+    checks:
+      - "Performing Test HAS_FLTO"
+    directories:
+      source: "/home/arrif-sondjalim/c++projects/supermarkt/build/CMakeFiles/CMakeScratch/TryCompile-3yuCOC"
+      binary: "/home/arrif-sondjalim/c++projects/supermarkt/build/CMakeFiles/CMakeScratch/TryCompile-3yuCOC"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g -g -O0 -Wall -Wextra -pedantic"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "HAS_FLTO"
+      cached: true
+      stdout: |
+        Change Dir: '/home/arrif-sondjalim/c++projects/supermarkt/build/CMakeFiles/CMakeScratch/TryCompile-3yuCOC'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_5934e
+        [1/2] /usr/bin/c++ -DHAS_FLTO  -std=c++17   -flto -fno-fat-lto-objects -o CMakeFiles/cmTC_5934e.dir/src.cxx.o -c /home/arrif-sondjalim/c++projects/supermarkt/build/CMakeFiles/CMakeScratch/TryCompile-3yuCOC/src.cxx
+        [2/2] : && /usr/bin/c++   CMakeFiles/cmTC_5934e.dir/src.cxx.o -o cmTC_5934e  -flto && :
+        
+      exitCode: 0
+...
