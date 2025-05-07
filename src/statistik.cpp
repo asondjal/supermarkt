@@ -228,5 +228,6 @@ float Statistik::Varianz() const {
     if (count == 0) {
         return 0.0f;
     }
+    
     return sum / count;
 }

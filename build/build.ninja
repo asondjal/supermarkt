@@ -52,7 +52,7 @@ build cmake_object_order_depends_target_supermarkt: phony || CMakeFiles/supermar
 build CMakeFiles/supermarkt.dir/src/main.cpp.o: CXX_COMPILER__supermarkt_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/main.cpp || cmake_object_order_depends_target_supermarkt
   DEP_FILE = CMakeFiles/supermarkt.dir/src/main.cpp.o.d
   FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -Wall -Wextra -pedantic
-  INCLUDES = -I/usr/include/python3.12 -I/home/arrif-sondjalim/c++projects/supermarkt/include -I/home/arrif-sondjalim/c++projects/supermarkt/pybind11/include -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils
+  INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -I/home/arrif-sondjalim/c++projects/supermarkt/pybind11/include -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils -isystem /usr/include/python3.12
   LAUNCHER = ccache 
   OBJECT_DIR = CMakeFiles/supermarkt.dir
   OBJECT_FILE_DIR = CMakeFiles/supermarkt.dir/src
@@ -60,7 +60,7 @@ build CMakeFiles/supermarkt.dir/src/main.cpp.o: CXX_COMPILER__supermarkt_unscann
 build CMakeFiles/supermarkt.dir/src/tests.cpp.o: CXX_COMPILER__supermarkt_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/tests.cpp || cmake_object_order_depends_target_supermarkt
   DEP_FILE = CMakeFiles/supermarkt.dir/src/tests.cpp.o.d
   FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -Wall -Wextra -pedantic
-  INCLUDES = -I/usr/include/python3.12 -I/home/arrif-sondjalim/c++projects/supermarkt/include -I/home/arrif-sondjalim/c++projects/supermarkt/pybind11/include -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils
+  INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -I/home/arrif-sondjalim/c++projects/supermarkt/pybind11/include -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils -isystem /usr/include/python3.12
   LAUNCHER = ccache 
   OBJECT_DIR = CMakeFiles/supermarkt.dir
   OBJECT_FILE_DIR = CMakeFiles/supermarkt.dir/src
@@ -68,7 +68,7 @@ build CMakeFiles/supermarkt.dir/src/tests.cpp.o: CXX_COMPILER__supermarkt_unscan
 build CMakeFiles/supermarkt.dir/src/datum.cpp.o: CXX_COMPILER__supermarkt_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/datum.cpp || cmake_object_order_depends_target_supermarkt
   DEP_FILE = CMakeFiles/supermarkt.dir/src/datum.cpp.o.d
   FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -Wall -Wextra -pedantic
-  INCLUDES = -I/usr/include/python3.12 -I/home/arrif-sondjalim/c++projects/supermarkt/include -I/home/arrif-sondjalim/c++projects/supermarkt/pybind11/include -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils
+  INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -I/home/arrif-sondjalim/c++projects/supermarkt/pybind11/include -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils -isystem /usr/include/python3.12
   LAUNCHER = ccache 
   OBJECT_DIR = CMakeFiles/supermarkt.dir
   OBJECT_FILE_DIR = CMakeFiles/supermarkt.dir/src
@@ -76,7 +76,7 @@ build CMakeFiles/supermarkt.dir/src/datum.cpp.o: CXX_COMPILER__supermarkt_unscan
 build CMakeFiles/supermarkt.dir/src/produkt.cpp.o: CXX_COMPILER__supermarkt_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/produkt.cpp || cmake_object_order_depends_target_supermarkt
   DEP_FILE = CMakeFiles/supermarkt.dir/src/produkt.cpp.o.d
   FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -Wall -Wextra -pedantic
-  INCLUDES = -I/usr/include/python3.12 -I/home/arrif-sondjalim/c++projects/supermarkt/include -I/home/arrif-sondjalim/c++projects/supermarkt/pybind11/include -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils
+  INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -I/home/arrif-sondjalim/c++projects/supermarkt/pybind11/include -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils -isystem /usr/include/python3.12
   LAUNCHER = ccache 
   OBJECT_DIR = CMakeFiles/supermarkt.dir
   OBJECT_FILE_DIR = CMakeFiles/supermarkt.dir/src
@@ -84,7 +84,7 @@ build CMakeFiles/supermarkt.dir/src/produkt.cpp.o: CXX_COMPILER__supermarkt_unsc
 build CMakeFiles/supermarkt.dir/src/person.cpp.o: CXX_COMPILER__supermarkt_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/person.cpp || cmake_object_order_depends_target_supermarkt
   DEP_FILE = CMakeFiles/supermarkt.dir/src/person.cpp.o.d
   FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -Wall -Wextra -pedantic
-  INCLUDES = -I/usr/include/python3.12 -I/home/arrif-sondjalim/c++projects/supermarkt/include -I/home/arrif-sondjalim/c++projects/supermarkt/pybind11/include -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils
+  INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -I/home/arrif-sondjalim/c++projects/supermarkt/pybind11/include -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils -isystem /usr/include/python3.12
   LAUNCHER = ccache 
   OBJECT_DIR = CMakeFiles/supermarkt.dir
   OBJECT_FILE_DIR = CMakeFiles/supermarkt.dir/src
@@ -92,7 +92,7 @@ build CMakeFiles/supermarkt.dir/src/person.cpp.o: CXX_COMPILER__supermarkt_unsca
 build CMakeFiles/supermarkt.dir/src/haendler.cpp.o: CXX_COMPILER__supermarkt_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/haendler.cpp || cmake_object_order_depends_target_supermarkt
   DEP_FILE = CMakeFiles/supermarkt.dir/src/haendler.cpp.o.d
   FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -Wall -Wextra -pedantic
-  INCLUDES = -I/usr/include/python3.12 -I/home/arrif-sondjalim/c++projects/supermarkt/include -I/home/arrif-sondjalim/c++projects/supermarkt/pybind11/include -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils
+  INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -I/home/arrif-sondjalim/c++projects/supermarkt/pybind11/include -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils -isystem /usr/include/python3.12
   LAUNCHER = ccache 
   OBJECT_DIR = CMakeFiles/supermarkt.dir
   OBJECT_FILE_DIR = CMakeFiles/supermarkt.dir/src
@@ -100,7 +100,7 @@ build CMakeFiles/supermarkt.dir/src/haendler.cpp.o: CXX_COMPILER__supermarkt_uns
 build CMakeFiles/supermarkt.dir/src/kunde.cpp.o: CXX_COMPILER__supermarkt_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/kunde.cpp || cmake_object_order_depends_target_supermarkt
   DEP_FILE = CMakeFiles/supermarkt.dir/src/kunde.cpp.o.d
   FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -Wall -Wextra -pedantic
-  INCLUDES = -I/usr/include/python3.12 -I/home/arrif-sondjalim/c++projects/supermarkt/include -I/home/arrif-sondjalim/c++projects/supermarkt/pybind11/include -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils
+  INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -I/home/arrif-sondjalim/c++projects/supermarkt/pybind11/include -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils -isystem /usr/include/python3.12
   LAUNCHER = ccache 
   OBJECT_DIR = CMakeFiles/supermarkt.dir
   OBJECT_FILE_DIR = CMakeFiles/supermarkt.dir/src
@@ -108,7 +108,7 @@ build CMakeFiles/supermarkt.dir/src/kunde.cpp.o: CXX_COMPILER__supermarkt_unscan
 build CMakeFiles/supermarkt.dir/src/warenkorb.cpp.o: CXX_COMPILER__supermarkt_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/warenkorb.cpp || cmake_object_order_depends_target_supermarkt
   DEP_FILE = CMakeFiles/supermarkt.dir/src/warenkorb.cpp.o.d
   FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -Wall -Wextra -pedantic
-  INCLUDES = -I/usr/include/python3.12 -I/home/arrif-sondjalim/c++projects/supermarkt/include -I/home/arrif-sondjalim/c++projects/supermarkt/pybind11/include -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils
+  INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -I/home/arrif-sondjalim/c++projects/supermarkt/pybind11/include -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils -isystem /usr/include/python3.12
   LAUNCHER = ccache 
   OBJECT_DIR = CMakeFiles/supermarkt.dir
   OBJECT_FILE_DIR = CMakeFiles/supermarkt.dir/src
@@ -116,7 +116,7 @@ build CMakeFiles/supermarkt.dir/src/warenkorb.cpp.o: CXX_COMPILER__supermarkt_un
 build CMakeFiles/supermarkt.dir/src/konto.cpp.o: CXX_COMPILER__supermarkt_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/konto.cpp || cmake_object_order_depends_target_supermarkt
   DEP_FILE = CMakeFiles/supermarkt.dir/src/konto.cpp.o.d
   FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -Wall -Wextra -pedantic
-  INCLUDES = -I/usr/include/python3.12 -I/home/arrif-sondjalim/c++projects/supermarkt/include -I/home/arrif-sondjalim/c++projects/supermarkt/pybind11/include -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils
+  INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -I/home/arrif-sondjalim/c++projects/supermarkt/pybind11/include -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils -isystem /usr/include/python3.12
   LAUNCHER = ccache 
   OBJECT_DIR = CMakeFiles/supermarkt.dir
   OBJECT_FILE_DIR = CMakeFiles/supermarkt.dir/src
@@ -124,7 +124,7 @@ build CMakeFiles/supermarkt.dir/src/konto.cpp.o: CXX_COMPILER__supermarkt_unscan
 build CMakeFiles/supermarkt.dir/src/kassenzettel.cpp.o: CXX_COMPILER__supermarkt_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/kassenzettel.cpp || cmake_object_order_depends_target_supermarkt
   DEP_FILE = CMakeFiles/supermarkt.dir/src/kassenzettel.cpp.o.d
   FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -Wall -Wextra -pedantic
-  INCLUDES = -I/usr/include/python3.12 -I/home/arrif-sondjalim/c++projects/supermarkt/include -I/home/arrif-sondjalim/c++projects/supermarkt/pybind11/include -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils
+  INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -I/home/arrif-sondjalim/c++projects/supermarkt/pybind11/include -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils -isystem /usr/include/python3.12
   LAUNCHER = ccache 
   OBJECT_DIR = CMakeFiles/supermarkt.dir
   OBJECT_FILE_DIR = CMakeFiles/supermarkt.dir/src
@@ -132,7 +132,7 @@ build CMakeFiles/supermarkt.dir/src/kassenzettel.cpp.o: CXX_COMPILER__supermarkt
 build CMakeFiles/supermarkt.dir/src/supermarkt.cpp.o: CXX_COMPILER__supermarkt_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/supermarkt.cpp || cmake_object_order_depends_target_supermarkt
   DEP_FILE = CMakeFiles/supermarkt.dir/src/supermarkt.cpp.o.d
   FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -Wall -Wextra -pedantic
-  INCLUDES = -I/usr/include/python3.12 -I/home/arrif-sondjalim/c++projects/supermarkt/include -I/home/arrif-sondjalim/c++projects/supermarkt/pybind11/include -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils
+  INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -I/home/arrif-sondjalim/c++projects/supermarkt/pybind11/include -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils -isystem /usr/include/python3.12
   LAUNCHER = ccache 
   OBJECT_DIR = CMakeFiles/supermarkt.dir
   OBJECT_FILE_DIR = CMakeFiles/supermarkt.dir/src
@@ -140,7 +140,7 @@ build CMakeFiles/supermarkt.dir/src/supermarkt.cpp.o: CXX_COMPILER__supermarkt_u
 build CMakeFiles/supermarkt.dir/src/read_data.cpp.o: CXX_COMPILER__supermarkt_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/read_data.cpp || cmake_object_order_depends_target_supermarkt
   DEP_FILE = CMakeFiles/supermarkt.dir/src/read_data.cpp.o.d
   FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -Wall -Wextra -pedantic
-  INCLUDES = -I/usr/include/python3.12 -I/home/arrif-sondjalim/c++projects/supermarkt/include -I/home/arrif-sondjalim/c++projects/supermarkt/pybind11/include -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils
+  INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -I/home/arrif-sondjalim/c++projects/supermarkt/pybind11/include -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils -isystem /usr/include/python3.12
   LAUNCHER = ccache 
   OBJECT_DIR = CMakeFiles/supermarkt.dir
   OBJECT_FILE_DIR = CMakeFiles/supermarkt.dir/src
@@ -148,7 +148,7 @@ build CMakeFiles/supermarkt.dir/src/read_data.cpp.o: CXX_COMPILER__supermarkt_un
 build CMakeFiles/supermarkt.dir/src/statistik.cpp.o: CXX_COMPILER__supermarkt_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/statistik.cpp || cmake_object_order_depends_target_supermarkt
   DEP_FILE = CMakeFiles/supermarkt.dir/src/statistik.cpp.o.d
   FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -Wall -Wextra -pedantic
-  INCLUDES = -I/usr/include/python3.12 -I/home/arrif-sondjalim/c++projects/supermarkt/include -I/home/arrif-sondjalim/c++projects/supermarkt/pybind11/include -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils
+  INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -I/home/arrif-sondjalim/c++projects/supermarkt/pybind11/include -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils -isystem /usr/include/python3.12
   LAUNCHER = ccache 
   OBJECT_DIR = CMakeFiles/supermarkt.dir
   OBJECT_FILE_DIR = CMakeFiles/supermarkt.dir/src
@@ -156,10 +156,18 @@ build CMakeFiles/supermarkt.dir/src/statistik.cpp.o: CXX_COMPILER__supermarkt_un
 build CMakeFiles/supermarkt.dir/src/logging.cpp.o: CXX_COMPILER__supermarkt_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/logging.cpp || cmake_object_order_depends_target_supermarkt
   DEP_FILE = CMakeFiles/supermarkt.dir/src/logging.cpp.o.d
   FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -Wall -Wextra -pedantic
-  INCLUDES = -I/usr/include/python3.12 -I/home/arrif-sondjalim/c++projects/supermarkt/include -I/home/arrif-sondjalim/c++projects/supermarkt/pybind11/include -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils
+  INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -I/home/arrif-sondjalim/c++projects/supermarkt/pybind11/include -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils -isystem /usr/include/python3.12
   LAUNCHER = ccache 
   OBJECT_DIR = CMakeFiles/supermarkt.dir
   OBJECT_FILE_DIR = CMakeFiles/supermarkt.dir/src
+
+build CMakeFiles/supermarkt.dir/bindings/python_bindings.cpp.o: CXX_COMPILER__supermarkt_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/bindings/python_bindings.cpp || cmake_object_order_depends_target_supermarkt
+  DEP_FILE = CMakeFiles/supermarkt.dir/bindings/python_bindings.cpp.o.d
+  FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -Wall -Wextra -pedantic
+  INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -I/home/arrif-sondjalim/c++projects/supermarkt/pybind11/include -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils -isystem /usr/include/python3.12
+  LAUNCHER = ccache 
+  OBJECT_DIR = CMakeFiles/supermarkt.dir
+  OBJECT_FILE_DIR = CMakeFiles/supermarkt.dir/bindings
 
 
 # =============================================================================
@@ -169,9 +177,9 @@ build CMakeFiles/supermarkt.dir/src/logging.cpp.o: CXX_COMPILER__supermarkt_unsc
 #############################################
 # Link the executable supermarkt
 
-build supermarkt: CXX_EXECUTABLE_LINKER__supermarkt_Debug CMakeFiles/supermarkt.dir/src/main.cpp.o CMakeFiles/supermarkt.dir/src/tests.cpp.o CMakeFiles/supermarkt.dir/src/datum.cpp.o CMakeFiles/supermarkt.dir/src/produkt.cpp.o CMakeFiles/supermarkt.dir/src/person.cpp.o CMakeFiles/supermarkt.dir/src/haendler.cpp.o CMakeFiles/supermarkt.dir/src/kunde.cpp.o CMakeFiles/supermarkt.dir/src/warenkorb.cpp.o CMakeFiles/supermarkt.dir/src/konto.cpp.o CMakeFiles/supermarkt.dir/src/kassenzettel.cpp.o CMakeFiles/supermarkt.dir/src/supermarkt.cpp.o CMakeFiles/supermarkt.dir/src/read_data.cpp.o CMakeFiles/supermarkt.dir/src/statistik.cpp.o CMakeFiles/supermarkt.dir/src/logging.cpp.o
+build supermarkt: CXX_EXECUTABLE_LINKER__supermarkt_Debug CMakeFiles/supermarkt.dir/src/main.cpp.o CMakeFiles/supermarkt.dir/src/tests.cpp.o CMakeFiles/supermarkt.dir/src/datum.cpp.o CMakeFiles/supermarkt.dir/src/produkt.cpp.o CMakeFiles/supermarkt.dir/src/person.cpp.o CMakeFiles/supermarkt.dir/src/haendler.cpp.o CMakeFiles/supermarkt.dir/src/kunde.cpp.o CMakeFiles/supermarkt.dir/src/warenkorb.cpp.o CMakeFiles/supermarkt.dir/src/konto.cpp.o CMakeFiles/supermarkt.dir/src/kassenzettel.cpp.o CMakeFiles/supermarkt.dir/src/supermarkt.cpp.o CMakeFiles/supermarkt.dir/src/read_data.cpp.o CMakeFiles/supermarkt.dir/src/statistik.cpp.o CMakeFiles/supermarkt.dir/src/logging.cpp.o CMakeFiles/supermarkt.dir/bindings/python_bindings.cpp.o | /usr/lib/x86_64-linux-gnu/libpython3.12.so
   FLAGS = -g -g -O0 -Wall -Wextra -pedantic
-  LINK_LIBRARIES = -lpoppler-cpp
+  LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libpython3.12.so  -lpoppler-cpp
   OBJECT_DIR = CMakeFiles/supermarkt.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -179,203 +187,57 @@ build supermarkt: CXX_EXECUTABLE_LINKER__supermarkt_Debug CMakeFiles/supermarkt.
   TARGET_PDB = supermarkt.dbg
 
 # =============================================================================
-# Object build statements for EXECUTABLE target supermarkt_bindings
+# Object build statements for MODULE_LIBRARY target py_bindings
 
 
 #############################################
-# Order-only phony target for supermarkt_bindings
+# Order-only phony target for py_bindings
 
-build cmake_object_order_depends_target_supermarkt_bindings: phony || CMakeFiles/supermarkt_bindings.dir
+build cmake_object_order_depends_target_py_bindings: phony || CMakeFiles/py_bindings.dir
 
-build CMakeFiles/supermarkt_bindings.dir/src/main.cpp.o: CXX_COMPILER__supermarkt_bindings_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/main.cpp || cmake_object_order_depends_target_supermarkt_bindings
-  DEP_FILE = CMakeFiles/supermarkt_bindings.dir/src/main.cpp.o.d
-  FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -Wall -Wextra -pedantic
-  INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -I/home/arrif-sondjalim/c++projects/supermarkt/pybind11/include -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -isystem /usr/include/python3.12
-  LAUNCHER = ccache 
-  OBJECT_DIR = CMakeFiles/supermarkt_bindings.dir
-  OBJECT_FILE_DIR = CMakeFiles/supermarkt_bindings.dir/src
-
-build CMakeFiles/supermarkt_bindings.dir/src/tests.cpp.o: CXX_COMPILER__supermarkt_bindings_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/tests.cpp || cmake_object_order_depends_target_supermarkt_bindings
-  DEP_FILE = CMakeFiles/supermarkt_bindings.dir/src/tests.cpp.o.d
-  FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -Wall -Wextra -pedantic
-  INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -I/home/arrif-sondjalim/c++projects/supermarkt/pybind11/include -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -isystem /usr/include/python3.12
-  LAUNCHER = ccache 
-  OBJECT_DIR = CMakeFiles/supermarkt_bindings.dir
-  OBJECT_FILE_DIR = CMakeFiles/supermarkt_bindings.dir/src
-
-build CMakeFiles/supermarkt_bindings.dir/src/datum.cpp.o: CXX_COMPILER__supermarkt_bindings_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/datum.cpp || cmake_object_order_depends_target_supermarkt_bindings
-  DEP_FILE = CMakeFiles/supermarkt_bindings.dir/src/datum.cpp.o.d
-  FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -Wall -Wextra -pedantic
-  INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -I/home/arrif-sondjalim/c++projects/supermarkt/pybind11/include -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -isystem /usr/include/python3.12
-  LAUNCHER = ccache 
-  OBJECT_DIR = CMakeFiles/supermarkt_bindings.dir
-  OBJECT_FILE_DIR = CMakeFiles/supermarkt_bindings.dir/src
-
-build CMakeFiles/supermarkt_bindings.dir/src/produkt.cpp.o: CXX_COMPILER__supermarkt_bindings_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/produkt.cpp || cmake_object_order_depends_target_supermarkt_bindings
-  DEP_FILE = CMakeFiles/supermarkt_bindings.dir/src/produkt.cpp.o.d
-  FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -Wall -Wextra -pedantic
-  INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -I/home/arrif-sondjalim/c++projects/supermarkt/pybind11/include -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -isystem /usr/include/python3.12
-  LAUNCHER = ccache 
-  OBJECT_DIR = CMakeFiles/supermarkt_bindings.dir
-  OBJECT_FILE_DIR = CMakeFiles/supermarkt_bindings.dir/src
-
-build CMakeFiles/supermarkt_bindings.dir/src/person.cpp.o: CXX_COMPILER__supermarkt_bindings_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/person.cpp || cmake_object_order_depends_target_supermarkt_bindings
-  DEP_FILE = CMakeFiles/supermarkt_bindings.dir/src/person.cpp.o.d
-  FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -Wall -Wextra -pedantic
-  INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -I/home/arrif-sondjalim/c++projects/supermarkt/pybind11/include -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -isystem /usr/include/python3.12
-  LAUNCHER = ccache 
-  OBJECT_DIR = CMakeFiles/supermarkt_bindings.dir
-  OBJECT_FILE_DIR = CMakeFiles/supermarkt_bindings.dir/src
-
-build CMakeFiles/supermarkt_bindings.dir/src/haendler.cpp.o: CXX_COMPILER__supermarkt_bindings_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/haendler.cpp || cmake_object_order_depends_target_supermarkt_bindings
-  DEP_FILE = CMakeFiles/supermarkt_bindings.dir/src/haendler.cpp.o.d
-  FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -Wall -Wextra -pedantic
-  INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -I/home/arrif-sondjalim/c++projects/supermarkt/pybind11/include -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -isystem /usr/include/python3.12
-  LAUNCHER = ccache 
-  OBJECT_DIR = CMakeFiles/supermarkt_bindings.dir
-  OBJECT_FILE_DIR = CMakeFiles/supermarkt_bindings.dir/src
-
-build CMakeFiles/supermarkt_bindings.dir/src/kunde.cpp.o: CXX_COMPILER__supermarkt_bindings_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/kunde.cpp || cmake_object_order_depends_target_supermarkt_bindings
-  DEP_FILE = CMakeFiles/supermarkt_bindings.dir/src/kunde.cpp.o.d
-  FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -Wall -Wextra -pedantic
-  INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -I/home/arrif-sondjalim/c++projects/supermarkt/pybind11/include -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -isystem /usr/include/python3.12
-  LAUNCHER = ccache 
-  OBJECT_DIR = CMakeFiles/supermarkt_bindings.dir
-  OBJECT_FILE_DIR = CMakeFiles/supermarkt_bindings.dir/src
-
-build CMakeFiles/supermarkt_bindings.dir/src/warenkorb.cpp.o: CXX_COMPILER__supermarkt_bindings_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/warenkorb.cpp || cmake_object_order_depends_target_supermarkt_bindings
-  DEP_FILE = CMakeFiles/supermarkt_bindings.dir/src/warenkorb.cpp.o.d
-  FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -Wall -Wextra -pedantic
-  INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -I/home/arrif-sondjalim/c++projects/supermarkt/pybind11/include -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -isystem /usr/include/python3.12
-  LAUNCHER = ccache 
-  OBJECT_DIR = CMakeFiles/supermarkt_bindings.dir
-  OBJECT_FILE_DIR = CMakeFiles/supermarkt_bindings.dir/src
-
-build CMakeFiles/supermarkt_bindings.dir/src/konto.cpp.o: CXX_COMPILER__supermarkt_bindings_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/konto.cpp || cmake_object_order_depends_target_supermarkt_bindings
-  DEP_FILE = CMakeFiles/supermarkt_bindings.dir/src/konto.cpp.o.d
-  FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -Wall -Wextra -pedantic
-  INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -I/home/arrif-sondjalim/c++projects/supermarkt/pybind11/include -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -isystem /usr/include/python3.12
-  LAUNCHER = ccache 
-  OBJECT_DIR = CMakeFiles/supermarkt_bindings.dir
-  OBJECT_FILE_DIR = CMakeFiles/supermarkt_bindings.dir/src
-
-build CMakeFiles/supermarkt_bindings.dir/src/kassenzettel.cpp.o: CXX_COMPILER__supermarkt_bindings_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/kassenzettel.cpp || cmake_object_order_depends_target_supermarkt_bindings
-  DEP_FILE = CMakeFiles/supermarkt_bindings.dir/src/kassenzettel.cpp.o.d
-  FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -Wall -Wextra -pedantic
-  INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -I/home/arrif-sondjalim/c++projects/supermarkt/pybind11/include -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -isystem /usr/include/python3.12
-  LAUNCHER = ccache 
-  OBJECT_DIR = CMakeFiles/supermarkt_bindings.dir
-  OBJECT_FILE_DIR = CMakeFiles/supermarkt_bindings.dir/src
-
-build CMakeFiles/supermarkt_bindings.dir/src/supermarkt.cpp.o: CXX_COMPILER__supermarkt_bindings_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/supermarkt.cpp || cmake_object_order_depends_target_supermarkt_bindings
-  DEP_FILE = CMakeFiles/supermarkt_bindings.dir/src/supermarkt.cpp.o.d
-  FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -Wall -Wextra -pedantic
-  INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -I/home/arrif-sondjalim/c++projects/supermarkt/pybind11/include -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -isystem /usr/include/python3.12
-  LAUNCHER = ccache 
-  OBJECT_DIR = CMakeFiles/supermarkt_bindings.dir
-  OBJECT_FILE_DIR = CMakeFiles/supermarkt_bindings.dir/src
-
-build CMakeFiles/supermarkt_bindings.dir/src/read_data.cpp.o: CXX_COMPILER__supermarkt_bindings_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/read_data.cpp || cmake_object_order_depends_target_supermarkt_bindings
-  DEP_FILE = CMakeFiles/supermarkt_bindings.dir/src/read_data.cpp.o.d
-  FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -Wall -Wextra -pedantic
-  INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -I/home/arrif-sondjalim/c++projects/supermarkt/pybind11/include -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -isystem /usr/include/python3.12
-  LAUNCHER = ccache 
-  OBJECT_DIR = CMakeFiles/supermarkt_bindings.dir
-  OBJECT_FILE_DIR = CMakeFiles/supermarkt_bindings.dir/src
-
-build CMakeFiles/supermarkt_bindings.dir/src/statistik.cpp.o: CXX_COMPILER__supermarkt_bindings_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/statistik.cpp || cmake_object_order_depends_target_supermarkt_bindings
-  DEP_FILE = CMakeFiles/supermarkt_bindings.dir/src/statistik.cpp.o.d
-  FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -Wall -Wextra -pedantic
-  INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -I/home/arrif-sondjalim/c++projects/supermarkt/pybind11/include -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -isystem /usr/include/python3.12
-  LAUNCHER = ccache 
-  OBJECT_DIR = CMakeFiles/supermarkt_bindings.dir
-  OBJECT_FILE_DIR = CMakeFiles/supermarkt_bindings.dir/src
-
-build CMakeFiles/supermarkt_bindings.dir/src/logging.cpp.o: CXX_COMPILER__supermarkt_bindings_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/logging.cpp || cmake_object_order_depends_target_supermarkt_bindings
-  DEP_FILE = CMakeFiles/supermarkt_bindings.dir/src/logging.cpp.o.d
-  FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -Wall -Wextra -pedantic
-  INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -I/home/arrif-sondjalim/c++projects/supermarkt/pybind11/include -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -isystem /usr/include/python3.12
-  LAUNCHER = ccache 
-  OBJECT_DIR = CMakeFiles/supermarkt_bindings.dir
-  OBJECT_FILE_DIR = CMakeFiles/supermarkt_bindings.dir/src
-
-build CMakeFiles/supermarkt_bindings.dir/bindings/statistik_bind.cpp.o: CXX_COMPILER__supermarkt_bindings_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/bindings/statistik_bind.cpp || cmake_object_order_depends_target_supermarkt_bindings
-  DEP_FILE = CMakeFiles/supermarkt_bindings.dir/bindings/statistik_bind.cpp.o.d
-  FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -Wall -Wextra -pedantic
-  INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -I/home/arrif-sondjalim/c++projects/supermarkt/pybind11/include -I/home/arrif-sondjalim/c++projects/supermarkt/inc/utils -I/home/arrif-sondjalim/c++projects/supermarkt/inc/base -isystem /usr/include/python3.12
-  LAUNCHER = ccache 
-  OBJECT_DIR = CMakeFiles/supermarkt_bindings.dir
-  OBJECT_FILE_DIR = CMakeFiles/supermarkt_bindings.dir/bindings
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target supermarkt_bindings
-
-
-#############################################
-# Link the executable supermarkt_bindings
-
-build supermarkt_bindings: CXX_EXECUTABLE_LINKER__supermarkt_bindings_Debug CMakeFiles/supermarkt_bindings.dir/src/main.cpp.o CMakeFiles/supermarkt_bindings.dir/src/tests.cpp.o CMakeFiles/supermarkt_bindings.dir/src/datum.cpp.o CMakeFiles/supermarkt_bindings.dir/src/produkt.cpp.o CMakeFiles/supermarkt_bindings.dir/src/person.cpp.o CMakeFiles/supermarkt_bindings.dir/src/haendler.cpp.o CMakeFiles/supermarkt_bindings.dir/src/kunde.cpp.o CMakeFiles/supermarkt_bindings.dir/src/warenkorb.cpp.o CMakeFiles/supermarkt_bindings.dir/src/konto.cpp.o CMakeFiles/supermarkt_bindings.dir/src/kassenzettel.cpp.o CMakeFiles/supermarkt_bindings.dir/src/supermarkt.cpp.o CMakeFiles/supermarkt_bindings.dir/src/read_data.cpp.o CMakeFiles/supermarkt_bindings.dir/src/statistik.cpp.o CMakeFiles/supermarkt_bindings.dir/src/logging.cpp.o CMakeFiles/supermarkt_bindings.dir/bindings/statistik_bind.cpp.o | /usr/lib/x86_64-linux-gnu/libpython3.12.so
-  FLAGS = -g -g -O0 -Wall -Wextra -pedantic
-  LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libpython3.12.so  -lpoppler-cpp
-  OBJECT_DIR = CMakeFiles/supermarkt_bindings.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = supermarkt_bindings
-  TARGET_PDB = supermarkt_bindings.dbg
-
-# =============================================================================
-# Object build statements for MODULE_LIBRARY target py_statistik
-
-
-#############################################
-# Order-only phony target for py_statistik
-
-build cmake_object_order_depends_target_py_statistik: phony || CMakeFiles/py_statistik.dir
-
-build CMakeFiles/py_statistik.dir/bindings/statistik_bind.cpp.o: CXX_COMPILER__py_statistik_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/bindings/statistik_bind.cpp || cmake_object_order_depends_target_py_statistik
-  DEFINES = -Dpy_statistik_EXPORTS
-  DEP_FILE = CMakeFiles/py_statistik.dir/bindings/statistik_bind.cpp.o.d
+build CMakeFiles/py_bindings.dir/bindings/python_bindings.cpp.o: CXX_COMPILER__py_bindings_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/bindings/python_bindings.cpp || cmake_object_order_depends_target_py_bindings
+  DEFINES = -Dpy_bindings_EXPORTS
+  DEP_FILE = CMakeFiles/py_bindings.dir/bindings/python_bindings.cpp.o.d
   FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -fPIC -fvisibility=hidden
   INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -isystem /usr/include/python3.12 -isystem /home/arrif-sondjalim/c++projects/supermarkt/pybind11/include
   LAUNCHER = ccache 
-  OBJECT_DIR = CMakeFiles/py_statistik.dir
-  OBJECT_FILE_DIR = CMakeFiles/py_statistik.dir/bindings
+  OBJECT_DIR = CMakeFiles/py_bindings.dir
+  OBJECT_FILE_DIR = CMakeFiles/py_bindings.dir/bindings
 
-build CMakeFiles/py_statistik.dir/src/statistik.cpp.o: CXX_COMPILER__py_statistik_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/statistik.cpp || cmake_object_order_depends_target_py_statistik
-  DEFINES = -Dpy_statistik_EXPORTS
-  DEP_FILE = CMakeFiles/py_statistik.dir/src/statistik.cpp.o.d
+build CMakeFiles/py_bindings.dir/src/statistik.cpp.o: CXX_COMPILER__py_bindings_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/statistik.cpp || cmake_object_order_depends_target_py_bindings
+  DEFINES = -Dpy_bindings_EXPORTS
+  DEP_FILE = CMakeFiles/py_bindings.dir/src/statistik.cpp.o.d
   FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -fPIC -fvisibility=hidden
   INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -isystem /usr/include/python3.12 -isystem /home/arrif-sondjalim/c++projects/supermarkt/pybind11/include
   LAUNCHER = ccache 
-  OBJECT_DIR = CMakeFiles/py_statistik.dir
-  OBJECT_FILE_DIR = CMakeFiles/py_statistik.dir/src
+  OBJECT_DIR = CMakeFiles/py_bindings.dir
+  OBJECT_FILE_DIR = CMakeFiles/py_bindings.dir/src
 
-build CMakeFiles/py_statistik.dir/src/read_data.cpp.o: CXX_COMPILER__py_statistik_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/read_data.cpp || cmake_object_order_depends_target_py_statistik
-  DEFINES = -Dpy_statistik_EXPORTS
-  DEP_FILE = CMakeFiles/py_statistik.dir/src/read_data.cpp.o.d
+build CMakeFiles/py_bindings.dir/src/read_data.cpp.o: CXX_COMPILER__py_bindings_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/read_data.cpp || cmake_object_order_depends_target_py_bindings
+  DEFINES = -Dpy_bindings_EXPORTS
+  DEP_FILE = CMakeFiles/py_bindings.dir/src/read_data.cpp.o.d
   FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -fPIC -fvisibility=hidden
   INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -isystem /usr/include/python3.12 -isystem /home/arrif-sondjalim/c++projects/supermarkt/pybind11/include
   LAUNCHER = ccache 
-  OBJECT_DIR = CMakeFiles/py_statistik.dir
-  OBJECT_FILE_DIR = CMakeFiles/py_statistik.dir/src
+  OBJECT_DIR = CMakeFiles/py_bindings.dir
+  OBJECT_FILE_DIR = CMakeFiles/py_bindings.dir/src
 
 
 # =============================================================================
-# Link build statements for MODULE_LIBRARY target py_statistik
+# Link build statements for MODULE_LIBRARY target py_bindings
 
 
 #############################################
-# Link the shared module py_statistik.cpython-312-x86_64-linux-gnu.so
+# Link the shared module py_bindings.cpython-312-x86_64-linux-gnu.so
 
-build py_statistik.cpython-312-x86_64-linux-gnu.so: CXX_MODULE_LIBRARY_LINKER__py_statistik_Debug CMakeFiles/py_statistik.dir/bindings/statistik_bind.cpp.o CMakeFiles/py_statistik.dir/src/statistik.cpp.o CMakeFiles/py_statistik.dir/src/read_data.cpp.o
+build py_bindings.cpython-312-x86_64-linux-gnu.so: CXX_MODULE_LIBRARY_LINKER__py_bindings_Debug CMakeFiles/py_bindings.dir/bindings/python_bindings.cpp.o CMakeFiles/py_bindings.dir/src/statistik.cpp.o CMakeFiles/py_bindings.dir/src/read_data.cpp.o
   LANGUAGE_COMPILE_FLAGS = -g -g -O0 -Wall -Wextra -pedantic
   LINK_LIBRARIES = -lpoppler-cpp
-  OBJECT_DIR = CMakeFiles/py_statistik.dir
+  OBJECT_DIR = CMakeFiles/py_bindings.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = py_statistik.cpython-312-x86_64-linux-gnu.so
-  TARGET_PDB = py_statistik.cpython-312-x86_64-linux-gnu.so.dbg
+  TARGET_FILE = py_bindings.cpython-312-x86_64-linux-gnu.so
+  TARGET_PDB = py_bindings.cpython-312-x86_64-linux-gnu.so.dbg
 
 
 #############################################
@@ -431,7 +293,7 @@ build pybind11/rebuild_cache: phony pybind11/CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build py_statistik: phony py_statistik.cpython-312-x86_64-linux-gnu.so
+build py_bindings: phony py_bindings.cpython-312-x86_64-linux-gnu.so
 
 # =============================================================================
 # Folder targets.
@@ -441,7 +303,7 @@ build py_statistik: phony py_statistik.cpython-312-x86_64-linux-gnu.so
 #############################################
 # Folder: /home/arrif-sondjalim/c++projects/supermarkt/build
 
-build all: phony supermarkt supermarkt_bindings py_statistik.cpython-312-x86_64-linux-gnu.so pybind11/all
+build all: phony supermarkt py_bindings.cpython-312-x86_64-linux-gnu.so pybind11/all
 
 # =============================================================================
 
