@@ -2,3 +2,11 @@
 [2025-05-06 19:38:05] [DEBUG] Reading configuration...
 [2025-05-06 19:38:05] [WARNING] File not found!
 [2025-05-06 19:38:05] [ERROR] Critical error!
+[2025-05-07 21:18:22] [INFO] System initialized.
+[2025-05-07 21:18:22] [DEBUG] Reading configuration...
+[2025-05-07 21:18:22] [WARNING] File not found!
+[2025-05-07 21:18:22] [ERROR] Critical error!
+[2025-05-07 21:18:30] [INFO] System initialized.
+[2025-05-07 21:18:30] [DEBUG] Reading configuration...
+[2025-05-07 21:18:30] [WARNING] File not found!
+[2025-05-07 21:18:30] [ERROR] Critical error!

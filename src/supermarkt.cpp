@@ -1,4 +1,5 @@
 #include "../inc/base/supermarkt.hpp"
+#include "../inc/utils/utilities.hpp"
 
 static uint32_t supermarkt_counter = 0;
 

@@ -1,4 +1,4 @@
-#include "../inc/utils/logging.hpp"
+#include "../inc/utils/logging.hpp" //Tests have to be done!!
 
 Logging::Logging(const std::string& logFilePath, LogLevel level, bool consoleOutput)
     : currentLevel_(level), consoleOutput_(consoleOutput) {

@@ -1,4 +1,13 @@
 #include "../inc/utils/tests.hpp"
+#include "../inc/base/datum.hpp"
+#include "../inc/base/produkt.hpp"
+#include "../inc/base/person.hpp"
+#include "../inc/base/kunde.hpp"
+#include "../inc/base/warenkorb.hpp"
+#include "../inc/base/konto.hpp"
+#include "../inc/base/haendler.hpp"
+#include "../inc/base/kassenzettel.hpp"
+#include "../inc/base/supermarkt.hpp"
 
 Tests::Tests() {}
 

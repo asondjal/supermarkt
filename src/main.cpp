@@ -1,6 +1,6 @@
 #include <iostream>
-#include "tests.hpp"
-#include "logging.hpp"
+#include "../inc/utils/tests.hpp"
+#include "../inc/utils/logging.hpp"
 
 int main() {
 

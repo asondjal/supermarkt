@@ -5,7 +5,7 @@
 #include "produkt.hpp"
 #include "warenkorb.hpp"
 #include "haendler.hpp"
-#include "utilities.hpp"
+// #include "utilities.hpp"
 #include <filesystem>
 #include <fstream>
 #include <sstream>

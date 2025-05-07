@@ -1,5 +1,6 @@
 /home/arrif-sondjalim/c++projects/supermarkt/build/CMakeFiles/supermarkt.dir
-/home/arrif-sondjalim/c++projects/supermarkt/build/CMakeFiles/statistik.dir
+/home/arrif-sondjalim/c++projects/supermarkt/build/CMakeFiles/supermarkt_bindings.dir
+/home/arrif-sondjalim/c++projects/supermarkt/build/CMakeFiles/py_statistik.dir
 /home/arrif-sondjalim/c++projects/supermarkt/build/CMakeFiles/edit_cache.dir
 /home/arrif-sondjalim/c++projects/supermarkt/build/CMakeFiles/rebuild_cache.dir
 /home/arrif-sondjalim/c++projects/supermarkt/build/pybind11/CMakeFiles/edit_cache.dir
