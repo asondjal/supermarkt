@@ -1,14 +1,12 @@
-
 import sys
 import os
+build_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'build'))
+sys.path.insert(0, build_path)
 
-sys.path.append(os.path.dirname(__file__))  # build/ ist im selben Verzeichnis
+import py_bindings as pys
 
-from py_bindings import ReadData
-from py_bindings import Statistik
-
-reader = ReadData("data/numbers.csv")
-stat = Statistik()
+reader = pys.ReadData("data/numbers.csv")
+stat = pys.Statistik()
 stat.lade_daten(reader)
 
 print("Wörter:", stat.wortanzahl())
@@ -17,3 +15,5 @@ print("Zeilen:", stat.zaehle_linen())
 print("Mittelwert:", stat.mittelwert())
 print("Median:", stat.median())
 print("Varianz:", round(stat.varianz(),2))
+
+print("Import erfolgreich!")

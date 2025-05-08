@@ -1,0 +1,4 @@
+[MASTER]
+
+[OPTIONS]
+python-path=./GUI/../build
