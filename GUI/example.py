@@ -1,11 +1,14 @@
+"""This is an example of how to use the py_bindings module in Python."""
+
 import sys
 import os
-build_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'build'))
-sys.path.insert(0, build_path)
 
 import py_bindings as pys
 
-reader = pys.ReadData("data/numbers.csv")
+build_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'build'))
+sys.path.insert(0, build_path)
+
+reader = pys.ReadData("./data/numbers.csv")
 stat = pys.Statistik()
 stat.lade_daten(reader)
 

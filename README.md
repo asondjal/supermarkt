@@ -42,6 +42,55 @@
 - Speicherort für die Source-Dateien
 - **tests.cpp:** Test-File fuer alle Executables
 
+## Integration von C++ in Python
+
+### Erweiterungen in der CMakeLists.txt:**
+
+- **Pybind11 einbinden**
+
+    add_subdirectory(pybind11)
+    find_package(Python3 COMPONENTS Interpreter Development REQUIRED)
+
+- **pybind11_bindings mit Python-Bibliotheken linken**
+
+    target_link_libraries(supermarkt PRIVATE Python3::Python)
+
+    include_directories(${Python3_INCLUDE_DIRS})
+    include_directories(${PROJECT_SOURCE_DIR}/include)
+    include_directories(${CMAKE_SOURCE_DIR}/pybind11/include)
+
+- **Modul für Python (Statistik-Pybind11)**
+
+    pybind11_add_module(py_bindings
+        bindings/python_bindings.cpp
+        src/statistik.cpp
+        src/read_data.cpp
+    )
+
+- **Linken von py_bindings mit poppler-cpp fuer Konventierung von PDFs in String**
+
+    target_link_libraries(py_bindings PRIVATE poppler-cpp)
+
+### **Erweiterungen fuer settings.json:**
+
+    "python.envFile": "${workspaceFolder}/.env",
+    "python.analysis.extraPaths": [
+    "./build"
+    ],
+    "python.analysis.stubPath": "./build",
+    "python.analysis.autoSearchPaths": true,
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportMissingImports": "none",
+        "reportMissingModuleSource": "none"
+    }
+
+- **Inhalt von .pylintrc:**
+    [MASTER]
+    init-hook='import sys; sys.path.append("build")'
+    extension-pkg-allow-list={py_bindings}
+
+- **Inhalt von.env:** PYTHONPATH=./build
+
 ## Noch zu implementierende Dateien
 
 - Statistik: Header sowie Source // Kleinere Funktionen fehlen, aber erst bei der Gestaltung der GUI von Relevanz

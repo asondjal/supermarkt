@@ -2,7 +2,7 @@
     "cSpell.diagnosticLevel": "Hint",
     "cpplint.excludes": [
         "build",
-        ".vscode",
+        ".vscode"
     ],
     "cpplint.lintMode": "workspace",
     "cpplint.filters": [
@@ -94,10 +94,16 @@
     },
     "C_Cpp.errorSquiggles": "disabled",
     "C_Cpp.default.compilerPath": "/usr/bin/gcc",
-    "python.analysis.diagnosticSeverityOverrides": {
-      "reportMissingImports": "none",
-      "reportMissingModuleSource": "none"
-    },
-    "python.linting.pylintArgs": ["--disable=E0611"]
-        
+
+    "python.envFile": "${workspaceFolder}/.env",
+
+    "python.analysis.extraPaths": [
+    "./build"
+],
+"python.analysis.stubPath": "./build",
+"python.analysis.autoSearchPaths": true,
+"python.analysis.diagnosticSeverityOverrides": {
+    "reportMissingImports": "none",
+    "reportMissingModuleSource": "none"
+}
 }
