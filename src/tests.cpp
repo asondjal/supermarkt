@@ -145,11 +145,13 @@ void Tests::test_Kassenzettel() {
 	warenkorb2.AddProdukt(&produkt1);
 	warenkorb2.AddProdukt(&produkt2);
 
-	Kassenzettel kassenzettel1{datum1, kunde1, haendler1, warenkorb1, konto1};
+	auto shared_konto1 = std::make_shared<Konto>(kunde1, "Bank of America");
+	Kassenzettel kassenzettel1{datum1, kunde1, haendler1, warenkorb1, shared_konto1};
 	kassenzettel1.CreateKassenzettel();
 	assert(konto1.GetKontostand() == 100.0f - warenkorb1.GetGesamtPreis());
 
-	Kassenzettel kassenzettel2{datum2, kunde2, haendler1, warenkorb1, konto2};
+	auto shared_konto2 = std::make_shared<Konto>(kunde2, "Deutsche Bank");
+	Kassenzettel kassenzettel2{datum2, kunde2, haendler1, warenkorb1, shared_konto2};
 	kassenzettel2.CreateKassenzettel();
 	assert(konto2.GetKontostand() == 50.0f - warenkorb1.GetGesamtPreis());
 
@@ -183,10 +185,12 @@ void Tests::test_Supermarkt() {
 	Datum datum1{1, 1, 2022};
 	Datum datum2{12, 11, 2009};
 
-	Kassenzettel kassenzettel1{datum1, kunde1, haendler1, warenkorb1, konto1};
+	auto shared_konto1 = std::make_shared<Konto>(kunde1, "Bank of America");
+	Kassenzettel kassenzettel1{datum1, kunde1, haendler1, warenkorb1, shared_konto1};
 	kassenzettel1.CreateKassenzettel();
 
-	Kassenzettel kassenzettel2{datum2, kunde2, haendler1, warenkorb1, konto2};
+	auto shared_konto2 = std::make_shared<Konto>(kunde2, "Deutsche Bank");
+	Kassenzettel kassenzettel2{datum2, kunde2, haendler1, warenkorb1, shared_konto2};
 	kassenzettel2.CreateKassenzettel();
 
 	Supermarkt supermarkt1{"REAL", "Muenchen, Deutschland"};

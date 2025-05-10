@@ -26,6 +26,7 @@ public:
     float Median() const;
     float Erwartungswert() const;
     float Varianz() const;
+    float Standardabweichung() const;
 
 private:
     std::vector<std::string> datenBuffer_;

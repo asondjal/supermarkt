@@ -2,7 +2,7 @@
 
 static uint32_t kassenzettelCounter_ = 0;
 
-Kassenzettel::Kassenzettel(Datum& datum, const Kunde& kunde, Haendler& haendler, Warenkorb& warenkorb, Konto& konto) :
+Kassenzettel::Kassenzettel(const Datum& datum, const Kunde& kunde, const Haendler& haendler, const Warenkorb& warenkorb, const std::shared_ptr<Konto>& konto) :
     datum_(datum),
     kunde_(kunde),
     haendler_(haendler),
@@ -34,7 +34,7 @@ uint32_t Kassenzettel::GetKassenzettelID() const {
  * @brief Erzeugen eines Kassenzettels und Speicherung im Ordner Kassenzettel
  * @return absoluter Pfad zur Datei
  */
-std::string Kassenzettel::CreateKassenzettel() {
+std::string Kassenzettel::CreateKassenzettel() const {
     std::lock_guard<std::mutex> lock(kassenzettelMutex_);
     // Anlegen des Kassenzettel-Ordners
     std::filesystem::create_directories("./data/kassenzettel");
@@ -76,9 +76,9 @@ std::string Kassenzettel::CreateKassenzettel() {
         << std::setw(14) << warenkorb_.GetGesamtPreis() << "\n\n";
     
     file << oss.str();
-    konto_.Auszahlen(warenkorb_.GetGesamtPreis());
-    file << "Institut: " << konto_.GetBank() << "\n";
-    file << "Konto-ID: " << konto_.GetKontoID() << "\n";
+    konto_->Auszahlen(warenkorb_.GetGesamtPreis());
+    file << "Institut: " << konto_->GetBank() << "\n";
+    file << "Konto-ID: " << konto_->GetKontoID() << "\n";
     file << "Abrechnungsdatum: " << datum_.Print() << "\n";
 
     file << "================== KASSENZETTEL ==================\n";

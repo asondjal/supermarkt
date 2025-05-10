@@ -18,5 +18,6 @@ print("Zeilen:", stat.zaehle_linen())
 print("Mittelwert:", stat.mittelwert())
 print("Median:", stat.median())
 print("Varianz:", round(stat.varianz(),2))
+print("Standardabweichung:", round(stat.standardabweichung(),2))
 
 print("Import erfolgreich!")

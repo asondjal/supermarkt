@@ -27,9 +27,26 @@ PYBIND11_MODULE(py_bindings, py_module) {
         .def("mittelwert", &Statistik::Mittelwert)
         .def("median", &Statistik::Median)
         .def("varianz", &Statistik::Varianz)
-        .def("erwartungswert", &Statistik::Erwartungswert);
+        .def("erwartungswert", &Statistik::Erwartungswert)
+        .def("standardabweichung", &Statistik::Standardabweichung);
 
     // Muss noch in py_bindings_.pyi implementiert werden!!
+
+    py::class_<Kassenzettel>(py_module, "Kassenzettel")
+        .def(pybind11::init<const Datum, const Kunde, const Haendler, const Warenkorb, const std::shared_ptr<Konto>>())
+        .def("get_kassenzettel_ID", &Kassenzettel::GetKassenzettelID)
+        .def("erzeuge_kassenzettel", &Kassenzettel::CreateKassenzettel)
+        .def("vergleiche_kassenzettel", &Kassenzettel::operator==);
+    
+    py::class_<Warenkorb>(py_module, "Warenkorb")
+        .def(py::init<Kunde>())
+        .def("get_warenkorb_ID", &Warenkorb::GetWarenkorbID)
+        .def("fuege_produkt_hinzu", &Warenkorb::AddProdukt)
+        .def("entferne_produkt", &Warenkorb::RemoveProdukt)
+        .def("get_kunde", &Warenkorb::GetKunde)
+        .def("get_warenkorb_gesamtpreis", &Warenkorb::GetGesamtPreis)
+        .def("erhalte_produkte", &Warenkorb::GetProdukte)
+        .def("verleiche_warenkorb", &Warenkorb::operator==);
     
     py::class_<Supermarkt>(py_module, "Supermarkt")
         .def(py::init<std::string, std::string>())

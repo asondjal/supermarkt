@@ -22,7 +22,7 @@ class Supermarkt {
         std::vector<Warenkorb*> warenkoerbe_;
         std::vector<Haendler*> haendler_;
         const uint32_t supermarkt_ID_;
-        std::mutex supermarktMutex_;
+        mutable std::mutex supermarktMutex_;
 
     public:
         Supermarkt(std::string name, std::string adresse);
@@ -34,10 +34,10 @@ class Supermarkt {
         void RemoveWarenkorb(Warenkorb& warenkorb);
         void AddHaendler(Haendler& haendler);
         void RemoveHaendler(Haendler& haendler);
-        std::string CreateProduktDatabase();
-        std::string CreateKundeDatabase();
-        std::string CreateWarenkorbDatabase();
-        std::string CreateHaendlerDatabase();
+        std::string CreateProduktDatabase() const;
+        std::string CreateKundeDatabase() const;
+        std::string CreateWarenkorbDatabase() const;
+        std::string CreateHaendlerDatabase() const;
         float GetGesamtWert() const;
         uint32_t GetSupermarktID() const;
         bool operator==(Supermarkt& other) const;

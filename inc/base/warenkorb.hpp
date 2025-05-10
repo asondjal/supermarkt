@@ -11,16 +11,18 @@ class Warenkorb {
 
     private:
     std::vector<Produkt*> produkte;
-    Kunde& kunde_;
+    const Kunde& kunde_;
+    const int warenkorbID_;
 
     public:
-    Warenkorb(Kunde& kunde);
-    Kunde& GetKunde() const;
+    Warenkorb(const Kunde& kunde);
+    const Kunde& GetKunde() const;
     void AddProdukt(Produkt* produkt);
     void RemoveProdukt(Produkt* produkt);
     float GetGesamtPreis() const;
     std::vector<Produkt*> GetProdukte() const;
     bool operator==(const Warenkorb& other) const;
+    int GetWarenkorbID() const;
 
 };
 

@@ -202,7 +202,6 @@ float Statistik::Erwartungswert() const {
  * @return Varianz der Daten
  */
 float Statistik::Varianz() const {
-    std::lock_guard<std::mutex> lock(datenMutex_);
     if (datenBuffer_.empty()) {
         return 0.0f;
     }
@@ -230,4 +229,9 @@ float Statistik::Varianz() const {
     }
     
     return sum / count;
+}
+
+float Statistik::Standardabweichung() const {
+    std::lock_guard<std::mutex> lock(datenMutex_);
+    return std::sqrt(Varianz());
 }

@@ -1,6 +1,8 @@
 #include "../inc/base/warenkorb.hpp"
 
-Warenkorb::Warenkorb(Kunde& kunde) : kunde_(kunde) {}
+static int warenkorb_counter = 0;
+
+Warenkorb::Warenkorb(const Kunde& kunde) : kunde_(kunde), warenkorbID_{warenkorb_counter++} {}
 
 void Warenkorb::AddProdukt(Produkt* produkt) {
     produkte.push_back(produkt); 
@@ -26,6 +28,14 @@ std::vector<Produkt*> Warenkorb::GetProdukte() const {
     return produkte;
 }
 
-Kunde& Warenkorb::GetKunde() const {
+const Kunde& Warenkorb::GetKunde() const {
     return kunde_;
+}
+
+int Warenkorb::GetWarenkorbID() const {
+    return warenkorbID_;
+}
+
+bool Warenkorb::operator==(const Warenkorb& other) const {
+    return warenkorbID_ == other.GetWarenkorbID();
 }

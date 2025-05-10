@@ -45,7 +45,7 @@ void Supermarkt::RemoveProdukt(Produkt& produkt) {
  * @brief Erzeugen eines Kassenzettels und Speicherung im Ordner Kassenzettel
  * @return absoluter Pfad zur Datei
  */
-std::string Supermarkt::CreateProduktDatabase() {
+std::string Supermarkt::CreateProduktDatabase() const{
 
     std::lock_guard<std::mutex> lock(supermarktMutex_);
     // Anlegen der Produkt-Datei
@@ -102,7 +102,7 @@ void Supermarkt::AddKunde(Kunde& kunde) {
  * @brief Erzeugen einer Textdatei mit allen Kunden
  * @return absoluter Pfad zur Datei
  */
-std::string Supermarkt::CreateKundeDatabase()  {
+std::string Supermarkt::CreateKundeDatabase() const {
     std::lock_guard<std::mutex> lock(supermarktMutex_);
     // Anlegen der Kunden-Datei
     std::filesystem::create_directories("./data");
@@ -161,7 +161,7 @@ void Supermarkt::AddWarenkorb(Warenkorb& warenkorb) {
  * @brief Erzeugen einer Textdatei mit allen Warenkörben und Speicherung im Ordner data
  * @return absoluter Pfad zur Datei
  */
-std::string Supermarkt::CreateWarenkorbDatabase()  {
+std::string Supermarkt::CreateWarenkorbDatabase() const {
     std::lock_guard<std::mutex> lock(supermarktMutex_);
     // Anlegen der Warenkorb-Datei
     std::filesystem::create_directories("./data");
@@ -219,7 +219,7 @@ void Supermarkt::AddHaendler(Haendler& haendler) {
  * @brief Erzeugen eines Textdatei mit allen Händlern und Speicherung im Ordner data
  * @return absoluter Pfad zur Datei
  */
-std::string Supermarkt::CreateHaendlerDatabase()  {
+std::string Supermarkt::CreateHaendlerDatabase() const {
     std::lock_guard<std::mutex> lock(supermarktMutex_);
     // Anlegen der Kunden-Datei
     std::filesystem::create_directories("./data");
