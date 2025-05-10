@@ -10,17 +10,19 @@
 #include <sstream>
 #include <iomanip>
 #include <vector>
+#include <mutex>
 
 class Supermarkt {
 
     private:
-        std::string name_;
-        std::string adresse_;
+        const std::string name_;
+        const std::string adresse_;
         std::vector<Produkt*> produkte_;
         std::vector<Kunde*> kunden_;
         std::vector<Warenkorb*> warenkoerbe_;
         std::vector<Haendler*> haendler_;
         const uint32_t supermarkt_ID_;
+        std::mutex supermarktMutex_;
 
     public:
         Supermarkt(std::string name, std::string adresse);
@@ -32,13 +34,13 @@ class Supermarkt {
         void RemoveWarenkorb(Warenkorb& warenkorb);
         void AddHaendler(Haendler& haendler);
         void RemoveHaendler(Haendler& haendler);
-        std::string CreateProduktDatabase() const;
-        std::string CreateKundeDatabase() const;
-        std::string CreateWarenkorbDatabase() const;
-        std::string CreateHaendlerDatabase() const;
+        std::string CreateProduktDatabase();
+        std::string CreateKundeDatabase();
+        std::string CreateWarenkorbDatabase();
+        std::string CreateHaendlerDatabase();
         float GetGesamtWert() const;
         uint32_t GetSupermarktID() const;
-        bool operator== (Supermarkt& other) const;
+        bool operator==(Supermarkt& other) const;
 };
 
 #endif /* SUPERMARKT_HPP_ */

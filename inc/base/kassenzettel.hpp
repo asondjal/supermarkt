@@ -14,6 +14,7 @@
 #include "konto.hpp"
 #include <chrono>
 #include <ctime>
+#include <mutex>
 
 class Kassenzettel {
     private:
@@ -24,11 +25,13 @@ class Kassenzettel {
     const uint32_t kassenzettelID_;
     Konto& konto_; // Nicht konstant, da Auszahlungen und Einzahlungen möglich bleiben müssen
     std::string filename_;
+    std::mutex kassenzettelMutex_;
+    
 
     public:
     Kassenzettel(Datum& datum, const Kunde& kunde, Haendler& haendler, Warenkorb& warenkorb, Konto& konto);
     uint32_t GetKassenzettelID() const;
-    std::string CreateKassenzettel() const;
+    std::string CreateKassenzettel();
     bool operator== (Kassenzettel& other) const;
 
 };

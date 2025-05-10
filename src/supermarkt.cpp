@@ -45,7 +45,9 @@ void Supermarkt::RemoveProdukt(Produkt& produkt) {
  * @brief Erzeugen eines Kassenzettels und Speicherung im Ordner Kassenzettel
  * @return absoluter Pfad zur Datei
  */
-std::string Supermarkt::CreateProduktDatabase() const {
+std::string Supermarkt::CreateProduktDatabase() {
+
+    std::lock_guard<std::mutex> lock(supermarktMutex_);
     // Anlegen der Produkt-Datei
     std::filesystem::create_directories("./data");
     std::filesystem::create_directories("./data/supermarkt_" + std::to_string(supermarkt_ID_));
@@ -100,7 +102,8 @@ void Supermarkt::AddKunde(Kunde& kunde) {
  * @brief Erzeugen einer Textdatei mit allen Kunden
  * @return absoluter Pfad zur Datei
  */
-std::string Supermarkt::CreateKundeDatabase() const {
+std::string Supermarkt::CreateKundeDatabase()  {
+    std::lock_guard<std::mutex> lock(supermarktMutex_);
     // Anlegen der Kunden-Datei
     std::filesystem::create_directories("./data");
     std::filesystem::create_directories("./data/supermarkt_" + std::to_string(supermarkt_ID_));
@@ -158,7 +161,8 @@ void Supermarkt::AddWarenkorb(Warenkorb& warenkorb) {
  * @brief Erzeugen einer Textdatei mit allen Warenkörben und Speicherung im Ordner data
  * @return absoluter Pfad zur Datei
  */
-std::string Supermarkt::CreateWarenkorbDatabase() const {
+std::string Supermarkt::CreateWarenkorbDatabase()  {
+    std::lock_guard<std::mutex> lock(supermarktMutex_);
     // Anlegen der Warenkorb-Datei
     std::filesystem::create_directories("./data");
     std::filesystem::create_directories("./data/supermarkt_" + std::to_string(supermarkt_ID_));
@@ -215,7 +219,8 @@ void Supermarkt::AddHaendler(Haendler& haendler) {
  * @brief Erzeugen eines Textdatei mit allen Händlern und Speicherung im Ordner data
  * @return absoluter Pfad zur Datei
  */
-std::string Supermarkt::CreateHaendlerDatabase() const {
+std::string Supermarkt::CreateHaendlerDatabase()  {
+    std::lock_guard<std::mutex> lock(supermarktMutex_);
     // Anlegen der Kunden-Datei
     std::filesystem::create_directories("./data");
     std::filesystem::create_directories("./data/supermarkt_" + std::to_string(supermarkt_ID_));

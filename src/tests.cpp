@@ -355,6 +355,19 @@ void Tests::test_Statistik() {
 	std::cout << "Alle Statistik-Tests waren erfolgreich!" << std::endl;
 }
 
+void Tests::test_Logging() {
+
+    Logging logger("logfile.txt", LogLevel::DEBUG);
+	assert(std::filesystem::exists("logfile.txt"));
+	assert(logger.getLevel() == "DEBUG");
+    logger.log("System initialized.", LogLevel::INFO);
+    logger.log("Reading configuration...", LogLevel::DEBUG);
+    logger.log("File not found!", LogLevel::WARNING);
+    logger.log("Critical error!", LogLevel::ERROR);
+
+	std::cout << "Alle Logging-Tests waren erfolgreich!" << std::endl;
+}
+
 void Tests::runAllTests() {
     test_Datum();
     test_Produkt();
@@ -367,6 +380,7 @@ void Tests::runAllTests() {
     test_Supermarkt();
     test_ReadData();
     test_Statistik();
+	test_Logging();
 
     std::cout << "Alle Tests erfolgreich!" << std::endl;
 }

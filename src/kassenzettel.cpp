@@ -34,7 +34,8 @@ uint32_t Kassenzettel::GetKassenzettelID() const {
  * @brief Erzeugen eines Kassenzettels und Speicherung im Ordner Kassenzettel
  * @return absoluter Pfad zur Datei
  */
-std::string Kassenzettel::CreateKassenzettel() const {
+std::string Kassenzettel::CreateKassenzettel() {
+    std::lock_guard<std::mutex> lock(kassenzettelMutex_);
     // Anlegen des Kassenzettel-Ordners
     std::filesystem::create_directories("./data/kassenzettel");
 

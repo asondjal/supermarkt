@@ -5,6 +5,7 @@
 #include <cassert>
 #include "read_data.hpp"
 #include "statistik.hpp"
+#include "logging.hpp"
 
 class Tests {
     public:
@@ -16,10 +17,11 @@ class Tests {
     void test_Haendler(); // Funktioniert einwandfrei
     void test_Warenkorb(); // Funktioniert einwandfrei
     void test_Konto(); // Funktioniert einwandfrei
-    void test_Kassenzettel();
-    void test_Supermarkt();
-    void test_ReadData();
-    void test_Statistik();
+    void test_Kassenzettel(); // Funktioniert einwandfrei
+    void test_Supermarkt(); // Funktioniert einwandfrei
+    void test_ReadData(); // Funktioniert einwandfrei
+    void test_Statistik(); // Funktioniert einwandfrei
+    void test_Logging(); // Funktioniert einwandfrei
     void runAllTests();
 };
 
