@@ -330,15 +330,6 @@ supermarkt_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 supermarkt_SOURCE_DIR:STATIC=/home/arrif-sondjalim/c++projects/supermarkt
 
-//Value Computed by CMake
-supermarkt_bindings_BINARY_DIR:STATIC=/home/arrif-sondjalim/c++projects/supermarkt/build
-
-//Value Computed by CMake
-supermarkt_bindings_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-supermarkt_bindings_SOURCE_DIR:STATIC=/home/arrif-sondjalim/c++projects/supermarkt
-
 
 ########################
 # INTERNAL cache entries

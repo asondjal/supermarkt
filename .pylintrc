@@ -1,4 +1,2 @@
 [MASTER]
 init-hook='import sys; sys.path.append("build")'
-extension-pkg-allow-list=py_bindings
-

@@ -204,9 +204,90 @@ build CMakeFiles/py_bindings.dir/bindings/python_bindings.cpp.o: CXX_COMPILER__p
   OBJECT_DIR = CMakeFiles/py_bindings.dir
   OBJECT_FILE_DIR = CMakeFiles/py_bindings.dir/bindings
 
-build CMakeFiles/py_bindings.dir/src/statistik.cpp.o: CXX_COMPILER__py_bindings_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/statistik.cpp || cmake_object_order_depends_target_py_bindings
+build CMakeFiles/py_bindings.dir/src/tests.cpp.o: CXX_COMPILER__py_bindings_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/tests.cpp || cmake_object_order_depends_target_py_bindings
   DEFINES = -Dpy_bindings_EXPORTS
-  DEP_FILE = CMakeFiles/py_bindings.dir/src/statistik.cpp.o.d
+  DEP_FILE = CMakeFiles/py_bindings.dir/src/tests.cpp.o.d
+  FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -fPIC -fvisibility=hidden
+  INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -isystem /usr/include/python3.12 -isystem /home/arrif-sondjalim/c++projects/supermarkt/pybind11/include
+  LAUNCHER = ccache 
+  OBJECT_DIR = CMakeFiles/py_bindings.dir
+  OBJECT_FILE_DIR = CMakeFiles/py_bindings.dir/src
+
+build CMakeFiles/py_bindings.dir/src/datum.cpp.o: CXX_COMPILER__py_bindings_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/datum.cpp || cmake_object_order_depends_target_py_bindings
+  DEFINES = -Dpy_bindings_EXPORTS
+  DEP_FILE = CMakeFiles/py_bindings.dir/src/datum.cpp.o.d
+  FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -fPIC -fvisibility=hidden
+  INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -isystem /usr/include/python3.12 -isystem /home/arrif-sondjalim/c++projects/supermarkt/pybind11/include
+  LAUNCHER = ccache 
+  OBJECT_DIR = CMakeFiles/py_bindings.dir
+  OBJECT_FILE_DIR = CMakeFiles/py_bindings.dir/src
+
+build CMakeFiles/py_bindings.dir/src/produkt.cpp.o: CXX_COMPILER__py_bindings_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/produkt.cpp || cmake_object_order_depends_target_py_bindings
+  DEFINES = -Dpy_bindings_EXPORTS
+  DEP_FILE = CMakeFiles/py_bindings.dir/src/produkt.cpp.o.d
+  FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -fPIC -fvisibility=hidden
+  INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -isystem /usr/include/python3.12 -isystem /home/arrif-sondjalim/c++projects/supermarkt/pybind11/include
+  LAUNCHER = ccache 
+  OBJECT_DIR = CMakeFiles/py_bindings.dir
+  OBJECT_FILE_DIR = CMakeFiles/py_bindings.dir/src
+
+build CMakeFiles/py_bindings.dir/src/person.cpp.o: CXX_COMPILER__py_bindings_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/person.cpp || cmake_object_order_depends_target_py_bindings
+  DEFINES = -Dpy_bindings_EXPORTS
+  DEP_FILE = CMakeFiles/py_bindings.dir/src/person.cpp.o.d
+  FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -fPIC -fvisibility=hidden
+  INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -isystem /usr/include/python3.12 -isystem /home/arrif-sondjalim/c++projects/supermarkt/pybind11/include
+  LAUNCHER = ccache 
+  OBJECT_DIR = CMakeFiles/py_bindings.dir
+  OBJECT_FILE_DIR = CMakeFiles/py_bindings.dir/src
+
+build CMakeFiles/py_bindings.dir/src/haendler.cpp.o: CXX_COMPILER__py_bindings_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/haendler.cpp || cmake_object_order_depends_target_py_bindings
+  DEFINES = -Dpy_bindings_EXPORTS
+  DEP_FILE = CMakeFiles/py_bindings.dir/src/haendler.cpp.o.d
+  FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -fPIC -fvisibility=hidden
+  INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -isystem /usr/include/python3.12 -isystem /home/arrif-sondjalim/c++projects/supermarkt/pybind11/include
+  LAUNCHER = ccache 
+  OBJECT_DIR = CMakeFiles/py_bindings.dir
+  OBJECT_FILE_DIR = CMakeFiles/py_bindings.dir/src
+
+build CMakeFiles/py_bindings.dir/src/kunde.cpp.o: CXX_COMPILER__py_bindings_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/kunde.cpp || cmake_object_order_depends_target_py_bindings
+  DEFINES = -Dpy_bindings_EXPORTS
+  DEP_FILE = CMakeFiles/py_bindings.dir/src/kunde.cpp.o.d
+  FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -fPIC -fvisibility=hidden
+  INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -isystem /usr/include/python3.12 -isystem /home/arrif-sondjalim/c++projects/supermarkt/pybind11/include
+  LAUNCHER = ccache 
+  OBJECT_DIR = CMakeFiles/py_bindings.dir
+  OBJECT_FILE_DIR = CMakeFiles/py_bindings.dir/src
+
+build CMakeFiles/py_bindings.dir/src/warenkorb.cpp.o: CXX_COMPILER__py_bindings_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/warenkorb.cpp || cmake_object_order_depends_target_py_bindings
+  DEFINES = -Dpy_bindings_EXPORTS
+  DEP_FILE = CMakeFiles/py_bindings.dir/src/warenkorb.cpp.o.d
+  FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -fPIC -fvisibility=hidden
+  INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -isystem /usr/include/python3.12 -isystem /home/arrif-sondjalim/c++projects/supermarkt/pybind11/include
+  LAUNCHER = ccache 
+  OBJECT_DIR = CMakeFiles/py_bindings.dir
+  OBJECT_FILE_DIR = CMakeFiles/py_bindings.dir/src
+
+build CMakeFiles/py_bindings.dir/src/konto.cpp.o: CXX_COMPILER__py_bindings_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/konto.cpp || cmake_object_order_depends_target_py_bindings
+  DEFINES = -Dpy_bindings_EXPORTS
+  DEP_FILE = CMakeFiles/py_bindings.dir/src/konto.cpp.o.d
+  FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -fPIC -fvisibility=hidden
+  INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -isystem /usr/include/python3.12 -isystem /home/arrif-sondjalim/c++projects/supermarkt/pybind11/include
+  LAUNCHER = ccache 
+  OBJECT_DIR = CMakeFiles/py_bindings.dir
+  OBJECT_FILE_DIR = CMakeFiles/py_bindings.dir/src
+
+build CMakeFiles/py_bindings.dir/src/kassenzettel.cpp.o: CXX_COMPILER__py_bindings_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/kassenzettel.cpp || cmake_object_order_depends_target_py_bindings
+  DEFINES = -Dpy_bindings_EXPORTS
+  DEP_FILE = CMakeFiles/py_bindings.dir/src/kassenzettel.cpp.o.d
+  FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -fPIC -fvisibility=hidden
+  INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -isystem /usr/include/python3.12 -isystem /home/arrif-sondjalim/c++projects/supermarkt/pybind11/include
+  LAUNCHER = ccache 
+  OBJECT_DIR = CMakeFiles/py_bindings.dir
+  OBJECT_FILE_DIR = CMakeFiles/py_bindings.dir/src
+
+build CMakeFiles/py_bindings.dir/src/supermarkt.cpp.o: CXX_COMPILER__py_bindings_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/supermarkt.cpp || cmake_object_order_depends_target_py_bindings
+  DEFINES = -Dpy_bindings_EXPORTS
+  DEP_FILE = CMakeFiles/py_bindings.dir/src/supermarkt.cpp.o.d
   FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -fPIC -fvisibility=hidden
   INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -isystem /usr/include/python3.12 -isystem /home/arrif-sondjalim/c++projects/supermarkt/pybind11/include
   LAUNCHER = ccache 
@@ -222,6 +303,24 @@ build CMakeFiles/py_bindings.dir/src/read_data.cpp.o: CXX_COMPILER__py_bindings_
   OBJECT_DIR = CMakeFiles/py_bindings.dir
   OBJECT_FILE_DIR = CMakeFiles/py_bindings.dir/src
 
+build CMakeFiles/py_bindings.dir/src/statistik.cpp.o: CXX_COMPILER__py_bindings_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/statistik.cpp || cmake_object_order_depends_target_py_bindings
+  DEFINES = -Dpy_bindings_EXPORTS
+  DEP_FILE = CMakeFiles/py_bindings.dir/src/statistik.cpp.o.d
+  FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -fPIC -fvisibility=hidden
+  INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -isystem /usr/include/python3.12 -isystem /home/arrif-sondjalim/c++projects/supermarkt/pybind11/include
+  LAUNCHER = ccache 
+  OBJECT_DIR = CMakeFiles/py_bindings.dir
+  OBJECT_FILE_DIR = CMakeFiles/py_bindings.dir/src
+
+build CMakeFiles/py_bindings.dir/src/logging.cpp.o: CXX_COMPILER__py_bindings_unscanned_Debug /home/arrif-sondjalim/c++projects/supermarkt/src/logging.cpp || cmake_object_order_depends_target_py_bindings
+  DEFINES = -Dpy_bindings_EXPORTS
+  DEP_FILE = CMakeFiles/py_bindings.dir/src/logging.cpp.o.d
+  FLAGS = -g -g -O0 -Wall -Wextra -pedantic -std=c++17 -fPIC -fvisibility=hidden
+  INCLUDES = -I/home/arrif-sondjalim/c++projects/supermarkt/include -isystem /usr/include/python3.12 -isystem /home/arrif-sondjalim/c++projects/supermarkt/pybind11/include
+  LAUNCHER = ccache 
+  OBJECT_DIR = CMakeFiles/py_bindings.dir
+  OBJECT_FILE_DIR = CMakeFiles/py_bindings.dir/src
+
 
 # =============================================================================
 # Link build statements for MODULE_LIBRARY target py_bindings
@@ -230,7 +329,7 @@ build CMakeFiles/py_bindings.dir/src/read_data.cpp.o: CXX_COMPILER__py_bindings_
 #############################################
 # Link the shared module py_bindings.cpython-312-x86_64-linux-gnu.so
 
-build py_bindings.cpython-312-x86_64-linux-gnu.so: CXX_MODULE_LIBRARY_LINKER__py_bindings_Debug CMakeFiles/py_bindings.dir/bindings/python_bindings.cpp.o CMakeFiles/py_bindings.dir/src/statistik.cpp.o CMakeFiles/py_bindings.dir/src/read_data.cpp.o
+build py_bindings.cpython-312-x86_64-linux-gnu.so: CXX_MODULE_LIBRARY_LINKER__py_bindings_Debug CMakeFiles/py_bindings.dir/bindings/python_bindings.cpp.o CMakeFiles/py_bindings.dir/src/tests.cpp.o CMakeFiles/py_bindings.dir/src/datum.cpp.o CMakeFiles/py_bindings.dir/src/produkt.cpp.o CMakeFiles/py_bindings.dir/src/person.cpp.o CMakeFiles/py_bindings.dir/src/haendler.cpp.o CMakeFiles/py_bindings.dir/src/kunde.cpp.o CMakeFiles/py_bindings.dir/src/warenkorb.cpp.o CMakeFiles/py_bindings.dir/src/konto.cpp.o CMakeFiles/py_bindings.dir/src/kassenzettel.cpp.o CMakeFiles/py_bindings.dir/src/supermarkt.cpp.o CMakeFiles/py_bindings.dir/src/read_data.cpp.o CMakeFiles/py_bindings.dir/src/statistik.cpp.o CMakeFiles/py_bindings.dir/src/logging.cpp.o
   LANGUAGE_COMPILE_FLAGS = -g -g -O0 -Wall -Wextra -pedantic
   LINK_LIBRARIES = -lpoppler-cpp
   OBJECT_DIR = CMakeFiles/py_bindings.dir

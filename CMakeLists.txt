@@ -45,8 +45,20 @@ include_directories(${CMAKE_SOURCE_DIR}/pybind11/include)
 # Modul für Python (Statistik-Pybind11)
 pybind11_add_module(py_bindings
     bindings/python_bindings.cpp
-    src/statistik.cpp
+    
+    src/tests.cpp
+    src/datum.cpp
+    src/produkt.cpp
+    src/person.cpp
+    src/haendler.cpp
+    src/kunde.cpp
+    src/warenkorb.cpp
+    src/konto.cpp
+    src/kassenzettel.cpp
+    src/supermarkt.cpp
     src/read_data.cpp
+    src/statistik.cpp
+    src/logging.cpp
 )
 
 target_link_libraries(py_bindings PRIVATE poppler-cpp)

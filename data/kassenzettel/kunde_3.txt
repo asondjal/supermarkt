@@ -10,6 +10,6 @@ Birne               5.20           2.42
 Gesamtpreis:                       14.02         
 
 Institut: Deutsche Bank
-Konto-ID: 4
+Konto-ID: 6
 Abrechnungsdatum: 12.11.2009
 ================== KASSENZETTEL ==================

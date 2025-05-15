@@ -129,10 +129,10 @@ void Tests::test_Kassenzettel() {
 	Haendler haendler1{"Jonathan Joestar", "maennlich", 76, "jonathan.joestar@gmx.net", "London, England"};
     Haendler haendler2{"Girono Giovanna", "maennlich", 19, "giorno.giovanna@gmail.com", "Rom, Italien"};
 	
-	Konto konto1{kunde1,"Bank of America"};
-	konto1.Einzahlen(100.0f);
-	Konto konto2{kunde2,"Deutsche Bank"};
-	konto2.Einzahlen(50.0f);
+	auto shared_konto1 = std::make_shared<Konto>(kunde1, "Bank of America");
+	shared_konto1->Einzahlen(100.0f);
+	auto shared_konto2 = std::make_shared<Konto>(kunde2, "Deutsche Bank");
+	shared_konto2->Einzahlen(50.0f);
 
 	Datum datum1{1, 1, 2022};
 	Datum datum2{12, 11, 2009};
@@ -145,15 +145,13 @@ void Tests::test_Kassenzettel() {
 	warenkorb2.AddProdukt(&produkt1);
 	warenkorb2.AddProdukt(&produkt2);
 
-	auto shared_konto1 = std::make_shared<Konto>(kunde1, "Bank of America");
 	Kassenzettel kassenzettel1{datum1, kunde1, haendler1, warenkorb1, shared_konto1};
 	kassenzettel1.CreateKassenzettel();
-	assert(konto1.GetKontostand() == 100.0f - warenkorb1.GetGesamtPreis());
+	assert(shared_konto1->GetKontostand() == 100.0f - warenkorb1.GetGesamtPreis());
 
-	auto shared_konto2 = std::make_shared<Konto>(kunde2, "Deutsche Bank");
 	Kassenzettel kassenzettel2{datum2, kunde2, haendler1, warenkorb1, shared_konto2};
 	kassenzettel2.CreateKassenzettel();
-	assert(konto2.GetKontostand() == 50.0f - warenkorb1.GetGesamtPreis());
+	assert(shared_konto2->GetKontostand() == 50.0f - warenkorb1.GetGesamtPreis());
 
     std::cout << "Test für Kassenzettel alle erfolgreich!" << std::endl;
 }

@@ -54,7 +54,6 @@
 - **pybind11_bindings mit Python-Bibliotheken linken**
 
     target_link_libraries(supermarkt PRIVATE Python3::Python)
-
     include_directories(${Python3_INCLUDE_DIRS})
     include_directories(${PROJECT_SOURCE_DIR}/include)
     include_directories(${CMAKE_SOURCE_DIR}/pybind11/include)
@@ -62,9 +61,7 @@
 - **Modul für Python (Statistik-Pybind11)**
 
     pybind11_add_module(py_bindings
-        bindings/python_bindings.cpp
-        src/statistik.cpp
-        src/read_data.cpp
+        Verwenden der gleichen Executables aus src, aber ohne main.cpp
     )
 
 - **Linken von py_bindings mit poppler-cpp fuer Konventierung von PDFs in String**
@@ -84,15 +81,19 @@
         "reportMissingModuleSource": "none"
     }
 
+### **Beheben von Pylint-Meldung, "Module couldn't be found":**
+
 - **Inhalt von .pylintrc:**
+
     [MASTER]
     init-hook='import sys; sys.path.append("build")'
-    extension-pkg-allow-list={py_bindings}
 
 - **Inhalt von.env:** PYTHONPATH=./build
 
-## Noch zu implementierende Dateien
+- **Temporäre Eingabe via Terminal:**
 
-- Statistik: Header sowie Source // Kleinere Funktionen fehlen, aber erst bei der Gestaltung der GUI von Relevanz
-- Logging: Header sowie Source
-- GUI: Header sowie Source
+    export PYTHONPATH=/home/arrif-sondjalim/c++projects/supermarkt/build
+
+## Zu erledigende Aufgaben
+
+- GUI: Implementierung in Python
