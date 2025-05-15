@@ -61,3 +61,40 @@ class Statistik:
 
     def erwartungswert(self) -> float:
         """Berechne den Erwartungswert der Daten."""
+
+class Person:
+    """Basis-Klasse Person zur Erzeugung einer Person"""
+
+    def __init__(
+        self, name: str, geschlecht: str, alter: int, email: str, adresse: str
+    ) -> None:
+        """"""
+        self.name = name
+        self.geschlecht = geschlecht
+        self.alter = alter
+        self.email = email
+        self.adresse = adresse
+
+    def __repr__(self) -> str:
+        return f"Person: {self.name}"
+
+    def get_name(self) -> str:
+        """Wiedergabe vom Namen einer Person"""
+
+    def get_geschlecht(self) -> str:
+        """Wiedergabe vom Geschlecht einer Person"""
+
+    def get_alter(self) -> int:
+        """Wiedergabe vom Alter einer Person"""
+
+    def get_email(self) -> str:
+        """Wiedergabe der E-Mail einer Person"""
+
+    def get_adresse(self) -> str:
+        """Wiedergabe der E-Mail eienr Person"""
+
+    def display_person(self) -> str:
+        """Wiedergabe der Informationen einer Person"""
+
+    def vergleiche_person(self, person: "Person") -> bool:
+        """Vergleiche zwei Personen"""
