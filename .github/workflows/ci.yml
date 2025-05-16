@@ -26,7 +26,10 @@ jobs:
           sudo apt-get install cmake g++ -y
           pip install pytest pybind11
 
-      - name: Installiere ccache
+      - name: Installiere poppler Bibliothek
+        run: sudo apt-get install libpoppler-cpp-dev -y
+
+      - name: Installiere ccache (optional, falls du es verwenden möchtest)
         run: sudo apt-get install ccache -y
 
       - name: C++ Modul mit CMake bauen (Workflow-Build)
