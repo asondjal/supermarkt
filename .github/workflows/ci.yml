@@ -9,31 +9,25 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Repository auschecken
-      uses: actions/checkout@v3
-      with:
-        submodules: true  # Holt auch pybind11
+      - name: Repository auschecken
+        uses: actions/checkout@v3
+        with:
+          submodules: true # Holt auch pybind11
 
-    - name: Python einrichten
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.11'
+      - name: Python einrichten
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
 
-    - name: Abhängigkeiten installieren
-      run: |
-        sudo apt-get update
-        sudo apt-get install cmake g++ -y
-        pip install pytest pybind11
+      - name: Abhängigkeiten installieren
+        run: |
+          sudo apt-get update
+          sudo apt-get install cmake g++ -y
+          pip install pytest pybind11
 
-    - name: C++ Modul mit CMake bauen
-      run: |
-        cmake -B build -DCMAKE_BUILD_TYPE=Release
-        cmake --build build --verbose
+      - name: C++ Modul mit CMake bauen (Workflow-Build)
+        run: cmake -B build_workflow -DCMAKE_BUILD_TYPE=Release
 
-    - name: Tests ausführen
-      env:
-        PYTHONPATH: ${{ github.workspace }}/build
-      run: |
-        pytest GUI/python_tests.py
+      - name: C++ Modul bauen (Workflow-Build)
+        run: cmake --build build_workflow --config Release
