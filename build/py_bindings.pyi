@@ -5,8 +5,11 @@
 class ReadData:
     """Klasse zum Auslesen von Dateien aus unterschiedlichen Formaten."""
 
+    readdata_counter = 0
+
     def __init__(self, path: str) -> None:
-        pass
+        ReadData.readdata_counter += 1
+        self.path = path
 
     def read_txt(self) -> str:
         """Lese Daten aus einer Text-Datei"""
@@ -23,11 +26,14 @@ class ReadData:
     def read_auto(self) -> str:
         """Lese Daten aus einer Datei, die automatisch erkannt wird."""
 
+
 class Statistik:
     """Klasse zur Berechnung von Statistiken."""
 
+    statistik_counter = 0
+
     def __init__(self) -> None:
-        pass
+        Statistik.statistik_counter += 1
 
     def lade_daten(self, reader: ReadData) -> None:
         """Lade Daten in die Statistik-Klasse."""
@@ -65,10 +71,12 @@ class Statistik:
 class Person:
     """Basis-Klasse Person zur Erzeugung einer Person"""
 
+    person_counter = 0
+
     def __init__(
         self, name: str, geschlecht: str, alter: int, email: str, adresse: str
     ) -> None:
-        """"""
+        Person.person_counter += 1
         self.name = name
         self.geschlecht = geschlecht
         self.alter = alter
@@ -98,3 +106,42 @@ class Person:
 
     def vergleiche_person(self, person: "Person") -> bool:
         """Vergleiche zwei Personen"""
+
+    def get_person_id(self) -> int:
+        """Wiedergabe der ID einer Person"""
+
+class Kunde(Person):
+    "Abgeleitete Klasse Kunde"
+
+    kunden_counter = 0
+
+    def __init__(self, name, geschlecht, alter, email, adresse) -> None:
+        super().__init__(name, geschlecht, alter, email, adresse)
+        Kunde.kunden_counter += 1
+
+    def get_kunden_id(self) -> int:
+        """Wiedergabe der ID eines Kunden"""
+
+    def display_kunde(self) -> None:
+        """Wiedergabe der Informationen eines Kundens"""
+
+    def vergleiche_kunde(self) -> bool:
+        """Vergleiche zwei Kunden"""
+
+class Haendler(Person):
+    "Abgeleitete Klasse Haendler"
+
+    haendler_counter = 0
+
+    def __init__(self, name, geschlecht, alter, email, adresse) -> None:
+        super().__init__(name, geschlecht, alter, email, adresse)
+        Haendler.haendler_counter += 1
+
+    def get_haendler_id(self) -> int:
+        """Wiedergabe der ID eines Haendler"""
+
+    def haendler_kunde(self) -> None:
+        """Wiedergabe der Informationen eines Haendler"""
+
+    def vergleiche_haendler(self) -> bool:
+        """Vergleiche zwei Haendler"""

@@ -3,6 +3,7 @@
 
 #include <string>
 #include <iostream>
+#include <algorithm>
 
 class Person {
     
@@ -20,6 +21,7 @@ class Person {
     std::string GetName() const;
     std::string GetGender() const;
     int GetAge() const;
+    int GetPersonID() const;
     std::string GetEmail() const;
     std::string GetAdresse() const;
     virtual void Print() const;

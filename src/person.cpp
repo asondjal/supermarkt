@@ -26,7 +26,13 @@ std::string Person::GetName() const {
  * @return gender_: Geschlecht der Person
  */
 std::string Person::GetGender() const {
-    return gender_;
+    std::string genders[3] = {"male", "female", "neutral"};
+    for (int i = 0; i < 3; i++) {
+        if (gender_ == genders[i]){
+            return gender_;
+        }
+    }
+    return "Ihr Geschlecht ist ungueltig!";
 }
 
 /**
@@ -42,7 +48,11 @@ int Person::GetAge() const {
  * @return email_: E-Mail der Person
  */
 std::string Person::GetEmail() const {
-    return email_;
+    size_t at_count = std::count(email_.begin(), email_.end(), '@');
+    if (at_count == 1) {
+        return email_;
+    }
+    return "Ihre E-Mail ist ungueltig!";
 }
 
 /**
@@ -51,6 +61,14 @@ std::string Person::GetEmail() const {
  */
 std::string Person::GetAdresse() const {
     return adresse_;
+}
+
+/**
+ * @brief Funktion liefert die ID einer Person zurück
+ * @return personID_: ID der Person
+ */
+int Person::GetPersonID() const {
+    return personID_;
 }
 
 /**
