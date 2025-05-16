@@ -13,6 +13,8 @@ jobs:
     steps:
     - name: Repository auschecken
       uses: actions/checkout@v3
+      with:
+        submodules: true  # Holt auch pybind11
 
     - name: Python einrichten
       uses: actions/setup-python@v4
@@ -25,17 +27,13 @@ jobs:
         sudo apt-get install cmake g++ -y
         pip install pytest pybind11
 
-    - name: Submodule initialisieren
-      run: |
-        git submodule update --init --recursive
-
     - name: C++ Modul mit CMake bauen
       run: |
         cmake -B build -DCMAKE_BUILD_TYPE=Release
         cmake --build build --verbose
 
     - name: Tests ausführen
-    env:
-      PYTHONPATH: ${{ github.workspace }}/build
-    run: |
-      pytest GUI/python_tests.py
+      env:
+        PYTHONPATH: ${{ github.workspace }}/build
+      run: |
+        pytest GUI/python_tests.py
