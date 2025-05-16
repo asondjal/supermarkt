@@ -21,18 +21,21 @@ jobs:
 
     - name: Abhängigkeiten installieren
       run: |
-        python -m pip install --upgrade pip
+        sudo apt-get update
+        sudo apt-get install cmake g++ -y
         pip install pytest pybind11
+
+    - name: Submodule initialisieren
+      run: |
+        git submodule update --init --recursive
 
     - name: C++ Modul mit CMake bauen
       run: |
-        sudo apt-get update
-        sudo apt-get install cmake g++ -y
-        cmake -B build
-        cmake --build build
+        cmake -B build -DCMAKE_BUILD_TYPE=Release
+        cmake --build build --verbose
 
     - name: Tests ausführen
-      env:
-        PYTHONPATH: ${{ github.workspace }}/build
-      run: |
-        pytest GUI/python_tests.py
+    env:
+      PYTHONPATH: ${{ github.workspace }}/build
+    run: |
+      pytest GUI/python_tests.py
