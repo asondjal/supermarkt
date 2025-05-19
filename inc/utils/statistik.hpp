@@ -21,16 +21,17 @@ public:
     uint32_t ZaehleWorte() const;
     uint32_t ZaehleZeichen() const;
     uint32_t ZaehleVariable(std::string variable) const;
-    float MittelwertIntern() const;
     float Mittelwert() const;
     float Median() const;
     float Erwartungswert() const;
-    float Varianz() const;
     float Standardabweichung() const;
 
 private:
     std::vector<std::string> datenBuffer_;
     mutable std::mutex datenMutex_;
+
+    float Varianz() const;
+    float MittelwertIntern() const;
 };
 
 #endif /* STATISTIK_HPP_ */

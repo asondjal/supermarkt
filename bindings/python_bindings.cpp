@@ -26,7 +26,6 @@ PYBIND11_MODULE(py_bindings, py_module) {
         .def("zaehle_variable", &Statistik::ZaehleVariable)
         .def("mittelwert", &Statistik::Mittelwert)
         .def("median", &Statistik::Median)
-        .def("varianz", &Statistik::Varianz)
         .def("erwartungswert", &Statistik::Erwartungswert)
         .def("standardabweichung", &Statistik::Standardabweichung);
 

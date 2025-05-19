@@ -38,24 +38,24 @@ void Tests::test_Produkt() {
 }
 
 void Tests::test_Person() {
-    Person person{"Max Mustermann", "M", 30, "max.mustermann@gmx.net", "Musterstraße 1, 12345, Musterstadt"};
+    Person person{"Max Mustermann", "male", 30, "max.mustermann@gmx.net", "Musterstraße 1, 12345, Musterstadt"};
 
     assert(person.GetName() == "Max Mustermann");
     assert(person.GetAge() == 30);
     assert(person.GetAdresse() == "Musterstraße 1, 12345, Musterstadt");
-    assert(person.GetGender() == "M");
+    assert(person.GetGender() == "male");
     assert(person.GetEmail() ==  "max.mustermann@gmx.net");
 
     std::cout << "Person Test erfolgreich!" << std::endl;
 }
 
 void Tests::test_Kunde() {
-    Kunde kunde{"LeBron James", "M", 40, "lebron.james@gmail.com", "Los Angeles, USA"};
+    Kunde kunde{"LeBron James", "male", 40, "lebron.james@gmail.com", "Los Angeles, USA"};
 
     assert(kunde.GetName() == "LeBron James");
     assert(kunde.GetAge() == 40);
     assert(kunde.GetAdresse() == "Los Angeles, USA");
-    assert(kunde.GetGender() == "M");
+    assert(kunde.GetGender() == "male");
     assert(kunde.GetEmail() ==  "lebron.james@gmail.com");
     assert(kunde.GetKundeID()== 0);
 
@@ -63,12 +63,12 @@ void Tests::test_Kunde() {
 }
 
 void Tests::test_Haendler() {
-    Haendler haendler{"Leonidas Arkona", "M", 28, "leonidas.arkona@esn.com", "Protein 1, 82617, Proteinos"};
+    Haendler haendler{"Leonidas Arkona", "male", 28, "leonidas.arkona@esn.com", "Protein 1, 82617, Proteinos"};
 
     assert(haendler.GetName() == "Leonidas Arkona");
     assert(haendler.GetAge() == 28);
     assert(haendler.GetAdresse() == "Protein 1, 82617, Proteinos");
-    assert(haendler.GetGender() == "M");
+    assert(haendler.GetGender() == "male");
     assert(haendler.GetEmail() ==  "leonidas.arkona@esn.com");
     assert(haendler.GetHaendlerID() == 0);
 
@@ -79,7 +79,7 @@ void Tests::test_Warenkorb() {
     Datum datum{1, 1, 2025};
     Produkt apfel{"Apfel", 1.99f, 3.0f, datum, "Obst"};
     Produkt birne{"Birne", 2.52f, 4.49f, datum, "Obst" };
-    Kunde kunde{"LeBron James", "M", 30, "lebron.james@gmail.com", "Los Angeles, USA"};
+    Kunde kunde{"LeBron James", "male", 30, "lebron.james@gmail.com", "Los Angeles, USA"};
     Warenkorb warenkorb{kunde};
 
     warenkorb.AddProdukt(&apfel);
@@ -107,7 +107,7 @@ void Tests::test_Warenkorb() {
 }
 
 void Tests::test_Konto() {
-    const Kunde kunde{"Jonathan Joestar", "M", 35, "jonathan.joestar@yahoo.com", "London, UK"};
+    const Kunde kunde{"Jonathan Joestar", "male", 35, "jonathan.joestar@yahoo.com", "London, UK"};
     Konto konto{kunde, "Barclays"};
 
     assert(konto.GetUser() == kunde);
@@ -123,11 +123,11 @@ void Tests::test_Kassenzettel() {
     Produkt produkt1{"Apfel", 1.170, 1.230, Datum{1, 1, 2022}, "Lebensmittel"};
 	Produkt produkt2{"Birne", 5.20, 2.420, Datum{1, 1, 2022}, "Lebensmittel"};
 
-	Kunde kunde1{"Kujo Jotaro", "maennlich", 30, "jotaro.kujo@gmail.com", "Tokyo, Japan"};
-	Kunde kunde2{"Josuke Higashikata", "maennlich", 16, "josuke.higashikata@yahoo.com", "Morioh, Japan"};
+	Kunde kunde1{"Kujo Jotaro", "male", 30, "jotaro.kujo@gmail.com", "Tokyo, Japan"};
+	Kunde kunde2{"Josuke Higashikata", "male", 16, "josuke.higashikata@yahoo.com", "Morioh, Japan"};
 
-	Haendler haendler1{"Jonathan Joestar", "maennlich", 76, "jonathan.joestar@gmx.net", "London, England"};
-    Haendler haendler2{"Girono Giovanna", "maennlich", 19, "giorno.giovanna@gmail.com", "Rom, Italien"};
+	Haendler haendler1{"Jonathan Joestar", "male", 76, "jonathan.joestar@gmx.net", "London, England"};
+    Haendler haendler2{"Girono Giovanna", "male", 19, "giorno.giovanna@gmail.com", "Rom, Italien"};
 	
 	auto shared_konto1 = std::make_shared<Konto>(kunde1, "Bank of America");
 	shared_konto1->Einzahlen(100.0f);
@@ -160,11 +160,11 @@ void Tests::test_Supermarkt() {
     Produkt produkt1{"Apfel", 1.170, 1.230, Datum{1, 1, 2022}, "Lebensmittel"};
 	Produkt produkt2{"Birne", 5.20, 2.420, Datum{1, 1, 2022}, "Lebensmittel"};
 
-	Kunde kunde1{"Kujo Jotaro", "M", 30, "jotaro.kujo@gmail.com", "Tokyo, Japan"};
-	Kunde kunde2{"Josuke Higashikata", "M", 16, "josuke.higashikata@yahoo.com", "Morioh, Japan"};
+	Kunde kunde1{"Kujo Jotaro", "male", 30, "jotaro.kujo@gmail.com", "Tokyo, Japan"};
+	Kunde kunde2{"Josuke Higashikata", "male", 16, "josuke.higashikata@yahoo.com", "Morioh, Japan"};
 
-	Haendler haendler1{"Jonathan Joestar", "M", 76, "jonathan.joestar@gmx.net", "London, England"};
-    Haendler haendler2{"Girono Giovanna", "M", 19, "giorno.giovanna@gmail.com", "Rom, Italien"};
+	Haendler haendler1{"Jonathan Joestar", "male", 76, "jonathan.joestar@gmx.net", "London, England"};
+    Haendler haendler2{"Girono Giovanna", "male", 19, "giorno.giovanna@gmail.com", "Rom, Italien"};
 	
 	Warenkorb warenkorb1(kunde1);
 	warenkorb1.AddProdukt(&produkt1);
@@ -352,7 +352,7 @@ void Tests::test_Statistik() {
 	assert(std::fabs(statistik.Mittelwert() - 197.14f) < 0.01f);
 	assert(std::fabs(statistik.Median() - 1042.00f) < 0.01f);
 	assert(std::fabs(statistik.Erwartungswert() - 197.14f) < 0.01f);
-	assert(std::fabs(statistik.Varianz() - 13750.23f) < 0.01f);
+	assert(std::fabs(statistik.Standardabweichung() - 117.26f) < 0.01f);
 
 	std::cout << "Alle Statistik-Tests waren erfolgreich!" << std::endl;
 }
