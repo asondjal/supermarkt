@@ -26,7 +26,6 @@ class ReadData:
     def read_auto(self) -> str:
         """Lese Daten aus einer Datei, die automatisch erkannt wird."""
 
-
 class Statistik:
     """Klasse zur Berechnung von Statistiken."""
 
@@ -143,5 +142,131 @@ class Haendler(Person):
     def haendler_kunde(self) -> None:
         """Wiedergabe der Informationen eines Haendler"""
 
-    def vergleiche_haendler(self) -> bool:
+    def vergleiche_haendler(self, haendler: "Haendler") -> bool:
         """Vergleiche zwei Haendler"""
+
+class Datum:
+    """Klasse Datum"""
+
+    datum_counter = 0
+
+    def __init__(self, tag: int, monat: int, jahr: int) -> None:
+        Datum.datum_counter += 1
+        self.tag = tag
+        self.monat = monat
+        self.jahr = jahr
+
+    def get_tag(self) -> int:
+        """Wiedergab vom Tag"""
+
+    def get_monat(self) -> int:
+        """Wiedergabe vom Monat"""
+
+    def get_jahr(self) -> int:
+        """Wiedergabe vom Jahr"""
+
+    def vergleiche_datum(self, datum: "Datum") -> bool:
+        """Vergleiche Daten miteinander"""
+
+    def datum_anzeige(self) -> str:
+        """Wiedergabe vom Datum im Format TT:MM:JJ"""
+
+class Produkt:
+    """Klasse Produkt"""
+
+    produkt_counter = 0
+
+    def __init__(
+        self, name: str, menge: float, preis: float, datum: Datum, abteilung: str
+    ) -> None:
+        Produkt.produkt_counter += 1
+        self.name = name
+        self.menge = menge
+        self.preis = preis
+        self.datum = datum
+        self.abteilung = abteilung
+
+    def get_bezeichnung(self) -> str:
+        """Wiedergabe vom Namen des Produktes"""
+
+    def get_menge(self) -> float:
+        """Wiedergabe von der Warenmenge"""
+
+    def get_preis(self) -> float:
+        """Wiedergabe vom Preis in € mit 2 Dezimalstellen"""
+
+    def get_gesamtpreis(self) -> float:
+        """Gesamtpreis in € mit 2 Dezimalstellen"""
+
+    def get_haltbarkeit(self) -> Datum:
+        """Wiedergabe der MHD bzw. Garantie eines Produktes"""
+
+    def get_produkt_id(self) -> int:
+        """Wiedergabe der ID eines Produktes zur Identifikation"""
+
+    def get_produkt_abteilung(self) -> str:
+        """Wiedergabe der Abteilung vom Produkt"""
+
+    def display_produkt(self) -> None:
+        """Darstellung der wichtigsten Informationen"""
+
+    def vergleiche_produkte(self, produkt: "Produkt") -> bool:
+        """Vergleiche Produkte basierend auf der ID miteinander"""
+
+class Konto:
+    """Klasse Konto"""
+
+    konto_counter = 0
+
+    def __init__(self, kunde: Kunde, institut: str) -> None:
+        Konto.konto_counter += 1
+        self.kunde = kunde
+        self.institut = institut
+
+    def einzahlen(self) -> None:
+        """Geld einzahlen aufs Konto"""
+
+    def abheben(self) -> None:
+        """Geld abheben vom Konto"""
+
+    def get_kontostand(self) -> float:
+        """Wiedergabe vom aktuellen Kontostand"""
+
+    def get_konto_id(self) -> int:
+        """Wiedergabe der ID eines Kontos"""
+
+    def get_institut(self) -> str:
+        """ "Wiedergabe vom Namen vom Institut"""
+
+    def vergleiche_konto(self, konto: "Konto") -> bool:
+        """Vergleich zwischen Konten basierend auf deren ID"""
+
+    def get_kontoinhaber(self) -> Kunde:
+        """Wiedergabe vom Besitzer vom Konto"""
+
+class Warenkorb:
+    """Klasse Warenkorb"""
+
+    def __init__(self, kunde: Kunde) -> None:
+        self.kunde = kunde
+
+    def get_warenkorb_id(self) -> int:
+        """Wiedergabe der ID vom Warenkorb"""
+
+    def fuege_produkt_hinzu(self, produkt: Produkt) -> None:
+        """Fuege ein Produkt in den Warenkorb hinzu"""
+
+    def entferne_produkt(self, produkt: Produkt) -> None:
+        """Entferne ein Produkt aus dem Warenkorb"""
+
+    def get_kunde(self) -> Kunde:
+        """Wiedergabe vom Besitzer vom Warenkorb"""
+
+    def get_warenkorb_gesamtpreis(self) -> float:
+        """Wiedergabe vom Gesamtpreis vom Einkauf in € bei 2 Dezimalstellen"""
+
+    def erhalte_produkte(self) -> list[Produkt]:
+        """Wiedergabe aller im Warenkorb vorhandenen Produkte"""
+
+    def vergleiche_warenkorb(self, warenkorb: "Warenkorb") -> bool:
+        """Vergleich zweier Warenkörbe basierend auf deren ID"""

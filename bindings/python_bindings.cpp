@@ -61,12 +61,14 @@ PYBIND11_MODULE(py_bindings, py_module) {
         .def("display_haendler", &Haendler::Print)
         .def("vergleiche_haendler", &Haendler::operator==);
 
-    // Muss noch in py_bindings_.pyi implementiert werden!!
-
     py::class_<Produkt>(py_module, "Produkt")
         .def(py::init<std::string, float, float, Datum, std::string>())
+        .def("__repr__", [](const Produkt &p) {
+            return "Produkt: " +p.GetName();
+        })
         .def("get_bezeichnung", &Produkt::GetName)
         .def("get_menge", &Produkt::GetMenge)
+        .def("get_preis", &Produkt::GetPreis)
         .def("get_gesamtpreis", &Produkt::GetGesamtPreis)
         .def("get_haltbarkeit", &Produkt::GetHaltbarkeit)
         .def("get_produkt_id", &Produkt::GetID)
@@ -79,10 +81,14 @@ PYBIND11_MODULE(py_bindings, py_module) {
         .def("get_tag", &Datum::GetTag)
         .def("get_monat", &Datum::GetMonat)
         .def("get_jahr", &Datum::GetJahr)
-        .def("anzeige", &Datum::Print);
+        .def("datum_anzeige", &Datum::Print)
+        .def("vergleiche_datum", &Datum::operator==);
 
     py::class_<Konto>(py_module, "Konto")
         .def(py::init<const Kunde&, std::string>())
+        .def("__repr__", [](const Kunde &k) {
+            return "Kunde: " + k.GetName();
+        })
         .def("einzahlen", &Konto::Einzahlen)
         .def("abheben", &Konto::Auszahlen)
         .def("get_kontostand", &Konto::GetKontostand)
@@ -93,13 +99,18 @@ PYBIND11_MODULE(py_bindings, py_module) {
 
     py::class_<Warenkorb>(py_module, "Warenkorb")
         .def(py::init<Kunde>())
+        .def("__repr__", [](const Warenkorb &w) {
+            return "Warekorb fuer: " + w.GetKunde().GetName();
+        })
         .def("get_warenkorb_id", &Warenkorb::GetWarenkorbID)
         .def("fuege_produkt_hinzu", &Warenkorb::AddProdukt)
         .def("entferne_produkt", &Warenkorb::RemoveProdukt)
         .def("get_kunde", &Warenkorb::GetKunde)
         .def("get_warenkorb_gesamtpreis", &Warenkorb::GetGesamtPreis)
         .def("erhalte_produkte", &Warenkorb::GetProdukte)
-        .def("verleiche_warenkorb", &Warenkorb::operator==);
+        .def("vergleiche_warenkorb", &Warenkorb::operator==);
+
+    // Muss noch in py_bindings_.pyi implementiert werden!!
 
     py::class_<Kassenzettel>(py_module, "Kassenzettel")
         .def(pybind11::init<const Datum, const Kunde, const Haendler, const Warenkorb, const std::shared_ptr<Konto>>())

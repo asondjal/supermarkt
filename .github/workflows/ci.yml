@@ -13,23 +13,23 @@ jobs:
       - name: Repository auschecken
         uses: actions/checkout@v3
         with:
-          submodules: true # Holt auch pybind11
+          submodules: true
 
       - name: Python einrichten
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
 
-      - name: Abhängigkeiten installieren
+      - name: Installation der Abhängigkeiten
         run: |
           sudo apt-get update
           sudo apt-get install cmake g++ -y
           pip install pytest pybind11
 
-      - name: Installiere poppler Bibliothek
+      - name: Installation der poppler-Bibliothek
         run: sudo apt-get install libpoppler-cpp-dev -y
 
-      - name: Installiere ccache (optional, falls du es verwenden möchtest)
+      - name: Installation vom ccache 
         run: sudo apt-get install ccache -y
 
       - name: C++ Modul mit CMake bauen (Workflow-Build)
