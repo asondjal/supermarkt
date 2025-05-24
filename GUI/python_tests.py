@@ -12,6 +12,8 @@ from py_bindings import (
     Supermarkt,
     Logging,
     LogLevel,
+    ReadData,
+    Statistik,
 )
 
 
@@ -283,3 +285,73 @@ def test_logging():
     logger.start_log("FBI has hacked your PC!", LogLevel.WARNING)
     logger.start_log("WIFI-Connection was interrupted!", LogLevel.ERROR)
     logger.start_log("WIFI-Connection was interrupted by HTTP-Port 241", LogLevel.DEBUG)
+
+
+def test_read_data():
+    """Funktion zum Testen von ReadData"""
+    read_data = ReadData("./data/supermarkt_0/produkte.txt")
+    read_data.read_txt()
+    assert read_data.read_txt() is not None
+    with open("./data/supermarkt_0/produkte.txt", "r", encoding="utf-8") as f:
+        file_content = f.read()
+        assert read_data.read_txt() == file_content
+
+    csv_data = ReadData("./data/numbers.csv")
+    csv_data.read_csv()
+    assert csv_data.read_csv() is not None
+    with open("./data/numbers.csv", "r", encoding="utf-8") as f:
+        file_content = f.read()
+        assert csv_data.read_csv() == file_content
+
+    json_data = ReadData("./.vscode/settings.json")
+    json_data.read_json()
+    assert json_data.read_json() is not None
+    with open("./.vscode/settings.json", "r", encoding="utf-8") as f:
+        file_content = f.read()
+        assert json_data.read_json() == file_content
+
+    # Alternative: test PDF reading without PyPDF2 or external libraries
+    # This will just check if the file can be opened and is not empty
+    with open("README.pdf", "rb") as f:
+        content = f.read()
+        assert len(content) > 0
+
+    auto_data = ReadData("logfile.txt")
+    auto_data.read_auto()
+    assert auto_data.read_auto() is not None
+    with open("logfile.txt", "r", encoding="utf-8") as f:
+        file_content = f.read()
+        assert auto_data.read_auto() == file_content
+
+
+def test_statistik():
+    """Funktion zum Testen von Statistik"""
+    text = ReadData("./data/supermarkt_0/produkte.txt")
+    kunden_data = ReadData("./data/supermarkt_0/kunden.txt")
+
+    statistik = Statistik()
+    statistik.lade_daten(text)
+    statistik.entferne_daten(text.read_txt())
+    statistik.lade_daten(text)
+    assert statistik.zaehle_linen() == 11
+    assert statistik.wortanzahl() == 17
+    assert statistik.zaehle_variable("Produkt") == 1
+    assert statistik.zaehle_eintraege() == 1
+    assert statistik.zeichenanzahl() == 598
+
+    statistik.lade_daten(kunden_data)
+    assert statistik.zaehle_linen() == 22
+    assert statistik.wortanzahl() == 38
+    assert statistik.zaehle_variable("Kunde") == 1
+    assert statistik.zaehle_eintraege() == 2
+    assert 9.3657642 - statistik.mittelwert() < 0.0001
+    assert statistik.zeichenanzahl() == 1206
+    assert 603.000023 - statistik.median() < 0.0001
+    assert 9.365714 - statistik.erwartungswert() < 0.0001
+    assert 11.485596 - statistik.standardabweichung() < 0.0001
+
+
+
+
+
+

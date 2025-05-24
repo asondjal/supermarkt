@@ -61,8 +61,8 @@ class Statistik:
     def median(self) -> float:
         """Berechne den Median der Daten."""
 
-    def varianz(self) -> float:
-        """Berechne die Varianz der Daten."""
+    def standardabweichung(self) -> float:
+        """Berechne die Standardabweichung der Daten."""
 
     def erwartungswert(self) -> float:
         """Berechne den Erwartungswert der Daten."""
