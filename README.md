@@ -96,4 +96,5 @@
 
 ## Zu erledigende Aufgaben
 
+- Integration der Klassen Kassenzettel, Supermarkt und Logging in py_bindings.pyi
 - GUI: Implementierung in Python

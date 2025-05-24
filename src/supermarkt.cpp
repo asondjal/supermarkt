@@ -94,8 +94,8 @@ std::string Supermarkt::CreateProduktDatabase() const{
 /**
  * @brief Hinzufügen eines Kunden
  */
-void Supermarkt::AddKunde(Kunde& kunde) {
-    kunden_.push_back(&kunde);
+void Supermarkt::AddKunde(std::shared_ptr<Kunde> kunde) {
+    kunden_.push_back(kunde);
 }
 
 /**
@@ -142,10 +142,10 @@ std::string Supermarkt::CreateKundeDatabase() const {
 /**
  * @brief Entfernen eines Kunden
  */
-void Supermarkt::RemoveKunde(Kunde& kunde) {
-    RemoveFromVector(kunden_, kunde, 
-        [](Kunde* a, const Kunde& b) {
-            return a->GetKundeID() == b.GetKundeID(); 
+void Supermarkt::RemoveKunde(std::shared_ptr<Kunde> kunde) {
+    RemoveFromVector(kunden_, kunde,
+        [](const std::shared_ptr<Kunde>& a, const std::shared_ptr<Kunde>& b) {
+            return a->GetKundeID() == b->GetKundeID();
         }
     );
 }
@@ -183,8 +183,8 @@ std::string Supermarkt::CreateWarenkorbDatabase() const {
     for (const auto& warenkorb : warenkoerbe_) {
         oss << std::fixed << std::setprecision(2)
             << std::left
-            << std::setw(20) << warenkorb->GetKunde().GetName()
-            << std::setw(15) << warenkorb->GetKunde().GetKundeID()
+            << std::setw(20) << warenkorb->GetKunde()->GetName()
+            << std::setw(15) << warenkorb->GetKunde()->GetKundeID()
             << std::setw(20) << warenkorb->GetGesamtPreis()
             << "\n";
     }
@@ -203,7 +203,7 @@ std::string Supermarkt::CreateWarenkorbDatabase() const {
 void Supermarkt::RemoveWarenkorb(Warenkorb& warenkorb) {
     RemoveFromVector(warenkoerbe_, warenkorb, 
         [](Warenkorb* a, const Warenkorb& b) {
-            return a->GetKunde().GetKundeID() == b.GetKunde().GetKundeID();
+            return a->GetKunde()->GetKundeID() == b.GetKunde()->GetKundeID();
         }
     );
 }

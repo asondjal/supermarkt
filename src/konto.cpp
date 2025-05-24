@@ -2,7 +2,7 @@
 
 static int kontoCounter = 0;
 
-Konto::Konto(const Kunde& user, std::string bank) : user_{user}, bank_{bank}, kontostand_{0.00}, kontoID_{kontoCounter++} {}
+Konto::Konto(std::shared_ptr<Kunde> user, std::string bank) : user_(std::move(user)), bank_(bank), kontostand_(0.00), kontoID_(kontoCounter++) {}
 
 /**
  * @brief Vergleichsoperator für Konten
@@ -56,7 +56,7 @@ std::string Konto::GetBank() const {
  * @brief Aufruf vom Kontoinhaber
  * @return Kontoinhaber
  */
-const Kunde& Konto::GetUser() const {
+std::shared_ptr<Kunde> Konto::GetUser() const {
     return user_;
 }
 

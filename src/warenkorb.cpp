@@ -2,7 +2,8 @@
 
 static int warenkorb_counter = 0;
 
-Warenkorb::Warenkorb(const Kunde& kunde) : kunde_(kunde), warenkorbID_{warenkorb_counter++} {}
+Warenkorb::Warenkorb(std::shared_ptr<Kunde> kunde)
+    : kunde_(std::move(kunde)), warenkorbID_(warenkorb_counter++) {}
 
 void Warenkorb::AddProdukt(Produkt* produkt) {
     produkte.push_back(produkt); 
@@ -28,7 +29,7 @@ std::vector<Produkt*> Warenkorb::GetProdukte() const {
     return produkte;
 }
 
-const Kunde& Warenkorb::GetKunde() const {
+std::shared_ptr<Kunde> Warenkorb::GetKunde() const {
     return kunde_;
 }
 

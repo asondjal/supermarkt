@@ -20,7 +20,7 @@
 class Kassenzettel {
     private:
     const Datum& datum_;
-    const Kunde& kunde_;
+    std::shared_ptr<Kunde> kunde_;
     const Haendler& haendler_;
     const Warenkorb& warenkorb_;
     const uint32_t kassenzettelID_;
@@ -29,7 +29,7 @@ class Kassenzettel {
     mutable std::mutex kassenzettelMutex_;
     
     public:
-    Kassenzettel(const Datum& datum, const Kunde& kunde, const Haendler& haendler, const Warenkorb& warenkorb, const std::shared_ptr<Konto>& konto);
+    Kassenzettel(const Datum& datum, std::shared_ptr<Kunde> kunde, const Haendler& haendler, const Warenkorb& warenkorb, std::shared_ptr<Konto> konto);
     uint32_t GetKassenzettelID() const;
     std::string CreateKassenzettel() const;
     bool operator==(Kassenzettel& other) const;

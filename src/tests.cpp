@@ -79,8 +79,8 @@ void Tests::test_Warenkorb() {
     Datum datum{1, 1, 2025};
     Produkt apfel{"Apfel", 1.99f, 3.0f, datum, "Obst"};
     Produkt birne{"Birne", 2.52f, 4.49f, datum, "Obst" };
-    Kunde kunde{"LeBron James", "male", 30, "lebron.james@gmail.com", "Los Angeles, USA"};
-    Warenkorb warenkorb{kunde};
+   	auto shared_kunde =  std::make_shared<Kunde>("LeBron James", "male", 30, "lebron.james@gmail.com", "Los Angeles, USA");
+    Warenkorb warenkorb{shared_kunde};
 
     warenkorb.AddProdukt(&apfel);
     auto produkte = warenkorb.GetProdukte();
@@ -107,10 +107,10 @@ void Tests::test_Warenkorb() {
 }
 
 void Tests::test_Konto() {
-    const Kunde kunde{"Jonathan Joestar", "male", 35, "jonathan.joestar@yahoo.com", "London, UK"};
-    Konto konto{kunde, "Barclays"};
+    auto shared_kunde = std::make_shared<Kunde>("Jonathan Joestar", "male", 35, "jonathan.joestar@yahoo.com", "London, UK");
+    Konto konto{shared_kunde, "Barclays"};
 
-    assert(konto.GetUser() == kunde);
+    assert(konto.GetUser() == shared_kunde);
     konto.Einzahlen(100.0f);
     assert(konto.GetKontostand() == 100.0f);
     konto.Auszahlen(50.0f);
@@ -123,33 +123,33 @@ void Tests::test_Kassenzettel() {
     Produkt produkt1{"Apfel", 1.170, 1.230, Datum{1, 1, 2022}, "Lebensmittel"};
 	Produkt produkt2{"Birne", 5.20, 2.420, Datum{1, 1, 2022}, "Lebensmittel"};
 
-	Kunde kunde1{"Kujo Jotaro", "male", 30, "jotaro.kujo@gmail.com", "Tokyo, Japan"};
-	Kunde kunde2{"Josuke Higashikata", "male", 16, "josuke.higashikata@yahoo.com", "Morioh, Japan"};
+	auto shared_kunde1 = std::make_shared<Kunde>("Kujo Jotaro", "male", 30, "jotaro.kujo@gmail.com", "Tokyo, Japan");
+	auto shared_kunde2 = std::make_shared<Kunde>("Josuke Higashikata", "male", 16, "josuke.higashikata@yahoo.com", "Morioh, Japan");
 
 	Haendler haendler1{"Jonathan Joestar", "male", 76, "jonathan.joestar@gmx.net", "London, England"};
     Haendler haendler2{"Girono Giovanna", "male", 19, "giorno.giovanna@gmail.com", "Rom, Italien"};
 	
-	auto shared_konto1 = std::make_shared<Konto>(kunde1, "Bank of America");
+	auto shared_konto1 = std::make_shared<Konto>(shared_kunde1, "Bank of America");
 	shared_konto1->Einzahlen(100.0f);
-	auto shared_konto2 = std::make_shared<Konto>(kunde2, "Deutsche Bank");
+	auto shared_konto2 = std::make_shared<Konto>(shared_kunde2, "Deutsche Bank");
 	shared_konto2->Einzahlen(50.0f);
 
 	Datum datum1{1, 1, 2022};
 	Datum datum2{12, 11, 2009};
-
-	Warenkorb warenkorb1(kunde1);
+	
+	Warenkorb warenkorb1(shared_kunde1);
 	warenkorb1.AddProdukt(&produkt1);
 	warenkorb1.AddProdukt(&produkt2);
 
-	Warenkorb warenkorb2{kunde2};
+	Warenkorb warenkorb2{shared_kunde2};
 	warenkorb2.AddProdukt(&produkt1);
 	warenkorb2.AddProdukt(&produkt2);
 
-	Kassenzettel kassenzettel1{datum1, kunde1, haendler1, warenkorb1, shared_konto1};
+	Kassenzettel kassenzettel1{datum1, shared_kunde1, haendler1, warenkorb1, shared_konto1};
 	kassenzettel1.CreateKassenzettel();
 	assert(shared_konto1->GetKontostand() == 100.0f - warenkorb1.GetGesamtPreis());
 
-	Kassenzettel kassenzettel2{datum2, kunde2, haendler1, warenkorb1, shared_konto2};
+	Kassenzettel kassenzettel2{datum2, shared_kunde2, haendler1, warenkorb1, shared_konto2};
 	kassenzettel2.CreateKassenzettel();
 	assert(shared_konto2->GetKontostand() == 50.0f - warenkorb1.GetGesamtPreis());
 
@@ -160,11 +160,11 @@ void Tests::test_Supermarkt() {
     Produkt produkt1{"Apfel", 1.170, 1.230, Datum{1, 1, 2022}, "Lebensmittel"};
 	Produkt produkt2{"Birne", 5.20, 2.420, Datum{1, 1, 2022}, "Lebensmittel"};
 
-	Kunde kunde1{"Kujo Jotaro", "male", 30, "jotaro.kujo@gmail.com", "Tokyo, Japan"};
-	Kunde kunde2{"Josuke Higashikata", "male", 16, "josuke.higashikata@yahoo.com", "Morioh, Japan"};
+	auto kunde1 = std::make_shared<Kunde>("Kujo Jotaro", "male", 30, "jotaro.kujo@gmail.com", "Tokyo, Japan");
+	auto kunde2 = std::make_shared<Kunde>("Josuke Higashikata", "male", 16, "josuke.higashikata@yahoo.com", "Morioh, Japan");
 
 	Haendler haendler1{"Jonathan Joestar", "male", 76, "jonathan.joestar@gmx.net", "London, England"};
-    Haendler haendler2{"Girono Giovanna", "male", 19, "giorno.giovanna@gmail.com", "Rom, Italien"};
+    Haendler haendler2{"Giorno Giovanna", "male", 19, "giorno.giovanna@gmail.com", "Rom, Italien"};
 	
 	Warenkorb warenkorb1(kunde1);
 	warenkorb1.AddProdukt(&produkt1);
@@ -361,11 +361,11 @@ void Tests::test_Logging() {
 
     Logging logger("logfile.txt", LogLevel::DEBUG);
 	assert(std::filesystem::exists("logfile.txt"));
-	assert(logger.getLevel() == "DEBUG");
-    logger.log("System initialized.", LogLevel::INFO);
-    logger.log("Reading configuration...", LogLevel::DEBUG);
-    logger.log("File not found!", LogLevel::WARNING);
-    logger.log("Critical error!", LogLevel::ERROR);
+	assert(logger.GetLevel() == "DEBUG");
+    logger.Log("System initialized.", LogLevel::INFO);
+    logger.Log("Reading configuration...", LogLevel::DEBUG);
+    logger.Log("File not found!", LogLevel::WARNING);
+    logger.Log("Critical error!", LogLevel::ERROR);
 
 	std::cout << "Alle Logging-Tests waren erfolgreich!" << std::endl;
 }

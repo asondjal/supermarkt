@@ -3,6 +3,8 @@
 #include "../inc/utils/statistik.hpp"
 #include "../inc/base/supermarkt.hpp"
 #include "../inc/base/kassenzettel.hpp"  // Adjusted path to match the correct location
+#include "../inc/utils/logging.hpp"
+#include <memory>
 
 namespace py = pybind11;
 
@@ -43,7 +45,7 @@ PYBIND11_MODULE(py_bindings, py_module) {
         .def("display_person", &Person::Print)
         .def("vergleiche_person", &Person::operator==);
 
-    py::class_<Kunde>(py_module, "Kunde")
+    py::class_<Kunde, std::shared_ptr<Kunde>>(py_module, "Kunde")
         .def(py::init<std::string, std::string, int, std::string, std::string>())
         .def("__repr__", [](const Kunde &k) {
                 return "Kunde: " + k.GetName();
@@ -84,8 +86,8 @@ PYBIND11_MODULE(py_bindings, py_module) {
         .def("datum_anzeige", &Datum::Print)
         .def("vergleiche_datum", &Datum::operator==);
 
-    py::class_<Konto>(py_module, "Konto")
-        .def(py::init<const Kunde&, std::string>())
+    py::class_<Konto, std::shared_ptr<Konto>>(py_module, "Konto")
+        .def(py::init<std::shared_ptr<Kunde>, std::string>())
         .def("__repr__", [](const Kunde &k) {
             return "Kunde: " + k.GetName();
         })
@@ -98,9 +100,9 @@ PYBIND11_MODULE(py_bindings, py_module) {
         .def("get_kontoinhaber", &Konto::GetUser);
 
     py::class_<Warenkorb>(py_module, "Warenkorb")
-        .def(py::init<Kunde>())
+        .def(py::init<std::shared_ptr<Kunde>>())
         .def("__repr__", [](const Warenkorb &w) {
-            return "Warekorb fuer: " + w.GetKunde().GetName();
+            return "Warekorb fuer: " + w.GetKunde()->GetName();
         })
         .def("get_warenkorb_id", &Warenkorb::GetWarenkorbID)
         .def("fuege_produkt_hinzu", &Warenkorb::AddProdukt)
@@ -110,17 +112,15 @@ PYBIND11_MODULE(py_bindings, py_module) {
         .def("erhalte_produkte", &Warenkorb::GetProdukte)
         .def("vergleiche_warenkorb", &Warenkorb::operator==);
 
-    // Muss noch in py_bindings_.pyi implementiert werden!!
-
     py::class_<Kassenzettel>(py_module, "Kassenzettel")
-        .def(pybind11::init<const Datum, const Kunde, const Haendler, const Warenkorb, const std::shared_ptr<Konto>>())
+        .def(py::init<const Datum&, std::shared_ptr<Kunde>, const Haendler&, const Warenkorb&, std::shared_ptr<Konto>>())
         .def("get_kassenzettel_id", &Kassenzettel::GetKassenzettelID)
         .def("erzeuge_kassenzettel", &Kassenzettel::CreateKassenzettel)
         .def("vergleiche_kassenzettel", &Kassenzettel::operator==);
     
     py::class_<Supermarkt>(py_module, "Supermarkt")
         .def(py::init<std::string, std::string>())
-        .def("fuerge_produkt_ein", &Supermarkt::AddProdukt)
+        .def("fuege_produkt_ein", &Supermarkt::AddProdukt)
         .def("entferne_produkt", &Supermarkt::RemoveProdukt)
         .def("fuege_kunden_ein", &Supermarkt::AddKunde)
         .def("entferne_kunden", &Supermarkt::RemoveKunde)
@@ -128,11 +128,25 @@ PYBIND11_MODULE(py_bindings, py_module) {
         .def("entferne_warenkorb", &Supermarkt::RemoveWarenkorb)
         .def("fueg_haendler_hinzu", &Supermarkt::AddHaendler)
         .def("entferne_haendler", &Supermarkt::RemoveHaendler)
-        .def("erzeuge_warenliste", &Supermarkt::CreateProduktDatabase)
+        .def("erzeuge_produktliste", &Supermarkt::CreateProduktDatabase)
         .def("erzeuge_kundenliste", &Supermarkt::CreateKundeDatabase)
         .def("erzeuge_haendlerliste", &Supermarkt::CreateHaendlerDatabase)
         .def("erzeuge_warenkorbliste", &Supermarkt::CreateWarenkorbDatabase)
         .def("get_umsatz", &Supermarkt::GetGesamtWert)
         .def("get_supermarkt_id", &Supermarkt::GetSupermarktID)
         .def("vergleiche_supermarkt", &Supermarkt::operator==);
+    
+    py::enum_<LogLevel>(py_module, "LogLevel")
+        .value("DEBUG", LogLevel::DEBUG)
+        .value("INFO", LogLevel::INFO)
+        .value("WARNING", LogLevel::WARNING)
+        .value("ERROR", LogLevel::ERROR)
+        .export_values();
+
+    py::class_<Logging>(py_module, "Logging")
+        .def(py::init<const std::string&, LogLevel, bool>())
+        .def("start_log", &Logging::Log)
+        .def("set_loglevel", &Logging::SetLevel)
+        .def("enable_console_output", &Logging::EnableConsoleOutput)
+        .def("get_level", &Logging::GetLevel);
 }

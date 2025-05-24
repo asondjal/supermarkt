@@ -1,6 +1,6 @@
 """Python bindings fuer Datenverarbeitung und Statistik."""
 
-# py_bindings.pyi
+from enum import Enum
 
 class ReadData:
     """Klasse zum Auslesen von Dateien aus unterschiedlichen Formaten."""
@@ -247,7 +247,10 @@ class Konto:
 class Warenkorb:
     """Klasse Warenkorb"""
 
+    warenkorb_counter = 0
+
     def __init__(self, kunde: Kunde) -> None:
+        Warenkorb.warenkorb_counter += 1
         self.kunde = kunde
 
     def get_warenkorb_id(self) -> int:
@@ -270,3 +273,140 @@ class Warenkorb:
 
     def vergleiche_warenkorb(self, warenkorb: "Warenkorb") -> bool:
         """Vergleich zweier Warenkörbe basierend auf deren ID"""
+
+class Kassenzettel:
+    """Klasse Kassenzettel"""
+
+    kassenzettel_counter = 0
+
+    def __init__(
+        self,
+        datum: Datum,
+        kunde: Kunde,
+        haendler: Haendler,
+        warenkorb: Warenkorb,
+        konto: Konto,
+    ) -> None:
+        Kassenzettel.kassenzettel_counter += 1
+        self.datum = datum
+        self.kunde = kunde
+        self.haendler = haendler
+        self.warenkorb = warenkorb
+        self.konto = konto
+
+    def get_kassenzettel_id(self) -> int:
+        """Wiedergabe der ID eines Kassenzettels"""
+
+    def erzeuge_kassenzettel(self) -> str:
+        """
+        Erzeuge einen Kassenzettel
+
+        Returns: Wiedergabe vom Dateipfad vom Kassenzettel
+        """
+
+    def vergleiche_kassenzettel(self) -> bool:
+        """Vergleich zwischen 2 Kassenzetteln basierend auf der ID"""
+
+class Supermarkt:
+    """Klasse Supermarkt"""
+
+    supermarkt_counter = 0
+
+    def __init__(self, name: str, adresse: str) -> None:
+        Supermarkt.supermarkt_counter += 1
+        self.name = name
+        self.adresse = adresse
+
+    def fuege_produkt_ein(self, produkt: Produkt) -> None:
+        """Fuege ein Produkt in den Supermarkt ein"""
+
+    def entferne_produkt(self, produkt: Produkt) -> None:
+        """Entferne ein Produkt aus dem Supermarkt"""
+
+    def fuege_kunden_ein(self, kunde: Kunde) -> None:
+        """Fuege einen Kunden in den Supermarkt ein"""
+
+    def entferne_kunden(self, kunde: Kunde) -> None:
+        """Entferne Kunden aus dem Supermarkt"""
+
+    def fuege_warenkorb_hinzu(self, warenkorb: Warenkorb) -> None:
+        """Fuege einen Warenkorb in den Supermarkt ein"""
+
+    def entferne_warenkorb(self, warenkorb: Warenkorb) -> None:
+        """Entferne einen Warenkorb aus dem Supermarkt"""
+
+    def fueg_haendler_hinzu(self, haendler: Haendler) -> None:
+        """Fuege einen Haendler in den Supermarkt ein"""
+
+    def entferne_haendler(self, haendler: Haendler) -> None:
+        """Entferne einen Haendler aus dem Supermarkt"""
+
+    def erzeuge_produktliste(self) -> str:
+        """
+        Erzeuge eine Dokument mit vorhandenen Produkten
+
+        Returns: Wiedergabe vom Dateipfad vom Dokument als str
+        """
+
+    def erzeuge_kundenliste(self) -> str:
+        """
+        Erzeuge eine Dokument mit vorhandenen Kunden
+
+        Returns: Wiedergabe vom Dateipfad vom Dokument als str
+        """
+
+    def erzeuge_haendlerliste(self) -> str:
+        """
+        Erzeuge eine Dokument mit vorhandenen Haendlern
+
+        Returns: Wiedergabe vom Dateipfad vom Dokument als str
+        """
+
+    def erzeuge_warenkorbliste(self) -> str:
+        """
+        Erzeuge eine Dokument mit vorhandenen Kunden
+
+        Returns: Wiedergabe vom Dateipfad vom Dokument als str
+        """
+
+    def get_umsatz(self) -> float:
+        """Wiedergabe vom generierten Umsatz in € bei einer Genauigkeit von 2 Dezimalstellen"""
+
+    def get_supermarkt_id(self) -> int:
+        """Wiedergabge der ID vom Supermarkt"""
+
+    def vergleiche_supermarkt(self, supermarkt: "Supermarkt") -> bool:
+        """Vergleiche zwei Supermaerkte basierend auf der ID"""
+
+class LogLevel(Enum):
+    """Enum-Klasse fuer Klasse Logging"""
+
+    DEBUG = 0
+    INFO = 1
+    WARNING = 2
+    ERROR = 3
+
+class Logging:
+    """Klasse Logging"""
+
+    def __init__(
+        self,
+        file_path: str,
+        status: LogLevel = LogLevel.INFO,
+        console_output: bool = True,
+    ) -> None:
+        self.file_path = file_path
+        self.status = status
+        self.console_output = console_output
+
+    def start_log(self, message: str, level: LogLevel) -> None:
+        """Start vom Logging-Prozess"""
+
+    def set_loglevel(self, level: LogLevel) -> None:
+        """Einstellen vom Status vom Log"""
+
+    def enable_console_output(self, status: bool) -> None:
+        """Ermoegliche Ausgabe via Konsole"""
+
+    def get_level(self) -> str:
+        """Wiedergabe vom Status als zusammenhaengender String"""

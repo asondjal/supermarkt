@@ -11,6 +11,7 @@
 #include <iomanip>
 #include <vector>
 #include <mutex>
+#include <memory>
 
 class Supermarkt {
 
@@ -18,7 +19,7 @@ class Supermarkt {
         const std::string name_;
         const std::string adresse_;
         std::vector<Produkt*> produkte_;
-        std::vector<Kunde*> kunden_;
+        std::vector<std::shared_ptr<Kunde>> kunden_;
         std::vector<Warenkorb*> warenkoerbe_;
         std::vector<Haendler*> haendler_;
         const uint32_t supermarkt_ID_;
@@ -28,8 +29,8 @@ class Supermarkt {
         Supermarkt(std::string name, std::string adresse);
         void AddProdukt(Produkt& produkt);
         void RemoveProdukt(Produkt& produkt);
-        void AddKunde(Kunde& kunde);
-        void RemoveKunde(Kunde& kunde);
+        void AddKunde(std::shared_ptr<Kunde> kunde);
+        void RemoveKunde(std::shared_ptr<Kunde> kunde);
         void AddWarenkorb(Warenkorb& warenkorb);
         void RemoveWarenkorb(Warenkorb& warenkorb);
         void AddHaendler(Haendler& haendler);

@@ -4,6 +4,7 @@
 #include <iomanip>
 #include <vector>
 #include <algorithm>
+#include <memory>
 #include "produkt.hpp"
 #include "kunde.hpp"
 
@@ -11,12 +12,12 @@ class Warenkorb {
 
     private:
     std::vector<Produkt*> produkte;
-    const Kunde& kunde_;
+    std::shared_ptr<Kunde> kunde_;
     const int warenkorbID_;
 
     public:
-    Warenkorb(const Kunde& kunde);
-    const Kunde& GetKunde() const;
+    explicit Warenkorb(std::shared_ptr<Kunde> kunde);
+    std::shared_ptr<Kunde> GetKunde() const;
     void AddProdukt(Produkt* produkt);
     void RemoveProdukt(Produkt* produkt);
     float GetGesamtPreis() const;

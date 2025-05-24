@@ -2,13 +2,13 @@
 
 static uint32_t kassenzettelCounter_ = 0;
 
-Kassenzettel::Kassenzettel(const Datum& datum, const Kunde& kunde, const Haendler& haendler, const Warenkorb& warenkorb, const std::shared_ptr<Konto>& konto) :
+Kassenzettel::Kassenzettel(const Datum& datum, std::shared_ptr<Kunde> kunde, const Haendler& haendler, const Warenkorb& warenkorb, std::shared_ptr<Konto> konto) :
     datum_(datum),
-    kunde_(kunde),
+    kunde_(std::move(kunde)),
     haendler_(haendler),
     warenkorb_(warenkorb),
     kassenzettelID_(kassenzettelCounter_++),
-    konto_(konto),
+    konto_(std::move(konto)),
     filename_("./data/kassenzettel/kunde_" + std::to_string(kassenzettelID_) + ".txt")
     {
 }
@@ -47,7 +47,7 @@ std::string Kassenzettel::CreateKassenzettel() const {
     }
 
     file << "================== KASSENZETTEL ==================\n";
-    file << "Kunde: " << kunde_.GetName() << ", Kunde-ID: " << kunde_.GetKundeID() << "\n";
+    file << "Kunde: " << kunde_->GetName() << ", Kunde-ID: " << kunde_->GetKundeID() << "\n";
     file << "Haendler: " << haendler_.GetName() << ", Haendler-ID: " << haendler_.GetHaendlerID() << "\n";
 
     std::ostringstream oss;

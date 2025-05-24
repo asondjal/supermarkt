@@ -4,22 +4,23 @@
 #include "kunde.hpp"
 #include <string>
 #include <iomanip>
+#include <memory>
 
 class Konto{
 
     private:
-    const Kunde& user_;
+    std::shared_ptr<Kunde> user_;
     const std::string bank_;
     float kontostand_;
     const int kontoID_;
 
     public:
-    Konto(const Kunde& user, std::string bank);
+    explicit Konto(std::shared_ptr<Kunde> user, std::string bank);
     void Einzahlen(float betrag);
     void Auszahlen(float betrag);
     std::string GetBank() const;
     float GetKontostand() const;
-    const Kunde& GetUser() const;
+    std::shared_ptr<Kunde> GetUser() const;
     int GetKontoID() const;
     bool operator==(const Konto& other) const;
 

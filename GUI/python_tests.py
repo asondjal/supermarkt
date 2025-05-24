@@ -1,6 +1,18 @@
 """Python zum Testen von den Klassen aus py_bindings.pyi"""
 
-from py_bindings import Person, Kunde, Haendler, Datum, Produkt, Konto, Warenkorb
+from py_bindings import (
+    Person,
+    Kunde,
+    Haendler,
+    Datum,
+    Produkt,
+    Konto,
+    Warenkorb,
+    Kassenzettel,
+    Supermarkt,
+    Logging,
+    LogLevel,
+)
 
 
 def test_person():
@@ -101,11 +113,15 @@ def test_warenkorb():
     kunde1 = Kunde(
         "Captial Bra", "male", 36, "capital.bra@egj.com", "Berlin, Neu-Kölln"
     )
+
+    kunde2 = Kunde("Luciano", "male", 31, "luciano@cocoloco.com", "Berlin, Kreuzberg")
+
     produkt1 = Produkt("Bananen", 1.992, 2.35, Datum(20, 5, 2025), "Lebensmittel")
     produkt2 = Produkt("Kirschen", 1.992, 2.35, Datum(20, 5, 2025), "Lebensmittel")
     warenkorb = Warenkorb(kunde1)
     shopping = Warenkorb(kunde1)
 
+    assert warenkorb.get_warenkorb_id() == 0
     warenkorb.fuege_produkt_hinzu(produkt1)
     produkte = warenkorb.erhalte_produkte()
 
@@ -143,3 +159,127 @@ def test_warenkorb():
     ) - warenkorb.get_warenkorb_gesamtpreis() < 0.0001
 
     assert warenkorb.vergleiche_warenkorb(shopping) is False
+    assert warenkorb.get_kunde().vergleiche_kunde(kunde2) is False
+
+
+def test_kassenzettel():
+    """Funktion zum Testen der Klasse Kassenzettel"""
+
+    datum = Datum(12, 12, 2012)
+    kunde1 = Kunde(
+        "LeBron James", "male", 40, "lebron.james@gmail.com", "Los Angeles, USA"
+    )
+    kunde2 = Kunde("Luciano", "male", 31, "luciano@cocoloco.com", "Berlin, Kreuzberg")
+    haendler = Haendler("Rihanna", "female", 36, "rihanna@gmail.com", "Hollywood, USA")
+
+    produkt1 = Produkt("Bananen", 1.992, 2.35, Datum(20, 5, 2025), "Lebensmittel")
+    produkt2 = Produkt("Kirschen", 2.646, 4.99, Datum(20, 5, 2025), "Lebensmittel")
+    warenkorb = Warenkorb(kunde1)
+    warenkorb.fuege_produkt_hinzu(produkt1)
+    warenkorb.fuege_produkt_hinzu(produkt2)
+
+    konto = Konto(kunde1, "American Express")
+    konto.einzahlen(120.00)
+
+    kassenzettel1 = Kassenzettel(datum, kunde1, haendler, warenkorb, konto)
+    kassenzettel2 = Kassenzettel(datum, kunde2, haendler, warenkorb, konto)
+
+    assert kassenzettel1.get_kassenzettel_id() == 0
+    kassenzettel1.erzeuge_kassenzettel()
+    assert (
+        120.00 - warenkorb.get_warenkorb_gesamtpreis()
+    ) - konto.get_kontostand() < 0.001
+    assert kassenzettel1.erzeuge_kassenzettel() == "./data/kassenzettel/kunde_0.txt"
+    assert kassenzettel1.vergleiche_kassenzettel(kassenzettel2) is False
+
+
+def test_supermarkt():
+    """Funktion zum Testen von Supermarkt"""
+
+    supermarkt = Supermarkt("REAL", "In the Hood 1, New York")
+    discounter = Supermarkt("NORMA", "In der Nachbarschaft 1, Hamburg")
+    assert supermarkt.get_supermarkt_id() == 0
+    assert supermarkt.vergleiche_supermarkt(discounter) is False
+
+    kunde1 = Kunde(
+        "LeBron James", "male", 40, "lebron.james@gmail.com", "Los Angeles, USA"
+    )
+    kunde2 = Kunde("Luciano", "male", 31, "luciano@cocoloco.com", "Berlin, Kreuzberg")
+    haendler1 = Haendler("Rihanna", "female", 36, "rihanna@gmail.com", "Hollywood, USA")
+    haendler2 = Haendler(
+        "ASAP Rocky", "male", 35, "asap.rocky@gmail.com", "Hollywood, USA"
+    )
+
+    produkt1 = Produkt("Bananen", 1.992, 2.35, Datum(20, 5, 2025), "Lebensmittel")
+    produkt2 = Produkt("Kirschen", 2.355, 4.99, Datum(20, 5, 2025), "Lebensmittel")
+    warenkorb = Warenkorb(kunde1)
+    warenkorb.fuege_produkt_hinzu(produkt1)
+    warenkorb.fuege_produkt_hinzu(produkt2)
+
+    supermarkt.fuege_produkt_ein(produkt1)
+    supermarkt.erzeuge_produktliste()
+    assert supermarkt.erzeuge_produktliste() == "./data/supermarkt_0/produkte.txt"
+    supermarkt.fuege_produkt_ein(produkt1)
+    supermarkt.erzeuge_produktliste()
+    supermarkt.entferne_produkt(produkt1)
+    supermarkt.erzeuge_produktliste()
+    supermarkt.entferne_produkt(produkt1)
+    supermarkt.erzeuge_produktliste()
+    supermarkt.fuege_produkt_ein(produkt1)
+    supermarkt.erzeuge_produktliste()
+    supermarkt.fuege_produkt_ein(produkt2)
+    supermarkt.erzeuge_produktliste()
+
+    supermarkt.fuege_kunden_ein(kunde1)
+    supermarkt.erzeuge_kundenliste()
+    assert supermarkt.erzeuge_kundenliste() == "./data/supermarkt_0/kunden.txt"
+    supermarkt.fuege_kunden_ein(kunde1)
+    supermarkt.erzeuge_kundenliste()
+    supermarkt.entferne_kunden(kunde1)
+    supermarkt.erzeuge_kundenliste()
+    supermarkt.fuege_kunden_ein(kunde1)
+    supermarkt.erzeuge_kundenliste()
+    supermarkt.fuege_kunden_ein(kunde2)
+    supermarkt.erzeuge_kundenliste()
+
+    supermarkt.fueg_haendler_hinzu(haendler1)
+    supermarkt.erzeuge_haendlerliste()
+    assert supermarkt.erzeuge_haendlerliste() == "./data/supermarkt_0/haendler.txt"
+    supermarkt.fueg_haendler_hinzu(haendler1)
+    supermarkt.erzeuge_haendlerliste()
+    supermarkt.entferne_haendler(haendler1)
+    supermarkt.erzeuge_haendlerliste()
+    supermarkt.fueg_haendler_hinzu(haendler1)
+    supermarkt.erzeuge_haendlerliste()
+    supermarkt.fueg_haendler_hinzu(haendler2)
+    supermarkt.erzeuge_haendlerliste()
+
+    supermarkt.fuege_warenkorb_hinzu(warenkorb)
+    supermarkt.erzeuge_warenkorbliste()
+    assert supermarkt.erzeuge_warenkorbliste() == "./data/supermarkt_0/warenkoerbe.txt"
+    supermarkt.fuege_warenkorb_hinzu(warenkorb)
+    supermarkt.erzeuge_warenkorbliste()
+    supermarkt.entferne_warenkorb(warenkorb)
+    supermarkt.erzeuge_warenkorbliste()
+    supermarkt.fuege_warenkorb_hinzu(warenkorb)
+    supermarkt.erzeuge_warenkorbliste()
+
+    assert 16.43 - supermarkt.get_umsatz() < 0.0001
+
+
+def test_logging():
+    """Funktion zum Testen von LogLevel"""
+
+    logger = Logging("loggingfile.txt", LogLevel.DEBUG, True)
+    assert logger.get_level() == "DEBUG"
+    logger.set_loglevel(LogLevel.ERROR)
+    assert logger.get_level() == "ERROR"
+    logger.set_loglevel(LogLevel.DEBUG)
+    logger.enable_console_output(True)
+    logger.start_log("System initialized.", LogLevel.INFO)
+    logger.start_log("System deactivated.", LogLevel.INFO)
+    logger.start_log("System restarted.", LogLevel.INFO)
+    logger.start_log("ChatPGT free is expired!", LogLevel.WARNING)
+    logger.start_log("FBI has hacked your PC!", LogLevel.WARNING)
+    logger.start_log("WIFI-Connection was interrupted!", LogLevel.ERROR)
+    logger.start_log("WIFI-Connection was interrupted by HTTP-Port 241", LogLevel.DEBUG)

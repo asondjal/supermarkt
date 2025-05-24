@@ -1,4 +1,4 @@
-#include "../inc/utils/logging.hpp" //Tests have to be done!!
+#include "../inc/utils/logging.hpp"
 
 /**
  * @brief Konstruktor der Klasse Logging
@@ -21,32 +21,10 @@ Logging::~Logging() {
 }
 
 /**
- * @brief Einschreiben von Status-Informationen in die Log-Datei
- * @param message, level
- */
-void Logging::log(const std::string& message, LogLevel level) {
-    if (level < currentLevel_) return;
-
-    std::string timestamp = getTimestamp();
-    std::string levelStr = levelToString(level);
-    std::ostringstream logEntry;
-    logEntry << "[" << timestamp << "] [" << levelStr << "] " << message << "\n";
-
-    std::lock_guard<std::mutex> lock(logMutex_);
-    if (logFile_.is_open()) {
-        logFile_ << logEntry.str();
-        logFile_.flush();
-    }
-    if (consoleOutput_) {
-        std::cout << logEntry.str();
-    }
-}
-
-/**
  * @brief Setzen der Statusmeldung
  * @param
  */
-void Logging::setLevel(LogLevel level) {
+void Logging::SetLevel(LogLevel level) {
     std::lock_guard<std::mutex> lock(logMutex_);
     currentLevel_ = level;
 }
@@ -55,7 +33,7 @@ void Logging::setLevel(LogLevel level) {
  * @brief Setzen der Ausgabe der Konsole
  * @param enable
  */
-void Logging::enableConsoleOutput(bool enable) {
+void Logging::EnableConsoleOutput(bool enable) {
     std::lock_guard<std::mutex> lock(logMutex_);
     consoleOutput_ = enable;
 }
@@ -64,7 +42,7 @@ void Logging::enableConsoleOutput(bool enable) {
  * @brief Wiedergabe der Zeit
  * @return Zeitangabe im Format `TT:MM:YY H:M:S`
  */
-std::string Logging::getTimestamp() const {
+std::string Logging::GetTimestamp() const {
     auto now = std::chrono::system_clock::now();
     auto itt = std::chrono::system_clock::to_time_t(now);
     std::ostringstream ss;
@@ -77,7 +55,7 @@ std::string Logging::getTimestamp() const {
  * @param level
  * @return Wiedergabe vom Status als String im Format Upper-Case
  */
-std::string Logging::levelToString(LogLevel level) const {
+std::string Logging::LevelToString(LogLevel level) const {
     switch (level) {
         case LogLevel::DEBUG: 
         return "DEBUG";
@@ -96,7 +74,29 @@ std::string Logging::levelToString(LogLevel level) const {
  * @brief Wiedergabe vom Level als String
  * @return Status als String
  */
-std::string Logging::getLevel() {
+std::string Logging::GetLevel() {
     std::lock_guard<std::mutex> lock(logMutex_);
-    return levelToString(currentLevel_);
+    return LevelToString(currentLevel_);
+}
+
+/**
+ * @brief Einschreiben von Status-Informationen in die Log-Datei
+ * @param message, level
+ */
+void Logging::Log(const std::string& message, LogLevel level) {
+    if (level < currentLevel_) return;
+
+    std::string timestamp = GetTimestamp();
+    std::string levelStr = LevelToString(level);
+    std::ostringstream logEntry;
+    logEntry << "[" << timestamp << "] [" << levelStr << "] " << message << "\n";
+
+    std::lock_guard<std::mutex> lock(logMutex_);
+    if (logFile_.is_open()) {
+        logFile_ << logEntry.str();
+        logFile_.flush();
+    }
+    if (consoleOutput_) {
+        std::cout << logEntry.str();
+    }
 }

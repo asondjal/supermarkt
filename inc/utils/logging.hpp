@@ -23,17 +23,17 @@ class Logging {
         LogLevel currentLevel_;
         bool consoleOutput_;
 
-        std::string getTimestamp() const;
-        std::string levelToString(LogLevel level) const;
+        std::string GetTimestamp() const;
+        std::string LevelToString(LogLevel level) const;
     
     public:
         Logging(const std::string& logFilePath, LogLevel level = LogLevel::INFO, bool consoleOutput = true);
         ~Logging();
 
-        void log(const std::string& message, LogLevel level = LogLevel::INFO);
-        void setLevel(LogLevel level);
-        void enableConsoleOutput(bool enable);
-        std::string getLevel();
+        void Log(const std::string& message, LogLevel level = LogLevel::INFO);
+        void SetLevel(LogLevel level);
+        void EnableConsoleOutput(bool enable);
+        std::string GetLevel();
 };
 
 #endif /* LOGGING_HPP_ */
