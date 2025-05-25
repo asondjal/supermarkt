@@ -31,7 +31,7 @@ PYBIND11_MODULE(py_bindings, py_module) {
         .def("erwartungswert", &Statistik::Erwartungswert)
         .def("standardabweichung", &Statistik::Standardabweichung);
 
-    py::class_<Person>(py_module, "Person")
+    py::class_<Person, std::shared_ptr<Person>>(py_module, "Person")
         .def(py::init<std::string, std::string, int, std::string, std::string>())
         .def("get_name", &Person::GetName)
         .def("__repr__", [](const Person &p) {
@@ -45,7 +45,7 @@ PYBIND11_MODULE(py_bindings, py_module) {
         .def("display_person", &Person::Print)
         .def("vergleiche_person", &Person::operator==);
 
-    py::class_<Kunde, std::shared_ptr<Kunde>>(py_module, "Kunde")
+    py::class_<Kunde, Person, std::shared_ptr<Kunde>>(py_module, "Kunde")
         .def(py::init<std::string, std::string, int, std::string, std::string>())
         .def("__repr__", [](const Kunde &k) {
                 return "Kunde: " + k.GetName();
@@ -54,7 +54,7 @@ PYBIND11_MODULE(py_bindings, py_module) {
         .def("display_kunde", &Kunde::Print)
         .def("vergleiche_kunde", &Kunde::operator==);
 
-    py::class_<Haendler>(py_module, "Haendler")
+    py::class_<Haendler, std::shared_ptr<Haendler>, Person>(py_module, "Haendler")
         .def(py::init<std::string, std::string, int, std::string, std::string>())
         .def("__repr__", [](const Haendler &h) {
                 return "Haendler: " + h.GetName();
