@@ -7,6 +7,22 @@ Supermarkt::Supermarkt(std::string name, std::string adresse) : name_(name), adr
     supermarkt_ID_{supermarkt_counter++} {}
 
 /**
+ * @brief Wiedergabe vom Namen vom Supermarkt
+ * @return Name vom Supermarkt
+ */
+std::string Supermarkt::GetSupermarktName() const {
+    return name_;
+}
+
+/**
+ * @brief Wiedergabe von der Adresse vom Supermarkt
+ * @return Adresse vom Supermarkt
+ */
+std::string Supermarkt::GetSupermarktAdress() const {
+    return adresse_;
+}
+
+/**
  * @brief Aufruf der ID vom Supermarkt
  * @return ID vom Supermarkt
  */

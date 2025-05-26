@@ -317,6 +317,12 @@ class Supermarkt:
         self.name = name
         self.adresse = adresse
 
+    def get_supermarkt_name(self) -> str:
+        """Wiedergabe vom Namen des Supermarkts"""
+
+    def get_supermarkt_adress(self) -> str:
+        """Wiedergabe von der Adresse vom Supermarkt"""
+
     def fuege_produkt_ein(self, produkt: Produkt) -> None:
         """Fuege ein Produkt in den Supermarkt ein"""
 

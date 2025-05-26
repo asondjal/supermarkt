@@ -27,6 +27,8 @@ class Supermarkt {
 
     public:
         Supermarkt(std::string name, std::string adresse);
+        std::string GetSupermarktAdress() const;
+        std::string GetSupermarktName() const;
         void AddProdukt(Produkt& produkt);
         void RemoveProdukt(Produkt& produkt);
         void AddKunde(std::shared_ptr<Kunde> kunde);

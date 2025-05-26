@@ -80,6 +80,9 @@ PYBIND11_MODULE(py_bindings, py_module) {
 
     py::class_<Datum>(py_module, "Datum")
         .def(py::init<uint32_t, uint32_t, uint32_t>())
+        .def("__repr__", [](const Datum &d) {
+            return "Datum";
+        })
         .def("get_tag", &Datum::GetTag)
         .def("get_monat", &Datum::GetMonat)
         .def("get_jahr", &Datum::GetJahr)
@@ -120,6 +123,8 @@ PYBIND11_MODULE(py_bindings, py_module) {
     
     py::class_<Supermarkt>(py_module, "Supermarkt")
         .def(py::init<std::string, std::string>())
+        .def("get_supermarkt_name", &Supermarkt::GetSupermarktName)
+        .def("get_supermarkt_adress", &Supermarkt::GetSupermarktAdress)
         .def("fuege_produkt_ein", &Supermarkt::AddProdukt)
         .def("entferne_produkt", &Supermarkt::RemoveProdukt)
         .def("fuege_kunden_ein", &Supermarkt::AddKunde)

@@ -1,46 +1,83 @@
+"""Python-File fuer die GUI"""
+
 import tkinter as tk
+from tkinter import messagebox
+from datetime import datetime
+
 from py_bindings import (
-    Person,
     Kunde,
-    Haendler,
-    Datum,
     Produkt,
-    Konto,
+    Haendler,
     Warenkorb,
+    Konto,
+    Statistik,
+    Datum,
     Kassenzettel,
     Supermarkt,
     Logging,
     LogLevel,
     ReadData,
-    Statistik,
 )
 
 
 class SupermarktApp:
     """Hauptklasse für die Supermarkt GUI-Anwendung"""
-    def __init__(self, root):
-        self.root = root
+
+    def __init__(self, master):
+        self.root = master
         self.root.title("Supermarkt GUI")
         self.root.geometry("1080x810")
         self.root.configure(bg="white")
+
+        heute = datetime.today()
+
+        self.current_date = Datum(heute.day, heute.month, heute.year)
+        self.current_kunde = None
+        self.current_haendler = None
+        self.current_konto = None
+        self.current_warenkorb = None
+        self.produkte_liste = []
+        self.supermarkt = Supermarkt(
+            "REAL", "Musterstraße 1, 12345 Musterstadt"
+        )
+
+        self.statistik = Statistik()
+        self.logging = Logging("supermarkt_logging.txt", LogLevel.INFO, True)
+        self.logging.start_log("Supermarkt GUI gestartet", LogLevel.INFO)
+        self.read_data = ReadData("supermarkt_logging.txt")
 
         self.create_widgets()
 
     def create_widgets(self):
         """Erstellt die GUI-Widgets"""
-        title = tk.Label(self.root, text="🛒 Supermarkt-Verwaltung", font=("Arial", 20), bg="white")
+        title = tk.Label(
+            self.root,
+            text=f"🛒 Supermarkt-Verwaltung fuer {self.supermarkt.get_supermarkt_name()}",
+            font=("Arial", 20),
+            bg="white",
+        )
         title.pack(pady=20)
+
+        subtitle = tk.Label(
+            self.root,
+            text=f"Aktuelles Datum: {self.current_date.datum_anzeige()}",
+            font=("Arial", 20),
+            bg="white",
+        )
+        subtitle.pack(pady=20)
 
         button_frame = tk.Frame(self.root, bg="white")
         button_frame.pack(pady=40)
 
+        # Graue Buttons für die Klassen
         buttons_info = [
             ("Kunde hinzufügen", self.handle_kunde),
-            ("Produkt anzeigen", self.handle_produkt),
-            ("Haendler anzeigen", self.handle_haendler),
-            ("Warenkorb anzeigen", self.handle_warenkorb),
-            ("Konto anzeigen", self.handle_konto),
-            ("Statistik anzeigen", self.handle_statistik),
+            ("Konto hinzufügen", self.handle_konto),
+            ("Aktueller Warenkorb", self.handle_warenkorb),
+            ("Haendler hinzufügen", self.handle_haendler),
+            ("Produkt hinzufügen", self.handle_produkt),
+            ("Erzeuge Kassenzettel", self.show_kassenzettel),
+
         ]
 
         for text, command in buttons_info:
@@ -52,72 +89,234 @@ class SupermarktApp:
                 fg="white",
                 font=("Arial", 14),
                 width=25,
-                height=2
+                height=2,
             )
             button.pack(pady=10)
 
-    def open_info_window(self, title: str, content: str):
-        """Öffnet ein neues Fenster mit Informationen"""
-        window = tk.Toplevel(self.root)
-        window.title(title)
-        window.geometry("500x300")
-        window.configure(bg="white")
-
-        label = tk.Label(window, text=title, font=("Arial", 16, "bold"), bg="white")
-        label.pack(pady=10)
-
-        content_label = tk.Label(window, text=content, bg="white", font=("Arial", 12), wraplength=480, justify="left")
-        content_label.pack(pady=10)
+        # Statusanzeige
+        self.status = tk.Label(
+            self.root, text="", bg="white", fg="green", font=("Arial", 12)
+        )
+        self.status.pack(pady=10)
 
     def handle_kunde(self):
-        """Erstellt einen Dummy-Kunden"""
-        kunde = Kunde("Max Mustermann", "male", 30, "max@web.de", "Musterstraße 1, 12345 Musterstadt")
-        self.open_info_window("🧍 Kunde erstellt", repr(kunde))
+        """Fenster zum Anlegen eines Kunden"""
 
-    def handle_produkt(self):
-        """Zeigt ein Beispielprodukt an"""
-        datum = Datum(25, 12, 2025)
-        produkt = Produkt("Apfel", 1.99, 3.5, datum, "Obst")
-        self.open_info_window("🍎 Produkt erstellt", repr(produkt))
+        def create_kunde():
+            name = entry_name.get()
+            geschlecht = entry_geschlecht.get()
+            alter = int(entry_alter.get())
+            email = entry_email.get()
+            adresse = entry_adresse.get()
+            self.current_kunde = Kunde(name, geschlecht, alter, email, adresse)
+            self.status.config(text=f"Kunde '{self.current_kunde.get_name()}' wurde gespeichert.")
+            self.logging.start_log(f"Neuer Kunde: {self.current_kunde.get_name()}", LogLevel.INFO)
+            kunde_window.destroy()
+
+        kunde_window = tk.Toplevel(self.root)
+        kunde_window.title("Kunde hinzufügen")
+        kunde_window.geometry("400x300")
+
+        labels = ["Name", "Geschlecht", "Alter", "E-Mail", "Adresse"]
+        entries = []
+
+        for label_text in labels:
+            tk.Label(kunde_window, text=label_text).pack()
+            entry = tk.Entry(kunde_window)
+            entry.pack()
+            entries.append(entry)
+
+        entry_name, entry_geschlecht, entry_alter, entry_email, entry_adresse = entries
+
+        tk.Button(kunde_window, text="Kunde erstellen", command=create_kunde).pack(
+            pady=10
+        )
 
     def handle_haendler(self):
-        """Erstellt einen Dummy-Händler"""
-        haendler = Haendler("Lisa Händler", "female", 45, "lisa@handel.de", "Marktweg 7, 54321 Händlertown")
-        self.open_info_window("🏪 Händler erstellt", repr(haendler))
+        """Öffnet ein Fenster zur Eingabe eines neuen Haendlers"""
 
-    def handle_warenkorb(self):
-        """Erstellt einen Warenkorb mit einem Produkt"""
-        kunde = Kunde("Anna", "female", 25, "anna@supermail.de", "Feldweg 2, 10115 Berlin")
-        produkt = Produkt("Bananen", 2.00, 1.5, Datum(15, 6, 2025), "Obst")
-        warenkorb = Warenkorb(kunde)
-        warenkorb.fuege_produkt_hinzu(produkt)
-        produkte = warenkorb.erhalte_produkte()
-        content = "\n".join([repr(p) for p in produkte])
-        self.open_info_window("🧺 Warenkorb erstellt", content)
+        def create_haendler():
+            try:
+                name = entry_name.get()
+                geschlecht = entry_geschlecht.get()
+                alter = int(entry_alter.get())
+                email = entry_email.get()
+                adresse = entry_adresse.get()
+
+                self.current_haendler = Haendler(
+                    name, geschlecht, alter, email, adresse
+                )
+                self.status.config(
+                    text=f"Haendler '{self.current_haendler.get_name()}' wurde erstellt."
+                )
+                haendler_fenster.destroy()
+            except ValueError as e:
+                messagebox.showerror("Fehler", str(e))
+
+        haendler_fenster = tk.Toplevel(self.root)
+        haendler_fenster.title("Neuen Haendler anlegen")
+        haendler_fenster.geometry("400x300")
+        haendler_fenster.configure(bg="white")
+
+        labels = ["Name", "Geschlecht", "Alter", "E-Mail", "Adresse"]
+        entries = []
+
+        for i, label in enumerate(labels):
+            tk.Label(haendler_fenster, text=label, bg="white").grid(
+                row=i, column=0, padx=10, pady=5, sticky="e"
+            )
+            entry = tk.Entry(haendler_fenster, width=30)
+            entry.grid(row=i, column=1, padx=10, pady=5)
+            entries.append(entry)
+
+        entry_name, entry_geschlecht, entry_alter, entry_email, entry_adresse = entries
+
+        tk.Button(
+            haendler_fenster,
+            text="Haendler erstellen",
+            command=create_haendler,
+            bg="gray",
+            fg="white",
+        ).grid(row=len(labels), columnspan=2, pady=20)
+        self.logging.start_log(f"Neuer Haendler: {self.current_haendler.get_name()}", LogLevel.INFO)
 
     def handle_konto(self):
-        """Zeigt ein Beispiel-Konto"""
-        kunde = Kunde("Tim Konto", "male", 32, "tim@konto.de", "Bankstraße 9, 45678 Geldstadt")
-        konto = Konto(kunde, "Sparkasse")
-        konto.einzahlen(100.0)
-        konto.abheben(25.0)
-        text = f"💳 Konto erstellt für: {kunde.get_name()}\nKontostand: {konto.get_kontostand():.2f} €"
-        self.open_info_window("💳 Konto", text)
+        """Fenster zum Erstellen eines Kontos für den aktuellen Kunden"""
+        if not self.current_kunde:
+            self.status.config(text="Bitte zuerst einen Kunden anlegen.")
+            return
 
-    def handle_statistik(self):
-        """Berechnet einfache Statistik aus Zahlen"""
-        statistik = Statistik()
-        data = "Wert: 100, 200, 150, 250, 300\nWeitere Zeile mit 50 und 75"
+        def create_konto():
+            bank = entry_bank.get()
+            self.current_konto = Konto(self.current_kunde, bank)
+            self.status.config(
+                text=f"Konto für {self.current_kunde.get_name()} bei {self.current_konto.get_institut()} wurde angelegt."
+            )
+            self.current_konto.einzahlen(1000.00)
+            konto_window.destroy()
+
+        konto_window = tk.Toplevel(self.root)
+        konto_window.title("Konto anlegen")
+        konto_window.geometry("400x150")
+
+        tk.Label(konto_window, text="Bankname").pack()
+        entry_bank = tk.Entry(konto_window)
+        entry_bank.pack()
+
+        tk.Button(konto_window, text="Konto erstellen", command=create_konto).pack(
+            pady=10
+        )
+        self.logging.start_log(f"Neues Konto fuer: {self.current_kunde.get_name()}", LogLevel.INFO)
+
+    def handle_produkt(self):
+        """Öffnet ein Fenster zur Eingabe eines neuen Produkts"""
+
+        def create_produkt():
+            try:
+                name = entry_name.get()
+                menge = float(entry_menge.get())
+                preis = float(entry_preis.get())
+                abteilung = entry_abteilung.get()
+
+
+                produkt = Produkt(name, menge, preis, Datum(10, 12, 2024), abteilung)
+                self.logging.start_log(f"Neues Produkt: {entry_name.get()}", LogLevel.INFO)
+                self.produkte_liste.append(produkt)
+
+                jugendschutz = ["Alkohol", "Hochprozentiges"]
+                if abteilung in jugendschutz and self.current_konto.get_kontoinhaber().get_alter() < 18:
+                    self.produkte_liste.remove(produkt)
+                    self.logging.start_log(f"{self.current_konto.get_kontoinhaber().get_name()} ist minderjaehrig!", LogLevel.ERROR)
+                self.status.config(text=f"Produkt '{name}' wurde erstellt.")
+                produkt_fenster.destroy()
+            except ValueError as e:
+                messagebox.showerror("Fehler", str(e))
+
+        produkt_fenster = tk.Toplevel(self.root)
+        produkt_fenster.title("Neues Produkt anlegen")
+        produkt_fenster.geometry("400x300")
+        produkt_fenster.configure(bg="white")
+
+        labels = ["Name", "Menge", "Preis", "Abteilung"]
+        entries = []
+
+        for i, label in enumerate(labels):
+            tk.Label(produkt_fenster, text=label, bg="white").grid(
+                row=i, column=0, padx=10, pady=5, sticky="e"
+            )
+            entry = tk.Entry(produkt_fenster, width=30)
+            entry.grid(row=i, column=1, padx=10, pady=5)
+            entries.append(entry)
+
+        entry_name, entry_menge, entry_preis, entry_abteilung = entries
+
+        tk.Button(
+            produkt_fenster,
+            text="Produkt erstellen",
+            command=create_produkt,
+            bg="gray",
+            fg="white",
+        ).grid(row=len(labels), columnspan=2, pady=20)
+
+    def handle_warenkorb(self):
+        """Fenster zum Erstellen eines Warenkorbs für den aktuellen Kunden"""
+        if not self.current_kunde:
+            self.status.config(text="Bitte zuerst einen Kunden anlegen.")
+            return
+
+        self.current_warenkorb = Warenkorb(self.current_kunde)
+        message = f"Warenkorb für {self.current_kunde.get_name()} wurde angelegt."
+
+        for produkt in self.produkte_liste:
+            self.current_warenkorb.fuege_produkt_hinzu(produkt)
+
+        kosten = self.current_warenkorb.get_warenkorb_gesamtpreis()
+        self.current_konto.abheben(kosten)
+        if self.current_konto.get_kontostand() > 0:
+            self.logging.start_log(f"{self.current_konto.get_kontoinhaber().get_name()} ist zahlungsfaehig!", LogLevel.INFO)
+        else:
+            self.logging.start_log(f"{self.current_konto.get_kontoinhaber().get_name()} ist insolvent!", LogLevel.ERROR)
+        items = self.current_warenkorb.erhalte_produkte()
+        if not items:
+            self.status.config(text="Warenkorb ist leer.")
+            self.logging.start_log("Leerer Warenkorb!", LogLevel.WARNING)
+            return
+
+        message = "Artikel im Warenkorb:\n"
+        for i, item in enumerate(items, 0):
+            message += f"{i+1}. {item.get_bezeichnung()}\n"
+        self.status.config(text=message)
+        message += f"\nGesamtkosten vom Einkauf: {kosten:.2f} €"
+        self.logging.start_log(message, LogLevel.INFO)
+
+        self.status.config(text=message)
+
+    def show_kassenzettel(self):
+        """Liest den zuletzt erzeugten Kassenzettel ein und zeigt ihn"""
+        if not hasattr(self, "current_kassenzettel"):
+            self.status.config(text="Kein Kassenzettel vorhanden.")
+            return
+        current_kassenzettel = Kassenzettel(self.current_date, self.current_kunde, self.current_haendler, self.current_warenkorb, self.current_konto)
+        current_kassenzettel.erzeuge_kassenzettel()
+
+
         try:
-            reader = ReadData.from_string(data)
-            statistik.lade_daten(reader)
-        except (AttributeError, ValueError, TypeError):
-            statistik.lade_daten(ReadData("./GUI/dummy.csv"))  # Fallback
-        mw = statistik.mittelwert()
-        med = statistik.median()
-        content = f"📊 Statistik:\nMittelwert: {mw:.2f}\nMedian: {med:.2f}\n"
-        self.open_info_window("📊 Statistik Ergebnisse", content)
+            with open(current_kassenzettel.erzeuge_kassenzettel(), "r", encoding="utf-8") as file:
+                content = file.read()
+        except (OSError, IOError) as e:
+            self.status.config(text=f"Fehler beim Lesen: {e}")
+            return
 
+        anzeige = tk.Toplevel(self.root)
+        anzeige.title("Kassenzettel")
+        anzeige.geometry("600x600")
+        anzeige.configure(bg="white")
+
+        textfeld = tk.Text(anzeige, wrap=tk.WORD, bg="white", font=("Courier", 12))
+        textfeld.insert(tk.END, content)
+        textfeld.pack(expand=True, fill=tk.BOTH)
+
+        self.status.config(text="Kassenzettel angezeigt.")
 
 if __name__ == "__main__":
     root = tk.Tk()
