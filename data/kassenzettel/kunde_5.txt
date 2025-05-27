@@ -7,8 +7,10 @@ Produkt             Menge          Preis [€]
 Kirschen            2.79           7.99                
 Zitronen            12.00          1.79                
 Bananen             12.92          2.56                
+Tequilla            2.00           39.99               
+Papayas             3.00           6.99                
 --------------------------------------------------
-Gesamtpreis:                       76.84         
+Gesamtpreis:                       177.79        
 
 Institut: American Express
 Konto-ID: 1

@@ -181,3 +181,107 @@ Gesamtkosten vom Einkauf: 97.64 €
 1. Kirschen
 
 Gesamtkosten vom Einkauf: 102.03 €
+[27.05.2025 18:20:11] [INFO] Supermarkt GUI gestartet
+[27.05.2025 18:20:49] [INFO] Neuer Kunde: LeBron James
+[27.05.2025 18:21:29] [INFO] Neues Konto fuer: LeBron James
+[27.05.2025 18:21:39] [INFO] LeBron James ist zahlungsfaehig!
+[27.05.2025 18:21:39] [WARNING] Leerer Warenkorb!
+[27.05.2025 18:22:07] [INFO] Neues Produkt: Wassermelone
+[27.05.2025 18:22:08] [INFO] LeBron James ist zahlungsfaehig!
+[27.05.2025 18:22:08] [INFO] Artikel im Warenkorb:
+1. Wassermelone
+
+Gesamtkosten vom Einkauf: 51.68 €
+[27.05.2025 18:22:55] [INFO] LeBron James ist zahlungsfaehig!
+[27.05.2025 18:22:55] [INFO] Artikel im Warenkorb:
+1. Wassermelone
+
+Gesamtkosten vom Einkauf: 51.68 €
+[27.05.2025 18:23:23] [INFO] Neues Produkt: Honig
+[27.05.2025 18:23:30] [INFO] LeBron James ist zahlungsfaehig!
+[27.05.2025 18:23:30] [INFO] Artikel im Warenkorb:
+1. Wassermelone
+2. Honig
+
+Gesamtkosten vom Einkauf: 78.65 €
+[27.05.2025 18:35:25] [INFO] Supermarkt GUI gestartet
+[27.05.2025 18:35:54] [INFO] Neuer Kunde: LeBron James
+[27.05.2025 18:35:56] [INFO] Neues Konto fuer: LeBron James
+[27.05.2025 18:36:04] [INFO] LeBron James ist zahlungsfaehig!
+[27.05.2025 18:36:04] [WARNING] Leerer Warenkorb!
+[27.05.2025 18:37:03] [INFO] Supermarkt GUI gestartet
+[27.05.2025 18:38:13] [INFO] Supermarkt GUI gestartet
+[27.05.2025 18:38:48] [INFO] Neuer Haendler: LeBron James
+[27.05.2025 18:39:35] [INFO] Neuer Kunde: Kyrie Irving
+[27.05.2025 18:39:39] [INFO] Neues Konto fuer: Kyrie Irving
+[27.05.2025 18:40:11] [INFO] Neues Produkt: Kirschen
+[27.05.2025 18:40:14] [INFO] Kyrie Irving ist zahlungsfaehig!
+[27.05.2025 18:40:14] [INFO] Artikel im Warenkorb:
+1. Kirschen
+
+Gesamtkosten vom Einkauf: 96.04 €
+[27.05.2025 18:40:17] [INFO] Kassenzettel erzeugt: ./data/kassenzettel/kunde_1.txt
+[27.05.2025 18:41:17] [INFO] Neues Produkt: Zitronen
+[27.05.2025 18:41:22] [INFO] Kassenzettel erzeugt: ./data/kassenzettel/kunde_2.txt
+[27.05.2025 18:42:22] [INFO] Neues Produkt: Bananen
+[27.05.2025 18:42:40] [INFO] Kassenzettel erzeugt: ./data/kassenzettel/kunde_3.txt
+[27.05.2025 18:43:29] [INFO] Supermarkt GUI gestartet
+[27.05.2025 18:43:58] [INFO] Neuer Kunde: Justin Bieber
+[27.05.2025 18:43:58] [INFO] Neues Konto fuer: Justin Bieber
+[27.05.2025 18:44:06] [INFO] Justin Bieber ist zahlungsfaehig!
+[27.05.2025 18:44:06] [WARNING] Leerer Warenkorb!
+[27.05.2025 18:44:49] [INFO] Neuer Haendler: Billie Eilish
+[27.05.2025 18:45:11] [INFO] Neues Produkt: Kirschen
+[27.05.2025 18:45:30] [INFO] Neues Produkt: Zitronen
+[27.05.2025 18:45:33] [INFO] Kassenzettel erzeugt: ./data/kassenzettel/kunde_1.txt
+[27.05.2025 18:45:44] [INFO] Justin Bieber ist zahlungsfaehig!
+[27.05.2025 18:45:44] [INFO] Artikel im Warenkorb:
+1. Kirschen
+2. Zitronen
+
+Gesamtkosten vom Einkauf: 43.76 €
+[27.05.2025 18:45:48] [INFO] Justin Bieber ist zahlungsfaehig!
+[27.05.2025 18:45:48] [INFO] Artikel im Warenkorb:
+1. Kirschen
+2. Zitronen
+
+Gesamtkosten vom Einkauf: 43.76 €
+[27.05.2025 18:45:53] [INFO] Kassenzettel erzeugt: ./data/kassenzettel/kunde_2.txt
+[27.05.2025 18:46:21] [INFO] Neues Produkt: Bananen
+[27.05.2025 18:46:23] [INFO] Justin Bieber ist zahlungsfaehig!
+[27.05.2025 18:46:23] [INFO] Artikel im Warenkorb:
+1. Kirschen
+2. Zitronen
+3. Bananen
+
+Gesamtkosten vom Einkauf: 76.84 €
+[27.05.2025 18:46:26] [INFO] Kassenzettel erzeugt: ./data/kassenzettel/kunde_3.txt
+[27.05.2025 18:46:58] [INFO] Neues Produkt: Tequilla
+[27.05.2025 18:47:01] [INFO] Justin Bieber ist zahlungsfaehig!
+[27.05.2025 18:47:01] [INFO] Artikel im Warenkorb:
+1. Kirschen
+2. Zitronen
+3. Bananen
+4. Tequilla
+
+Gesamtkosten vom Einkauf: 156.82 €
+[27.05.2025 18:47:03] [INFO] Kassenzettel erzeugt: ./data/kassenzettel/kunde_4.txt
+[27.05.2025 18:47:42] [INFO] Neues Produkt: Papayas
+[27.05.2025 18:47:44] [INFO] Justin Bieber ist zahlungsfaehig!
+[27.05.2025 18:47:44] [INFO] Artikel im Warenkorb:
+1. Kirschen
+2. Zitronen
+3. Bananen
+4. Tequilla
+5. Papayas
+
+Gesamtkosten vom Einkauf: 177.79 €
+[27.05.2025 18:47:46] [INFO] Kassenzettel erzeugt: ./data/kassenzettel/kunde_5.txt
+[27.05.2025 19:12:45] [INFO] Supermarkt GUI gestartet
+[27.05.2025 19:14:58] [INFO] Supermarkt GUI gestartet
+[27.05.2025 19:18:11] [INFO] Supermarkt GUI gestartet
+[27.05.2025 19:19:30] [INFO] Supermarkt GUI gestartet
+[27.05.2025 19:19:59] [INFO] Supermarkt GUI wird geschlossen
+[27.05.2025 19:20:04] [INFO] Supermarkt GUI gestartet
+[27.05.2025 19:20:08] [INFO] Supermarkt GUI wird geschlossen
+[27.05.2025 19:20:10] [INFO] Supermarkt GUI gestartet
