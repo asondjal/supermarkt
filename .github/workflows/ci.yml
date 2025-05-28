@@ -27,7 +27,7 @@ jobs:
           pip install pytest pybind11
 
       - name: C++ Modul mit CMake bauen (Workflow-Build)
-        run: cmake -B build_workflow -DCMAKE_BUILD_TYPE=Release
+        run: cmake -B build -DCMAKE_BUILD_TYPE=Release
 
       - name: C++ Modul bauen (Workflow-Build)
         run: cmake --build build --config Release
