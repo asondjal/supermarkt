@@ -31,18 +31,15 @@ add_executable(supermarkt
     bindings/python_bindings.cpp
 )
 
-# Pybind11 einbinden
 add_subdirectory(pybind11)
 find_package(Python3 COMPONENTS Interpreter Development REQUIRED)
 
-# pybind11_bindings mit Python-Bibliotheken linken
 target_link_libraries(supermarkt PRIVATE Python3::Python)
 
 include_directories(${Python3_INCLUDE_DIRS})
 include_directories(${PROJECT_SOURCE_DIR}/include)
 include_directories(${CMAKE_SOURCE_DIR}/pybind11/include)
 
-# Modul für Python (Statistik-Pybind11)
 pybind11_add_module(py_bindings
     bindings/python_bindings.cpp
     
@@ -63,14 +60,11 @@ pybind11_add_module(py_bindings
 
 target_link_libraries(py_bindings PRIVATE poppler-cpp)
 
-# Includes
 target_include_directories(supermarkt PRIVATE
     inc/base
     inc/utils
 )
 
-# Libraries
 target_link_libraries(supermarkt PRIVATE poppler-cpp)
 
-# Compiler-Flags
 target_compile_options(supermarkt PRIVATE -Wall -Wextra -pedantic)

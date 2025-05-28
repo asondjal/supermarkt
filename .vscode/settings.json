@@ -1,14 +1,4 @@
 {
-    "cSpell.diagnosticLevel": "Hint",
-    "cpplint.excludes": [
-        "build",
-        ".vscode"
-    ],
-    "cpplint.lintMode": "workspace",
-    "cpplint.filters": [
-        "-legal/copyright",
-        "-build/include_subdir"
-    ],
     "cmake.configureOnOpen": false,
     "files.associations": {
         "iomanip": "cpp",
@@ -95,21 +85,12 @@
     "C_Cpp.errorSquiggles": "disabled",
     "C_Cpp.default.compilerPath": "/usr/bin/gcc",
 
-    "python.envFile": "${workspaceFolder}/.env",
-
-    "python.analysis.extraPaths": [
-    "./build"
-],
-"python.analysis.stubPath": "./build",
-"python.analysis.autoSearchPaths": true,
-"python.analysis.diagnosticSeverityOverrides": {
+  "python.analysis.extraPaths": ["./build"],
+  "python.analysis.diagnosticSeverityOverrides": {
     "reportMissingImports": "none",
     "reportMissingModuleSource": "none"
-},
-"python.testing.pytestArgs": [
-    "GUI"
-],
-"python.testing.unittestEnabled": false,
-"python.testing.pytestEnabled": true,
-"python.analysis.autoImportCompletions": false
+  },
+  "python.analysis.typeCheckingMode": "off",
+  "python.envFile": "${workspaceFolder}/.env",
+  "python.analysis.ignore": ["./GUI/gui.py", "./tests/test_supermarkt.py"]
 }

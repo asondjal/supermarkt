@@ -2,5 +2,5 @@
 init-hook='import sys; sys.path.append("build")'
 
 [TYPECHECK]
-extension-pkg-allow-list=py_bindings
-generated-members=Kunde,Produkt,Warenkorb,Konto,Statistik,Datum,Kassenzettel,Supermarkt,Haendler
+extension-pkg-whitelist=py_bindings
+ignored-modules=py_bindings
