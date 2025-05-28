@@ -88,12 +88,8 @@
     [MASTER]
     init-hook='import sys; sys.path.append("build")'
 
-- **Inhalt von.env:** PYTHONPATH=./build
+    [TYPECHECK]
+    extension-pkg-allow-list=py_bindings
+    generated-members=Kunde,Produkt,Warenkorb,Konto,Statistik,Datum,Kassenzettel,Supermarkt,Haendler
 
-- **Temporäre Eingabe via Terminal:**
-
-    export PYTHONPATH=/home/arrif-sondjalim/c++projects/supermarkt/build
-
-## Zu erledigende Aufgaben
-
-- GUI: Implementierung in Python
+- **Inhalt von.env:** PYTHONPATH=/home/arrif-sondjalim/c++projects/supermarkt/build

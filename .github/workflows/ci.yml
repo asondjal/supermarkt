@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
     steps:
       - name: Repository auschecken
@@ -23,17 +23,17 @@ jobs:
       - name: Installation der Abhängigkeiten
         run: |
           sudo apt-get update
-          sudo apt-get install cmake g++ -y
+          sudo apt-get install cmake g++ libpoppler-cpp-dev ccache -y
           pip install pytest pybind11
-
-      - name: Installation der poppler-Bibliothek
-        run: sudo apt-get install libpoppler-cpp-dev -y
-
-      - name: Installation vom ccache 
-        run: sudo apt-get install ccache -y
 
       - name: C++ Modul mit CMake bauen (Workflow-Build)
         run: cmake -B build_workflow -DCMAKE_BUILD_TYPE=Release
 
       - name: C++ Modul bauen (Workflow-Build)
         run: cmake --build build_workflow --config Release
+
+      - name: Python-Tests ausführen
+        env:
+          PYTHONPATH: ${{github.workspace}}/build_workflow
+        run: |
+          pytest tests

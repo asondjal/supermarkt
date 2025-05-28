@@ -1,17 +1,17 @@
 # ninja log v5
-5	48	1748291283456856161	CMakeFiles/supermarkt.dir/bindings/python_bindings.cpp.o	addd45ab5cb31833
-4	93	1748074529456840587	CMakeFiles/py_bindings.dir/src/logging.cpp.o	391d8852fd32ea64
-18	25	1748036700772554354	CMakeFiles/py_bindings.dir/src/read_data.cpp.o	dcfe9a11cb38d20e
-4	882	1748074334442809998	CMakeFiles/supermarkt.dir/src/main.cpp.o	4e51c7852a31404d
-3	91	1748074529456840587	CMakeFiles/supermarkt.dir/src/logging.cpp.o	1f1b5db147be41c2
-12	20	1748036700766554450	CMakeFiles/py_bindings.dir/src/haendler.cpp.o	a6c5b51fc8057a2d
+4	15	1748291283435855944	CMakeFiles/supermarkt.dir/src/konto.cpp.o	24a4ef8f819c31ed
+3	13	1748036700758554577	CMakeFiles/supermarkt.dir/src/read_data.cpp.o	ca71ae747732ba9a
+2	10	1748036700757554593	CMakeFiles/supermarkt.dir/src/haendler.cpp.o	ab9a567d18bbc66f
 1	7	1748036700754554641	CMakeFiles/supermarkt.dir/src/produkt.cpp.o	8fd603b505ef24a0
-5	48	1748291283456856161	CMakeFiles/py_bindings.dir/bindings/python_bindings.cpp.o	2a520e02f7700bfe
+12	20	1748036700766554450	CMakeFiles/py_bindings.dir/src/haendler.cpp.o	a6c5b51fc8057a2d
+3	91	1748074529456840587	CMakeFiles/supermarkt.dir/src/logging.cpp.o	1f1b5db147be41c2
 48	361	1748291283776859466	py_bindings.cpython-312-x86_64-linux-gnu.so	887deaefcf563a05
 5	1048	1748285563302637871	CMakeFiles/py_bindings.dir/src/supermarkt.cpp.o	62c4b3a77e1ea9a9
-2	10	1748036700757554593	CMakeFiles/supermarkt.dir/src/haendler.cpp.o	ab9a567d18bbc66f
-3	13	1748036700758554577	CMakeFiles/supermarkt.dir/src/read_data.cpp.o	ca71ae747732ba9a
-4	15	1748291283435855944	CMakeFiles/supermarkt.dir/src/konto.cpp.o	24a4ef8f819c31ed
+5	48	1748291283456856161	CMakeFiles/py_bindings.dir/bindings/python_bindings.cpp.o	2a520e02f7700bfe
+4	882	1748074334442809998	CMakeFiles/supermarkt.dir/src/main.cpp.o	4e51c7852a31404d
+18	25	1748036700772554354	CMakeFiles/py_bindings.dir/src/read_data.cpp.o	dcfe9a11cb38d20e
+4	93	1748074529456840587	CMakeFiles/py_bindings.dir/src/logging.cpp.o	391d8852fd32ea64
+5	48	1748291283456856161	CMakeFiles/supermarkt.dir/bindings/python_bindings.cpp.o	addd45ab5cb31833
 4	12	1748072294720191945	CMakeFiles/supermarkt.dir/src/warenkorb.cpp.o	815ab298a47d84e8
 5	13	1748072294720191945	CMakeFiles/py_bindings.dir/src/warenkorb.cpp.o	71c806ed688e5a74
 5	17	1748291283435855944	CMakeFiles/py_bindings.dir/src/tests.cpp.o	edaa199a6141a92b
@@ -27,6 +27,6 @@
 10	19	1748036700764554482	CMakeFiles/py_bindings.dir/src/datum.cpp.o	923eb6ef856e0cdd
 1	14	1748036700759554562	CMakeFiles/supermarkt.dir/src/datum.cpp.o	4eb4326846a30204
 48	441	1748291283855860281	supermarkt	cc057bd2818101e2
-1	9	1748036700757554593	CMakeFiles/supermarkt.dir/src/person.cpp.o	2fe9242dceedb2f4
-5	16	1748291283436855955	CMakeFiles/py_bindings.dir/src/kassenzettel.cpp.o	31e6936931b4d697
 2	12	1748036700757554593	CMakeFiles/supermarkt.dir/src/kunde.cpp.o	a07c8055f3682e4a
+5	16	1748291283436855955	CMakeFiles/py_bindings.dir/src/kassenzettel.cpp.o	31e6936931b4d697
+1	9	1748036700757554593	CMakeFiles/supermarkt.dir/src/person.cpp.o	2fe9242dceedb2f4
