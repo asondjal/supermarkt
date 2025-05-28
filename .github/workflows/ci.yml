@@ -30,10 +30,10 @@ jobs:
         run: cmake -B build_workflow -DCMAKE_BUILD_TYPE=Release
 
       - name: C++ Modul bauen (Workflow-Build)
-        run: cmake --build build_workflow --config Release
+        run: cmake --build build --config Release
 
       - name: Python-Tests ausführen
         env:
-          PYTHONPATH: ${{github.workspace}}/build_workflow
+          PYTHONPATH: ${{github.workspace}}/build
         run: |
           pytest tests
