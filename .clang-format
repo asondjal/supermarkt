@@ -3,7 +3,7 @@ IndentWidth: 2
 ColumnLimit: 80
 IncludeBlocks: Regroup
 SortIncludes: true
-AccessModifierOffset: -2
+AccessModifierOffset: -1
 IncludeCategories:
   - Regex:           '^<.*\.h>'
     Priority:        1

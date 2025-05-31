@@ -12,8 +12,8 @@
 
 #include "utils/read_data.hpp"
 
-class Statistik {
-public:
+class Statistik{
+ public:
   explicit Statistik();
   void LadeDaten(ReadData& reader);
   void EntferneDaten(const std::string& data);
@@ -27,7 +27,7 @@ public:
   float Erwartungswert() const;
   float Standardabweichung() const;
 
-private:
+ private:
   std::vector<std::string> datenBuffer_;
   mutable std::mutex datenMutex_;
 

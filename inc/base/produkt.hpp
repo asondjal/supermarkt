@@ -7,7 +7,7 @@
 
 #include "base/datum.hpp"
 
-class Produkt {
+class Produkt{
  private:
   const std::string name_;
   const float menge_;        // in kg

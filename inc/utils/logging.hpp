@@ -11,8 +11,8 @@
 
 enum class LogLevel { DEBUG, INFO, WARNING, ERROR };
 
-class Logging {
-private:
+class Logging{
+ private:
   std::ofstream logFile_;
   std::mutex logMutex_;
   LogLevel currentLevel_;
@@ -21,7 +21,7 @@ private:
   std::string GetTimestamp() const;
   std::string LevelToString(LogLevel level) const;
 
-public:
+ public:
   Logging(const std::string& logFilePath, LogLevel level = LogLevel::INFO,
           bool consoleOutput = true);
   ~Logging();

@@ -5,7 +5,7 @@
 
 #include "base/person.hpp"
 
-class Kunde : public Person {
+class Kunde : public Person{
  private:
   const int kundeID_;
 

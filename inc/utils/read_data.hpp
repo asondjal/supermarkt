@@ -10,8 +10,8 @@
 #include <string>
 #include <vector>
 
-class ReadData {
-public:
+class ReadData{
+ public:
   explicit ReadData(const std::string& path);
   std::mutex& GetMutex();
   std::string ReadFile() const;
@@ -21,7 +21,7 @@ public:
   std::string ReadPDF() const;
   std::string ReadAuto() const;
 
-private:
+ private:
   std::string filePath_;
   mutable std::mutex mtx_;
 };

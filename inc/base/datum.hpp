@@ -7,7 +7,7 @@
 #include <sstream>
 #include <string>
 
-class Datum {
+class Datum{
  private:
   const uint32_t tag_;
   const uint32_t monat_;
