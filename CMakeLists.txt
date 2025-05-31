@@ -11,7 +11,6 @@ set(CMAKE_CXX_COMPILER_LAUNCHER ccache)
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O2")
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g -O0 -Wall -Wextra -pedantic")
 
-# Haupt-Executable: supermarkt
 add_executable(supermarkt 
     src/main.cpp
     src/tests.cpp
@@ -59,12 +58,8 @@ pybind11_add_module(py_bindings
 )
 
 target_link_libraries(py_bindings PRIVATE poppler-cpp)
+target_include_directories(py_bindings PRIVATE ${PROJECT_SOURCE_DIR}/inc)
 
-target_include_directories(supermarkt PRIVATE
-    inc/base
-    inc/utils
-)
-
+target_include_directories(supermarkt PRIVATE ${PROJECT_SOURCE_DIR}/inc)
 target_link_libraries(supermarkt PRIVATE poppler-cpp)
-
 target_compile_options(supermarkt PRIVATE -Wall -Wextra -pedantic)

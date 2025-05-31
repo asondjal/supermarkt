@@ -1,14 +1,14 @@
-#ifndef TESTS_HPP_
-#define TESTS_HPP_
+#ifndef INC_UTILS_TESTS_HPP_
+#define INC_UTILS_TESTS_HPP_
 
 #include <iostream>
 #include <cassert>
-#include "read_data.hpp"
-#include "statistik.hpp"
-#include "logging.hpp"
+#include "utils/read_data.hpp"
+#include "utils/statistik.hpp"
+#include "utils/logging.hpp"
 
 class Tests {
-    public:
+ public:
     Tests();
     void test_Datum(); // Funktioniert einwandfrei
     void test_Produkt(); // Funktioniert einwandfrei
@@ -25,4 +25,4 @@ class Tests {
     void runAllTests();
 };
 
-#endif /* TESTS_HPP_ */
+#endif  // INC_UTILS_TESTS_HPP_

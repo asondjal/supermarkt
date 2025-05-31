@@ -1,14 +1,14 @@
 #ifndef INC_BASE_KUNDE_HPP_
 #define INC_BASE_KUNDE_HPP_
 
-#include "person.hpp"
+#include "base/person.hpp"
 
 class Kunde : public Person {
 
-    private:
+ private:
     const int kundeID_;
 
-    public:
+ public:
     Kunde(std::string name, std::string gender, int age, std::string email, std::string adresse);
     int GetKundeID() const;
     void Print() const final;
@@ -17,4 +17,4 @@ class Kunde : public Person {
 };
 
 
-#endif // INC_BASE_KUNDE_HPP_
+#endif  // INC_BASE_KUNDE_HPP_

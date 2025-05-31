@@ -1,5 +1,5 @@
-#ifndef UTILITIES_HPP_
-#define UTILITIES_HPP_
+#ifndef INC_UTILS_UTILITIES_HPP_
+#define INC_UTILS_UTILITIES_HPP_
 
 #include <vector>
 #include <algorithm>
@@ -17,4 +17,4 @@ std::string default_repr(const std::string& classname, const std::string& name) 
     return "<" + classname + ": " + name + ">";
 }
 
-#endif /* UTILITIES_HPP_ */
+#endif  // INC_UTILS_UTILITIES_HPP_

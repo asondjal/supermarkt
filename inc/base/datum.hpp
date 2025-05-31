@@ -24,4 +24,4 @@ class Datum {
 };
 
 
-#endif // INC_BASE_DATUM_HPP_
+#endif  // INC_BASE_DATUM_HPP_

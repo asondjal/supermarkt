@@ -1,5 +1,5 @@
-#ifndef READ_DATA_HPP_
-#define READ_DATA_HPP_
+#ifndef INC_UTILS_READ_DATA_HPP_
+#define INC_UTILS_READ_DATA_HPP_
 
 #include <string>
 #include <vector>
@@ -25,4 +25,4 @@ private:
     mutable std::mutex mtx_;
 };
 
-#endif /* READ_DATA_HPP_ */
+#endif  // INC_UTILS_READ_DATA_HPP_

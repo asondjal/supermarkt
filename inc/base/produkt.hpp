@@ -1,14 +1,13 @@
-#ifndef PRODUKT_HPP_
-#define PRODUKT_HPP_
+#ifndef INC_BASE_PRODUKT_HPP_
+#define INC_BASE_PRODUKT_HPP_
 
 #include <string>
 #include <iostream>
 #include <iomanip>
-#include "datum.hpp"
+#include "base/datum.hpp"
 
 class Produkt {
-
-    private:
+ private:
     const std::string name_;
     const float menge_; // in kg
     const float preis_; // in €
@@ -16,7 +15,7 @@ class Produkt {
     const int id_;
     const std::string abteilung_;
 
-    public:
+ public:
     Produkt(std::string name, float menge, float preis, Datum haltbarkeit, std::string abteilung);
     std::string GetName() const;
     float GetMenge() const;
@@ -30,4 +29,4 @@ class Produkt {
 
 };
 
-#endif /* PRODUKT_HPP_ */
+#endif  // INC_BASE_PRODUKT_HPP_

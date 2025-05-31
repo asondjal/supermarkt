@@ -1,7 +1,7 @@
-#ifndef STATISTIK_HPP_
-#define STATISTIK_HPP_
+#ifndef INC_UTILS_STATISTIK_HPP_
+#define INC_UTILS_STATISTIK_HPP_
 
-#include "read_data.hpp"
+#include "utils/read_data.hpp"
 #include <vector>
 #include <string>
 #include <algorithm>
@@ -12,7 +12,7 @@
 #include <cmath>
 
 class Statistik {
-public:
+ public:
     explicit Statistik();
     void LadeDaten(ReadData& reader);
     void EntferneDaten(const std::string& data);
@@ -26,7 +26,7 @@ public:
     float Erwartungswert() const;
     float Standardabweichung() const;
 
-private:
+ private:
     std::vector<std::string> datenBuffer_;
     mutable std::mutex datenMutex_;
 
@@ -34,4 +34,4 @@ private:
     float MittelwertIntern() const;
 };
 
-#endif /* STATISTIK_HPP_ */
+#endif // INC_UTILS_STATISTIK_HPP_

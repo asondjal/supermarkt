@@ -1,21 +1,20 @@
-#ifndef WARENKORB_HPP_
-#define WARENKORB_HPP_
+#ifndef INC_BASE_WARENKORB_HPP_
+#define INC_BASE_WARENKORB_HPP_
 
 #include <iomanip>
 #include <vector>
 #include <algorithm>
 #include <memory>
-#include "produkt.hpp"
-#include "kunde.hpp"
+#include "base/produkt.hpp"
+#include "base/kunde.hpp"
 
 class Warenkorb {
-
-    private:
+ private:
     std::vector<Produkt*> produkte;
     std::shared_ptr<Kunde> kunde_;
     const int warenkorbID_;
 
-    public:
+ public:
     explicit Warenkorb(std::shared_ptr<Kunde> kunde);
     std::shared_ptr<Kunde> GetKunde() const;
     void AddProdukt(Produkt* produkt);
@@ -27,4 +26,4 @@ class Warenkorb {
 
 };
 
-#endif /* WARENKORB_HPP_ */
+#endif  // INC_BASE_WARENKORB_HPP_
