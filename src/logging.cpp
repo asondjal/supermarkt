@@ -1,4 +1,4 @@
-#include "../inc/utils/logging.hpp"
+#include "utils/logging.hpp"
 
 /**
  * @brief Konstruktor der Klasse Logging
@@ -86,8 +86,7 @@ std::string Logging::GetLevel() {
  * @param message, level
  */
 void Logging::Log(const std::string& message, LogLevel level) {
-  if (level < currentLevel_)
-    return;
+  if (level < currentLevel_) return;
 
   std::string timestamp = GetTimestamp();
   std::string levelStr = LevelToString(level);

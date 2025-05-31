@@ -1,12 +1,13 @@
 #ifndef INC_BASE_WARENKORB_HPP_
 #define INC_BASE_WARENKORB_HPP_
 
-#include "base/kunde.hpp"
-#include "base/produkt.hpp"
 #include <algorithm>
 #include <iomanip>
 #include <memory>
 #include <vector>
+
+#include "base/kunde.hpp"
+#include "base/produkt.hpp"
 
 class Warenkorb {
  private:

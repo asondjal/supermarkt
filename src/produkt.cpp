@@ -1,4 +1,4 @@
-#include "../inc/base/produkt.hpp"
+#include "base/produkt.hpp"
 
 static int produkt_counter = 0;
 

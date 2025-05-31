@@ -2,8 +2,8 @@
 #define INC_UTILS_UTILITIES_HPP_
 
 #include <algorithm>
-#include <vector>
 #include <string>
+#include <vector>
 
 template <typename T, typename U, typename Compare>
 void RemoveFromVector(std::vector<T>& vec, const U& value, Compare comp) {

@@ -1,7 +1,6 @@
 #ifndef INC_UTILS_STATISTIK_HPP_
 #define INC_UTILS_STATISTIK_HPP_
 
-#include "utils/read_data.hpp"
 #include <algorithm>
 #include <cmath>
 #include <iomanip>
@@ -10,6 +9,8 @@
 #include <regex>
 #include <string>
 #include <vector>
+
+#include "utils/read_data.hpp"
 
 class Statistik {
  public:

@@ -1,11 +1,12 @@
 #ifndef INC_UTILS_TESTS_HPP_
 #define INC_UTILS_TESTS_HPP_
 
+#include <cassert>
+#include <iostream>
+
 #include "utils/logging.hpp"
 #include "utils/read_data.hpp"
 #include "utils/statistik.hpp"
-#include <cassert>
-#include <iostream>
 
 class Tests {
  public:

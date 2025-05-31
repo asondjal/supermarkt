@@ -1,4 +1,4 @@
-#include "../inc/utils/read_data.hpp"
+#include "utils/read_data.hpp"
 
 ReadData::ReadData(const std::string& path) : filePath_{path} {}
 

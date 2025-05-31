@@ -1,4 +1,4 @@
-#include "../inc/utils/statistik.hpp"
+#include "utils/statistik.hpp"
 
 Statistik::Statistik() : datenBuffer_{}, datenMutex_{} {}
 

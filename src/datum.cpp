@@ -1,4 +1,4 @@
-#include "../inc/base/datum.hpp"
+#include "base/datum.hpp"
 
 Datum::Datum(uint32_t tag, uint32_t monat, uint32_t jahr)
     : tag_(tag), monat_(monat), jahr_(jahr) {}

@@ -1,14 +1,14 @@
 #ifndef INC_UTILS_READ_DATA_HPP_
 #define INC_UTILS_READ_DATA_HPP_
 
+#include <poppler/cpp/poppler-document.h>
+#include <poppler/cpp/poppler-page.h>
+
 #include <filesystem>
 #include <fstream>
 #include <mutex>
 #include <string>
 #include <vector>
-
-#include <poppler/cpp/poppler-document.h>
-#include <poppler/cpp/poppler-page.h>
 
 class ReadData {
  public:

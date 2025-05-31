@@ -7,8 +7,8 @@
 #include <memory>
 #include <mutex>
 #include <sstream>
-#include <vector>
 #include <string>
+#include <vector>
 
 #include "base/haendler.hpp"
 #include "base/kunde.hpp"

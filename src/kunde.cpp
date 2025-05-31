@@ -1,4 +1,4 @@
-#include "../inc/base/kunde.hpp"
+#include "base/kunde.hpp"
 
 static int kunden_counter = 0;
 
