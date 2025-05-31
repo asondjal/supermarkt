@@ -9,7 +9,7 @@
 #include "base/kunde.hpp"
 #include "base/produkt.hpp"
 
-class Warenkorb{
+class Warenkorb {
  private:
   std::vector<Produkt*> produkte;
   std::shared_ptr<Kunde> kunde_;

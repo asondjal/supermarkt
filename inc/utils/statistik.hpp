@@ -12,7 +12,7 @@
 
 #include "utils/read_data.hpp"
 
-class Statistik{
+class Statistik {
  public:
   explicit Statistik();
   void LadeDaten(ReadData& reader);

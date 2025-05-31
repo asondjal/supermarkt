@@ -5,7 +5,7 @@
 #include <iostream>
 #include <string>
 
-class Person{
+class Person {
  private:
   const std::string name_;
   const std::string gender_;

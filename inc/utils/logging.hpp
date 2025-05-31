@@ -11,7 +11,7 @@
 
 enum class LogLevel { DEBUG, INFO, WARNING, ERROR };
 
-class Logging{
+class Logging {
  private:
   std::ofstream logFile_;
   std::mutex logMutex_;

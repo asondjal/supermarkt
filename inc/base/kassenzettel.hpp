@@ -19,7 +19,7 @@
 #include "base/produkt.hpp"
 #include "base/warenkorb.hpp"
 
-class Kassenzettel{
+class Kassenzettel {
  private:
   const Datum& datum_;
   std::shared_ptr<Kunde> kunde_;

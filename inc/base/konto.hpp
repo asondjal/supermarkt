@@ -8,7 +8,7 @@
 
 #include "base/kunde.hpp"
 
-class Konto{
+class Konto {
  private:
   std::shared_ptr<Kunde> user_;
   const std::string bank_;

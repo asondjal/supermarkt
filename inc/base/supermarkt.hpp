@@ -15,7 +15,7 @@
 #include "base/produkt.hpp"
 #include "base/warenkorb.hpp"
 
-class Supermarkt{
+class Supermarkt {
  private:
   const std::string name_;
   const std::string adresse_;
