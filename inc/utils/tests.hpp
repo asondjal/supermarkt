@@ -9,7 +9,7 @@
 #include "utils/statistik.hpp"
 
 class Tests {
- public:
+public:
   Tests();
   void test_Datum();         // Funktioniert einwandfrei
   void test_Produkt();       // Funktioniert einwandfrei

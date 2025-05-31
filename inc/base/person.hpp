@@ -6,7 +6,7 @@
 #include <string>
 
 class Person {
- private:
+private:
   const std::string name_;
   const std::string gender_;
   const int age_;
@@ -14,7 +14,7 @@ class Person {
   const std::string adresse_;
   const int personID_;
 
- public:
+public:
   Person(std::string name, std::string gender, int age, std::string email,
          std::string adresse);
   virtual ~Person() = default;
