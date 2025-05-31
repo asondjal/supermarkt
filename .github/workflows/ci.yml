@@ -19,6 +19,13 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'
+      
+      - name: Installiere cpplint
+        run: pip install cpplint
+        
+      - name: Führe cpplint aus
+        run: |
+          find ./src ./inc -name '*.cpp' -o -name '*.hpp' | xargs cpplint --filter=-legal/copyright
 
       - name: Installation der Abhängigkeiten
         run: |
