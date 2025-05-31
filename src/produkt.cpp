@@ -1,4 +1,6 @@
 #include "base/produkt.hpp"
+#include <iostream>
+#include <string>
 
 static int produkt_counter = 0;
 

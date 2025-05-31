@@ -1,5 +1,10 @@
 #include "base/warenkorb.hpp"
 
+#include <utility>
+#include <iostream>
+#include <string>
+#include <vector>
+
 static int warenkorb_counter = 0;
 
 Warenkorb::Warenkorb(std::shared_ptr<Kunde> kunde)

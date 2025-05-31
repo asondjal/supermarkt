@@ -1,5 +1,10 @@
 #include "base/konto.hpp"
 
+#include <utility>
+#include <iostream>
+#include <memory>
+#include <string>
+
 static int kontoCounter = 0;
 
 Konto::Konto(std::shared_ptr<Kunde> user, std::string bank)

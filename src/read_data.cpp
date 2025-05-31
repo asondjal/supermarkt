@@ -1,5 +1,7 @@
 #include "utils/read_data.hpp"
 
+#include <string>
+
 ReadData::ReadData(const std::string& path) : filePath_{path} {}
 
 std::mutex& ReadData::GetMutex() { return mtx_; }

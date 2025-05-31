@@ -206,9 +206,8 @@ class SupermarktApp:
         def create_konto():
             bank = entry_bank.get()
             self.current_konto = Konto(self.current_kunde, bank)
-            self.status.config(
-                text=f"Konto für {self.current_kunde.get_name()} bei {self.current_konto.get_institut()} wurde angelegt."
-            )
+            text = f"Konto für {self.current_kunde.get_name()} bei {self.current_konto.get_institut()} wurde angelegt."
+            self.status.config(text)
             self.current_konto.einzahlen(1000.00)
             konto_window.destroy()
 

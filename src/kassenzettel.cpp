@@ -1,5 +1,9 @@
 #include "base/kassenzettel.hpp"
 
+#include <memory>
+#include <utility>
+#include <string>
+
 static uint32_t kassenzettelCounter_ = 0;
 
 Kassenzettel::Kassenzettel(const Datum& datum, std::shared_ptr<Kunde> kunde,

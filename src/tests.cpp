@@ -1,5 +1,9 @@
 #include "utils/tests.hpp"
 
+#include <memory>
+#include <string>
+#include <iostream>
+
 #include "base/datum.hpp"
 #include "base/haendler.hpp"
 #include "base/kassenzettel.hpp"

@@ -4,6 +4,7 @@
     "reportMissingImports": "none",
     "reportMissingModuleSource": "none"
   },
+
   "python.analysis.typeCheckingMode": "off",
   "python.envFile": "${workspaceFolder}/.env",
   "python.analysis.ignore": ["./GUI/gui.py", "./tests/test_supermarkt.py"],
@@ -12,6 +13,10 @@
   "editor.defaultFormatter": "xaver.clang-format",
   "editor.formatOnSave": true
   },
+
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": false,
+
   "clang-format.executable": "/absolute/path/to/clang-format",
   "clang-format.style": "file", 
 
@@ -98,6 +103,7 @@
         "typeindex": "cpp",
         "valarray": "cpp"
     },
+
     "C_Cpp.errorSquiggles": "disabled",
     "C_Cpp.default.compilerPath": "/usr/bin/gcc"
 }
