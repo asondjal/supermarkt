@@ -8,12 +8,12 @@
 #include <string>
 
 class Datum {
-private:
+ private:
   const uint32_t tag_;
   const uint32_t monat_;
   const uint32_t jahr_;
 
-public:
+ public:
   Datum(uint32_t tag, uint32_t monat, uint32_t jahr);
   uint32_t GetTag() const;
   uint32_t GetMonat() const;

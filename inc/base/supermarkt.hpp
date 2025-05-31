@@ -16,7 +16,7 @@
 #include "base/warenkorb.hpp"
 
 class Supermarkt {
-private:
+ private:
   const std::string name_;
   const std::string adresse_;
   std::vector<Produkt*> produkte_;
@@ -26,7 +26,7 @@ private:
   const uint32_t supermarkt_ID_;
   mutable std::mutex supermarktMutex_;
 
-public:
+ public:
   Supermarkt(std::string name, std::string adresse);
   std::string GetSupermarktAdress() const;
   std::string GetSupermarktName() const;

@@ -8,7 +8,7 @@
 #include "base/datum.hpp"
 
 class Produkt {
-private:
+ private:
   const std::string name_;
   const float menge_;        // in kg
   const float preis_;        // in €
@@ -16,7 +16,7 @@ private:
   const int id_;
   const std::string abteilung_;
 
-public:
+ public:
   Produkt(std::string name, float menge, float preis, Datum haltbarkeit,
           std::string abteilung);
   std::string GetName() const;

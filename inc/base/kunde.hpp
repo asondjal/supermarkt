@@ -6,10 +6,10 @@
 #include "base/person.hpp"
 
 class Kunde : public Person {
-private:
+ private:
   const int kundeID_;
 
-public:
+ public:
   Kunde(std::string name, std::string gender, int age, std::string email,
         std::string adresse);
   int GetKundeID() const;
