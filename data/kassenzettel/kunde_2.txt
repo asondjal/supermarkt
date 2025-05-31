@@ -1,15 +1,15 @@
 ================== KASSENZETTEL ==================
-Kunde: Justin Bieber, Kunde-ID: 1
-Haendler: Billie Eilish, Haendler-ID: 1
+Kunde: Kujo Jotaro, Kunde-ID: 5
+Haendler: Jonathan Joestar, Haendler-ID: 3
 
 Produkt             Menge          Preis [€]         
 --------------------------------------------------
-Kirschen            2.79           7.99                
-Zitronen            12.00          1.79                
+Apfel               1.17           1.23                
+Birne               5.20           2.42                
 --------------------------------------------------
-Gesamtpreis:                       43.76         
+Gesamtpreis:                       14.02         
 
-Institut: American Express
-Konto-ID: 1
-Abrechnungsdatum: 27.05.2025
+Institut: Bank of America
+Konto-ID: 5
+Abrechnungsdatum: 01.01.2022
 ================== KASSENZETTEL ==================

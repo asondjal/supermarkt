@@ -1,13 +1,15 @@
 ================== KASSENZETTEL ==================
-Kunde: Justin Bieber, Kunde-ID: 1
-Haendler: Billie Eilish, Haendler-ID: 1
+Kunde: Josuke Higashikata, Kunde-ID: 4
+Haendler: Jonathan Joestar, Haendler-ID: 1
 
 Produkt             Menge          Preis [€]         
 --------------------------------------------------
+Apfel               1.17           1.23                
+Birne               5.20           2.42                
 --------------------------------------------------
-Gesamtpreis:                       0.00          
+Gesamtpreis:                       14.02         
 
-Institut: American Express
-Konto-ID: 1
-Abrechnungsdatum: 27.05.2025
+Institut: Deutsche Bank
+Konto-ID: 2
+Abrechnungsdatum: 12.11.2009
 ================== KASSENZETTEL ==================

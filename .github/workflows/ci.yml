@@ -47,3 +47,8 @@ jobs:
           PYTHONPATH: ${{github.workspace}}/build
         run: |
           pytest tests
+
+      - name: C++-Tests ausführen
+        run: |
+          chmod +x ./build/supermarkt_tests
+          ./build/supermarkt_tests
