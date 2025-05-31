@@ -1,6 +1,7 @@
 #include "utils/logging.hpp"
-#include <string>
+
 #include <iostream>
+#include <string>
 
 /**
  * @brief Konstruktor der Klasse Logging

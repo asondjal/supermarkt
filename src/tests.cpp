@@ -1,8 +1,8 @@
 #include "utils/tests.hpp"
 
+#include <iostream>
 #include <memory>
 #include <string>
-#include <iostream>
 
 #include "base/datum.hpp"
 #include "base/haendler.hpp"

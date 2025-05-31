@@ -1,8 +1,8 @@
 #include "base/kassenzettel.hpp"
 
 #include <memory>
-#include <utility>
 #include <string>
+#include <utility>
 
 static uint32_t kassenzettelCounter_ = 0;
 

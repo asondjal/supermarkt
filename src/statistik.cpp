@@ -1,9 +1,9 @@
 #include "utils/statistik.hpp"
 
 #include <algorithm>
-#include <vector>
 #include <iostream>
 #include <string>
+#include <vector>
 
 Statistik::Statistik() : datenBuffer_{}, datenMutex_{} {}
 

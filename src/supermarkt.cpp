@@ -1,7 +1,7 @@
 #include "base/supermarkt.hpp"
 
-#include <memory>
 #include <iostream>
+#include <memory>
 
 #include "utils/utilities.hpp"
 

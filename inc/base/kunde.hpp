@@ -2,6 +2,7 @@
 #define INC_BASE_KUNDE_HPP_
 
 #include <string>
+
 #include "base/person.hpp"
 
 class Kunde : public Person {

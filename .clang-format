@@ -1,9 +1,10 @@
-# .clang-format
 BasedOnStyle: Google
 IndentWidth: 2
 ColumnLimit: 80
 IncludeBlocks: Regroup
 SortIncludes: true
+InsertTrailingNewline: true
+AccessModifierOffset: -2
 IncludeCategories:
   - Regex:           '^<.*\.h>'
     Priority:        1

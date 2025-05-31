@@ -1,4 +1,5 @@
 #include "base/kunde.hpp"
+
 #include <string>
 
 static int kunden_counter = 0;

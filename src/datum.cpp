@@ -1,4 +1,5 @@
 #include "base/datum.hpp"
+
 #include <string>
 
 Datum::Datum(uint32_t tag, uint32_t monat, uint32_t jahr)
