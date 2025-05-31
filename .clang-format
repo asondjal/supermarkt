@@ -1,0 +1,15 @@
+# .clang-format
+BasedOnStyle: Google
+IndentWidth: 2
+ColumnLimit: 80
+AllowShortIfStatementsOnASingleLine: false
+DerivePointerAlignment: false
+PointerAlignment: Left
+IncludeBlocks: Preserve
+IncludeCategories:
+  - Regex:           '^<.*\.h>'
+    Priority:        1
+    SortPriority:    0
+  - Regex:           '.*'
+    Priority:        2
+SortIncludes: true

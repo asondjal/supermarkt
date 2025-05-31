@@ -1,11 +1,10 @@
-#include <iostream>
-#include "../inc/utils/tests.hpp"
 #include "../inc/utils/logging.hpp"
+#include "../inc/utils/tests.hpp"
+#include <iostream>
 
 int main() {
+  Tests tests;
+  tests.runAllTests();
 
-	Tests tests;
-	tests.runAllTests();
-
-	return 0;
+  return 0;
 }
