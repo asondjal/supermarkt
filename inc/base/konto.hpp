@@ -1,5 +1,5 @@
-#ifndef KONTO_HPP_
-#define KONTO_HPP_
+#ifndef INC_BASE_KONTO_HPP_
+#define INC_BASE_KONTO_HPP_
 
 #include "kunde.hpp"
 #include <string>
@@ -26,4 +26,4 @@ class Konto{
 
 };
 
-#endif /* KONTO_HPP_ */
+#endif // INC_BASE_KONTO_HPP_

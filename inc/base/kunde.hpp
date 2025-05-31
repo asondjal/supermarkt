@@ -1,5 +1,5 @@
-#ifndef KUNDE_HPP_
-#define KUNDE_HPP_
+#ifndef INC_BASE_KUNDE_HPP_
+#define INC_BASE_KUNDE_HPP_
 
 #include "person.hpp"
 
@@ -16,4 +16,5 @@ class Kunde : public Person {
 
 };
 
-#endif /* KUNDE_HPP_ */
+
+#endif // INC_BASE_KUNDE_HPP_

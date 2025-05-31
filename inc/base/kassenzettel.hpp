@@ -1,5 +1,5 @@
-#ifndef KASSENZETTEL_HPP
-#define KASSENZETTEL_HPP
+#ifndef INC_BASE_KASSENZETTEL_HPP
+#define INC_BASE_KASSENZETTEL_HPP
 
 #include <iostream>
 #include <sstream>
@@ -18,7 +18,7 @@
 #include <memory>
 
 class Kassenzettel {
-    private:
+ private:
     const Datum& datum_;
     std::shared_ptr<Kunde> kunde_;
     const Haendler& haendler_;
@@ -28,7 +28,7 @@ class Kassenzettel {
     std::string filename_;
     mutable std::mutex kassenzettelMutex_;
     
-    public:
+ public:
     Kassenzettel(const Datum& datum, std::shared_ptr<Kunde> kunde, const Haendler& haendler, const Warenkorb& warenkorb, std::shared_ptr<Konto> konto);
     uint32_t GetKassenzettelID() const;
     std::string CreateKassenzettel() const;
@@ -36,4 +36,5 @@ class Kassenzettel {
 
 };
 
-#endif /* KASSENZETTEL_HPP */
+
+#endif // INC_BASE_KASSENZETTEL_HPP

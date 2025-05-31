@@ -23,4 +23,5 @@ class Datum {
     bool operator==(const Datum& other) const;
 };
 
+
 #endif // INC_BASE_DATUM_HPP_
