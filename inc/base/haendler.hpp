@@ -6,10 +6,10 @@
 #include "base/person.hpp"
 
 class Haendler : public Person {
- private:
+private:
   const int haendlerID_;
 
- public:
+public:
   Haendler(std::string name, std::string gender, int alter, std::string email,
            std::string adresse);
   int GetHaendlerID() const;

@@ -10,12 +10,12 @@
 #include "base/produkt.hpp"
 
 class Warenkorb {
- private:
+private:
   std::vector<Produkt*> produkte;
   std::shared_ptr<Kunde> kunde_;
   const int warenkorbID_;
 
- public:
+public:
   explicit Warenkorb(std::shared_ptr<Kunde> kunde);
   std::shared_ptr<Kunde> GetKunde() const;
   void AddProdukt(Produkt* produkt);

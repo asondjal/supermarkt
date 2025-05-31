@@ -20,7 +20,7 @@
 #include "base/warenkorb.hpp"
 
 class Kassenzettel {
- private:
+private:
   const Datum& datum_;
   std::shared_ptr<Kunde> kunde_;
   const Haendler& haendler_;
@@ -31,7 +31,7 @@ class Kassenzettel {
   std::string filename_;
   mutable std::mutex kassenzettelMutex_;
 
- public:
+public:
   Kassenzettel(const Datum& datum, std::shared_ptr<Kunde> kunde,
                const Haendler& haendler, const Warenkorb& warenkorb,
                std::shared_ptr<Konto> konto);

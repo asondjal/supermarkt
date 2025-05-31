@@ -1,7 +1,7 @@
 #include "base/person.hpp"
 
-#include <string>
 #include <iostream>
+#include <string>
 
 static int personen_counter = 0;
 
