@@ -1,10 +1,6 @@
 #ifndef INC_BASE_SUPERMARKT_HPP_
 #define INC_BASE_SUPERMARKT_HPP_
 
-#include "base/haendler.hpp"
-#include "base/kunde.hpp"
-#include "base/produkt.hpp"
-#include "base/warenkorb.hpp"
 #include <filesystem>
 #include <fstream>
 #include <iomanip>
@@ -12,6 +8,12 @@
 #include <mutex>
 #include <sstream>
 #include <vector>
+#include <string>
+
+#include "base/haendler.hpp"
+#include "base/kunde.hpp"
+#include "base/produkt.hpp"
+#include "base/warenkorb.hpp"
 
 class Supermarkt {
  private:

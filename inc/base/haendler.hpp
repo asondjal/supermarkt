@@ -1,6 +1,7 @@
 #ifndef INC_BASE_HAENDLER_HPP_
 #define INC_BASE_HAENDLER_HPP_
 
+#include <string>
 #include "base/person.hpp"
 
 class Haendler : public Person {

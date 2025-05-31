@@ -1,12 +1,6 @@
-#ifndef INC_BASE_KASSENZETTEL_HPP
-#define INC_BASE_KASSENZETTEL_HPP
+#ifndef INC_BASE_KASSENZETTEL_HPP_
+#define INC_BASE_KASSENZETTEL_HPP_
 
-#include "base/datum.hpp"
-#include "base/haendler.hpp"
-#include "base/konto.hpp"
-#include "base/kunde.hpp"
-#include "base/produkt.hpp"
-#include "base/warenkorb.hpp"
 #include <chrono>
 #include <ctime>
 #include <filesystem>  // C++17 is required for this header
@@ -16,6 +10,14 @@
 #include <memory>
 #include <mutex>
 #include <sstream>
+#include <string>
+
+#include "base/datum.hpp"
+#include "base/haendler.hpp"
+#include "base/konto.hpp"
+#include "base/kunde.hpp"
+#include "base/produkt.hpp"
+#include "base/warenkorb.hpp"
 
 class Kassenzettel {
  private:
@@ -38,4 +40,4 @@ class Kassenzettel {
   bool operator==(Kassenzettel& other) const;
 };
 
-#endif  // INC_BASE_KASSENZETTEL_HPP
+#endif  // INC_BASE_KASSENZETTEL_HPP_

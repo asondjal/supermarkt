@@ -3,6 +3,7 @@
 
 #include <algorithm>
 #include <vector>
+#include <string>
 
 template <typename T, typename U, typename Compare>
 void RemoveFromVector(std::vector<T>& vec, const U& value, Compare comp) {

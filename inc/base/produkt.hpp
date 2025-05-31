@@ -1,10 +1,11 @@
 #ifndef INC_BASE_PRODUKT_HPP_
 #define INC_BASE_PRODUKT_HPP_
 
-#include "base/datum.hpp"
 #include <iomanip>
 #include <iostream>
 #include <string>
+
+#include "base/datum.hpp"
 
 class Produkt {
  private:
