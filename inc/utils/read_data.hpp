@@ -10,7 +10,7 @@
 #include <string>
 #include <vector>
 
-class ReadData{
+class ReadData {
  public:
   explicit ReadData(const std::string& path);
   std::mutex& GetMutex();
