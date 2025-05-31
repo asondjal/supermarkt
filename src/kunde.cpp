@@ -1,6 +1,7 @@
 #include "base/kunde.hpp"
 
 #include <string>
+#include <iostream>
 
 static int kunden_counter = 0;
 

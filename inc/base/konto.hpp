@@ -9,13 +9,13 @@
 #include "base/kunde.hpp"
 
 class Konto {
-private:
+ private:
   std::shared_ptr<Kunde> user_;
   const std::string bank_;
   float kontostand_;
   const int kontoID_;
 
-public:
+ public:
   explicit Konto(std::shared_ptr<Kunde> user, std::string bank);
   void Einzahlen(float betrag);
   void Auszahlen(float betrag);

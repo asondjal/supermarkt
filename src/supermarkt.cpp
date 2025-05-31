@@ -1,5 +1,6 @@
 #include "base/supermarkt.hpp"
 
+#include <string>
 #include <iostream>
 #include <memory>
 

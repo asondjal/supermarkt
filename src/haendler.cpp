@@ -1,6 +1,7 @@
 #include "base/haendler.hpp"
 
 #include <string>
+#include <iostream>
 
 static int haendlerCounter_ = 0;
 
