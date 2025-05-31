@@ -5,7 +5,7 @@
 
 #include "base/person.hpp"
 
-class Haendler : public Person{
+class Haendler : public Person {
  private:
   const int haendlerID_;
 
