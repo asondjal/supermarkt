@@ -1,4 +1,4 @@
-name: Python-Tests
+name: Supermarkt CI
 
 on:
   push:
@@ -9,36 +9,38 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+
     steps:
       - name: Repository auschecken
         uses: actions/checkout@v3
         with:
           submodules: true
 
-      - name: Python einrichten
+      - name: Python 3.12 einrichten
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'
 
-      - name: Installation der Abhängigkeiten
+      - name: Abhängigkeiten installieren (C++, Python, PDF, CMake)
         run: |
           sudo apt-get update
-          sudo apt-get install cmake g++ libpoppler-cpp-dev ccache -y
+          sudo apt-get install -y cmake g++ ccache libpoppler-cpp-dev
+          pip install --upgrade pip
           pip install pytest pybind11
 
-      - name: C++ Modul mit CMake bauen (Workflow-Build)
-        run: cmake -B build -DCMAKE_BUILD_TYPE=Release
+      - name: CMake konfigurieren
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 
-      - name: C++ Modul bauen (Workflow-Build)
+      - name: C++-Modul kompilieren
         run: cmake --build build --config Release
 
       - name: Python-Tests ausführen
         env:
-          PYTHONPATH: ${{github.workspace}}/build
+          PYTHONPATH: ${{ github.workspace }}/build
         run: |
           pytest python_tests
 
       - name: C++-Tests ausführen
         run: |
-          chmod +x ./build/supermarkt_tests
+          chmod +x ./build/cpp_tests
           ./build/cpp_tests
