@@ -41,4 +41,4 @@ jobs:
       - name: C++-Tests ausführen
         run: |
           chmod +x ./build/supermarkt_tests
-          ./build/supermarkt_tests
+          ./build/cpp_tests
