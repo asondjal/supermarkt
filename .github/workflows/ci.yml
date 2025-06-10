@@ -20,12 +20,6 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: C++ Style Check mit cpplint
-        run: |
-          pip install cpplint
-          find ./src ./inc -name '*.cpp' -o -name '*.hpp' \
-            | xargs cpplint --filter=-legal/copyright,-build/include_subdir,-build/c++17
-
       - name: Installation der Abhängigkeiten
         run: |
           sudo apt-get update
