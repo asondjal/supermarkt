@@ -31,7 +31,9 @@ bool Kassenzettel::operator==(Kassenzettel& other) const {
  * @brief Aufruf vom KassenzettelID
  * @return ID vom Kassenzettel
  */
-uint32_t Kassenzettel::GetKassenzettelID() const { return kassenzettelID_; }
+uint32_t Kassenzettel::GetKassenzettelID() const { 
+  return kassenzettelID_; 
+}
 
 /**
  * @brief Erzeugen eines Kassenzettels und Speicherung im Ordner Kassenzettel

@@ -1,7 +1,5 @@
 #include "base/datum.hpp"
 
-#include <string>
-
 Datum::Datum(uint32_t tag, uint32_t monat, uint32_t jahr)
     : tag_(tag), monat_(monat), jahr_(jahr) {}
 
@@ -9,19 +7,25 @@ Datum::Datum(uint32_t tag, uint32_t monat, uint32_t jahr)
  * @brief Aufruf vom aktuellen Tag
  * @return aktueller Tag
  */
-uint32_t Datum::GetTag() const { return tag_; }
+uint32_t Datum::GetTag() const { 
+  return tag_; 
+}
 
 /**
  * @brief Aufruf vom aktuellen Monat
  * @return aktueller Monat
  */
-uint32_t Datum::GetMonat() const { return monat_; }
+uint32_t Datum::GetMonat() const { 
+  return monat_; 
+}
 
 /**
  * @brief Aufruf vom aktuellen Jahr
  * @return aktuelles Jahr
  */
-uint32_t Datum::GetJahr() const { return jahr_; }
+uint32_t Datum::GetJahr() const { 
+  return jahr_; 
+}
 
 /**
  * @brief Darstellung vom Tag im Format DD.MM.JJ

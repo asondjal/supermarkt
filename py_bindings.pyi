@@ -1,4 +1,4 @@
-"""Python bindings fuer Datenverarbeitung und Statistik."""
+"""C++-Schnittstelle in Python fuer die Datenverarbeitung und die Statistik."""
 
 from enum import Enum
 

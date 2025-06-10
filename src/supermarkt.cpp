@@ -1,9 +1,5 @@
 #include "base/supermarkt.hpp"
 
-#include <iostream>
-#include <memory>
-#include <string>
-
 #include "utils/utilities.hpp"
 
 static uint32_t supermarkt_counter = 0;
@@ -21,13 +17,17 @@ std::string Supermarkt::GetSupermarktName() const { return name_; }
  * @brief Wiedergabe von der Adresse vom Supermarkt
  * @return Adresse vom Supermarkt
  */
-std::string Supermarkt::GetSupermarktAdress() const { return adresse_; }
+std::string Supermarkt::GetSupermarktAdress() const { 
+  return adresse_; 
+}
 
 /**
  * @brief Aufruf der ID vom Supermarkt
  * @return ID vom Supermarkt
  */
-uint32_t Supermarkt::GetSupermarktID() const { return supermarkt_ID_; }
+uint32_t Supermarkt::GetSupermarktID() const { 
+  return supermarkt_ID_; 
+}
 
 /**
  * @brief Vergleichsoperator für Supermärkte
@@ -41,16 +41,12 @@ bool Supermarkt::operator==(Supermarkt& other) const {
 /**
  * @brief Hinzufügen eines Produktes ins Sortiment
  */
-void Supermarkt::AddProdukt(Produkt& produkt) { produkte_.push_back(&produkt); }
+void Supermarkt::AddProdukt(Produkt& produkt) { produkte_.insert(&produkt); }
 
 /**
  * @brief Entfernen eines Produktes ins Sortiment
  */
-void Supermarkt::RemoveProdukt(Produkt& produkt) {
-  RemoveFromVector(produkte_, produkt, [](Produkt* a, const Produkt& b) {
-    return a->GetID() == b.GetID();  // Vergleichsstrategie
-  });
-}
+void Supermarkt::RemoveProdukt(Produkt& produkt) { produkte_.erase(&produkt);}
 
 /**
  * @brief Erzeugen eines Kassenzettels und Speicherung im Ordner Kassenzettel
@@ -102,7 +98,14 @@ std::string Supermarkt::CreateProduktDatabase() const {
  * @brief Hinzufügen eines Kunden
  */
 void Supermarkt::AddKunde(std::shared_ptr<Kunde> kunde) {
-  kunden_.push_back(kunde);
+  kunden_.insert(kunde);
+}
+
+/**
+ * @brief Entfernen eines Kunden
+ */
+void Supermarkt::RemoveKunde(std::shared_ptr<Kunde> kunde) {
+  kunden_.erase(kunde);
 }
 
 /**
@@ -145,21 +148,17 @@ std::string Supermarkt::CreateKundeDatabase() const {
 }
 
 /**
- * @brief Entfernen eines Kunden
- */
-void Supermarkt::RemoveKunde(std::shared_ptr<Kunde> kunde) {
-  RemoveFromVector(
-      kunden_, kunde,
-      [](const std::shared_ptr<Kunde>& a, const std::shared_ptr<Kunde>& b) {
-        return a->GetKundeID() == b->GetKundeID();
-      });
-}
-
-/**
  * @brief Hinzufügen eines Warenkorbs
  */
 void Supermarkt::AddWarenkorb(Warenkorb& warenkorb) {
-  warenkoerbe_.push_back(&warenkorb);
+  warenkoerbe_.insert(&warenkorb);
+}
+
+/**
+ * @brief Entfernen eines Warenkorbes
+ */
+void Supermarkt::RemoveWarenkorb(Warenkorb& warenkorb) {
+  warenkoerbe_.erase(&warenkorb);
 }
 
 /**
@@ -205,20 +204,17 @@ std::string Supermarkt::CreateWarenkorbDatabase() const {
 }
 
 /**
- * @brief Entfernen eines Warenkorbes
- */
-void Supermarkt::RemoveWarenkorb(Warenkorb& warenkorb) {
-  RemoveFromVector(
-      warenkoerbe_, warenkorb, [](Warenkorb* a, const Warenkorb& b) {
-        return a->GetKunde()->GetKundeID() == b.GetKunde()->GetKundeID();
-      });
-}
-
-/**
  * @brief Hinzufügen eines Händlers
  */
 void Supermarkt::AddHaendler(Haendler& haendler) {
-  haendler_.push_back(&haendler);
+  haendler_.insert(&haendler);
+}
+
+/**
+ * @brief Entfernen eines Händlers aus dem System
+ */
+void Supermarkt::RemoveHaendler(Haendler& haendler) {
+  haendler_.erase(&haendler);
 }
 
 /**
@@ -259,15 +255,6 @@ std::string Supermarkt::CreateHaendlerDatabase() const {
   file << oss.str();
   file.close();
   return haendlerdatabase_path;
-}
-
-/**
- * @brief Entfernen eines Händlers aus dem System
- */
-void Supermarkt::RemoveHaendler(Haendler& haendler) {
-  RemoveFromVector(haendler_, haendler, [](Haendler* a, const Haendler& b) {
-    return a->GetHaendlerID() == b.GetHaendlerID();
-  });
 }
 
 /**

@@ -26,7 +26,9 @@ bool Konto::operator==(const Konto& other) const {
  * @brief Einzahlung auf das Konto
  * @param betrag: Geldbetrag, der aufs Konto eingezahlt bzw. überwiesen wird
  */
-void Konto::Einzahlen(float betrag) { kontostand_ += betrag; }
+void Konto::Einzahlen(float betrag) { 
+  kontostand_ += betrag; 
+}
 
 /**
  * @brief Auszahlung vom Konto
@@ -54,16 +56,22 @@ float Konto::GetKontostand() const {
  * @brief Aufruf vom Institut
  * @return Bankinformationen als String
  */
-std::string Konto::GetBank() const { return bank_; }
+std::string Konto::GetBank() const { 
+  return bank_; 
+}
 
 /**
  * @brief Aufruf vom Kontoinhaber
  * @return Kontoinhaber
  */
-std::shared_ptr<Kunde> Konto::GetUser() const { return user_; }
+std::shared_ptr<Kunde> Konto::GetUser() const { 
+  return user_; 
+}
 
 /**
  * @brief Aufruf vom der ID vom Kontoinhaber
  * @return ID vom Kontoinhaber
  */
-int Konto::GetKontoID() const { return kontoID_; }
+int Konto::GetKontoID() const { 
+  return kontoID_; 
+}

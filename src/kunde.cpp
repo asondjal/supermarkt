@@ -23,7 +23,9 @@ bool Kunde::operator==(const Kunde& other) const {
  * @brief Rückgabewert ist die ID eines Kunden
  * @return kundeID_: ID eines Kunden
  */
-int Kunde::GetKundeID() const { return kundeID_; }
+int Kunde::GetKundeID() const { 
+  return kundeID_; 
+}
 
 /**
  * @brief Darstellung der wichtigsten Informationen eines Kunden

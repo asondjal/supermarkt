@@ -9,6 +9,8 @@
 #include <regex>
 #include <string>
 #include <vector>
+#include <set>
+#include <mutex>
 
 #include "utils/read_data.hpp"
 
@@ -28,7 +30,7 @@ class Statistik {
   float Standardabweichung() const;
 
  private:
-  std::vector<std::string> datenBuffer_;
+  std::set<std::string> datenBuffer_; // Use set to prevent duplicates
   mutable std::mutex datenMutex_;
 
   float Varianz() const;

@@ -29,11 +29,17 @@ float Warenkorb::GetGesamtPreis() const {
   return gesamtPreis;
 }
 
-std::vector<Produkt*> Warenkorb::GetProdukte() const { return produkte; }
+std::vector<Produkt*> Warenkorb::GetProdukte() const { 
+  return produkte; 
+}
 
-std::shared_ptr<Kunde> Warenkorb::GetKunde() const { return kunde_; }
+std::shared_ptr<Kunde> Warenkorb::GetKunde() const { 
+  return kunde_; 
+}
 
-int Warenkorb::GetWarenkorbID() const { return warenkorbID_; }
+int Warenkorb::GetWarenkorbID() const { 
+  return warenkorbID_; 
+}
 
 bool Warenkorb::operator==(const Warenkorb& other) const {
   return warenkorbID_ == other.GetWarenkorbID();

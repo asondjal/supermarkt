@@ -8,7 +8,7 @@
 #include <mutex>
 #include <sstream>
 #include <string>
-#include <vector>
+#include <set>
 
 #include "base/haendler.hpp"
 #include "base/kunde.hpp"
@@ -19,10 +19,10 @@ class Supermarkt {
  private:
   const std::string name_;
   const std::string adresse_;
-  std::vector<Produkt*> produkte_;
-  std::vector<std::shared_ptr<Kunde>> kunden_;
-  std::vector<Warenkorb*> warenkoerbe_;
-  std::vector<Haendler*> haendler_;
+  std::set<Produkt*> produkte_;
+  std::set<std::shared_ptr<Kunde>> kunden_;
+  std::set<Warenkorb*> warenkoerbe_;
+  std::set<Haendler*> haendler_;
   const uint32_t supermarkt_ID_;
   mutable std::mutex supermarktMutex_;
 

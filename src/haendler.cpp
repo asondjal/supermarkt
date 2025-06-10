@@ -20,7 +20,9 @@ bool Haendler::operator==(const Haendler& other) const {
 /**
  * @brief Funktion zur Wiedergabe der ID eines Händlers
  */
-int Haendler::GetHaendlerID() const { return haendlerID_; }
+int Haendler::GetHaendlerID() const { 
+  return haendlerID_; 
+}
 
 /**
  * @brief Funktion zur Präsentation der Informationen über einen Händler

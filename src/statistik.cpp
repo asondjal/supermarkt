@@ -13,7 +13,7 @@ Statistik::Statistik() : datenBuffer_{}, datenMutex_{} {}
  */
 void Statistik::LadeDaten(ReadData& reader) {
   std::string data = reader.ReadFile();
-  datenBuffer_.push_back(data);
+  datenBuffer_.insert(data);
 }
 
 /**
@@ -22,16 +22,7 @@ void Statistik::LadeDaten(ReadData& reader) {
  */
 void Statistik::EntferneDaten(const std::string& data) {
   std::lock_guard<std::mutex> lock(datenMutex_);
-
-  for (auto& bufferData : datenBuffer_) {
-    if (bufferData == data) {
-      bufferData.clear();
-    }
-  }
-
-  auto it = std::remove_if(datenBuffer_.begin(), datenBuffer_.end(),
-                           [](const std::string& s) { return s.empty(); });
-  datenBuffer_.erase(it, datenBuffer_.end());
+  datenBuffer_.erase(data);
 }
 
 /**
