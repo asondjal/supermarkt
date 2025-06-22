@@ -7,7 +7,7 @@
 
 template <typename T>
 std::string default_repr(const std::string& classname,
-                         const std::string& name) {
+  const std::string& name) {
   return "<" + classname + ": " + name + ">";
 }
 
