@@ -76,15 +76,16 @@ std::string simple_pdf_data = simple_pdf.ReadPDF();
 assert(simple_pdf_data != "!");
 std::string simple_pdf_content;
 poppler::document* document = poppler::document::load_from_file("README.pdf");
+
 if (!document) {
-throw std::runtime_error("Could not open PDF file: README.pdf");
+    throw std::runtime_error("Could not open PDF file: README.pdf");
 }
 for (int i = 0; i < document->pages(); ++i) {
-poppler::page* p = document->create_page(i);
-if (p) {
-    simple_pdf_content += p->text().to_latin1();
-    delete p;
-}
+    poppler::page* p = document->create_page(i);
+    if (p) {
+        simple_pdf_content += p->text().to_latin1();
+        delete p;
+    }
 }
 delete document;
 
@@ -95,15 +96,17 @@ std::string pdfData = pdf.ReadPDF();
 std::ifstream pdf_file("supermarkt.pdf");
 std::string pdf_content;
 poppler::document* doc = poppler::document::load_from_file("supermarkt.pdf");
+
 if (!doc) {
-throw std::runtime_error("Could not open PDF file: supermarkt.pdf");
+    throw std::runtime_error("Could not open PDF file: supermarkt.pdf");
 }
+
 for (int i = 0; i < doc->pages(); ++i) {
-poppler::page* p = doc->create_page(i);
-if (p) {
-    pdf_content += p->text().to_latin1();
-    delete p;
-}
+    poppler::page* p = doc->create_page(i);
+    if (p) {
+        pdf_content += p->text().to_latin1();
+        delete p;
+    }
 }
 delete doc;
 

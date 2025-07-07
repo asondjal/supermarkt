@@ -1,7 +1,7 @@
 #include "base/datum.hpp"
 
 Datum::Datum(uint32_t tag, uint32_t monat, uint32_t jahr)
-    : tag_(tag), monat_(monat), jahr_(jahr) {}
+  : tag_(tag), monat_(monat), jahr_(jahr) {}
 
 /**
  * @brief Aufruf vom aktuellen Tag
@@ -45,6 +45,5 @@ std::string Datum::Print() const {
  * @return true wenn gleich, false wenn ungleich
  */
 bool Datum::operator==(const Datum& other) const {
-  return (tag_ == other.tag_) && (monat_ == other.monat_) &&
-         (jahr_ == other.jahr_);
+  return (tag_ == other.tag_) && (monat_ == other.monat_) && (jahr_ == other.jahr_);
 }

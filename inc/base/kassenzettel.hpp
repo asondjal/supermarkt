@@ -26,15 +26,13 @@ class Kassenzettel {
   const Haendler& haendler_;
   const Warenkorb& warenkorb_;
   const uint32_t kassenzettelID_;
-  std::shared_ptr<Konto> konto_;  // Nicht konstant, da Auszahlungen und
-                                  // Einzahlungen möglich bleiben müssen
+  std::shared_ptr<Konto> konto_;  // Nicht konstant, da Auszahlungen und Einzahlungen möglich bleiben müssen
   std::string filename_;
   mutable std::mutex kassenzettelMutex_;
 
  public:
-  Kassenzettel(const Datum& datum, std::shared_ptr<Kunde> kunde,
-               const Haendler& haendler, const Warenkorb& warenkorb,
-               std::shared_ptr<Konto> konto);
+  Kassenzettel(const Datum& datum, std::shared_ptr<Kunde> kunde, 
+  const Haendler& haendler, const Warenkorb& warenkorb, std::shared_ptr<Konto> konto);
   uint32_t GetKassenzettelID() const;
   std::string CreateKassenzettel() const;
   bool operator==(Kassenzettel& other) const;

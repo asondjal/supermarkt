@@ -11,7 +11,9 @@ Supermarkt::Supermarkt(std::string name, std::string adresse)
  * @brief Wiedergabe vom Namen vom Supermarkt
  * @return Name vom Supermarkt
  */
-std::string Supermarkt::GetSupermarktName() const { return name_; }
+std::string Supermarkt::GetSupermarktName() const { 
+  return name_; 
+}
 
 /**
  * @brief Wiedergabe von der Adresse vom Supermarkt
@@ -41,12 +43,16 @@ bool Supermarkt::operator==(Supermarkt& other) const {
 /**
  * @brief Hinzufügen eines Produktes ins Sortiment
  */
-void Supermarkt::AddProdukt(Produkt& produkt) { produkte_.insert(&produkt); }
+void Supermarkt::AddProdukt(Produkt& produkt) { 
+  produkte_.insert(&produkt); 
+}
 
 /**
  * @brief Entfernen eines Produktes ins Sortiment
  */
-void Supermarkt::RemoveProdukt(Produkt& produkt) { produkte_.erase(&produkt);}
+void Supermarkt::RemoveProdukt(Produkt& produkt) { 
+  produkte_.erase(&produkt);
+}
 
 /**
  * @brief Erzeugen eines Kassenzettels und Speicherung im Ordner Kassenzettel
@@ -56,17 +62,15 @@ std::string Supermarkt::CreateProduktDatabase() const {
   std::lock_guard<std::mutex> lock(supermarktMutex_);
   // Anlegen der Produkt-Datei
   std::filesystem::create_directories("./data");
-  std::filesystem::create_directories("./data/supermarkt_" +
-                                      std::to_string(supermarkt_ID_));
-  std::string filename =
-      "./data/supermarkt_" + std::to_string(supermarkt_ID_) + "/produkte.txt";
+  std::filesystem::create_directories("./data/supermarkt_" + std::to_string(supermarkt_ID_));
+  std::string filename = "./data/supermarkt_" + std::to_string(supermarkt_ID_) + "/produkte.txt";
   std::ofstream file(filename, std::ios::out | std::ios::trunc);
+
   if (!file) {
-    return "Fehler beim Erstellen der Datei!";
+    throw std::runtime_error("Fehler beim Erstellen von " + filename);
   }
 
-  file << "========================== PRODUKT DATABASE "
-          "==========================\n";
+  file << "========================== PRODUKT DATABASE ==========================\n";
   file << "Supermarkt: " << name_ << "\n";
   file << "Adresse: " << adresse_ << "\n\n";
 
@@ -85,8 +89,7 @@ std::string Supermarkt::CreateProduktDatabase() const {
   oss << std::string(70, '-') << "\n";
   oss << std::left << std::setw(35) << "Umsatz: " << std::fixed
       << std::setprecision(2) << std::setw(14) << GetGesamtWert() << "\n";
-  oss << "====================================================================="
-         "=\n";
+  oss << "======================================================================\n";
 
   file << oss.str();
   file.close();
@@ -114,24 +117,27 @@ void Supermarkt::RemoveKunde(std::shared_ptr<Kunde> kunde) {
  */
 std::string Supermarkt::CreateKundeDatabase() const {
   std::lock_guard<std::mutex> lock(supermarktMutex_);
-  // Anlegen der Kunden-Datei
+
   std::filesystem::create_directories("./data");
-  std::filesystem::create_directories("./data/supermarkt_" +
-                                      std::to_string(supermarkt_ID_));
-  std::string kundendatabase_path =
-      "./data/supermarkt_" + std::to_string(supermarkt_ID_) + "/kunden.txt";
+  
+  // Anlegen der Kunden-Datei
+  std::filesystem::create_directories("./data/supermarkt_" + std::to_string(supermarkt_ID_));
+  std::string kundendatabase_path = "./data/supermarkt_" + std::to_string(supermarkt_ID_) + "/kunden.txt";
   std::ofstream file(kundendatabase_path, std::ios::out | std::ios::trunc);
+
   if (!file) {
-    return "Fehler beim Erstellen der Datei!";
+    throw std::runtime_error("Fehler beim Erstellen von " + kundendatabase_path);
   }
-  file << "============================ KUNDEN DATABASE "
-          "==============================\n";
+
+  file << "============================ KUNDEN DATABASE ==============================\n";
   file << "Supermarkt: " << name_ << "\n";
   file << "Adresse: " << adresse_ << "\n\n";
+  
   std::ostringstream oss;
   oss << std::left << std::setw(20) << "Kunde" << std::setw(15) << "ID"
       << std::setw(20) << "Alter" << std::setw(15) << "Geschlecht" << "\n";
   oss << std::string(70, '-') << "\n";
+
   for (const auto& kunde : kunden_) {
     oss << std::left << std::setw(20) << kunde->GetName() << std::setw(15)
         << kunde->GetKundeID() << std::setw(20) << kunde->GetAge()
@@ -140,8 +146,8 @@ std::string Supermarkt::CreateKundeDatabase() const {
   oss << std::string(70, '-') << "\n";
   oss << std::left << std::setw(35) << "Anzahl Kunden: " << std::setw(14)
       << kunden_.size() << "\n";
-  oss << "====================================================================="
-         "======\n";
+  oss << "===========================================================================\n";
+
   file << oss.str();
   file.close();
   return kundendatabase_path;
@@ -162,31 +168,30 @@ void Supermarkt::RemoveWarenkorb(Warenkorb& warenkorb) {
 }
 
 /**
- * @brief Erzeugen einer Textdatei mit allen Warenkörben und Speicherung im
- * Ordner data
+ * @brief Erzeugen einer Textdatei mit allen Warenkörben und Speicherung im Ordner data
  * @return absoluter Pfad zur Datei
  */
 std::string Supermarkt::CreateWarenkorbDatabase() const {
   std::lock_guard<std::mutex> lock(supermarktMutex_);
-  // Anlegen der Warenkorb-Datei
   std::filesystem::create_directories("./data");
-  std::filesystem::create_directories("./data/supermarkt_" +
-                                      std::to_string(supermarkt_ID_));
-  std::string warenkorbdatabase_path = "./data/supermarkt_" +
-                                       std::to_string(supermarkt_ID_) +
-                                       "/warenkoerbe.txt";
+  
+  // Anlegen der Warenkorb-Datei
+  std::filesystem::create_directories("./data/supermarkt_" + std::to_string(supermarkt_ID_));
+  std::string warenkorbdatabase_path = "./data/supermarkt_" + std::to_string(supermarkt_ID_) + "/warenkoerbe.txt";
   std::ofstream file(warenkorbdatabase_path, std::ios::out | std::ios::trunc);
+
   if (!file) {
-    return "Fehler beim Erstellen der Datei!";
+    throw std::runtime_error("Fehler beim Erstellen von " + warenkorbdatabase_path);
   }
-  file << "=========================== WARENKORB DATABASE "
-          "=======================\n";
+
+  file << "=========================== WARENKORB DATABASE =======================\n";
   file << "Supermarkt: " << name_ << "\n";
   file << "Adresse: " << adresse_ << "\n\n";
   std::ostringstream oss;
   oss << std::left << std::setw(20) << "Kunde" << std::setw(15) << "ID"
       << std::setw(20) << "Gesamtpreis [€]" << "\n";
   oss << std::string(70, '-') << "\n";
+
   for (const auto& warenkorb : warenkoerbe_) {
     oss << std::fixed << std::setprecision(2) << std::left << std::setw(20)
         << warenkorb->GetKunde()->GetName() << std::setw(15)
@@ -196,8 +201,8 @@ std::string Supermarkt::CreateWarenkorbDatabase() const {
   oss << std::string(70, '-') << "\n";
   oss << std::left << std::setw(35) << "Anzahl Warenkoerbe: " << std::setw(14)
       << warenkoerbe_.size() << "\n";
-  oss << "====================================================================="
-         "=\n";
+  oss << "======================================================================\n";
+
   file << oss.str();
   file.close();
   return warenkorbdatabase_path;
@@ -218,40 +223,40 @@ void Supermarkt::RemoveHaendler(Haendler& haendler) {
 }
 
 /**
- * @brief Erzeugen eines Textdatei mit allen Händlern und Speicherung im Ordner
- * data
+ * @brief Erzeugen eines Textdatei mit allen Händlern und Speicherung im Ordnerdata
  * @return absoluter Pfad zur Datei
  */
 std::string Supermarkt::CreateHaendlerDatabase() const {
   std::lock_guard<std::mutex> lock(supermarktMutex_);
   // Anlegen der Kunden-Datei
   std::filesystem::create_directories("./data");
-  std::filesystem::create_directories("./data/supermarkt_" +
-                                      std::to_string(supermarkt_ID_));
-  std::string haendlerdatabase_path =
-      "./data/supermarkt_" + std::to_string(supermarkt_ID_) + "/haendler.txt";
+  std::filesystem::create_directories("./data/supermarkt_" + std::to_string(supermarkt_ID_));
+  std::string haendlerdatabase_path = "./data/supermarkt_" + std::to_string(supermarkt_ID_) + "/haendler.txt";
   std::ofstream file(haendlerdatabase_path, std::ios::out | std::ios::trunc);
+
   if (!file) {
-    return "Fehler beim Erstellen der Datei!";
+    throw std::runtime_error("Fehler beim Erstellen von " + haendlerdatabase_path);
   }
-  file << "============================ HAENDLER DATABASE "
-          "============================\n";
+  
+  file << "============================ HAENDLER DATABASE ============================\n";
   file << "Supermarkt: " << name_ << "\n";
   file << "Adresse: " << adresse_ << "\n\n";
   std::ostringstream oss;
   oss << std::left << std::setw(20) << "Haendler" << std::setw(15) << "ID"
       << std::setw(20) << "Alter" << std::setw(15) << "Geschlecht" << "\n";
   oss << std::string(70, '-') << "\n";
+
   for (const auto& haendler : haendler_) {
     oss << std::left << std::setw(20) << haendler->GetName() << std::setw(15)
         << haendler->GetHaendlerID() << std::setw(20) << haendler->GetAge()
         << std::setw(15) << haendler->GetGender() << "\n";
   }
+
   oss << std::string(70, '-') << "\n";
   oss << std::left << std::setw(35) << "Anzahl Haendler: " << std::setw(14)
       << haendler_.size() << "\n";
-  oss << "====================================================================="
-         "======\n";
+  oss << "===========================================================================\n";
+
   file << oss.str();
   file.close();
   return haendlerdatabase_path;

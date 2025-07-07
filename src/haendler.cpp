@@ -5,10 +5,9 @@
 
 static int haendlerCounter_ = 0;
 
-Haendler::Haendler(std::string name, std::string gender, int alter,
-                   std::string email, std::string adresse)
-    : Person(name, gender, alter, email, adresse),
-      haendlerID_(haendlerCounter_++) {}
+Haendler::Haendler(std::string name, std::string gender, int alter, std::string email, std::string adresse)
+  : Person(name, gender, alter, email, adresse),
+    haendlerID_(haendlerCounter_++) {}
 
 /**
  * @brief Überladung des Vergleichsoperators für die Klasse Haendler

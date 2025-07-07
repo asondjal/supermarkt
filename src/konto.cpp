@@ -8,10 +8,10 @@
 static int kontoCounter = 0;
 
 Konto::Konto(std::shared_ptr<Kunde> user, std::string bank)
-    : user_(std::move(user)),
-      bank_(bank),
-      kontostand_(0.00),
-      kontoID_(kontoCounter++) {}
+  : user_(std::move(user)),
+    bank_(bank),
+    kontostand_(0.00),
+    kontoID_(kontoCounter++) {}
 
 /**
  * @brief Vergleichsoperator für Konten
@@ -36,11 +36,9 @@ void Konto::Einzahlen(float betrag) {
  */
 void Konto::Auszahlen(float betrag) {
   if (betrag > kontostand_) {
-    std::cerr << "Fehler: Auszahlung übersteigt Kontostand!" << std::endl;
-    return;
-  } else {
-    kontostand_ -= betrag;
+    throw std::invalid_argument("Auszahlung übersteigt Kontostand.");
   }
+  kontostand_ -= betrag;
 }
 
 /**

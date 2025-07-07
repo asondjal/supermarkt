@@ -3,20 +3,19 @@
 #include <memory>
 #include <string>
 #include <utility>
+#include <stdexcept>
 
 static uint32_t kassenzettelCounter_ = 0;
 
 Kassenzettel::Kassenzettel(const Datum& datum, std::shared_ptr<Kunde> kunde,
-                           const Haendler& haendler, const Warenkorb& warenkorb,
-                           std::shared_ptr<Konto> konto)
-    : datum_(datum),
-      kunde_(std::move(kunde)),
-      haendler_(haendler),
-      warenkorb_(warenkorb),
-      kassenzettelID_(kassenzettelCounter_++),
-      konto_(std::move(konto)),
-      filename_("./data/kassenzettel/kunde_" + std::to_string(kassenzettelID_) +
-                ".txt") {}
+const Haendler& haendler, const Warenkorb& warenkorb, std::shared_ptr<Konto> konto)
+  : datum_(datum),
+    kunde_(std::move(kunde)),
+    haendler_(haendler),
+    warenkorb_(warenkorb),
+    kassenzettelID_(kassenzettelCounter_++),
+    konto_(std::move(konto)),
+    filename_("./data/kassenzettel/kunde_" + std::to_string(kassenzettelID_) + ".txt") {}
 
 /**
  * @brief Vergleichsoperator für Kassenzettel

@@ -15,14 +15,13 @@ std::mutex& ReadData::GetMutex() {
 std::string ReadData::ReadFile() const {
   std::lock_guard<std::mutex> lock(mtx_);  // Schutz vor Race Conditions
   if (!std::filesystem::exists(filePath_)) {
-    throw std::runtime_error("File does not exist: " + filePath_);
+    throw std::runtime_error("Datei existiert nicht: " + filePath_);
   }
   std::ifstream file(filePath_);
   if (!file.is_open()) {
-    throw std::runtime_error("Could not open file: " + filePath_);
+    throw std::runtime_error("Datei kann nicht geöffnet werden: " + filePath_);
   }
-  std::string content((std::istreambuf_iterator<char>(file)),
-                      std::istreambuf_iterator<char>());
+  std::string content((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
   return content;
 }
 
@@ -59,7 +58,7 @@ std::string ReadData::ReadPDF() const {
   std::lock_guard<std::mutex> lock(mtx_);
   poppler::document* doc = poppler::document::load_from_file(filePath_);
   if (!doc) {
-    throw std::runtime_error("Could not open PDF file: " + filePath_);
+    throw std::runtime_error("PDF-Datei konnte nicht geöffnet werden " + filePath_);
   }
   for (int i = 0; i < doc->pages(); ++i) {
     poppler::page* p = doc->create_page(i);
@@ -87,6 +86,6 @@ std::string ReadData::ReadAuto() const {
   } else if (ext == ".pdf") {
     return ReadPDF();
   } else {
-    throw std::runtime_error("Unsupported file format: " + ext);
+    throw std::runtime_error("Unbekanntes Dateiformat: " + ext);
   }
 }

@@ -299,3 +299,5 @@ Gesamtkosten vom Einkauf: 177.79 €
 [10.06.2025 22:38:57] [INFO] Supermarkt GUI gestartet
 [10.06.2025 22:39:02] [INFO] Supermarkt GUI wird geschlossen
 [22.06.2025 20:20:35] [INFO] Supermarkt GUI gestartet
+[07.07.2025 11:31:31] [INFO] Supermarkt GUI gestartet
+[07.07.2025 11:31:36] [INFO] Supermarkt GUI wird geschlossen

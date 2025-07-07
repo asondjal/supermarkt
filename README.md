@@ -73,7 +73,7 @@ vor allem CTRL+SHIFT+B zum Kompilieren
 ### **bindings**
 
 - Ablageort fuer die Executables aus C++, um mit pybind11 zu interagieren
-- Deklaration der Funktionen aus C++ fuer Python, **Achtung:** Funktionen sollen
+- Deklaration der Funktionen aus C++ fuer Python, **Achtung:** Funktionen müssen
 *Snake-Case* sein, damit Sie in Python nahtlos funktionieren
 
 ### **py_bindings.pyi**
@@ -85,7 +85,7 @@ damit der Compiler erkennt, dass diese Funktionen bereits in C++ definiert wurde
 ### **pybind11**
 
 - **Installation:** Klonen vom Git-Repository [Pybind11](https://github.com/pybind/pybind11.git)
-- Noetig, um eine Schnittstelle zwischen C++ und Python zu ermoeglichen
+- **Warum:** Noetig, um eine Schnittstelle zwischen C++ und Python zu ermoeglichen
 
 - **Modul für Python (Statistik-Pybind11)**
 
@@ -122,7 +122,12 @@ damit der Compiler erkennt, dass diese Funktionen bereits in C++ definiert wurde
     extension-pkg-whitelist=py_bindings
     ignored-modules=py_bindings
 
-- **Inhalt von.env:** PYTHONPATH=/home/arrif-sondjalim/c++projects/supermarkt/build
+- **Inhalt von.env:** PYTHONPATH=absolute_path_to_executable
+
+## **Ausführung vom Executable**
+
+- Eingabe vom Befehl **export PYTHONPATH=absolute_path_to_executable** im Terminal
+- **Hinweis:** Der absolute Pfad lässt sich mittels find -name build ermitteln
 
 ## **Integration in GitHub**
 

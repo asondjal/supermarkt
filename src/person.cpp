@@ -5,14 +5,13 @@
 
 static int personen_counter = 0;
 
-Person::Person(std::string name, std::string gender, int age, std::string email,
-               std::string adresse)
-    : name_{name},
-      gender_{gender},
-      age_{age},
-      email_{email},
-      adresse_{adresse},
-      personID_{personen_counter++} {}
+Person::Person(std::string name, std::string gender, int age, std::string email, std::string adresse)
+  : name_{name},
+    gender_{gender},
+    age_{age},
+    email_{email},
+    adresse_{adresse},
+    personID_{personen_counter++} {}
 
 /**
  * @brief Überladung des Vergleichsoperators
