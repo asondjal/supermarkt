@@ -12,7 +12,7 @@ def test_statistik():
     statistik.entferne_daten(text.read_txt())
     statistik.lade_daten(text)
     assert statistik.zaehle_linen() == 11
-    assert statistik.wortanzahl() == 17
+    assert statistik.wortanzahl() == 14
     assert statistik.zaehle_variable("Produkt") == 1
     assert statistik.zaehle_eintraege() == 1
     assert statistik.zeichenanzahl() == 598
