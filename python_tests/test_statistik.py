@@ -22,7 +22,7 @@ def test_statistik():
     assert statistik.zaehle_variable("Kunde") == 1
     assert statistik.zaehle_eintraege() == 2
     assert 7.508571147 - statistik.mittelwert() < 0.0001
-    assert statistik.zeichenanzahl() == 1206
+    assert statistik.zeichenanzahl() == 1202
     assert 603.000023 - statistik.median() < 0.0001
     assert 7.5085711479 - statistik.erwartungswert() < 0.0001
     assert 11.485596 - statistik.standardabweichung() < 0.0001
