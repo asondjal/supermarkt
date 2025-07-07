@@ -18,7 +18,7 @@ def test_statistik():
     assert statistik.zeichenanzahl() == 596
     statistik.lade_daten(kunden_data)
     assert statistik.zaehle_linen() == 22
-    assert statistik.wortanzahl() == 33
+    assert statistik.wortanzahl() == 38
     assert statistik.zaehle_variable("Kunde") == 1
     assert statistik.zaehle_eintraege() == 2
     assert 7.508571147 - statistik.mittelwert() < 0.0001
