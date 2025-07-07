@@ -57,6 +57,7 @@ add_executable(cpp_tests
     cpp_tests/test_kunde.cpp
     cpp_tests/test_haendler.cpp
     cpp_tests/test_warenkorb.cpp
+    cpp_tests/test_konto.cpp
     cpp_tests/test_kassenzettel.cpp
     cpp_tests/test_supermarkt.cpp
 )

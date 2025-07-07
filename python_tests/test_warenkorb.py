@@ -15,7 +15,7 @@ def test_warenkorb():
     warenkorb = Warenkorb(kunde1)
     shopping = Warenkorb(kunde1)
 
-    # assert warenkorb.get_warenkorb_id() == 0 Only work locally
+    assert warenkorb.get_warenkorb_id() == 0
     warenkorb.fuege_produkt_hinzu(produkt1)
     produkte = warenkorb.erhalte_produkte()
 
@@ -26,14 +26,14 @@ def test_warenkorb():
     warenkorb.entferne_produkt(produkt1)
     produkte = warenkorb.erhalte_produkte()
     assert repr(produkte) == "[]"
-    # assert len(produkte) == 0 Only work locally
+    assert len(produkte) == 0
     assert warenkorb.get_warenkorb_gesamtpreis() == 0.0000
 
     warenkorb.entferne_produkt(produkt1)
     print(warenkorb.erhalte_produkte())
     produkte = warenkorb.erhalte_produkte()
     assert repr(produkte) == "[]"
-    # assert len(produkte) == 0 Only work locally
+    assert len(produkte) == 0
     assert warenkorb.get_warenkorb_gesamtpreis() == 0.0000
 
     warenkorb.fuege_produkt_hinzu(produkt1)

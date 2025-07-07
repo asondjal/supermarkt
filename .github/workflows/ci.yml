@@ -34,11 +34,13 @@ jobs:
       - name: C++-Modul kompilieren
         run: cmake --build build --config Release
 
-      - name: Python-Tests ausführen
+      - name: Python-Tests einzeln ausführen
         env:
           PYTHONPATH: ${{ github.workspace }}/build
         run: |
-          pytest python_tests
+          for file in python_tests/test_*.py; do
+            pytest "$file"
+          done
 
       - name: C++-Tests ausführen
         run: |

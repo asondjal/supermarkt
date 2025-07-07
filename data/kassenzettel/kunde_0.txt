@@ -1,15 +1,15 @@
 ================== KASSENZETTEL ==================
-Kunde: LeBron James, Kunde-ID: 0
-Haendler: Rihanna, Haendler-ID: 0
+Kunde: Kujo Jotaro, Kunde-ID: 3
+Haendler: Jonathan Joestar, Haendler-ID: 1
 
 Produkt             Menge          Preis [€]         
 --------------------------------------------------
-Bananen             1.99           2.35                
-Kirschen            2.65           4.99                
+Apfel               1.17           1.23                
+Birne               5.20           2.42                
 --------------------------------------------------
-Gesamtpreis:                       17.88         
+Gesamtpreis:                       14.02         
 
-Institut: American Express
-Konto-ID: 0
-Abrechnungsdatum: 12.12.2012
+Institut: Bank of America
+Konto-ID: 1
+Abrechnungsdatum: 01.01.2022
 ================== KASSENZETTEL ==================

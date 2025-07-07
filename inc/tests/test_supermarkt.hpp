@@ -5,6 +5,8 @@
 #include <iostream>
 
 #include "base/supermarkt.hpp"
+#include "base/konto.hpp"
+#include "base/kassenzettel.hpp"
 
 void TestSupermarkt();
 

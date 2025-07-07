@@ -44,5 +44,5 @@ void TestStatistik() {
   assert(std::fabs(statistik.Erwartungswert() - 197.14f) < 0.01f);
   assert(std::fabs(statistik.Standardabweichung() - 117.26f) < 0.01f);
 
-  std::cout << "Alle Statistik-Tests waren erfolgreich!" << std::endl;
+  std::cout << "Alle Tests für Statistik waren erfolgreich!" << std::endl;
 }

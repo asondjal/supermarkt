@@ -9,7 +9,7 @@ def test_konto():
     konto1 = Konto(kunde1, "Commerzbank")
     konto2 = Konto(kunde1, "Deutsche Post")
 
-    # assert konto1.get_konto_id() == 0 Only work locally
+    assert konto1.get_konto_id() == 0
     konto1.einzahlen(1000.00)
     assert konto1.get_kontostand() == 1000.00
     konto1.abheben(500.00)
@@ -21,5 +21,5 @@ def test_konto():
     assert konto1.get_kontostand() == 1250.00
     assert konto1.get_institut() == "Commerzbank"
     assert konto1.vergleiche_konto(konto2) is False
-    # assert konto2.get_konto_id() == 1 Only work locally
+    assert konto2.get_konto_id() == 1
     assert konto1.get_kontoinhaber().vergleiche_kunde(kunde1) is True

@@ -1,6 +1,8 @@
 #ifndef INC_TESTS_TEST_KUNDE_HPP_
 #define INC_TESTS_TEST_KUNDE_HPP_
 
+#include <cassert>
+
 #include "base/kunde.hpp"
 
 void TestKunde();

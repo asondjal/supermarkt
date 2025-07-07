@@ -9,6 +9,6 @@ def test_haendler():
         "ASAP Rocky", "male", 35, "asap.rocky@gmail.com", "Hollywood, USA"
     )
 
-    # assert haendler1.get_haendler_id() == 0 Only work locally
-    # assert haendler2.get_haendler_id() == 1
+    assert haendler1.get_haendler_id() == 0
+    assert haendler2.get_haendler_id() == 1
     assert haendler1.vergleiche_haendler(haendler2) is False

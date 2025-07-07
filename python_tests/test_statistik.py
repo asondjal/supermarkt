@@ -12,18 +12,17 @@ def test_statistik():
     statistik.entferne_daten(text.read_txt())
     statistik.lade_daten(text)
     assert statistik.zaehle_linen() == 11
-    # assert statistik.wortanzahl() == 17 Only work locally
+    assert statistik.wortanzahl() == 17
     assert statistik.zaehle_variable("Produkt") == 1
     assert statistik.zaehle_eintraege() == 1
-    # assert statistik.zeichenanzahl() == 598 Only work locally
-
+    assert statistik.zeichenanzahl() == 598
     statistik.lade_daten(kunden_data)
     assert statistik.zaehle_linen() == 22
-    # assert statistik.wortanzahl() == 38 Only work locally
-    # assert statistik.zaehle_variable("Kunde") == 1
-    # assert statistik.zaehle_eintraege() == 2
-    # assert 7.508571147 - statistik.mittelwert() < 0.0001
-    # assert statistik.zeichenanzahl() == 1206
-    # assert 603.000023 - statistik.median() < 0.0001
-    # assert 7.5085711479 - statistik.erwartungswert() < 0.0001
-    # assert 11.485596 - statistik.standardabweichung() < 0.0001
+    assert statistik.wortanzahl() == 38
+    assert statistik.zaehle_variable("Kunde") == 1
+    assert statistik.zaehle_eintraege() == 2
+    assert 7.508571147 - statistik.mittelwert() < 0.0001
+    assert statistik.zeichenanzahl() == 1206
+    assert 603.000023 - statistik.median() < 0.0001
+    assert 7.5085711479 - statistik.erwartungswert() < 0.0001
+    assert 11.485596 - statistik.standardabweichung() < 0.0001
