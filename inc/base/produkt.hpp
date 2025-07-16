@@ -17,8 +17,7 @@ class Produkt {
   const std::string abteilung_;
 
  public:
-  Produkt(std::string name, float menge, float preis, Datum haltbarkeit,
-          std::string abteilung);
+  Produkt(std::string name, float menge, float preis, Datum haltbarkeit, std::string abteilung);
   std::string GetName() const;
   float GetMenge() const;
   float GetPreis() const;

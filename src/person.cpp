@@ -5,29 +5,26 @@
 
 static int personen_counter = 0;
 
-Person::Person(std::string name, std::string gender, int age, std::string email, std::string adresse)
-  : name_{name},
-    gender_{gender},
-    age_{age},
-    email_{email},
-    adresse_{adresse},
-    personID_{personen_counter++} {}
+Person::Person(std::string name, std::string gender, int age, std::string email,
+               std::string adresse)
+    : name_{name},
+      gender_{gender},
+      age_{age},
+      email_{email},
+      adresse_{adresse},
+      personID_{personen_counter++} {}
 
 /**
  * @brief Überladung des Vergleichsoperators
  * @param other: andere Person
  * @return true, wenn die Personen gleich sind, false sonst
  */
-bool Person::operator==(const Person& other) const {
-  return personID_ == other.personID_;
-}
+bool Person::operator==(const Person& other) const { return personID_ == other.personID_; }
 /**
  * @brief Funktion liefert den Namen einer Person zurück
  * @return name_: Name der Person
  */
-std::string Person::GetName() const { 
-  return name_; 
-}
+std::string Person::GetName() const { return name_; }
 
 /**
  * @brief Funktion liefert das Geschlecht einer Person zurück
@@ -40,16 +37,14 @@ std::string Person::GetGender() const {
       return gender_;
     }
   }
-  return "Ihr Geschlecht ist ungueltig!";
+  throw std::invalid_argument("Ihr Geschlecht ist ungueltig!");
 }
 
 /**
  * @brief Funktion liefert das Alter einer Person zurück
  * @return age_: Alter der Person
  */
-int Person::GetAge() const { 
-  return age_; 
-}
+int Person::GetAge() const { return age_; }
 
 /**
  * @brief Funktion liefert die E-Mail einer Person zurück
@@ -67,17 +62,13 @@ std::string Person::GetEmail() const {
  * @brief Rückgabwert der Funktion ist die Adresse einer Person
  * @return adresse_: Adresse der Person
  */
-std::string Person::GetAdresse() const { 
-  return adresse_; 
-}
+std::string Person::GetAdresse() const { return adresse_; }
 
 /**
  * @brief Funktion liefert die ID einer Person zurück
  * @return personID_: ID der Person
  */
-int Person::GetPersonID() const { 
-  return personID_; 
-}
+int Person::GetPersonID() const { return personID_; }
 
 /**
  * @brief Funktion zur Zusammenfassung aller Informationen für eine Person

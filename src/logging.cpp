@@ -7,13 +7,11 @@
  * @brief Konstruktor der Klasse Logging
  * @param logFilePath, level, consoleOutput
  */
-Logging::Logging(const std::string& logFilePath, LogLevel level,
-                 bool consoleOutput)
+Logging::Logging(const std::string& logFilePath, LogLevel level, bool consoleOutput)
     : currentLevel_(level), consoleOutput_(consoleOutput) {
   logFile_.open(logFilePath, std::ios::app);
   if (!logFile_.is_open()) {
-    std::cerr << "[ERROR] Unable to open log file: " << logFilePath
-              << std::endl;
+    std::cerr << "[ERROR] Unable to open log file: " << logFilePath << std::endl;
   }
 }
 /**
@@ -89,7 +87,8 @@ std::string Logging::GetLevel() {
  * @param message, level
  */
 void Logging::Log(const std::string& message, LogLevel level) {
-  if (level < currentLevel_) return;
+  if (level < currentLevel_)
+    return;
 
   std::string timestamp = GetTimestamp();
   std::string levelStr = LevelToString(level);

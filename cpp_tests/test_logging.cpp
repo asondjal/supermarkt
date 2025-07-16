@@ -1,6 +1,6 @@
 #include "tests/test_logging.hpp"
 
-void TestLogging() {  
+void TestLogging() {
   Logging logger("logfile.txt", LogLevel::DEBUG);
   assert(std::filesystem::exists("logfile.txt"));
   assert(logger.GetLevel() == "DEBUG");

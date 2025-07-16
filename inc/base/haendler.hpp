@@ -10,8 +10,7 @@ class Haendler : public Person {
   const int haendlerID_;
 
  public:
-  Haendler(std::string name, std::string gender, int alter, std::string email,
-           std::string adresse);
+  Haendler(std::string name, std::string gender, int alter, std::string email, std::string adresse);
   int GetHaendlerID() const;
   void Print() const final;
   bool operator==(const Haendler& other) const;

@@ -4,9 +4,9 @@
 #include <cassert>
 #include <iostream>
 
+#include "base/datum.hpp"
 #include "base/kunde.hpp"
 #include "base/produkt.hpp"
-#include "base/datum.hpp"
 #include "base/warenkorb.hpp"
 
 void TestWarenkorb();

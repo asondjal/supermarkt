@@ -46,3 +46,7 @@ jobs:
         run: |
           chmod +x ./build/cpp_tests
           ./build/cpp_tests
+
+      - name: Formatierung für C++Dateien prüfen
+        run: clang-format --dry-run --Werror $(find ./src ./cpp_tests ./inc -regex '.*\.\(cpp\|hpp\)$')
+

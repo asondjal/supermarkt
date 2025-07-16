@@ -2,11 +2,11 @@
 #define INC_TESTS_TEST_LOGGING_HPP_
 
 #include <cassert>
-#include <iostream>
 #include <filesystem>
+#include <iostream>
 
 #include "utils/logging.hpp"
 
 void TestLogging();
 
-#endif // INC_TESTS_TEST_LOGGING_HPP_
+#endif  // INC_TESTS_TEST_LOGGING_HPP_

@@ -1,10 +1,10 @@
 #ifndef INC_TESTS_TEST_KASSENZETTEL_HPP_
 #define INC_TESTS_TEST_KASSENZETTEL_HPP_
 
-#include "base/kassenzettel.hpp"
-
 #include <cassert>
 #include <iostream>
+
+#include "base/kassenzettel.hpp"
 
 void TestKassenzettel();
 

@@ -2,8 +2,8 @@
 #define INC_TESTS_TEST_READ_DATA_HPP_
 
 #include <cassert>
-#include <iostream>
 #include <filesystem>
+#include <iostream>
 
 #include "utils/read_data.hpp"
 

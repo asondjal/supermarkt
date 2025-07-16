@@ -4,7 +4,7 @@
 #include <cassert>
 #include <iostream>
 
-#include "base/datum.hpp" 
+#include "base/datum.hpp"
 
 void TestDatum();
 

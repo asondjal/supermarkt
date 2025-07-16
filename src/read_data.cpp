@@ -4,9 +4,7 @@
 
 ReadData::ReadData(const std::string& path) : filePath_{path} {}
 
-std::mutex& ReadData::GetMutex() { 
-  return mtx_; 
-}
+std::mutex& ReadData::GetMutex() { return mtx_; }
 
 /**
  * @brief Liest den Inhalt einer Datei aus und gibt ihn als String zurück
@@ -29,25 +27,19 @@ std::string ReadData::ReadFile() const {
  * @brief Liest den Inhalt einer Textdatei aus und gibt ihn als String zurück
  * @return Inhalt der Text-Datei als String
  */
-std::string ReadData::ReadTxt() const { 
-  return ReadFile(); 
-}
+std::string ReadData::ReadTxt() const { return ReadFile(); }
 
 /**
  * @brief Liest den Inhalt einer CSV-Datei aus und gibt ihn als String zurück
  * @return Inhalt der CSV-Datei als String
  */
-std::string ReadData::ReadCSV() const { 
-  return ReadFile(); 
-}
+std::string ReadData::ReadCSV() const { return ReadFile(); }
 
 /**
  * @brief Liest den Inhalt einer JSON-Datei und gibt ihn als String zurück
  * @return Inhalt der JSON-Datei als String
  */
-std::string ReadData::ReadJSON() const { 
-  return ReadFile(); 
-}
+std::string ReadData::ReadJSON() const { return ReadFile(); }
 
 /**
  * @brief Liest den Inhalt einer PDF-Datei und gibt ihn als String zurück

@@ -6,8 +6,7 @@
 #include <vector>
 
 template <typename T>
-std::string default_repr(const std::string& classname,
-  const std::string& name) {
+std::string default_repr(const std::string& classname, const std::string& name) {
   return "<" + classname + ": " + name + ">";
 }
 

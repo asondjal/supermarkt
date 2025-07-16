@@ -15,8 +15,7 @@ class Person {
   const int personID_;
 
  public:
-  Person(std::string name, std::string gender, int age, std::string email,
-         std::string adresse);
+  Person(std::string name, std::string gender, int age, std::string email, std::string adresse);
   virtual ~Person() = default;
   std::string GetName() const;
   std::string GetGender() const;

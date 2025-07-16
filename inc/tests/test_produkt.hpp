@@ -1,5 +1,5 @@
-# ifndef INC_TESTS_TEST_PRODUKT_HPP_
-# define INC_TESTS_TEST_PRODUKT_HPP_
+#ifndef INC_TESTS_TEST_PRODUKT_HPP_
+#define INC_TESTS_TEST_PRODUKT_HPP_
 
 #include <cassert>
 #include <iostream>

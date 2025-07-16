@@ -69,8 +69,7 @@ uint32_t Statistik::ZaehleVariable(std::string variable) const {
   for (const auto& data : datenBuffer_) {
     uint32_t entryCount = 0;
     std::regex variableRegex(R"(\b)" + variable + R"(\b)");
-    auto variablesBegin =
-        std::sregex_iterator(data.begin(), data.end(), variableRegex);
+    auto variablesBegin = std::sregex_iterator(data.begin(), data.end(), variableRegex);
     auto variablesEnd = std::sregex_iterator();
     entryCount = std::distance(variablesBegin, variablesEnd);
     anzahl += entryCount;
@@ -108,8 +107,7 @@ float Statistik::MittelwertIntern() const {
   uint32_t count = 0;
 
   for (const auto& data : datenBuffer_) {
-    auto numbersBegin =
-        std::sregex_iterator(data.begin(), data.end(), numberRegex);
+    auto numbersBegin = std::sregex_iterator(data.begin(), data.end(), numberRegex);
     auto numbersEnd = std::sregex_iterator();
 
     for (auto it = numbersBegin; it != numbersEnd; ++it) {
@@ -175,8 +173,7 @@ float Statistik::Erwartungswert() const {
 
   for (const auto& data : datenBuffer_) {
     std::regex numberRegex(R"(([-+]?\d*\.?\d+))");
-    auto numbersBegin =
-        std::sregex_iterator(data.begin(), data.end(), numberRegex);
+    auto numbersBegin = std::sregex_iterator(data.begin(), data.end(), numberRegex);
     auto numbersEnd = std::sregex_iterator();
 
     for (auto it = numbersBegin; it != numbersEnd; ++it) {
@@ -208,8 +205,7 @@ float Statistik::Varianz() const {
 
   for (const auto& data : datenBuffer_) {
     std::regex numberRegex(R"(([-+]?\d*\.?\d+))");
-    auto numbersBegin =
-        std::sregex_iterator(data.begin(), data.end(), numberRegex);
+    auto numbersBegin = std::sregex_iterator(data.begin(), data.end(), numberRegex);
     auto numbersEnd = std::sregex_iterator();
 
     for (auto it = numbersBegin; it != numbersEnd; ++it) {
