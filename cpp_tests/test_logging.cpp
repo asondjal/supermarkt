@@ -2,7 +2,7 @@
 
 void TestLogging() {
   Logging logger("logfile.txt", LogLevel::DEBUG);
-  assert(std::filesystem::exists("logfile.txt"));
+  assert(std::filesystem::exists("logfile.txt") == true);
   assert(logger.GetLevel() == "DEBUG");
   logger.Log("System initialized.", LogLevel::INFO);
   logger.Log("Reading configuration...", LogLevel::DEBUG);
