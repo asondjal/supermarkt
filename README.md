@@ -3,18 +3,18 @@
 ## **Ziele**
 
 - **Implementierung eines Supermarktes:** Systemverstaendnis foerden
-- **Integration von Komponenten aus unterschiedlichen Programmiersprachen:** Sich Gedanken darüber zu machen,
-ob es nicht sinnvoll waere,das Projekt in Komponenten aufzuteilen und falls noetig auch die Komponenten
-in anderen Sprachen implementieren, wodurch das Projekt skalierbar wird
-- **Umgang von Zugriffsrechten auf Dateisysteme und Ressourcen:** Sehr wichtig, denn bei der Verarbeitung
-und Verwaltung von Dokumenten muss sichergestellt werden, dass Race Conditions und Deadlocks vermieden
+- **Integration von Komponenten aus unterschiedlichen Programmiersprachen:** Modulare und mehrsprachige Architektur:
+Durch die Aufteilung in klar getrennte Module und die gezielte Nutzung von C++ (Backend) sowie Python (Frontend) wird Skalierbarkeit ermöglicht
+- **Umgang von Zugriffsrechten auf Dateisysteme und Ressourcen:** Sicherstellung des synchronisierten Zugriffs
+(z. B. per std::mutex), um Race Conditions und Deadlocks bei gleichzeitiger Dateiverarbeitung zu verhindern.
+- **Schnelle Testbarkeit trotz hoher Komplexität:** Trotz hohem Overhead durch C++ sollen die Tests in Python weniger Millisekunden brauchen
 
-## **Erstes Design**
+## **Design**
 
-- Verwaltung von Kunden, Haendlern, Produkten, Kontos, Warenkörben, Supermaerkte
-- Export von Kassenzetteln, Inventur- und Kunden-, Haendler-, sowie Warenkorbdateien
-- Trennung von Datenzugriff (`ReadData`) und Auswertung (`Statistik`)
-- Multithreading-fähiger Dateizugriff mittels Mutexen
+- **Basisklassen:** Datum, Kunde, Haendler, Produkt, Konto, Warenkorb, Supermarkt, Kassenzettel
+- **Datensätze:** Export von Kassenzetteln, Inventur- und Kunden-, Haendler-, sowie Warenkorbdateien
+- **Fokus:** Trennung von Datenzugriff (`ReadData`) und Auswertung (`Statistik`) sowie Monitoring (`Logging`)
+- **Vermeidung von Race Conditions:** Multithreading-fähiger Dateizugriff mittels Mutexen
 
 ## **Hauptfunktionen**
 
@@ -49,7 +49,7 @@ vor allem CTRL+SHIFT+B zum Kompilieren
 - Speicherort für die Source-Dateien
 - **tests.cpp:** Test-File fuer alle Executables
 
-## Ordner data
+## **Ordner data**
 
 - Aufbewahrungsort fuer die generierten Kassenzettel, Warenbestaende, Kundenliste, Haendlerlisten
 - Referenzpunkt fuer die Datenverarbeitung
@@ -134,3 +134,11 @@ damit der Compiler erkennt, dass diese Funktionen bereits in C++ definiert wurde
 - **ci.yml im Ordner .github:** Konfiguration von CI/CD
 - **.gitignore:** Ordner und Dateien, die ignoriert werden koennen
 - **gitmodules:** Mitteilung gegenüber dem System, dass pybind11 als Submodul zu verwenden ist
+
+## **Ergebnisse**
+
+- **CI/CD-Tests:** Tests laufen stabil, inklusive C++- und Python-Komponenten auf GitHub Actions.
+- **Pybind11:** konsistente Schnittstelle zwischen C++ und Python.
+- **Python-Tests über C++-Module:** Worst Case benötigt unter 200 ms, im Best-Case ca. 140 ms
+- **Formatierung für C++:** clang-format, cpplint
+- **C++-Style von Google:** Skalierbar und wartbar dank durchdachter Architektur
