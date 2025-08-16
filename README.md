@@ -9,6 +9,10 @@ Durch die Aufteilung in klar getrennte Module und die gezielte Nutzung von C++ (
 (z. B. per std::mutex), um Race Conditions und Deadlocks bei gleichzeitiger Dateiverarbeitung zu verhindern.
 - **Schnelle Testbarkeit trotz hoher Komplexität:** Trotz hohem Overhead durch C++ sollen die Tests in Python weniger Millisekunden brauchen
 
+## **Ausführung**
+
+- **Befehl im Terminal:** export PYTHONPATH=$(realpath build/)
+
 ## **Design**
 
 - **Basisklassen:** Datum, Kunde, Haendler, Produkt, Konto, Warenkorb, Supermarkt, Kassenzettel
@@ -56,20 +60,6 @@ vor allem CTRL+SHIFT+B zum Kompilieren
 
 ## **Integration von C++ in Python**
 
-### **Erweiterungen in der CMakeLists.txt:**
-
-- **Pybind11 einbinden**
-
-    add_subdirectory(pybind11)
-    find_package(Python3 COMPONENTS Interpreter Development REQUIRED)
-
-- **pybind11_bindings mit Python-Bibliotheken linken**
-
-    target_link_libraries(supermarkt PRIVATE Python3::Python)
-    include_directories(${Python3_INCLUDE_DIRS})
-    include_directories(${PROJECT_SOURCE_DIR}/include)
-    include_directories(${CMAKE_SOURCE_DIR}/pybind11/include)
-
 ### **bindings**
 
 - Ablageort fuer die Executables aus C++, um mit pybind11 zu interagieren
@@ -86,48 +76,6 @@ damit der Compiler erkennt, dass diese Funktionen bereits in C++ definiert wurde
 
 - **Installation:** Klonen vom Git-Repository [Pybind11](https://github.com/pybind/pybind11.git)
 - **Warum:** Noetig, um eine Schnittstelle zwischen C++ und Python zu ermoeglichen
-
-- **Modul für Python (Statistik-Pybind11)**
-
-    pybind11_add_module(py_bindings
-        Verwenden der gleichen Executables aus src, aber ohne main.cpp
-    )
-
-- **Linken von py_bindings mit poppler-cpp fuer Konventierung von PDFs in String**
-
-    target_link_libraries(py_bindings PRIVATE poppler-cpp)
-
-### **Erweiterungen fuer settings.json:**
-
-    "C_Cpp.errorSquiggles": "disabled",
-    "C_Cpp.default.compilerPath": "/usr/bin/gcc",
-
-    "python.analysis.extraPaths": ["./build"],
-    "python.analysis.diagnosticSeverityOverrides": {
-        "reportMissingImports": "none",
-        "reportMissingModuleSource": "none"
-    },
-    "python.analysis.typeCheckingMode": "off",
-    "python.envFile": "${workspaceFolder}/.env",
-    "python.analysis.ignore": ["./GUI/gui.py", "./tests/test_supermarkt.py"] # Noetig, da pylint Schwierigkeiten mit stat. Variablen hat
-
-### **Behebung der Pylint-Fehlermeldungen:**
-
-- **Inhalt von .pylintrc:**
-
-    [MASTER]
-    init-hook='import sys; sys.path.append("build")'
-
-    [TYPECHECK]
-    extension-pkg-whitelist=py_bindings
-    ignored-modules=py_bindings
-
-- **Inhalt von.env:** PYTHONPATH=absolute_path_to_executable
-
-## **Ausführung vom Executable**
-
-- Eingabe vom Befehl **export PYTHONPATH=absolute_path_to_executable** im Terminal
-- **Hinweis:** Der absolute Pfad lässt sich mittels find -name build ermitteln
 
 ## **Integration in GitHub**
 

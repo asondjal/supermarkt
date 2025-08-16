@@ -1,0 +1,50 @@
+### **Erweiterungen in der CMakeLists.txt:**
+
+- **Pybind11 einbinden**
+
+    add_subdirectory(pybind11)
+    find_package(Python3 COMPONENTS Interpreter Development REQUIRED)
+
+- **pybind11_bindings mit Python-Bibliotheken linken**
+
+    target_link_libraries(supermarkt PRIVATE Python3::Python)
+    include_directories(${Python3_INCLUDE_DIRS})
+    include_directories(${PROJECT_SOURCE_DIR}/include)
+    include_directories(${CMAKE_SOURCE_DIR}/pybind11/include)
+
+- **Modul für Python (Statistik-Pybind11)**
+
+    pybind11_add_module(py_bindings
+        Verwenden der gleichen Executables aus src, aber ohne main.cpp
+    )
+
+- **Linken von py_bindings mit poppler-cpp fuer Konventierung von PDFs in String**
+
+    target_link_libraries(py_bindings PRIVATE poppler-cpp)
+
+### **Erweiterungen fuer settings.json:**
+
+    "C_Cpp.errorSquiggles": "disabled",
+    "C_Cpp.default.compilerPath": "/usr/bin/gcc",
+
+    "python.analysis.extraPaths": ["./build"],
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportMissingImports": "none",
+        "reportMissingModuleSource": "none"
+    },
+    "python.analysis.typeCheckingMode": "off",
+    "python.envFile": "${workspaceFolder}/.env",
+    "python.analysis.ignore": ["./GUI/gui.py", "./tests/test_supermarkt.py"] # Noetig, da pylint Schwierigkeiten mit stat. Variablen hat
+
+### **Behebung der Pylint-Fehlermeldungen:**
+
+- **Inhalt von .pylintrc:**
+
+    [MASTER]
+    init-hook='import sys; sys.path.append("build")'
+
+    [TYPECHECK]
+    extension-pkg-whitelist=py_bindings
+    ignored-modules=py_bindings
+
+- **Inhalt von.env:** PYTHONPATH=absolute_path_to_executable
