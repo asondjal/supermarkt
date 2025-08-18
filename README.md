@@ -11,7 +11,8 @@ Durch die Aufteilung in klar getrennte Module und die gezielte Nutzung von C++ (
 
 ## **Ausführung**
 
-- **Befehl im Terminal:** export PYTHONPATH=$(realpath build/)
+- **Executable generieren:** Ctrl + Shift + B
+- **Befehl im Terminal:** export PYTHONPATH=$(realpath build/) -> Anscließend können alle Funktionalitäten verwendet werden
 
 ## **Design**
 

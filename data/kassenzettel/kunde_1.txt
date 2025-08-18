@@ -1,15 +1,15 @@
 ================== KASSENZETTEL ==================
-Kunde: Josuke Higashikata, Kunde-ID: 4
-Haendler: Jonathan Joestar, Haendler-ID: 1
+Kunde: XY, Kunde-ID: 1
+Haendler: XX, Haendler-ID: 1
 
 Produkt             Menge          Preis [€]         
 --------------------------------------------------
-Apfel               1.17           1.23                
-Birne               5.20           2.42                
+Zitronen            20.00          1.29                
+Wassermelone        12.98          2.67                
 --------------------------------------------------
-Gesamtpreis:                       14.02         
+Gesamtpreis:                       60.46         
 
-Institut: Deutsche Bank
-Konto-ID: 2
-Abrechnungsdatum: 12.11.2009
+Institut: American Express
+Konto-ID: 1
+Abrechnungsdatum: 18.08.2025
 ================== KASSENZETTEL ==================

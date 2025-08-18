@@ -40,6 +40,8 @@ class SupermarktApp:
         self.current_konto = None
         self.current_warenkorb = None
         self.produkte_liste = []
+        self.kontostand = 10000.00
+        self.pfad = ""
         self.supermarkt = Supermarkt("REAL", "Musterstraße 1, 12345 Musterstadt")
 
         dummy_kunde = Kunde("x", "neutral", 0, "x@x.com", "Nothing")
@@ -207,7 +209,7 @@ class SupermarktApp:
             bank = entry_bank.get()
             self.current_konto = Konto(self.current_kunde, bank)
             text = f"Konto für {self.current_kunde.get_name()} bei {self.current_konto.get_institut()} wurde angelegt."
-            self.status.config(text)
+            self.status.config(text=text)
             self.current_konto.einzahlen(1000.00)
             konto_window.destroy()
 
@@ -295,6 +297,7 @@ class SupermarktApp:
         for produkt in self.produkte_liste:
             self.current_warenkorb.fuege_produkt_hinzu(produkt)
 
+        self.current_konto.einzahlen(self.kontostand)
         kosten = self.current_warenkorb.get_warenkorb_gesamtpreis()
         self.current_konto.abheben(kosten)
         if self.current_konto.get_kontostand() > 0:
@@ -347,8 +350,8 @@ class SupermarktApp:
             return
 
         try:
-            pfad = self.current_kassenzettel.erzeuge_kassenzettel()
-            with open(pfad, "r", encoding="utf-8") as file:
+            self.pfad = self.current_kassenzettel.erzeuge_kassenzettel()
+            with open(self.pfad, "r", encoding="utf-8") as file:
                 content = file.read()
         except (OSError, IOError) as e:
             self.status.config(text=f"Fehler beim Lesen: {e}")

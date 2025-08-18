@@ -1,17 +1,12 @@
 ================== KASSENZETTEL ==================
-Kunde: Justin Bieber, Kunde-ID: 1
-Haendler: Billie Eilish, Haendler-ID: 1
+Kunde: XX, Kunde-ID: 1
+Haendler: XY, Haendler-ID: 1
 
 Produkt             Menge          Preis [€]         
 --------------------------------------------------
-Kirschen            2.79           7.99                
-Zitronen            12.00          1.79                
-Bananen             12.92          2.56                
-Tequilla            2.00           39.99               
+Kirschen            4.98           12.99               
+Orangen             3.92           18.99               
+Erdbeeren           2.98           13.99               
 --------------------------------------------------
-Gesamtpreis:                       156.82        
+Gesamtpreis:                       180.89        
 
-Institut: American Express
-Konto-ID: 1
-Abrechnungsdatum: 27.05.2025
-================== KASSENZETTEL ==================

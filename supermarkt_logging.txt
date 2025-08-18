@@ -301,3 +301,235 @@ Gesamtkosten vom Einkauf: 177.79 €
 [22.06.2025 20:20:35] [INFO] Supermarkt GUI gestartet
 [07.07.2025 11:31:31] [INFO] Supermarkt GUI gestartet
 [07.07.2025 11:31:36] [INFO] Supermarkt GUI wird geschlossen
+[18.08.2025 18:46:58] [INFO] Supermarkt GUI gestartet
+[18.08.2025 18:48:09] [INFO] Neuer Kunde: Kyrie Irving
+[18.08.2025 18:48:15] [INFO] Neues Konto fuer: Kyrie Irving
+[18.08.2025 18:48:31] [ERROR] Kyrie Irving ist insolvent!
+[18.08.2025 18:48:31] [WARNING] Leerer Warenkorb!
+[18.08.2025 18:48:54] [INFO] Neues Produkt: Kirschen
+[18.08.2025 18:49:31] [INFO] Neuer Haendler: Kevin Durant
+[18.08.2025 18:50:36] [INFO] Supermarkt GUI wird geschlossen
+[18.08.2025 18:50:58] [INFO] Supermarkt GUI gestartet
+[18.08.2025 18:51:48] [INFO] Neuer Kunde: Nikola Jokic
+[18.08.2025 18:51:49] [INFO] Neues Konto fuer: Nikola Jokic
+[18.08.2025 18:52:07] [ERROR] Nikola Jokic ist insolvent!
+[18.08.2025 18:52:07] [WARNING] Leerer Warenkorb!
+[18.08.2025 18:52:09] [ERROR] Nikola Jokic ist insolvent!
+[18.08.2025 18:52:09] [WARNING] Leerer Warenkorb!
+[18.08.2025 18:52:27] [INFO] Neues Produkt: Orangen
+[18.08.2025 18:53:19] [INFO] Neuer Haendler: Kevin Durant
+[18.08.2025 18:53:22] [INFO] Neues Konto fuer: Nikola Jokic
+[18.08.2025 18:55:24] [INFO] Supermarkt GUI gestartet
+[18.08.2025 18:56:13] [INFO] Neuer Kunde: Rihanna
+[18.08.2025 18:56:47] [INFO] Neuer Haendler: ASAP ROCKY
+[18.08.2025 18:56:49] [INFO] Neues Konto fuer: Rihanna
+[18.08.2025 18:57:20] [INFO] Neues Produkt: Kirschen
+[18.08.2025 18:57:23] [INFO] Neues Konto fuer: Rihanna
+[18.08.2025 19:01:32] [INFO] Supermarkt GUI gestartet
+[18.08.2025 19:02:05] [INFO] Neuer Kunde: Thomas Justin
+[18.08.2025 19:02:07] [INFO] Neues Konto fuer: Thomas Justin
+[18.08.2025 19:03:01] [INFO] Neues Konto fuer: Thomas Justin
+[18.08.2025 19:03:54] [INFO] Supermarkt GUI wird geschlossen
+[18.08.2025 19:03:58] [INFO] Supermarkt GUI gestartet
+[18.08.2025 19:04:35] [INFO] Neuer Kunde: LeBron James
+[18.08.2025 19:05:19] [INFO] Neuer Haendler: Tristan Thompson
+[18.08.2025 19:05:21] [INFO] Neues Konto fuer: LeBron James
+[18.08.2025 19:06:13] [INFO] Neues Produkt: Orangen
+[18.08.2025 19:10:54] [INFO] Supermarkt GUI wird geschlossen
+[18.08.2025 19:11:56] [INFO] Supermarkt GUI gestartet
+[18.08.2025 19:12:20] [INFO] Neuer Kunde: XX
+[18.08.2025 19:12:23] [INFO] Neues Konto fuer: XX
+[18.08.2025 19:13:06] [INFO] Neuer Haendler: XY
+[18.08.2025 19:13:35] [INFO] Neues Produkt: Kirschen
+[18.08.2025 19:13:37] [INFO] XX ist zahlungsfaehig!
+[18.08.2025 19:13:37] [INFO] Artikel im Warenkorb:
+1. Kirschen
+
+Gesamtkosten vom Einkauf: 64.72 €
+[18.08.2025 19:14:07] [INFO] Neues Produkt: Orangen
+[18.08.2025 19:14:09] [INFO] XX ist zahlungsfaehig!
+[18.08.2025 19:14:09] [INFO] Artikel im Warenkorb:
+1. Kirschen
+2. Orangen
+
+Gesamtkosten vom Einkauf: 139.18 €
+[18.08.2025 19:14:13] [INFO] Kassenzettel erzeugt: ./data/kassenzettel/kunde_1.txt
+[18.08.2025 19:16:22] [INFO] Neues Produkt: Erdbeeren
+[18.08.2025 19:16:23] [INFO] XX ist zahlungsfaehig!
+[18.08.2025 19:16:23] [INFO] Artikel im Warenkorb:
+1. Kirschen
+2. Orangen
+3. Erdbeeren
+
+Gesamtkosten vom Einkauf: 180.89 €
+[18.08.2025 19:16:28] [INFO] Kassenzettel erzeugt: ./data/kassenzettel/kunde_2.txt
+[18.08.2025 19:19:24] [INFO] Supermarkt GUI wird geschlossen
+[18.08.2025 19:19:28] [INFO] Supermarkt GUI gestartet
+[18.08.2025 19:20:00] [INFO] Neuer Kunde: XX
+[18.08.2025 19:20:01] [INFO] Neues Konto fuer: XX
+[18.08.2025 19:24:53] [INFO] Supermarkt GUI gestartet
+[18.08.2025 19:25:22] [INFO] Neuer Kunde: LeBron James
+[18.08.2025 19:25:24] [INFO] Neues Konto fuer: LeBron James
+[18.08.2025 19:25:33] [INFO] LeBron James ist zahlungsfaehig!
+[18.08.2025 19:25:33] [WARNING] Leerer Warenkorb!
+[18.08.2025 19:26:11] [INFO] Neuer Haendler: Michael Jordan
+[18.08.2025 19:26:38] [INFO] Neues Produkt: Nike Air Jordan 1
+[18.08.2025 19:26:42] [INFO] LeBron James ist zahlungsfaehig!
+[18.08.2025 19:26:42] [INFO] Artikel im Warenkorb:
+1. Nike Air Jordan 1
+
+Gesamtkosten vom Einkauf: 259.98 €
+[18.08.2025 19:26:49] [INFO] Kassenzettel erzeugt: ./data/kassenzettel/kunde_1.txt
+[18.08.2025 19:27:19] [INFO] Neues Produkt: Bananen
+[18.08.2025 19:28:47] [INFO] Supermarkt GUI wird geschlossen
+[18.08.2025 19:32:47] [INFO] Supermarkt GUI gestartet
+[18.08.2025 19:33:11] [INFO] Neues Produkt: Kirschen
+[18.08.2025 19:33:40] [INFO] Neuer Kunde: XX
+[18.08.2025 19:33:48] [INFO] Neues Konto fuer: XX
+[18.08.2025 19:33:59] [INFO] XX ist zahlungsfaehig!
+[18.08.2025 19:33:59] [INFO] Artikel im Warenkorb:
+1. Kirschen
+
+Gesamtkosten vom Einkauf: 129.77 €
+[18.08.2025 19:34:11] [INFO] XX ist zahlungsfaehig!
+[18.08.2025 19:34:11] [INFO] Artikel im Warenkorb:
+1. Kirschen
+
+Gesamtkosten vom Einkauf: 129.77 €
+[18.08.2025 19:34:43] [INFO] Neues Produkt: Limetten
+[18.08.2025 19:34:45] [INFO] XX ist zahlungsfaehig!
+[18.08.2025 19:34:45] [INFO] Artikel im Warenkorb:
+1. Kirschen
+2. Limetten
+
+Gesamtkosten vom Einkauf: 145.25 €
+[18.08.2025 19:35:09] [INFO] Neues Produkt: Nike Air Jordan 1
+[18.08.2025 19:35:13] [INFO] XX ist zahlungsfaehig!
+[18.08.2025 19:35:13] [INFO] Artikel im Warenkorb:
+1. Kirschen
+2. Limetten
+3. Nike Air Jordan 1
+
+Gesamtkosten vom Einkauf: 425.23 €
+[18.08.2025 19:36:01] [INFO] Neuer Haendler: XYX
+[18.08.2025 19:36:22] [INFO] Neues Produkt: Bananen
+[18.08.2025 19:40:31] [INFO] Supermarkt GUI gestartet
+[18.08.2025 19:40:56] [INFO] Neuer Kunde: XX
+[18.08.2025 19:40:56] [INFO] Neues Konto fuer: XX
+[18.08.2025 19:41:04] [INFO] XX ist zahlungsfaehig!
+[18.08.2025 19:41:04] [WARNING] Leerer Warenkorb!
+[18.08.2025 19:41:33] [INFO] Neues Produkt: Ananas
+[18.08.2025 19:41:35] [INFO] XX ist zahlungsfaehig!
+[18.08.2025 19:41:35] [INFO] Artikel im Warenkorb:
+1. Ananas
+
+Gesamtkosten vom Einkauf: 119.88 €
+[18.08.2025 19:42:18] [INFO] Neuer Haendler: Kawhi Leonard
+[18.08.2025 19:42:21] [INFO] XX ist zahlungsfaehig!
+[18.08.2025 19:42:21] [INFO] Artikel im Warenkorb:
+1. Ananas
+
+Gesamtkosten vom Einkauf: 119.88 €
+[18.08.2025 19:42:42] [INFO] Neues Produkt: Orangen
+[18.08.2025 19:42:44] [INFO] XX ist zahlungsfaehig!
+[18.08.2025 19:42:44] [INFO] Artikel im Warenkorb:
+1. Ananas
+2. Orangen
+
+Gesamtkosten vom Einkauf: 211.19 €
+[18.08.2025 19:42:49] [INFO] Kassenzettel erzeugt: ./data/kassenzettel/kunde_1.txt
+[18.08.2025 19:43:27] [INFO] Neues Produkt: Pepsi Cola
+[18.08.2025 19:59:48] [INFO] Supermarkt GUI wird geschlossen
+[18.08.2025 20:03:25] [INFO] Supermarkt GUI gestartet
+[18.08.2025 20:04:32] [INFO] Supermarkt GUI gestartet
+[18.08.2025 20:04:54] [INFO] Supermarkt GUI gestartet
+[18.08.2025 20:05:13] [INFO] Supermarkt GUI gestartet
+[18.08.2025 20:05:53] [INFO] Supermarkt GUI gestartet
+[18.08.2025 20:06:43] [INFO] Neuer Kunde: Bryan Smith
+[18.08.2025 20:06:43] [INFO] Neues Konto fuer: Bryan Smith
+[18.08.2025 20:06:55] [INFO] Bryan Smith ist zahlungsfaehig!
+[18.08.2025 20:06:55] [WARNING] Leerer Warenkorb!
+[18.08.2025 20:07:22] [INFO] Neues Produkt: Bananen
+[18.08.2025 20:07:23] [INFO] Bryan Smith ist zahlungsfaehig!
+[18.08.2025 20:07:23] [INFO] Artikel im Warenkorb:
+1. Bananen
+
+Gesamtkosten vom Einkauf: 31.82 €
+[18.08.2025 20:07:47] [INFO] Neues Produkt: Orangen
+[18.08.2025 20:08:14] [INFO] Bryan Smith ist zahlungsfaehig!
+[18.08.2025 20:08:14] [INFO] Artikel im Warenkorb:
+1. Bananen
+2. Orangen
+
+Gesamtkosten vom Einkauf: 49.72 €
+[18.08.2025 20:08:41] [INFO] Bryan Smith ist zahlungsfaehig!
+[18.08.2025 20:08:41] [INFO] Artikel im Warenkorb:
+1. Bananen
+2. Orangen
+
+Gesamtkosten vom Einkauf: 49.72 €
+[18.08.2025 20:09:19] [INFO] Neues Produkt: Tomaten
+[18.08.2025 20:09:20] [INFO] Bryan Smith ist zahlungsfaehig!
+[18.08.2025 20:09:20] [INFO] Artikel im Warenkorb:
+1. Bananen
+2. Orangen
+3. Tomaten
+
+Gesamtkosten vom Einkauf: 70.56 €
+[18.08.2025 20:12:57] [INFO] Supermarkt GUI wird geschlossen
+[18.08.2025 20:13:29] [INFO] Supermarkt GUI gestartet
+[18.08.2025 20:14:04] [INFO] Neuer Kunde: Austin Thomas
+[18.08.2025 20:14:05] [INFO] Neues Konto fuer: Austin Thomas
+[18.08.2025 20:14:20] [INFO] Austin Thomas ist zahlungsfaehig!
+[18.08.2025 20:14:20] [WARNING] Leerer Warenkorb!
+[18.08.2025 20:14:24] [INFO] Austin Thomas ist zahlungsfaehig!
+[18.08.2025 20:14:24] [WARNING] Leerer Warenkorb!
+[18.08.2025 20:15:16] [INFO] Neuer Haendler: Conor McGregor
+[18.08.2025 20:15:19] [INFO] Austin Thomas ist zahlungsfaehig!
+[18.08.2025 20:15:19] [WARNING] Leerer Warenkorb!
+[18.08.2025 20:15:45] [INFO] Neues Produkt: Champagner
+[18.08.2025 20:15:48] [INFO] Austin Thomas ist zahlungsfaehig!
+[18.08.2025 20:15:48] [INFO] Artikel im Warenkorb:
+1. Champagner
+
+Gesamtkosten vom Einkauf: 59.98 €
+[18.08.2025 20:16:10] [INFO] Neues Produkt: Zitronen
+[18.08.2025 20:16:22] [INFO] Austin Thomas ist zahlungsfaehig!
+[18.08.2025 20:16:22] [INFO] Artikel im Warenkorb:
+1. Champagner
+2. Zitronen
+
+Gesamtkosten vom Einkauf: 93.38 €
+[18.08.2025 20:16:49] [INFO] Neues Produkt: Erdbeeren
+[18.08.2025 20:16:51] [INFO] Austin Thomas ist zahlungsfaehig!
+[18.08.2025 20:16:51] [INFO] Artikel im Warenkorb:
+1. Champagner
+2. Zitronen
+3. Erdbeeren
+
+Gesamtkosten vom Einkauf: 115.69 €
+[18.08.2025 20:17:35] [INFO] Neues Produkt: NVIDIA GeForce RTX 3070
+[18.08.2025 20:17:37] [ERROR] Fehler beim Abheben: Auszahlung übersteigt Kontostand!
+[18.08.2025 20:17:46] [ERROR] Fehler beim Abheben: Auszahlung übersteigt Kontostand!
+[18.08.2025 20:17:46] [ERROR] Fehler beim Abheben: Auszahlung übersteigt Kontostand!
+[18.08.2025 20:17:47] [ERROR] Fehler beim Abheben: Auszahlung übersteigt Kontostand!
+[18.08.2025 20:22:11] [INFO] Supermarkt GUI gestartet
+[18.08.2025 20:22:42] [INFO] Neuer Kunde: XY
+[18.08.2025 20:22:42] [INFO] Neues Konto fuer: XY
+[18.08.2025 20:22:53] [INFO] XY ist zahlungsfaehig!
+[18.08.2025 20:22:53] [WARNING] Leerer Warenkorb!
+[18.08.2025 20:23:10] [INFO] Neuer Haendler: XX
+[18.08.2025 20:23:56] [INFO] Neues Produkt: Zitronen
+[18.08.2025 20:23:58] [INFO] XY ist zahlungsfaehig!
+[18.08.2025 20:23:58] [INFO] Artikel im Warenkorb:
+1. Zitronen
+
+Gesamtkosten vom Einkauf: 25.80 €
+[18.08.2025 20:24:21] [INFO] Neues Produkt: Wassermelone
+[18.08.2025 20:24:23] [INFO] XY ist zahlungsfaehig!
+[18.08.2025 20:24:23] [INFO] Artikel im Warenkorb:
+1. Zitronen
+2. Wassermelone
+
+Gesamtkosten vom Einkauf: 60.46 €
+[18.08.2025 20:24:27] [INFO] Kassenzettel erzeugt: ./data/kassenzettel/kunde_1.txt
