@@ -209,8 +209,9 @@ class SupermarktApp:
             bank = entry_bank.get()
             self.current_konto = Konto(self.current_kunde, bank)
             text = f"Konto für {self.current_kunde.get_name()} bei {self.current_konto.get_institut()} wurde angelegt."
+            self.logging.start_log(text, LogLevel.INFO)
             self.status.config(text=text)
-            self.current_konto.einzahlen(1000.00)
+            self.current_konto.einzahlen(self.kontostand)
             konto_window.destroy()
 
         konto_window = tk.Toplevel(self.root)
@@ -223,9 +224,6 @@ class SupermarktApp:
 
         tk.Button(konto_window, text="Konto erstellen", command=create_konto).pack(
             pady=10
-        )
-        self.logging.start_log(
-            f"Neues Konto fuer: {self.current_kunde.get_name()}", LogLevel.INFO
         )
 
     def handle_produkt(self):
@@ -293,14 +291,16 @@ class SupermarktApp:
 
         self.current_warenkorb = Warenkorb(self.current_kunde)
         message = f"Warenkorb für {self.current_kunde.get_name()} wurde angelegt."
+        self.current_konto.einzahlen(self.kontostand)
 
+        kosten = 0.00
+        
         for produkt in self.produkte_liste:
             self.current_warenkorb.fuege_produkt_hinzu(produkt)
+            kosten += produkt.get_gesamtpreis()
 
-        self.current_konto.einzahlen(self.kontostand)
-        kosten = self.current_warenkorb.get_warenkorb_gesamtpreis()
         self.current_konto.abheben(kosten)
-        if self.current_konto.get_kontostand() > 0:
+        if self.current_konto.get_kontostand() >= 0:
             self.logging.start_log(
                 f"{self.current_konto.get_kontoinhaber().get_name()} ist zahlungsfaehig!",
                 LogLevel.INFO,
@@ -310,6 +310,7 @@ class SupermarktApp:
                 f"{self.current_konto.get_kontoinhaber().get_name()} ist insolvent!",
                 LogLevel.ERROR,
             )
+
         items = self.current_warenkorb.erhalte_produkte()
         if not items:
             self.status.config(text="Warenkorb ist leer.")

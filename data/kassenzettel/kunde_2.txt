@@ -1,12 +1,18 @@
 ================== KASSENZETTEL ==================
-Kunde: XX, Kunde-ID: 1
-Haendler: Kawhi Leonard, Haendler-ID: 1
+Kunde: LeBron James, Kunde-ID: 1
+Haendler: Kyrie Irving, Haendler-ID: 1
 
 Produkt             Menge          Preis [€]         
 --------------------------------------------------
-Ananas              12.00          9.99                
-Orangen             5.97           15.29               
-Pepsi Cola          12.00          2.59                
+Kirschen            3.76           13.99               
+Orangen             7.50           8.00                
+Wassermelone        15.98          2.00                
+Nike Air Jordan 1   2.00           139.99              
+NVIDIA GPU          1.00           575.44              
 --------------------------------------------------
-Gesamtpreis:                       242.27        
+Gesamtpreis:                       1000.00       
 
+Institut: American Express
+Konto-ID: 1
+Abrechnungsdatum: 25.08.2025
+================== KASSENZETTEL ==================

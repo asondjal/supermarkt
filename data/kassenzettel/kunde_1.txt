@@ -1,15 +1,13 @@
 ================== KASSENZETTEL ==================
-Kunde: XY, Kunde-ID: 1
-Haendler: XX, Haendler-ID: 1
+Kunde: XX, Kunde-ID: 1
+Haendler: XY, Haendler-ID: 1
 
 Produkt             Menge          Preis [€]         
 --------------------------------------------------
-Zitronen            20.00          1.29                
-Wassermelone        12.98          2.67                
 --------------------------------------------------
-Gesamtpreis:                       60.46         
+Gesamtpreis:                       0.00          
 
-Institut: American Express
+Institut: ICE
 Konto-ID: 1
-Abrechnungsdatum: 18.08.2025
+Abrechnungsdatum: 25.08.2025
 ================== KASSENZETTEL ==================

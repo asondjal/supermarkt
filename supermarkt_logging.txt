@@ -533,3 +533,125 @@ Gesamtkosten vom Einkauf: 25.80 €
 
 Gesamtkosten vom Einkauf: 60.46 €
 [18.08.2025 20:24:27] [INFO] Kassenzettel erzeugt: ./data/kassenzettel/kunde_1.txt
+[25.08.2025 18:23:46] [INFO] Supermarkt GUI gestartet
+[25.08.2025 18:23:51] [INFO] Supermarkt GUI wird geschlossen
+[25.08.2025 18:24:01] [INFO] Supermarkt GUI gestartet
+[25.08.2025 18:25:06] [INFO] Neuer Kunde: LeBron James
+[25.08.2025 18:25:10] [INFO] Neues Konto fuer: LeBron James
+[25.08.2025 18:26:34] [INFO] LeBron James ist zahlungsfaehig!
+[25.08.2025 18:26:34] [WARNING] Leerer Warenkorb!
+[25.08.2025 18:27:24] [INFO] Neuer Haendler: Kyrie Irving
+[25.08.2025 18:27:28] [INFO] LeBron James ist zahlungsfaehig!
+[25.08.2025 18:27:28] [WARNING] Leerer Warenkorb!
+[25.08.2025 18:27:56] [INFO] Neues Produkt: Kirschen
+[25.08.2025 18:28:03] [INFO] LeBron James ist zahlungsfaehig!
+[25.08.2025 18:28:03] [INFO] Artikel im Warenkorb:
+1. Kirschen
+
+Gesamtkosten vom Einkauf: 52.63 €
+[25.08.2025 18:28:25] [INFO] Neues Produkt: Orangen
+[25.08.2025 18:28:27] [INFO] LeBron James ist zahlungsfaehig!
+[25.08.2025 18:28:27] [INFO] Artikel im Warenkorb:
+1. Kirschen
+2. Orangen
+
+Gesamtkosten vom Einkauf: 112.63 €
+[25.08.2025 18:29:08] [INFO] Neues Produkt: Wassermelone
+[25.08.2025 18:29:10] [INFO] LeBron James ist zahlungsfaehig!
+[25.08.2025 18:29:10] [INFO] Artikel im Warenkorb:
+1. Kirschen
+2. Orangen
+3. Wassermelone
+
+Gesamtkosten vom Einkauf: 144.58 €
+[25.08.2025 18:29:38] [INFO] Neues Produkt: Nike Air Jordan 1
+[25.08.2025 18:29:45] [INFO] LeBron James ist zahlungsfaehig!
+[25.08.2025 18:29:45] [INFO] Artikel im Warenkorb:
+1. Kirschen
+2. Orangen
+3. Wassermelone
+4. Nike Air Jordan 1
+
+Gesamtkosten vom Einkauf: 424.56 €
+[25.08.2025 18:30:37] [INFO] Neues Produkt: NVIDIA GPU
+[25.08.2025 18:30:40] [INFO] LeBron James ist zahlungsfaehig!
+[25.08.2025 18:30:40] [INFO] Artikel im Warenkorb:
+1. Kirschen
+2. Orangen
+3. Wassermelone
+4. Nike Air Jordan 1
+5. NVIDIA GPU
+
+Gesamtkosten vom Einkauf: 1000.00 €
+[25.08.2025 18:31:48] [INFO] Kassenzettel erzeugt: ./data/kassenzettel/kunde_1.txt
+[25.08.2025 18:32:24] [INFO] Neues Produkt: Zitronen
+[25.08.2025 18:32:29] [INFO] Kassenzettel erzeugt: ./data/kassenzettel/kunde_2.txt
+[25.08.2025 18:33:09] [INFO] Kassenzettel erzeugt: ./data/kassenzettel/kunde_3.txt
+[25.08.2025 18:34:42] [INFO] Supermarkt GUI wird geschlossen
+[25.08.2025 18:36:53] [INFO] Supermarkt GUI gestartet
+[25.08.2025 18:37:36] [INFO] Neuer Kunde: Thomas Johnson
+[25.08.2025 18:39:02] [INFO] Supermarkt GUI gestartet
+[25.08.2025 18:39:47] [INFO] Neuer Kunde: Michael Jordan
+[25.08.2025 18:39:50] [INFO] Konto für Michael Jordan
+[25.08.2025 18:43:07] [INFO] Supermarkt GUI wird geschlossen
+[25.08.2025 18:43:10] [INFO] Supermarkt GUI gestartet
+[25.08.2025 18:44:14] [INFO] Neuer Kunde: Luka Doncic
+[25.08.2025 18:44:27] [INFO] Konto für Luka Doncic bei UniCredit wurde angelegt.
+[25.08.2025 18:44:42] [INFO] Luka Doncic ist zahlungsfaehig!
+[25.08.2025 18:44:42] [WARNING] Leerer Warenkorb!
+[25.08.2025 18:45:24] [INFO] Neuer Haendler: Serena Williams
+[25.08.2025 18:45:57] [INFO] Neues Produkt: Wassermelone
+[25.08.2025 18:45:59] [INFO] Luka Doncic ist zahlungsfaehig!
+[25.08.2025 18:45:59] [INFO] Artikel im Warenkorb:
+1. Wassermelone
+
+Gesamtkosten vom Einkauf: 32.01 €
+[25.08.2025 18:46:37] [INFO] Neues Produkt: NVIDA GeForce RTX 4070
+[25.08.2025 18:46:38] [INFO] Luka Doncic ist zahlungsfaehig!
+[25.08.2025 18:46:38] [INFO] Artikel im Warenkorb:
+1. Wassermelone
+2. NVIDA GeForce RTX 4070
+
+Gesamtkosten vom Einkauf: 732.00 €
+[25.08.2025 18:47:04] [INFO] Neues Produkt: Nike Air Jordan 1
+[25.08.2025 18:47:08] [INFO] Luka Doncic ist zahlungsfaehig!
+[25.08.2025 18:47:08] [INFO] Artikel im Warenkorb:
+1. Wassermelone
+2. NVIDA GeForce RTX 4070
+3. Nike Air Jordan 1
+
+Gesamtkosten vom Einkauf: 1011.98 €
+[25.08.2025 18:47:19] [INFO] Kassenzettel erzeugt: ./data/kassenzettel/kunde_1.txt
+[25.08.2025 18:47:35] [INFO] Supermarkt GUI wird geschlossen
+[25.08.2025 18:52:00] [INFO] Supermarkt GUI gestartet
+[25.08.2025 18:52:55] [INFO] Neuer Kunde: Khalid
+[25.08.2025 18:53:02] [INFO] Konto für Khalid bei American Express wurde angelegt.
+[25.08.2025 18:54:16] [INFO] Supermarkt GUI wird geschlossen
+[25.08.2025 18:54:26] [INFO] Supermarkt GUI gestartet
+[25.08.2025 18:56:01] [INFO] Neuer Kunde: Austin Mahomes
+[25.08.2025 18:56:07] [INFO] Konto für Austin Mahomes bei American Express wurde angelegt.
+[25.08.2025 18:56:08] [INFO] Austin Mahomes ist zahlungsfaehig!
+[25.08.2025 18:56:08] [WARNING] Leerer Warenkorb!
+[25.08.2025 18:56:47] [INFO] Neuer Haendler: Justin Bieber
+[25.08.2025 18:57:14] [INFO] Neues Produkt: Champagner
+[25.08.2025 18:57:18] [INFO] Austin Mahomes ist zahlungsfaehig!
+[25.08.2025 18:57:18] [INFO] Artikel im Warenkorb:
+1. Champagner
+
+Gesamtkosten vom Einkauf: 959.94 €
+[25.08.2025 18:57:56] [INFO] Neues Produkt: Kaiserschmarn
+[25.08.2025 18:58:00] [INFO] Austin Mahomes ist zahlungsfaehig!
+[25.08.2025 18:58:00] [INFO] Artikel im Warenkorb:
+1. Champagner
+2. Kaiserschmarn
+
+Gesamtkosten vom Einkauf: 1000.11 €
+[25.08.2025 19:04:15] [INFO] Supermarkt GUI gestartet
+[25.08.2025 19:04:44] [INFO] Neuer Kunde: XX
+[25.08.2025 19:04:52] [INFO] Konto für XX bei ICE wurde angelegt.
+[25.08.2025 19:04:54] [INFO] XX ist zahlungsfaehig!
+[25.08.2025 19:04:54] [WARNING] Leerer Warenkorb!
+[25.08.2025 19:05:45] [INFO] Neuer Haendler: XY
+[25.08.2025 19:06:20] [INFO] Neues Produkt: NVIDIA GeForce RTX 5090
+[25.08.2025 19:06:28] [INFO] Kassenzettel erzeugt: ./data/kassenzettel/kunde_1.txt
+[25.08.2025 19:06:52] [INFO] Supermarkt GUI wird geschlossen

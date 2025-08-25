@@ -1,3 +1,0 @@
-================== KASSENZETTEL ==================
-Kunde: x, Kunde-ID: 0
-Haendler: 
