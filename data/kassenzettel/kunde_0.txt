@@ -1,0 +1,15 @@
+================== KASSENZETTEL ==================
+Kunde: Kujo Jotaro, Kunde-ID: 3
+Haendler: Jonathan Joestar, Haendler-ID: 1
+
+Produkt             Menge          Preis [€]         
+--------------------------------------------------
+Apfel               1.17           1.23                
+Birne               5.20           2.42                
+--------------------------------------------------
+Gesamtpreis:                       14.02         
+
+Institut: Bank of America
+Konto-ID: 1
+Abrechnungsdatum: 01.01.2022
+================== KASSENZETTEL ==================

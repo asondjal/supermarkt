@@ -35,7 +35,7 @@ PYBIND11_MODULE(py_bindings, py_module) {
         .def(py::init<std::string, std::string, int, std::string, std::string>())
         .def("get_name", &Person::GetName)
         .def("__repr__", [](const Person &p) {
-                return "Person: " + p.GetName();
+                return "<Person: " + p.GetName() + ">";
             })
         .def("get_geschlecht", &Person::GetGender)
         .def("get_alter", &Person::GetAge)
@@ -45,10 +45,10 @@ PYBIND11_MODULE(py_bindings, py_module) {
         .def("display_person", &Person::Print)
         .def("vergleiche_person", &Person::operator==);
 
-    py::class_<Kunde, Person, std::shared_ptr<Kunde>>(py_module, "Kunde")
+    py::class_<Kunde, Person>(py_module, "Kunde")
         .def(py::init<std::string, std::string, int, std::string, std::string>())
         .def("__repr__", [](const Kunde &k) {
-                return "Kunde: " + k.GetName();
+                return "<Kunde: " + k.GetName() + ">";
             })
         .def("get_kunden_id", &Kunde::GetKundeID)
         .def("display_kunde", &Kunde::Print)
@@ -57,16 +57,27 @@ PYBIND11_MODULE(py_bindings, py_module) {
     py::class_<Haendler, std::shared_ptr<Haendler>, Person>(py_module, "Haendler")
         .def(py::init<std::string, std::string, int, std::string, std::string>())
         .def("__repr__", [](const Haendler &h) {
-                return "Haendler: " + h.GetName();
+                return "<Haendler: " + h.GetName() + ">";
             })
         .def("get_haendler_id", &Haendler::GetHaendlerID)
         .def("display_haendler", &Haendler::Print)
         .def("vergleiche_haendler", &Haendler::operator==);
 
+    py::class_<Datum>(py_module, "Datum")
+        .def(py::init<uint32_t, uint32_t, uint32_t>())
+        .def("__repr__", [](const Datum &d) {
+            return "<Datum: " + d.Print() + ">";
+        })
+        .def("get_tag", &Datum::GetTag)
+        .def("get_monat", &Datum::GetMonat)
+        .def("get_jahr", &Datum::GetJahr)
+        .def("datum_anzeige", &Datum::Print)
+        .def("vergleiche_datum", &Datum::operator==);
+
     py::class_<Produkt>(py_module, "Produkt")
         .def(py::init<std::string, float, float, Datum, std::string>())
         .def("__repr__", [](const Produkt &p) {
-            return "Produkt: " +p.GetName();
+            return "<Produkt: " + p.GetName() + ">";
         })
         .def("get_bezeichnung", &Produkt::GetName)
         .def("get_menge", &Produkt::GetMenge)
@@ -78,21 +89,10 @@ PYBIND11_MODULE(py_bindings, py_module) {
         .def("display_produkt", &Produkt::Display)
         .def("vergleiche_produkte", &Produkt::operator==);
 
-    py::class_<Datum>(py_module, "Datum")
-        .def(py::init<uint32_t, uint32_t, uint32_t>())
-        .def("__repr__", [](const Datum &d) {
-            return "Datum";
-        })
-        .def("get_tag", &Datum::GetTag)
-        .def("get_monat", &Datum::GetMonat)
-        .def("get_jahr", &Datum::GetJahr)
-        .def("datum_anzeige", &Datum::Print)
-        .def("vergleiche_datum", &Datum::operator==);
-
     py::class_<Konto, std::shared_ptr<Konto>>(py_module, "Konto")
         .def(py::init<std::shared_ptr<Kunde>, std::string>())
-        .def("__repr__", [](const Kunde &k) {
-            return "Kunde: " + k.GetName();
+        .def("__repr__", [](const Konto &k) {
+            return "<Konto von: " + k.GetUser()->GetName() + ">";
         })
         .def("einzahlen", &Konto::Einzahlen)
         .def("abheben", &Konto::Auszahlen)
@@ -105,7 +105,7 @@ PYBIND11_MODULE(py_bindings, py_module) {
     py::class_<Warenkorb>(py_module, "Warenkorb")
         .def(py::init<std::shared_ptr<Kunde>>())
         .def("__repr__", [](const Warenkorb &w) {
-            return "Warekorb fuer: " + w.GetKunde()->GetName();
+            return "<Warekorb fuer: " + w.GetKunde()->GetName() + ">";
         })
         .def("get_warenkorb_id", &Warenkorb::GetWarenkorbID)
         .def("fuege_produkt_hinzu", &Warenkorb::AddProdukt)

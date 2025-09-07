@@ -655,3 +655,12 @@ Gesamtkosten vom Einkauf: 1000.11 €
 [25.08.2025 19:06:20] [INFO] Neues Produkt: NVIDIA GeForce RTX 5090
 [25.08.2025 19:06:28] [INFO] Kassenzettel erzeugt: ./data/kassenzettel/kunde_1.txt
 [25.08.2025 19:06:52] [INFO] Supermarkt GUI wird geschlossen
+[05.09.2025 23:05:42] [INFO] Supermarkt GUI gestartet
+[05.09.2025 23:33:12] [INFO] Supermarkt GUI gestartet
+[05.09.2025 23:38:07] [INFO] Supermarkt GUI gestartet
+[05.09.2025 23:40:47] [INFO] Supermarkt GUI gestartet
+[05.09.2025 23:40:53] [INFO] Supermarkt GUI gestartet
+[05.09.2025 23:41:04] [INFO] Supermarkt GUI gestartet
+[05.09.2025 23:41:21] [INFO] Supermarkt GUI wird geschlossen
+[05.09.2025 23:46:07] [INFO] Supermarkt GUI gestartet
+[07.09.2025 13:18:13] [INFO] Supermarkt GUI gestartet

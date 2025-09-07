@@ -23,3 +23,6 @@ def test_konto():
     assert konto1.vergleiche_konto(konto2) is False
     assert konto2.get_konto_id() == 1
     assert konto1.get_kontoinhaber().vergleiche_kunde(kunde1) is True
+    print(konto1)
+
+test_konto()

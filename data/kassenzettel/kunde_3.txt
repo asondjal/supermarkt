@@ -1,18 +1,15 @@
 ================== KASSENZETTEL ==================
-Kunde: LeBron James, Kunde-ID: 1
-Haendler: Kyrie Irving, Haendler-ID: 1
+Kunde: Josuke Higashikata, Kunde-ID: 6
+Haendler: Jonathan Joestar, Haendler-ID: 3
 
 Produkt             Menge          Preis [€]         
 --------------------------------------------------
-Kirschen            3.76           13.99               
-Orangen             7.50           8.00                
-Wassermelone        15.98          2.00                
-Nike Air Jordan 1   2.00           139.99              
-NVIDIA GPU          1.00           575.44              
+Apfel               1.17           1.23                
+Birne               5.20           2.42                
 --------------------------------------------------
-Gesamtpreis:                       1000.00       
+Gesamtpreis:                       14.02         
 
-Institut: American Express
-Konto-ID: 1
-Abrechnungsdatum: 25.08.2025
+Institut: Deutsche Bank
+Konto-ID: 6
+Abrechnungsdatum: 12.11.2009
 ================== KASSENZETTEL ==================

@@ -1,6 +1,7 @@
 """Python-File fuer die GUI"""
 
 import os
+import sys
 import glob
 
 import tkinter as tk

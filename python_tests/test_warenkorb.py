@@ -54,3 +54,6 @@ def test_warenkorb():
 
     assert warenkorb.vergleiche_warenkorb(shopping) is False
     assert warenkorb.get_kunde().vergleiche_kunde(kunde2) is False
+    print(warenkorb)
+
+test_warenkorb()
