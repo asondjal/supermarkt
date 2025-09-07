@@ -12,6 +12,6 @@ def test_datum():
     assert datum1.get_jahr() == 2025
     assert datum1.datum_anzeige() == "01.01.2025"
     assert datum1.vergleiche_datum(datum2) is False
-    print(datum1)
+    assert str(datum2) == f"Datum: {datum2.datum_anzeige()}"
 
 test_datum()

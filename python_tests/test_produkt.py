@@ -16,3 +16,4 @@ def test_produkt():
     assert produkt1.get_produkt_abteilung() == "Lebensmittel"
     assert produkt1.get_produkt_id() == 0
     assert produkt1.vergleiche_produkte(produkt2) is False
+    assert str(produkt1) == f"Produkt: {produkt1.get_bezeichnung()}"

@@ -19,3 +19,6 @@ def test_person():
     assert person1.vergleiche_person(person2) is False
     assert person1.get_person_id() == 0
     assert person2.get_person_id() == 1
+    assert str(person1) == f"Person: {person1.get_name()}"
+
+test_person()
