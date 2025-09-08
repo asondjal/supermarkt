@@ -4,8 +4,8 @@
 #include <algorithm>
 #include <iomanip>
 #include <memory>
-#include <vector>
 #include <utility>
+#include <vector>
 
 #include "base/kunde.hpp"
 #include "base/produkt.hpp"

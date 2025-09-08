@@ -10,7 +10,7 @@ void TestProdukt() {
   assert(produkt.GetAbteilung() == "Obst");
   assert(std::abs(produkt.GetGesamtPreis() - (1.99f * 3.0f)) < 0.001f);
   auto test_produkt = produkt.GetHaltbarkeit();
-  assert(test_produkt == datum);
+  assert(test_produkt.Print() == "01.01.2025") assert(test_produkt == datum);
 
   std::cout << "Alle Tests für Produkt waren erfolgreich!" << std::endl;
 }
