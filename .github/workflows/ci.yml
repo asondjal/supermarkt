@@ -43,8 +43,8 @@ jobs:
         run: clang-format --dry-run --Werror $(find ./src ./cpp_tests ./inc -regex '.*\.\(cpp\|hpp\)$')
     
       - name: Clean old artifacts
-        run: rm -rf build/ dist/ *.egg-info
-          pip uninstall -y py_bindings
+        run: pip uninstall -y py_bindings
+            pip install .
 
       - name: Python-Tests einzeln ausführen
         env:
