@@ -15,7 +15,7 @@ def test_warenkorb():
     warenkorb = Warenkorb(kunde1)
     shopping = Warenkorb(kunde1)
 
-    assert warenkorb.get_warenkorb_id() == 0
+    assert warenkorb.get_warenkorb_id() != shopping.get_warenkorb_id()
     warenkorb.fuege_produkt_hinzu(produkt1)
     produkte = warenkorb.erhalte_produkte()
 
