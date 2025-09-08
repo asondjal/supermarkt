@@ -41,10 +41,7 @@ jobs:
 
       - name: Formatierung für C++Dateien prüfen
         run: clang-format --dry-run --Werror $(find ./src ./cpp_tests ./inc -regex '.*\.\(cpp\|hpp\)$')
-    
-      - name: Clean old artifacts
-        run: rm -rf build/ dist/ *.egg-info
-        
+
       - name: Python-Tests einzeln ausführen
         env:
           PYTHONPATH: ${{ github.workspace }}/build
