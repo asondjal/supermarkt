@@ -47,7 +47,7 @@ jobs:
           PYTHONPATH: ${{ github.workspace }}/build
         run: |
           for file in python_tests/test_*.py; do
-            pytest --forked "$file"
+            pytest "$file"
           done
 
 
