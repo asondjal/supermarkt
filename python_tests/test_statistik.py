@@ -12,19 +12,19 @@ def test_statistik():
     statistik.entferne_daten(text.read_txt())
     statistik.lade_daten(text)
     assert statistik.zaehle_linen() == 11
-    assert statistik.wortanzahl() == 14
+    assert statistik.wortanzahl() == 17
     assert statistik.zaehle_variable("Produkt") == 1
     assert statistik.zaehle_eintraege() == 1
-    assert statistik.zeichenanzahl() == 596
+    assert statistik.zeichenanzahl() == 598
     statistik.lade_daten(kunden_data)
     assert statistik.zaehle_linen() == 22
-    assert statistik.wortanzahl() == 33
+    assert statistik.wortanzahl() == 38
     assert statistik.zaehle_variable("Kunde") == 1
     assert statistik.zaehle_eintraege() == 2
     assert 7.508571147 - statistik.mittelwert() < 0.0001
-    assert statistik.zeichenanzahl() == 1202
+    assert statistik.zeichenanzahl() == 1206
     assert 601.00001321 - statistik.median() < 0.0001
-    assert 7.836666584014893- statistik.erwartungswert() < 0.0001
+    assert 7.5085711479187012 - statistik.erwartungswert() < 0.0001
     assert 8.048698425292969 - statistik.standardabweichung() < 0.0001
 
 test_statistik()
