@@ -35,7 +35,7 @@ PYBIND11_MODULE(py_bindings, py_module) {
         .def(py::init<std::string, std::string, int, std::string, std::string>())
         .def("get_name", &Person::GetName)
         .def("__repr__", [](const Person &p) {
-                return "Person: " + p.GetName() + "";
+                return "Person: " + p.GetName();
             })
         .def("get_geschlecht", &Person::GetGender)
         .def("get_alter", &Person::GetAge)
@@ -48,7 +48,7 @@ PYBIND11_MODULE(py_bindings, py_module) {
     py::class_<Kunde, Person, std::shared_ptr<Kunde>>(py_module, "Kunde")
         .def(py::init<std::string, std::string, int, std::string, std::string>())
         .def("__repr__", [](const Kunde &k) {
-                return "Kunde: " + k.GetName() + "";
+                return "Kunde: " + k.GetName();
             })
         .def("get_kunden_id", &Kunde::GetKundeID)
         .def("display_kunde", &Kunde::Print)
@@ -57,7 +57,7 @@ PYBIND11_MODULE(py_bindings, py_module) {
     py::class_<Haendler, Person, std::shared_ptr<Haendler>>(py_module, "Haendler")
         .def(py::init<std::string, std::string, int, std::string, std::string>())
         .def("__repr__", [](const Haendler &h) {
-                return "Haendler: " + h.GetName() + "";
+                return "Haendler: " + h.GetName();
             })
         .def("get_haendler_id", &Haendler::GetHaendlerID)
         .def("display_haendler", &Haendler::Print)

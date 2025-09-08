@@ -34,6 +34,18 @@ jobs:
       - name: C++-Modul kompilieren
         run: cmake --build build --config Release
 
+      - name: C++-Tests ausführen
+        run: |
+          chmod +x ./build/cpp_tests
+          ./build/cpp_tests
+
+      - name: Formatierung für C++Dateien prüfen
+        run: clang-format --dry-run --Werror $(find ./src ./cpp_tests ./inc -regex '.*\.\(cpp\|hpp\)$')
+    
+      - name: Clean old artifacts
+        run: rm -rf build/ dist/ *.egg-info
+          pip uninstall -y py_bindings
+
       - name: Python-Tests einzeln ausführen
         env:
           PYTHONPATH: ${{ github.workspace }}/build
@@ -42,11 +54,5 @@ jobs:
             pytest "$file"
           done
 
-      - name: C++-Tests ausführen
-        run: |
-          chmod +x ./build/cpp_tests
-          ./build/cpp_tests
 
-      - name: Formatierung für C++Dateien prüfen
-        run: clang-format --dry-run --Werror $(find ./src ./cpp_tests ./inc -regex '.*\.\(cpp\|hpp\)$')
 
