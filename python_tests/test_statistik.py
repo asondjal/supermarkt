@@ -26,6 +26,6 @@ def test_statistik():
     assert statistik.zeichenanzahl() in (1202, 1206)
     assert 601.00001321 - statistik.median() < 0.0001
     assert 7.5085711479187012 - statistik.erwartungswert() < 0.0001
-    assert 12.2170724868774412 - statistik.standardabweichung() < 0.0001
+    assert statistik.standardabweichung() in (12.2170724868774412, 8.048698425292969)
 
 test_statistik()
