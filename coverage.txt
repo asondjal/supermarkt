@@ -11,7 +11,7 @@ Coverage report: 96%
    ?   show/hide this help
    ____________________
 
-   [1]coverage.py v7.4.4, created at 2025-09-09 22:17 +0200
+   [1]coverage.py v7.4.4, created at 2025-09-09 22:29 +0200
 
                   Module                statements missing excluded coverage
    [2]conftest.py                       11         8       0        27%
@@ -20,7 +20,7 @@ Coverage report: 96%
    [5]python_tests/test_haendler.py     7          0       0        100%
    [6]python_tests/test_kassenzettel.py 20         0       0        100%
    [7]python_tests/test_konto.py        21         0       0        100%
-   [8]python_tests/test_kunde.py        8          0       0        100%
+   [8]python_tests/test_kunde.py        7          0       0        100%
    [9]python_tests/test_logging.py      15         0       0        100%
    [10]python_tests/test_person.py      14         0       0        100%
    [11]python_tests/test_produkt.py     14         0       0        100%
@@ -29,11 +29,11 @@ Coverage report: 96%
    [14]python_tests/test_supermarkt.py  60         0       0        100%
    [15]python_tests/test_warenkorb.py   41         0       0        100%
    [16]setup.py                         4          4       0        0%
-   Total                                280        12      0        96%
+   Total                                279        12      0        96%
 
    No items found using the specified filter.
 
-   [17]coverage.py v7.4.4, created at 2025-09-09 22:17 +0200
+   [17]coverage.py v7.4.4, created at 2025-09-09 22:29 +0200
 
    [18](BUTTON) (BUTTON) (BUTTON)
 
