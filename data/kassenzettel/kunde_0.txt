@@ -1,6 +1,6 @@
 ================== KASSENZETTEL ==================
-Kunde: LeBron James, Kunde-ID: 0
-Haendler: Rihanna, Haendler-ID: 0
+Kunde: LeBron James, Kunde-ID: 3
+Haendler: Rihanna, Haendler-ID: 2
 
 Produkt             Menge          Preis [€]         
 --------------------------------------------------
@@ -10,6 +10,6 @@ Kirschen            2.65           4.99
 Gesamtpreis:                       17.88         
 
 Institut: American Express
-Konto-ID: 0
+Konto-ID: 2
 Abrechnungsdatum: 12.12.2012
 ================== KASSENZETTEL ==================
