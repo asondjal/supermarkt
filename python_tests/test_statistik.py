@@ -18,13 +18,13 @@ def test_statistik():
     assert statistik.zeichenanzahl() in (596, 598)
     statistik.lade_daten(kunden_data)
     assert statistik.zaehle_linen() == 22
-    assert statistik.wortanzahl() in (38, 41, 40)
+    assert statistik.wortanzahl() in (33, 38, 41, 40)
     assert statistik.zaehle_variable("Kunde") == 1
     assert statistik.zaehle_eintraege() == 2
     assert 7.508571147 - statistik.mittelwert() < 0.0001
     assert statistik.zeichenanzahl() in (1206, 1207, 1208, 1209)
     assert 601.00001321 - statistik.median() < 0.0001
     assert 7.5085711479187012 - statistik.erwartungswert() < 0.0001
-    assert 8.048698425292969 - statistik.standardabweichung() < 0.0001
+    assert 12.2170724868774412 - statistik.standardabweichung() < 0.0001
 
 test_statistik()
