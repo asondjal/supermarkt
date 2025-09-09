@@ -46,6 +46,9 @@ jobs:
         env:
           PYTHONPATH: ${{ github.workspace }}/build
         run: |
+          pip install --upgrade pip
+          pip install pytest-cov
+          pip install pytest pybind11
           for file in python_tests/test_*.py; do
             pytest "$file"
           done
