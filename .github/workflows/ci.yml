@@ -26,6 +26,11 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y cmake g++ ccache libpoppler-cpp-dev
           sudo apt-get update && sudo apt-get install -y lcov gcovr g++
+
+          pip install --upgrade pip
+          pip install pytest pybind11
+          pip install pytest-cov
+          pip install prometheus_client
           
       - name: CMake konfigurieren
         run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
@@ -45,14 +50,21 @@ jobs:
         env:
           PYTHONPATH: ${{ github.workspace }}/build
         run: |
-          pip install --upgrade pip
-          pip install pytest pybind11
-          pip install pytest-cov
           chmod +x ./run_cpp_coverage.sh
           ./run_cpp_coverage.sh
           for file in python_tests/test_*.py; do
             pytest "$file"
           done
 
+      - name: Exportieren der Coverage
+        run: |
+          coverage json -o coverage.json
+          lcov --summary coverage.info > coverage.txt || true
+          pytest --cov=./python_tests --cov-report=json
 
-
+      - name: Start Prometheus + Grafana + Exporter
+        run: |
+          docker-compose -f docker-compose.ci.yml up -d
+          sleep 15
+          docker ps -a
+          
