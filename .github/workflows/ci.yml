@@ -48,6 +48,8 @@ jobs:
           pip install --upgrade pip
           pip install pytest pybind11
           pip install pytest-cov
+          chmod +x ./run_cpp_coverage.sh
+          ./run_cpp_coverage.sh
           for file in python_tests/test_*.py; do
             pytest "$file"
           done

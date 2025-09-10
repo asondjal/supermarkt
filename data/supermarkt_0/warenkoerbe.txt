@@ -1,11 +1,10 @@
 =========================== WARENKORB DATABASE =======================
 Supermarkt: REAL
-Adresse: Muenchen, Deutschland
+Adresse: In the Hood 1, New York
 
 Kunde               ID             Gesamtpreis [€]   
 ----------------------------------------------------------------------
-Kujo Jotaro         5              14.02               
-Josuke Higashikata  6              14.02               
+LeBron James        8              16.43               
 ----------------------------------------------------------------------
-Anzahl Warenkoerbe:                2             
+Anzahl Warenkoerbe:                1             
 ======================================================================
