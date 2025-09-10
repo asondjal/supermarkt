@@ -4,60 +4,65 @@ Coverage report: 96%
 
    Shortcuts on this page
 
-   n s m x c   change column sorting
+   f s m x c   change column sorting
 
    [ ]   prev/next file
 
    ?   show/hide this help
    ____________________
+   [ ] hide covered
 
-   [1]coverage.py v7.4.4, created at 2025-09-09 22:29 +0200
+Files [1]Functions [2]Classes
 
-                  Module                statements missing excluded coverage
-   [2]conftest.py                       11         8       0        27%
-   [3]python_tests/__init__.py          0          0       0        100%
-   [4]python_tests/test_datum.py        11         0       0        100%
-   [5]python_tests/test_haendler.py     7          0       0        100%
-   [6]python_tests/test_kassenzettel.py 20         0       0        100%
-   [7]python_tests/test_konto.py        21         0       0        100%
-   [8]python_tests/test_kunde.py        7          0       0        100%
-   [9]python_tests/test_logging.py      15         0       0        100%
-   [10]python_tests/test_person.py      14         0       0        100%
-   [11]python_tests/test_produkt.py     14         0       0        100%
-   [12]python_tests/test_read_data.py   29         0       0        100%
-   [13]python_tests/test_statistik.py   25         0       0        100%
-   [14]python_tests/test_supermarkt.py  60         0       0        100%
-   [15]python_tests/test_warenkorb.py   41         0       0        100%
-   [16]setup.py                         4          4       0        0%
+   [3]coverage.py v7.10.6, created at 2025-09-10 12:47 +0200
+
+                   File                 statements missing excluded coverage
+   [4]conftest.py                       11         8       0        27%
+   [5]python_tests/__init__.py          0          0       0        100%
+   [6]python_tests/test_datum.py        11         0       0        100%
+   [7]python_tests/test_haendler.py     7          0       0        100%
+   [8]python_tests/test_kassenzettel.py 20         0       0        100%
+   [9]python_tests/test_konto.py        21         0       0        100%
+   [10]python_tests/test_kunde.py       7          0       0        100%
+   [11]python_tests/test_logging.py     15         0       0        100%
+   [12]python_tests/test_person.py      14         0       0        100%
+   [13]python_tests/test_produkt.py     14         0       0        100%
+   [14]python_tests/test_read_data.py   29         0       0        100%
+   [15]python_tests/test_statistik.py   25         0       0        100%
+   [16]python_tests/test_supermarkt.py  60         0       0        100%
+   [17]python_tests/test_warenkorb.py   41         0       0        100%
+   [18]setup.py                         4          4       0        0%
    Total                                279        12      0        96%
 
    No items found using the specified filter.
 
-   [17]coverage.py v7.4.4, created at 2025-09-09 22:29 +0200
+   [19]coverage.py v7.10.6, created at 2025-09-10 12:47 +0200
 
-   [18](BUTTON) (BUTTON) (BUTTON)
+   (BUTTON) (BUTTON) (BUTTON)
 
 References
 
    Visible links:
-   1. https://coverage.readthedocs.io/en/7.4.4
-   2. file:///home/arrif-sondjalim/c++projects/supermarkt/htmlcov/conftest_py.html
-   3. file:///home/arrif-sondjalim/c++projects/supermarkt/htmlcov/d_0fb7fec36e5ac5e5___init___py.html
-   4. file:///home/arrif-sondjalim/c++projects/supermarkt/htmlcov/d_0fb7fec36e5ac5e5_test_datum_py.html
-   5. file:///home/arrif-sondjalim/c++projects/supermarkt/htmlcov/d_0fb7fec36e5ac5e5_test_haendler_py.html
-   6. file:///home/arrif-sondjalim/c++projects/supermarkt/htmlcov/d_0fb7fec36e5ac5e5_test_kassenzettel_py.html
-   7. file:///home/arrif-sondjalim/c++projects/supermarkt/htmlcov/d_0fb7fec36e5ac5e5_test_konto_py.html
-   8. file:///home/arrif-sondjalim/c++projects/supermarkt/htmlcov/d_0fb7fec36e5ac5e5_test_kunde_py.html
-   9. file:///home/arrif-sondjalim/c++projects/supermarkt/htmlcov/d_0fb7fec36e5ac5e5_test_logging_py.html
-  10. file:///home/arrif-sondjalim/c++projects/supermarkt/htmlcov/d_0fb7fec36e5ac5e5_test_person_py.html
-  11. file:///home/arrif-sondjalim/c++projects/supermarkt/htmlcov/d_0fb7fec36e5ac5e5_test_produkt_py.html
-  12. file:///home/arrif-sondjalim/c++projects/supermarkt/htmlcov/d_0fb7fec36e5ac5e5_test_read_data_py.html
-  13. file:///home/arrif-sondjalim/c++projects/supermarkt/htmlcov/d_0fb7fec36e5ac5e5_test_statistik_py.html
-  14. file:///home/arrif-sondjalim/c++projects/supermarkt/htmlcov/d_0fb7fec36e5ac5e5_test_supermarkt_py.html
-  15. file:///home/arrif-sondjalim/c++projects/supermarkt/htmlcov/d_0fb7fec36e5ac5e5_test_warenkorb_py.html
-  16. file:///home/arrif-sondjalim/c++projects/supermarkt/htmlcov/setup_py.html
-  17. https://coverage.readthedocs.io/en/7.4.4
-  18. file:///home/arrif-sondjalim/c++projects/supermarkt/htmlcov/conftest_py.html
+   1. file:///home/arrif-sondjalim/c++projects/supermarkt/htmlcov/function_index.html
+   2. file:///home/arrif-sondjalim/c++projects/supermarkt/htmlcov/class_index.html
+   3. https://coverage.readthedocs.io/en/7.10.6
+   4. file:///home/arrif-sondjalim/c++projects/supermarkt/htmlcov/conftest_py.html
+   5. file:///home/arrif-sondjalim/c++projects/supermarkt/htmlcov/z_0fb7fec36e5ac5e5___init___py.html
+   6. file:///home/arrif-sondjalim/c++projects/supermarkt/htmlcov/z_0fb7fec36e5ac5e5_test_datum_py.html
+   7. file:///home/arrif-sondjalim/c++projects/supermarkt/htmlcov/z_0fb7fec36e5ac5e5_test_haendler_py.html
+   8. file:///home/arrif-sondjalim/c++projects/supermarkt/htmlcov/z_0fb7fec36e5ac5e5_test_kassenzettel_py.html
+   9. file:///home/arrif-sondjalim/c++projects/supermarkt/htmlcov/z_0fb7fec36e5ac5e5_test_konto_py.html
+  10. file:///home/arrif-sondjalim/c++projects/supermarkt/htmlcov/z_0fb7fec36e5ac5e5_test_kunde_py.html
+  11. file:///home/arrif-sondjalim/c++projects/supermarkt/htmlcov/z_0fb7fec36e5ac5e5_test_logging_py.html
+  12. file:///home/arrif-sondjalim/c++projects/supermarkt/htmlcov/z_0fb7fec36e5ac5e5_test_person_py.html
+  13. file:///home/arrif-sondjalim/c++projects/supermarkt/htmlcov/z_0fb7fec36e5ac5e5_test_produkt_py.html
+  14. file:///home/arrif-sondjalim/c++projects/supermarkt/htmlcov/z_0fb7fec36e5ac5e5_test_read_data_py.html
+  15. file:///home/arrif-sondjalim/c++projects/supermarkt/htmlcov/z_0fb7fec36e5ac5e5_test_statistik_py.html
+  16. file:///home/arrif-sondjalim/c++projects/supermarkt/htmlcov/z_0fb7fec36e5ac5e5_test_supermarkt_py.html
+  17. file:///home/arrif-sondjalim/c++projects/supermarkt/htmlcov/z_0fb7fec36e5ac5e5_test_warenkorb_py.html
+  18. file:///home/arrif-sondjalim/c++projects/supermarkt/htmlcov/setup_py.html
+  19. https://coverage.readthedocs.io/en/7.10.6
 
    Hidden links:
-  20. file://localhost/home/arrif-sondjalim/c++projects/supermarkt/htmlcov/setup_py.html
+  21. file://localhost/home/arrif-sondjalim/c++projects/supermarkt/htmlcov/setup_py.html
+  22. file://localhost/home/arrif-sondjalim/c++projects/supermarkt/htmlcov/conftest_py.html

@@ -1,11 +1,10 @@
 ============================ HAENDLER DATABASE ============================
 Supermarkt: REAL
-Adresse: In the Hood 1, New York
+Adresse: Muenchen, Deutschland
 
 Haendler            ID             Alter               Geschlecht     
 ----------------------------------------------------------------------
-ASAP Rocky          4              35                  male           
-Rihanna             3              36                  female         
+Jonathan Joestar    3              76                  male           
 ----------------------------------------------------------------------
-Anzahl Haendler:                   2             
+Anzahl Haendler:                   1             
 ===========================================================================

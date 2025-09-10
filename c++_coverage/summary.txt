@@ -1,0 +1,35 @@
+------------------------------------------------------------------------------
+                           GCC Code Coverage Report
+Directory: .
+------------------------------------------------------------------------------
+File                                       Lines    Exec  Cover   Missing
+------------------------------------------------------------------------------
+cpp_tests/main.cpp                            14      14   100%
+cpp_tests/test_datum.cpp                      14      14   100%
+cpp_tests/test_haendler.cpp                   10      10   100%
+cpp_tests/test_kassenzettel.cpp               27      27   100%
+cpp_tests/test_konto.cpp                      16      15    93%   16
+cpp_tests/test_kunde.cpp                      10      10   100%
+cpp_tests/test_logging.cpp                    10      10   100%
+cpp_tests/test_person.cpp                     15      14    93%   17
+cpp_tests/test_produkt.cpp                    13      13   100%
+cpp_tests/test_read_data.cpp                 101      96    95%   8,15,23,103,123
+cpp_tests/test_statistik.cpp                  38      38   100%
+cpp_tests/test_supermarkt.cpp                 71      71   100%
+cpp_tests/test_warenkorb.cpp                  25      25   100%
+src/datum.cpp                                 14      14   100%
+src/haendler.cpp                              10       4    40%   15-16,27-30
+src/kassenzettel.cpp                          43      39    90%   26-27,34,49
+src/konto.cpp                                 15      14    93%   18
+src/kunde.cpp                                  8       3    37%   17,28-31
+src/logging.cpp                               55      43    78%   14,30-33,39-42,71-72,91
+src/main.cpp                                   1       0     0%   3
+src/person.cpp                                32      22    68%   22,58,71,76-82
+src/produkt.cpp                               27      17    63%   17,67-75
+src/read_data.cpp                             41      36    87%   7,20,75,77,79
+src/statistik.cpp                            140     122    87%   59,103,117-119,123,147,158,169,183-185,189,200,216-218,222
+src/supermarkt.cpp                           127     114    89%   14,20,26,33-34,45,60,97,115,148,165,199,215
+src/warenkorb.cpp                             19      16    84%   36,38-39
+------------------------------------------------------------------------------
+TOTAL                                        896     801    89%
+------------------------------------------------------------------------------
