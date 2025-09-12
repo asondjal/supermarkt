@@ -27,7 +27,7 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
-      <td>2025-09-10 12:56:49</td>
+      <td>2025-09-12 13:17:01</td>
     </tr>
   </table>
 </div>
@@ -41,15 +41,15 @@
     </tr>
     <tr>
       <th scope="row">Lines:</th>
-      <td>16</td>
       <td>19</td>
-      <td class="coverage-medium">84.2%</td>
+      <td>19</td>
+      <td class="coverage-high">100.0%</td>
     </tr>
     <tr>
       <th scope="row">Functions:</th>
-      <td>6</td>
       <td>8</td>
-      <td class="coverage-medium">75.0%</td>
+      <td>8</td>
+      <td class="coverage-high">100.0%</td>
     </tr>
     <tr>
       <th scope="row">Branches:</th>
@@ -73,14 +73,14 @@
       <th>Call count</th>
       <th>Block coverage</th>
     </tr>
-    <tr><td><a href="#l14">Warenkorb::AddProdukt(Produkt*) (line 14)</a></td><td>called 10 times, returned 10 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l23">Warenkorb::GetGesamtPreis() const (line 23)</a></td><td>called 26 times, returned 26 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l34">Warenkorb::GetKunde() const (line 34)</a></td><td>called 24 times, returned 24 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l32">Warenkorb::GetProdukte() const (line 32)</a></td><td>called 10 times, returned 10 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l36">Warenkorb::GetWarenkorbID() const (line 36)</a></td><td>not called</td><td>0.0%</td></tr>
-    <tr><td><a href="#l16">Warenkorb::RemoveProdukt(Produkt*) (line 16)</a></td><td>called 2 times, returned 2 times</td><td>92.0%</td></tr>
-    <tr><td><a href="#l11">Warenkorb::Warenkorb(std::shared_ptr&lt;Kunde&gt;) (line 11)</a></td><td>called 5 times, returned 5 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l38">Warenkorb::operator==(Warenkorb const&amp;) const (line 38)</a></td><td>not called</td><td>0.0%</td></tr>
+    <tr><td><a href="#l14">Warenkorb::AddProdukt(Produkt*) (line 14)</a></td><td>called 100 times, returned 100 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l23">Warenkorb::GetGesamtPreis() const (line 23)</a></td><td>called 197 times, returned 197 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l34">Warenkorb::GetKunde() const (line 34)</a></td><td>called 150 times, returned 150 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l32">Warenkorb::GetProdukte() const (line 32)</a></td><td>called 154 times, returned 154 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l36">Warenkorb::GetWarenkorbID() const (line 36)</a></td><td>called 54 times, returned 54 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l16">Warenkorb::RemoveProdukt(Produkt*) (line 16)</a></td><td>called 38 times, returned 38 times</td><td>92.0%</td></tr>
+    <tr><td><a href="#l11">Warenkorb::Warenkorb(std::shared_ptr&lt;Kunde&gt;) (line 11)</a></td><td>called 59 times, returned 59 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l38">Warenkorb::operator==(Warenkorb const&amp;) const (line 38)</a></td><td>called 18 times, returned 18 times</td><td>100.0%</td></tr>
   </table>
 </details>
 
@@ -169,14 +169,14 @@
       <td class="lineno"><a id="l11" href="#l11">11</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">5</td>
+      <td class="linecount coveredLine">59</td>
       <td class="src coveredLine"><span class="n">Warenkorb</span><span class="o">::</span><span class="n">Warenkorb</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Kunde</span><span class="o">&gt;</span><span class="w"> </span><span class="n">kunde</span><span class="p">)</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l12" href="#l12">12</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">5</td>
+      <td class="linecount coveredLine">59</td>
       <td class="src coveredLine"><span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="n">kunde_</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">kunde</span><span class="p">)),</span><span class="w"> </span><span class="n">warenkorbID_</span><span class="p">(</span><span class="n">warenkorb_counter</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span></td>
     </tr>
     <tr class="source-line">
@@ -190,7 +190,7 @@
       <td class="lineno"><a id="l14" href="#l14">14</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">10</td>
+      <td class="linecount coveredLine">100</td>
       <td class="src coveredLine"><span class="kt">void</span><span class="w"> </span><span class="n">Warenkorb</span><span class="o">::</span><span class="n">AddProdukt</span><span class="p">(</span><span class="n">Produkt</span><span class="o">*</span><span class="w"> </span><span class="n">produkt</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">produkte</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">produkt</span><span class="p">);</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -204,7 +204,7 @@
       <td class="lineno"><a id="l16" href="#l16">16</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">2</td>
+      <td class="linecount coveredLine">38</td>
       <td class="src coveredLine"><span class="kt">void</span><span class="w"> </span><span class="n">Warenkorb</span><span class="o">::</span><span class="n">RemoveProdukt</span><span class="p">(</span><span class="n">Produkt</span><span class="o">*</span><span class="w"> </span><span class="n">produkt</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -213,12 +213,12 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 3 taken 2 times.</div>
+          <div class="takenBranch">&check; Branch 3 taken 38 times.</div>
           <div class="notTakenBranch">&cross; Branch 4 not taken.</div>
         </div>
         </details>
       </td>
-      <td class="linecount partialCoveredLine">2</td>
+      <td class="linecount partialCoveredLine">38</td>
       <td class="src partialCoveredLine"><span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">find</span><span class="p">(</span><span class="n">produkte</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">produkte</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="w"> </span><span class="n">produkt</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -227,12 +227,12 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 2 taken 1 times.</div>
-          <div class="takenBranch">&check; Branch 3 taken 1 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 19 times.</div>
+          <div class="takenBranch">&check; Branch 3 taken 19 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">2</td>
+      <td class="linecount coveredLine">38</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">it</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">produkte</span><span class="p">.</span><span class="n">end</span><span class="p">())</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -241,12 +241,12 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 2 taken 1 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 19 times.</div>
           <div class="notTakenBranch">&cross; Branch 3 not taken.</div>
         </div>
         </details>
       </td>
-      <td class="linecount partialCoveredLine">1</td>
+      <td class="linecount partialCoveredLine">19</td>
       <td class="src partialCoveredLine"><span class="w">    </span><span class="n">produkte</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">it</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -260,7 +260,7 @@
       <td class="lineno"><a id="l21" href="#l21">21</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">2</td>
+      <td class="linecount coveredLine">38</td>
       <td class="src coveredLine"><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -274,21 +274,21 @@
       <td class="lineno"><a id="l23" href="#l23">23</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">26</td>
+      <td class="linecount coveredLine">197</td>
       <td class="src coveredLine"><span class="kt">float</span><span class="w"> </span><span class="n">Warenkorb</span><span class="o">::</span><span class="n">GetGesamtPreis</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l24" href="#l24">24</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">26</td>
+      <td class="linecount coveredLine">197</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">fixed</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">setprecision</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l25" href="#l25">25</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">26</td>
+      <td class="linecount coveredLine">197</td>
       <td class="src coveredLine"><span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">gesamtPreis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -297,12 +297,12 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 4 taken 49 times.</div>
-          <div class="takenBranch">&check; Branch 5 taken 26 times.</div>
+          <div class="takenBranch">&check; Branch 4 taken 283 times.</div>
+          <div class="takenBranch">&check; Branch 5 taken 197 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">75</td>
+      <td class="linecount coveredLine">480</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">produkt</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">produkte</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -311,12 +311,12 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 49 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 283 times.</div>
           <div class="notTakenBranch">&cross; Branch 2 not taken.</div>
         </div>
         </details>
       </td>
-      <td class="linecount partialCoveredLine">49</td>
+      <td class="linecount partialCoveredLine">283</td>
       <td class="src partialCoveredLine"><span class="w">    </span><span class="n">gesamtPreis</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">produkt</span><span class="o">-&gt;</span><span class="n">GetGesamtPreis</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
@@ -330,7 +330,7 @@
       <td class="lineno"><a id="l29" href="#l29">29</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">26</td>
+      <td class="linecount coveredLine">197</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">gesamtPreis</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -351,7 +351,7 @@
       <td class="lineno"><a id="l32" href="#l32">32</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">10</td>
+      <td class="linecount coveredLine">154</td>
       <td class="src coveredLine"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Produkt</span><span class="o">*&gt;</span><span class="w"> </span><span class="n">Warenkorb</span><span class="o">::</span><span class="n">GetProdukte</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">produkte</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -365,7 +365,7 @@
       <td class="lineno"><a id="l34" href="#l34">34</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">24</td>
+      <td class="linecount coveredLine">150</td>
       <td class="src coveredLine"><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Kunde</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Warenkorb</span><span class="o">::</span><span class="n">GetKunde</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">kunde_</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -379,8 +379,8 @@
       <td class="lineno"><a id="l36" href="#l36">36</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="kt">int</span><span class="w"> </span><span class="n">Warenkorb</span><span class="o">::</span><span class="n">GetWarenkorbID</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">warenkorbID_</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
+      <td class="linecount coveredLine">54</td>
+      <td class="src coveredLine"><span class="kt">int</span><span class="w"> </span><span class="n">Warenkorb</span><span class="o">::</span><span class="n">GetWarenkorbID</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">warenkorbID_</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l37" href="#l37">37</a></td>
@@ -393,15 +393,15 @@
       <td class="lineno"><a id="l38" href="#l38">38</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="kt">bool</span><span class="w"> </span><span class="n">Warenkorb</span><span class="o">::</span><span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Warenkorb</span><span class="o">&amp;</span><span class="w"> </span><span class="n">other</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span></td>
+      <td class="linecount coveredLine">18</td>
+      <td class="src coveredLine"><span class="kt">bool</span><span class="w"> </span><span class="n">Warenkorb</span><span class="o">::</span><span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Warenkorb</span><span class="o">&amp;</span><span class="w"> </span><span class="n">other</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l39" href="#l39">39</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">warenkorbID_</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">GetWarenkorbID</span><span class="p">();</span></td>
+      <td class="linecount coveredLine">18</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">warenkorbID_</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">GetWarenkorbID</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l40" href="#l40">40</a></td>

@@ -1,6 +1,0 @@
-[MASTER]
-init-hook='import sys; sys.path.append("build")'
-
-[TYPECHECK]
-extension-pkg-whitelist=py_bindings
-ignored-modules=py_bindings

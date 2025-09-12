@@ -8,11 +8,14 @@ Durch die Aufteilung in klar getrennte Module und die gezielte Nutzung von C++ (
 - **Umgang von Zugriffsrechten auf Dateisysteme und Ressourcen:** Sicherstellung des synchronisierten Zugriffs
 (z. B. per std::mutex), um Race Conditions und Deadlocks bei gleichzeitiger Dateiverarbeitung zu verhindern.
 - **Schnelle Testbarkeit trotz hoher Komplexität:** Trotz hohem Overhead durch C++ sollen die Tests in Python weniger Millisekunden brauchen
+- **Erfassung der Coverage:** Mittels Befehlen im Terminal wird die Coverage in C++ und Python ermittelt
 
 ## **Ausführung**
 
 - **Executable generieren:** Ctrl + Shift + B
-- **Befehl im Terminal:** export PYTHONPATH=$(realpath build/) -> Anscließend können alle Funktionalitäten verwendet werden
+- **C++-Modul in Python integrieren:** pip install .
+- **Ermitteln der Coverage in Python:** ./run_python_tests.sh im Terminal als Befehl eingeben
+- **Ermitteln der Coverage in C++:** ./run_cpp_coverage.sh  im Terminal als Befehl eingeben
 
 ## **Design**
 
@@ -77,6 +80,12 @@ damit der Compiler erkennt, dass diese Funktionen bereits in C++ definiert wurde
 
 - **Installation:** Klonen vom Git-Repository [Pybind11](https://github.com/pybind/pybind11.git)
 - **Warum:** Noetig, um eine Schnittstelle zwischen C++ und Python zu ermoeglichen
+
+### **Dateien zur Python-Konfiguration**
+
+- **pytest.ini:** Konfiguration der Coverage fuer den Code in Python
+- **.env:** Konfiguration, um dem System mitzuteilen, wo der Ordner fuer die Executable sich befindet
+- **setup-py:** Notwendig, damit der Python-Interpreter das Modul in Python verwenden kann
 
 ## **Integration in GitHub**
 

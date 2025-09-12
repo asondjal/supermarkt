@@ -7,7 +7,6 @@
 
   "python.analysis.typeCheckingMode": "off",
   "python.envFile": "${workspaceFolder}/.env",
-  "python.analysis.ignore": ["./GUI/gui.py", "./tests/test_supermarkt.py"],
 
   "python-envs.defaultEnvManager": "ms-python.python:venv",
   "python-envs.pythonProjects": [],

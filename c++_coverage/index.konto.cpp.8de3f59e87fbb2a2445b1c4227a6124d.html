@@ -27,7 +27,7 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
-      <td>2025-09-10 12:56:49</td>
+      <td>2025-09-12 13:17:01</td>
     </tr>
   </table>
 </div>
@@ -41,15 +41,15 @@
     </tr>
     <tr>
       <th scope="row">Lines:</th>
-      <td>14</td>
       <td>15</td>
-      <td class="coverage-high">93.3%</td>
+      <td>15</td>
+      <td class="coverage-high">100.0%</td>
     </tr>
     <tr>
       <th scope="row">Functions:</th>
-      <td>7</td>
       <td>8</td>
-      <td class="coverage-medium">87.5%</td>
+      <td>8</td>
+      <td class="coverage-high">100.0%</td>
     </tr>
     <tr>
       <th scope="row">Branches:</th>
@@ -73,14 +73,14 @@
       <th>Call count</th>
       <th>Block coverage</th>
     </tr>
-    <tr><td><a href="#l30">Konto::Auszahlen(float) (line 30)</a></td><td>called 6 times, returned 4 times</td><td>86.0%</td></tr>
-    <tr><td><a href="#l24">Konto::Einzahlen(float) (line 24)</a></td><td>called 7 times, returned 7 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l50">Konto::GetBank[abi:cxx11]() const (line 50)</a></td><td>called 4 times, returned 4 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l62">Konto::GetKontoID() const (line 62)</a></td><td>called 4 times, returned 4 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l41">Konto::GetKontostand() const (line 41)</a></td><td>called 5 times, returned 5 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l56">Konto::GetUser() const (line 56)</a></td><td>called 1 time, returned 1 time</td><td>100.0%</td></tr>
-    <tr><td><a href="#l10">Konto::Konto(std::shared_ptr&lt;Kunde&gt;, std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;) (line 10)</a></td><td>called 7 times, returned 7 times</td><td>83.0%</td></tr>
-    <tr><td><a href="#l18">Konto::operator==(Konto const&amp;) const (line 18)</a></td><td>not called</td><td>0.0%</td></tr>
+    <tr><td><a href="#l30">Konto::Auszahlen(float) (line 30)</a></td><td>called 60 times, returned 58 times</td><td>86.0%</td></tr>
+    <tr><td><a href="#l24">Konto::Einzahlen(float) (line 24)</a></td><td>called 52 times, returned 52 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l50">Konto::GetBank[abi:cxx11]() const (line 50)</a></td><td>called 40 times, returned 40 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l62">Konto::GetKontoID() const (line 62)</a></td><td>called 112 times, returned 112 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l41">Konto::GetKontostand() const (line 41)</a></td><td>called 104 times, returned 104 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l56">Konto::GetUser() const (line 56)</a></td><td>called 55 times, returned 55 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l10">Konto::Konto(std::shared_ptr&lt;Kunde&gt;, std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;) (line 10)</a></td><td>called 52 times, returned 52 times</td><td>83.0%</td></tr>
+    <tr><td><a href="#l18">Konto::operator==(Konto const&amp;) const (line 18)</a></td><td>called 18 times, returned 18 times</td><td>100.0%</td></tr>
   </table>
 </details>
 
@@ -162,7 +162,7 @@
       <td class="lineno"><a id="l10" href="#l10">10</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">7</td>
+      <td class="linecount coveredLine">52</td>
       <td class="src coveredLine"><span class="n">Konto</span><span class="o">::</span><span class="n">Konto</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Kunde</span><span class="o">&gt;</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">bank</span><span class="p">)</span></td>
     </tr>
     <tr class="source-line">
@@ -171,12 +171,12 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 3 taken 7 times.</div>
+          <div class="takenBranch">&check; Branch 3 taken 52 times.</div>
           <div class="notTakenBranch">&cross; Branch 4 not taken.</div>
         </div>
         </details>
       </td>
-      <td class="linecount partialCoveredLine">7</td>
+      <td class="linecount partialCoveredLine">52</td>
       <td class="src partialCoveredLine"><span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="n">user_</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">user</span><span class="p">)),</span><span class="w"> </span><span class="n">bank_</span><span class="p">(</span><span class="n">bank</span><span class="p">),</span><span class="w"> </span><span class="n">kontostand_</span><span class="p">(</span><span class="mf">0.00</span><span class="p">),</span><span class="w"> </span><span class="n">kontoID_</span><span class="p">(</span><span class="n">kontoCounter</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span></td>
     </tr>
     <tr class="source-line">
@@ -225,8 +225,8 @@
       <td class="lineno"><a id="l18" href="#l18">18</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="kt">bool</span><span class="w"> </span><span class="n">Konto</span><span class="o">::</span><span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Konto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">other</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">kontoID_</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">GetKontoID</span><span class="p">();</span><span class="w"> </span><span class="p">}</span></td>
+      <td class="linecount coveredLine">18</td>
+      <td class="src coveredLine"><span class="kt">bool</span><span class="w"> </span><span class="n">Konto</span><span class="o">::</span><span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Konto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">other</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">kontoID_</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">GetKontoID</span><span class="p">();</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l19" href="#l19">19</a></td>
@@ -267,7 +267,7 @@
       <td class="lineno"><a id="l24" href="#l24">24</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">7</td>
+      <td class="linecount coveredLine">52</td>
       <td class="src coveredLine"><span class="kt">void</span><span class="w"> </span><span class="n">Konto</span><span class="o">::</span><span class="n">Einzahlen</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">betrag</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">kontostand_</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">betrag</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -309,7 +309,7 @@
       <td class="lineno"><a id="l30" href="#l30">30</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">6</td>
+      <td class="linecount coveredLine">60</td>
       <td class="src coveredLine"><span class="kt">void</span><span class="w"> </span><span class="n">Konto</span><span class="o">::</span><span class="n">Auszahlen</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">betrag</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -319,11 +319,11 @@
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
           <div class="takenBranch">&check; Branch 0 taken 1 times.</div>
-          <div class="takenBranch">&check; Branch 1 taken 5 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 59 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">6</td>
+      <td class="linecount coveredLine">60</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">betrag</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">kontostand_</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -351,14 +351,14 @@
       <td class="lineno"><a id="l34" href="#l34">34</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">5</td>
+      <td class="linecount coveredLine">59</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">kontostand_</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">betrag</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l35" href="#l35">35</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">5</td>
+      <td class="linecount coveredLine">59</td>
       <td class="src coveredLine"><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -400,21 +400,21 @@
       <td class="lineno"><a id="l41" href="#l41">41</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">5</td>
+      <td class="linecount coveredLine">104</td>
       <td class="src coveredLine"><span class="kt">float</span><span class="w"> </span><span class="n">Konto</span><span class="o">::</span><span class="n">GetKontostand</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l42" href="#l42">42</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">5</td>
+      <td class="linecount coveredLine">104</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">fixed</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">setprecision</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l43" href="#l43">43</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">5</td>
+      <td class="linecount coveredLine">104</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">kontostand_</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -463,7 +463,7 @@
       <td class="lineno"><a id="l50" href="#l50">50</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">4</td>
+      <td class="linecount coveredLine">40</td>
       <td class="src coveredLine"><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">Konto</span><span class="o">::</span><span class="n">GetBank</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">bank_</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -505,7 +505,7 @@
       <td class="lineno"><a id="l56" href="#l56">56</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">1</td>
+      <td class="linecount coveredLine">55</td>
       <td class="src coveredLine"><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Kunde</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Konto</span><span class="o">::</span><span class="n">GetUser</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">user_</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -547,7 +547,7 @@
       <td class="lineno"><a id="l62" href="#l62">62</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">4</td>
+      <td class="linecount coveredLine">112</td>
       <td class="src coveredLine"><span class="kt">int</span><span class="w"> </span><span class="n">Konto</span><span class="o">::</span><span class="n">GetKontoID</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">kontoID_</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">

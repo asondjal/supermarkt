@@ -60,11 +60,3 @@ jobs:
         run: |
           coverage json -o coverage.json
           lcov --summary coverage.info > coverage.txt || true
-          pytest --cov=./python_tests --cov-report=json
-
-      - name: Start Prometheus + Grafana + Exporter
-        run: |
-          docker-compose -f docker-compose.ci.yml up -d
-          sleep 15
-          docker ps -a
-          
