@@ -10,6 +10,10 @@ Durch die Aufteilung in klar getrennte Module und die gezielte Nutzung von C++ (
 - **Schnelle Testbarkeit trotz hoher Komplexität:** Trotz hohem Overhead durch C++ sollen die Tests in Python weniger Millisekunden brauchen
 - **Erfassung der Coverage:** Mittels Befehlen im Terminal wird die Coverage in C++ und Python ermittelt
 
+## **Lizenz**
+
+- Dieses Projekt verwendet die MIT-Lizenz
+
 ## **Ausführung**
 
 - **Executable generieren:** Ctrl + Shift + B
