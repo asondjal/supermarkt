@@ -1,4 +1,4 @@
-Coverage report: 98%
+Coverage report: 100%
 
    [ ] Show/hide keyboard shortcuts
 
@@ -14,7 +14,7 @@ Coverage report: 98%
 
 Files [1]Functions [2]Classes
 
-   [3]coverage.py v7.10.6, created at 2025-09-12 13:16 +0200
+   [3]coverage.py v7.10.6, created at 2025-10-10 13:22 +0200
 
                    File                 statements missing excluded coverage
    [4]python_tests/__init__.py          0          0       0        100%
@@ -30,12 +30,11 @@ Files [1]Functions [2]Classes
    [14]python_tests/test_statistik.py   25         0       0        100%
    [15]python_tests/test_supermarkt.py  60         0       0        100%
    [16]python_tests/test_warenkorb.py   41         0       0        100%
-   [17]setup.py                         4          4       0        0%
-   Total                                264        4       0        98%
+   Total                                260        0       0        100%
 
    No items found using the specified filter.
 
-   [18]coverage.py v7.10.6, created at 2025-09-12 13:16 +0200
+   [17]coverage.py v7.10.6, created at 2025-10-10 13:22 +0200
 
    (BUTTON) (BUTTON) (BUTTON)
 
@@ -58,9 +57,8 @@ References
   14. file:///home/arrif-sondjalim/c++projects/supermarkt/htmlcov/z_0fb7fec36e5ac5e5_test_statistik_py.html
   15. file:///home/arrif-sondjalim/c++projects/supermarkt/htmlcov/z_0fb7fec36e5ac5e5_test_supermarkt_py.html
   16. file:///home/arrif-sondjalim/c++projects/supermarkt/htmlcov/z_0fb7fec36e5ac5e5_test_warenkorb_py.html
-  17. file:///home/arrif-sondjalim/c++projects/supermarkt/htmlcov/setup_py.html
-  18. https://coverage.readthedocs.io/en/7.10.6
+  17. https://coverage.readthedocs.io/en/7.10.6
 
    Hidden links:
-  20. file://localhost/home/arrif-sondjalim/c++projects/supermarkt/htmlcov/setup_py.html
-  21. file://localhost/home/arrif-sondjalim/c++projects/supermarkt/htmlcov/z_0fb7fec36e5ac5e5___init___py.html
+  19. file://localhost/home/arrif-sondjalim/c++projects/supermarkt/htmlcov/z_0fb7fec36e5ac5e5_test_warenkorb_py.html
+  20. file://localhost/home/arrif-sondjalim/c++projects/supermarkt/htmlcov/z_0fb7fec36e5ac5e5___init___py.html

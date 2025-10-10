@@ -8,7 +8,7 @@ mkdir -p "$REPORT_DIR"
 
 # Coverage-Berichte erzeugen
 gcovr -r . \
-  --filter='src/' \
+  --exclude='src/' \
   --filter='cpp_tests/' \
   --exclude='pybind11/' \
   --exclude='bindings/' \

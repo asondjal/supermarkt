@@ -17,19 +17,6 @@ cpp_tests/test_read_data.cpp                 101      96    95%   8,15,23,103,12
 cpp_tests/test_statistik.cpp                  38      38   100%
 cpp_tests/test_supermarkt.cpp                 71      71   100%
 cpp_tests/test_warenkorb.cpp                  25      25   100%
-src/datum.cpp                                 14      14   100%
-src/haendler.cpp                              10       6    60%   27-30
-src/kassenzettel.cpp                          43      42    97%   49
-src/konto.cpp                                 15      15   100%
-src/kunde.cpp                                  8       4    50%   28-31
-src/logging.cpp                               55      51    92%   14,71-72,91
-src/main.cpp                                   1       0     0%   3
-src/person.cpp                                32      24    75%   58,76-82
-src/produkt.cpp                               27      18    66%   67-75
-src/read_data.cpp                             41      36    87%   7,20,75,77,79
-src/statistik.cpp                            140     122    87%   59,103,117-119,123,147,158,169,183-185,189,200,216-218,222
-src/supermarkt.cpp                           127     121    95%   14,20,60,115,165,215
-src/warenkorb.cpp                             19      19   100%
 ------------------------------------------------------------------------------
-TOTAL                                        896     829    92%
+TOTAL                                        364     357    98%
 ------------------------------------------------------------------------------
