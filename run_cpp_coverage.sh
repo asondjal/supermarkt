@@ -6,6 +6,10 @@ set -e  # Script beendet sich bei Fehlern
 REPORT_DIR="c++_coverage"
 mkdir -p "$REPORT_DIR"
 
+# Dateien in C++ korrekt formatieren 
+echo "Formatiere C++-Dateien entsprechend .clang-format..."
+find ./src ./cpp_tests ./inc -regex '.*\.\(cpp\|hpp\)$' -exec clang-format -i {} \;
+
 # Coverage-Berichte erzeugen
 gcovr -r . \
   --exclude='src/' \
