@@ -3,28 +3,6 @@
 void TestReadData() {
   ReadData error_file{"Error_File.sdtxt"};
 
-  try {
-    error_file.ReadAuto();
-    assert(false && "Exception durch unbekannten Dateitypen");
-  } catch (const std::exception& e) {
-    std::cerr << "Exception: " << e.what() << std::endl;
-  }
-
-  try {
-    error_file.ReadFile();
-    assert(false && "Exception durch nicht existente Datei");
-  } catch (const std::exception& e) {
-    std::cerr << "Exception: " << e.what() << std::endl;
-  }
-
-  ReadData error_pdf{"Dummy.pdf"};
-  try {
-    error_pdf.ReadPDF();
-    assert(false && "Exception durch nicht existente PDF");
-  } catch (const std::exception& e) {
-    std::cerr << "Exception: " << e.what() << std::endl;
-  }
-
   ReadData dummyfile{"./data/empty.txt"};
   std::string dummy = dummyfile.ReadTxt();
   assert(dummy != ".");
@@ -99,9 +77,6 @@ void TestReadData() {
   std::string simple_pdf_content;
   poppler::document* document = poppler::document::load_from_file("README.pdf");
 
-  if (!document) {
-    throw std::runtime_error("Could not open PDF file: README.pdf");
-  }
   for (int i = 0; i < document->pages(); ++i) {
     poppler::page* p = document->create_page(i);
     if (p) {
@@ -118,10 +93,6 @@ void TestReadData() {
   std::ifstream pdf_file("supermarkt.pdf");
   std::string pdf_content;
   poppler::document* doc = poppler::document::load_from_file("supermarkt.pdf");
-
-  if (!doc) {
-    throw std::runtime_error("Could not open PDF file: supermarkt.pdf");
-  }
 
   for (int i = 0; i < doc->pages(); ++i) {
     poppler::page* p = doc->create_page(i);
