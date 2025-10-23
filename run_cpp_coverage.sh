@@ -1,25 +1,18 @@
 #!/bin/bash
 
-set -e  # Script beendet sich bei Fehlern
+set -e
 
-# Coverage-Ordner vorbereiten
-REPORT_DIR="c++_coverage"
-mkdir -p "$REPORT_DIR"
-
-# Dateien in C++ korrekt formatieren 
-echo "Formatiere C++-Dateien entsprechend .clang-format..."
 find ./src ./cpp_tests ./inc -regex '.*\.\(cpp\|hpp\)$' -exec clang-format -i {} \;
 
-# Coverage-Berichte erzeugen
+REPORT_DIR="cpp-coverage"
+mkdir -p "$REPORT_DIR"
+
 gcovr -r . \
-  --exclude='src/' \
   --filter='cpp_tests/' \
-  --exclude='pybind11/' \
-  --exclude='bindings/' \
+  --exclude='src/' \
   --exclude='external/' \
-  --html-details "$REPORT_DIR/index.html" \
   --txt "$REPORT_DIR/summary.txt"
 
-echo "✅ Coverage-Reports erstellt:"
-echo "   - HTML: $REPORT_DIR/index.html"
-echo "   - Text: $REPORT_DIR/summary.txt"
+find ./cpp-coverage -type f \( -name "*.html" -o -name "*.css" \) -delete
+
+echo "Coverage-Report: $REPORT_DIR/summary.txt"
