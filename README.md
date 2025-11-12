@@ -16,10 +16,8 @@ Durch die Aufteilung in klar getrennte Module und die gezielte Nutzung von C++ (
 
 ## **Ausführung**
 
-- **Executable generieren:** Ctrl + Shift + B
-- **C++-Modul in Python integrieren:** pip install .
-- **Ermitteln der Coverage in Python:** ./run_python_tests.sh im Terminal als Befehl eingeben
-- **Ermitteln der Coverage in C++:** ./run_cpp_coverage.sh  im Terminal als Befehl eingeben
+- **Installation von pybind:** git clone [git@github.com:pybind/pybind11.git] aber ohne eckige Klammern bei der Eingabe im Terminal
+- **C++-Modul in Python integrieren:** pip install ., unter Linux muss davor eine virtuelle Umgebung entwickelt werden.
 
 ## **Design**
 
