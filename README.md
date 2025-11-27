@@ -16,8 +16,8 @@ Durch die Aufteilung in klar getrennte Module und die gezielte Nutzung von C++ (
 
 ## **Ausführung**
 
-- **Installation von pybind:** git clone [git@github.com:pybind/pybind11.git] aber ohne eckige Klammern bei der Eingabe im Terminal
-- **C++-Modul in Python integrieren:** pip install ., unter Linux muss davor eine virtuelle Umgebung entwickelt werden.
+- **Projekt-Setup:** ./start.sh
+- **C++-Modul in Python integrieren:** pip install .
 
 ## **Design**
 
@@ -38,27 +38,6 @@ Durch die Aufteilung in klar getrennte Module und die gezielte Nutzung von C++ (
 - **Optimierung O2:** Beschleunigung vom Build-Vorgang und Debugging sind möglich
 - **Debugging:** Aktivierung vom Debuggung, um die Fehlersuche zu vereinfachen
 
-### **.vscode**
-
-- **tasks.json:** JSON-Datei fuers Steuern vom Kompilier-Vorgang inkl. Shortcuts fuer die Tastatur,
-vor allem CTRL+SHIFT+B zum Kompilieren
-- **settings.json:** JSON-Datei zur Konfiguration für C++ und meinem Modul py_bindings
-
-### **build**
-
-- Speicherort fuer die Executables, Binärdateien und Befehle fürs Komplieren
-
-### **inc**
-
-- Ablageort für die Header-Dateien
-- **base:** Unterordner für die einfachen Klassen
-- **utils:** Unterordner für die Template-Klassen, die in anderen Projekten nutzbar sind
-
-### **src**
-
-- Speicherort für die Source-Dateien
-- **tests.cpp:** Test-File fuer alle Executables
-
 ## **Ordner data**
 
 - Aufbewahrungsort fuer die generierten Kassenzettel, Warenbestaende, Kundenliste, Haendlerlisten
@@ -72,28 +51,10 @@ vor allem CTRL+SHIFT+B zum Kompilieren
 - Deklaration der Funktionen aus C++ fuer Python, **Achtung:** Funktionen müssen
 *Snake-Case* sein, damit Sie in Python nahtlos funktionieren
 
-### **py_bindings.pyi**
-
-- **Zweck:** Minimierung der Fehlermeldungen, die durch Pylint erkennt werden
-- **Umsetzung:** Reine Deklaration der Funktionen aus der Datei ./bindings/py_bindings.cpp,
-damit der Compiler erkennt, dass diese Funktionen bereits in C++ definiert wurden.
-
 ### **pybind11**
 
-- **Installation:** Klonen vom Git-Repository [Pybind11](https://github.com/pybind/pybind11.git)
-- **Warum:** Noetig, um eine Schnittstelle zwischen C++ und Python zu ermoeglichen
+- **Integration** API zwischen C++ und Python
 
-### **Dateien zur Python-Konfiguration**
-
-- **pytest.ini:** Konfiguration der Coverage fuer den Code in Python
-- **.env:** Konfiguration, um dem System mitzuteilen, wo der Ordner fuer die Executable sich befindet
-- **setup-py:** Notwendig, damit der Python-Interpreter das Modul in Python verwenden kann
-
-## **Integration in GitHub**
-
-- **ci.yml im Ordner .github:** Konfiguration von CI/CD
-- **.gitignore:** Ordner und Dateien, die ignoriert werden koennen
-- **gitmodules:** Mitteilung gegenüber dem System, dass pybind11 als Submodul zu verwenden ist
 
 ## **Ergebnisse**
 
